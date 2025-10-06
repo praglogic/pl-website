@@ -146,7 +146,7 @@ import Navigation from '../components/Navigation.astro';
   <!-- Founder Section -->
   <section class="founder-section">
     <div class="container">
-      <h2>Meet Our Founder</h2>
+      <h2>Founder and Centaur Mindset</h2>
       <div class="founder-content">
         <div class="founder-image">
           <img src="/images/aejaz-profile.jpg" alt="Aejaz Sheriff Quaraishi, Founder & Principal Architect" class="profile-photo">
@@ -163,14 +163,8 @@ import Navigation from '../components/Navigation.astro';
             
             <div class="founder-credentials">
               <h4>Background & Expertise</h4>
-              <ul>
-                <li><strong>Education:</strong> B.E. Computer Engineering, Visvesvaraya Technological University (University Topper)</li>
-                <li><strong>Experience:</strong> 28+ years in enterprise architecture, AI/ML, and healthcare systems</li>
-                <li><strong>Healthcare AI:</strong> Deep expertise in HIPAA-compliant platforms, HL7 FHIR, and clinical data interoperability</li>
-                <li><strong>Multi-Agent Systems:</strong> Pioneered 7-agent therapeutic AI with 98.7% crisis detection accuracy</li>
-                <li><strong>Enterprise Leadership:</strong> Led architecture practices at Blue Cross Blue Shield, IBM, and IDG</li>
-                <li><strong>Certifications:</strong> TOGAF 9.1, HL7 FHIR Proficient, Google ML Engineer, Java/Web Development</li>
-              </ul>
+              <p><strong>Experience:</strong> 28+ years in enterprise architecture, AI/ML, and healthcare systems</p>
+              <p><strong>Healthcare AI:</strong> Deep expertise in HIPAA-compliant platforms, HL7 FHIR, and clinical data interoperability</p>
             </div>
             
             <div class="founder-achievements">
@@ -529,6 +523,42 @@ import Navigation from '../components/Navigation.astro';
   .profile-photo:hover {
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-placeholder {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--color-background-alt);
+    border: 2px dashed var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .placeholder-content {
+    padding: var(--space-4);
+  }
+  
+  .placeholder-content h4 {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2);
+  }
+  
+  .placeholder-content p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-1);
+  }
+  
+  .placeholder-content code {
+    background: var(--color-background-alt);
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
   }
   
   .founder-info h3 {
