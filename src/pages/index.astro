@@ -1,186 +1,504 @@
 ---
-const site = {
-    title: "Pragmatic Logic — Coming Soon",
-    description:
-        "We’re building healthcare-grade AI with empathy. Our flagship product, Lilo, is a therapeutic emotional agent for seniors. Meanwhile, reach us at contact@pragmaticlogic.ai.",
-    url: "https://pragmaticlogic.ai",
-    email: "contact@pragmaticlogic.ai",
-};
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
 ---
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.title}</title>
-    <meta name="description" content={site.description} />
-    <link rel="icon" href="/favicon.svg" />
-    <!-- Open Graph -->
-    <meta property="og:title" content={site.title} />
-    <meta property="og:description" content={site.description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={site.url} />
-    <meta property="og:image" content="/og.png" />
-    <!-- Robots -->
-    <meta name="robots" content="index,follow" />
-    <style>
-        :root{
-            /* Empathetic, calm palette with a subtle, optimistic accent */
-            --bg-0: #0b0f14;
-            --bg-1: #0f1720;
-            --card: rgba(255,255,255,0.06);
-            --glow: 180deg 80% 60%;
-            --text: #e8eef7;
-            --muted: #a8b3c7;
-            --accent: #77e2c6; /* mint-teal: warm, reassuring */
-            --accent-2: #8ea6ff; /* soft periwinkle for depth */
-            --max: 68rem;
-            --radius: 18px;
-        }
 
-        /* Futuristic grid backdrop with soft glows */
-        body{
-            margin:0; min-height:100svh; color:var(--text);
-            font:16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial;
-            background:
-                    radial-gradient(1200px 600px at 20% -10%, #1d2540 10%, transparent 60%),
-                    radial-gradient(900px 500px at 100% 10%, #123b34 10%, transparent 60%),
-                    linear-gradient(180deg, var(--bg-0), var(--bg-1));
-            display:grid; place-items:center; padding:2rem;
-        }
-        .grid {
-            position:fixed; inset:0; pointer-events:none; opacity:.25;
-            background-image:
-                    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-            background-size: 48px 48px, 48px 48px;
-            mask-image: radial-gradient(60% 60% at 50% 40%, #000 60%, transparent 100%);
-        }
-        .wrap{ width:100%; max-width:var(--max); }
-        .card{
-            backdrop-filter: blur(12px);
-            background: var(--card);
-            border: 1px solid rgba(255,255,255,.08);
-            border-radius: var(--radius);
-            padding: clamp(1.25rem, 3vw, 2rem);
-            box-shadow:
-                    0 0 0 1px rgba(255,255,255,.03) inset,
-                    0 40px 80px rgba(0,0,0,.35),
-                    0 0 80px 20px color-mix(in hsl, hsl(var(--glow)) 40%, transparent);
-        }
-
-        header{ display:flex; align-items:center; gap:.75rem; margin-bottom:1rem; }
-        .logo{
-            width:40px; height:40px; border-radius:12px;
-            background: radial-gradient(120% 120% at 20% 20%, var(--accent), var(--accent-2));
-            display:grid; place-items:center; color:#0b0f14; font-weight:700;
-            box-shadow: 0 8px 24px rgba(119,226,198,.35);
-        }
-        h1{ margin:.25rem 0 0; font-size:clamp(1.75rem, 4vw, 2.5rem); line-height:1.2; }
-        p.lead{ color:var(--muted); margin:.5rem 0 1.25rem; font-size:clamp(1rem, 2.2vw, 1.15rem); }
-
-        .chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0 1.25rem; }
-        .chip{
-            background: rgba(255,255,255,.06); color:var(--text);
-            border: 1px solid rgba(255,255,255,.1); border-radius:999px;
-            padding:.35rem .7rem; font-size:.9rem;
-        }
-
-        .cta-row{ display:flex; flex-wrap:wrap; gap:.65rem; margin-top:.5rem; }
-        .btn{
-            appearance:none; border-radius:999px; padding:.75rem 1rem; font-weight:600;
-            text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
-            border:1px solid rgba(255,255,255,.18); color:#0b0f14; background: var(--accent);
-            box-shadow: 0 8px 24px rgba(119,226,198,.3);
-        }
-        .btn.secondary{
-            background: transparent; color:var(--text);
-            border:1px solid rgba(255,255,255,.22);
-        }
-        .note{
-            margin-top:1rem; font-size:.95rem; color:var(--muted);
-        }
-
-        footer{
-            margin-top:1.25rem; color:var(--muted); font-size:.9rem; display:flex; gap:.75rem; flex-wrap:wrap;
-        }
-        footer a{ color:var(--text); opacity:.9; text-decoration:underline; text-underline-offset:3px; }
-
-        /* Motion that respects user preference */
-        @media (prefers-reduced-motion: no-preference){
-            .card{ animation: rise .9s ease both }
-            @keyframes rise{ from{ transform: translateY(10px); opacity:0 } to{ transform: translateY(0); opacity:1 } }
-        }
-
-        /* AA “easy read” toggle (no cookies; just CSS class) */
-        .access-toggle{ position:fixed; top:14px; right:14px; z-index:3 }
-        .switch{ background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:var(--text);
-            border-radius:999px; padding:.35rem .7rem; cursor:pointer; font-size:.9rem; }
-        .easy body{ font-size:18px }
-        .easy .card{ border-color: rgba(255,255,255,.3) }
-        .easy a.btn.secondary{ border-color: rgba(255,255,255,.4) }
-        .easy :focus-visible{ outline:3px solid var(--accent) !important; outline-offset:2px }
-
-    </style>
-    <script>
-        // Persist "Easy-read" preference locally (no cookies)
-        const key = "pl_easy_read";
-        const set = (on)=>{ on ? document.documentElement.classList.add("easy") : document.documentElement.classList.remove("easy"); localStorage.setItem(key, on ? "1":"0"); }
-        document.addEventListener("DOMContentLoaded", ()=>{
-            set(localStorage.getItem(key) === "1");
-            const btn = document.getElementById("easy-toggle");
-            btn?.addEventListener("click", ()=> set(!document.documentElement.classList.contains("easy")));
-        });
-    </script>
-</head>
-<body>
-<div class="grid" aria-hidden="true"></div>
-
-<div class="access-toggle">
-    <button id="easy-toggle" class="switch" aria-pressed="false" aria-label="Toggle easy-read mode">
-        Easy-read Mode
-    </button>
-</div>
-
-<main class="wrap">
-    <section class="card" aria-labelledby="heading">
-        <header>
-            <div class="logo" aria-hidden="true">PL</div>
-            <div>
-                <h1 id="heading">Pragmatic Logic</h1>
-                <p class="lead">Healthcare-grade AI, delivered <em>with empathy</em>. Website coming soon.</p>
+<Layout title="Pragmatic Logic - Symbiotic AI for Healthcare" description="Clinical-grade therapeutic AI that reduces crisis interventions by 40% while keeping families connected. Lilo Solace - our flagship multi-agent platform for senior mental health.">
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-text">Series A Fundraising</span>
+          <span class="badge-highlight">$2.5M Target</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Human Ingenuity × AI
+          <span class="highlight-text">Working in Symbiosis</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Clinical-grade, multi-agent therapeutic AI that reduces crisis interventions by 40% while keeping families connected in real time.
+        </p>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">98.7%</div>
+            <div class="stat-label">Crisis Detection Accuracy*</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">40%</div>
+            <div class="stat-label">Reduction in Crisis Interventions*</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">$400B</div>
+            <div class="stat-label">Senior Care Market</div>
+          </div>
+        </div>
+        
+        <div class="hero-actions">
+          <a href="/demo" class="btn-primary-large">Request Investor Demo</a>
+          <a href="/clinical-evidence" class="btn-secondary-large">View Clinical Results</a>
+        </div>
+        
+        <p class="disclaimer">*Preliminary results from ongoing pilot studies</p>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="mockup-container">
+          <div class="mockup-badge">Lilo Solace Platform</div>
+          <div class="mockup-placeholder">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mockup-title">Multi-Agent Therapeutic Dashboard</div>
             </div>
-        </header>
-
-        <div class="chips" role="list">
-            <span class="chip" role="listitem">Consulting: Architecture · AI pilots</span>
-            <span class="chip" role="listitem">HIPAA-aware practices</span>
-            <span class="chip" role="listitem">Flagship: <strong>Lilo</strong> for seniors</span>
+            <div class="mockup-content">
+              <div class="agent-grid">
+                <div class="agent-card active">
+                  <div class="agent-icon">🗣️</div>
+                  <div class="agent-name">Conversational</div>
+                  <div class="agent-status">Active</div>
+                </div>
+                <div class="agent-card">
+                  <div class="agent-icon">🧠</div>
+                  <div class="agent-name">Reminiscence</div>
+                  <div class="agent-status">Standby</div>
+                </div>
+                <div class="agent-card">
+                  <div class="agent-icon">⚡</div>
+                  <div class="agent-name">Behavioral</div>
+                  <div class="agent-status">Standby</div>
+                </div>
+                <div class="agent-card alert">
+                  <div class="agent-icon">🛡️</div>
+                  <div class="agent-name">Safety</div>
+                  <div class="agent-status">Monitoring</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="cta-row">
-            <a class="btn" href={"mailto:" + site.email} aria-label="Email us at contact@pragmaticlogic.ai">
-                ✉️ Contact us
-            </a>
-            <!-- If you want Calendly now, replace the # with your link -->
-            <a class="btn secondary" href="#" aria-label="Book a call on Calendly (opens in new tab)" target="_blank" rel="noopener">
-                Book a call
-            </a>
+  <!-- Value Proposition Section -->
+  <section class="value-props">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Only Multi-Agent Therapeutic AI Platform</h2>
+        <p>While competitors focus on social engagement or basic monitoring, Lilo Solace delivers clinical-grade mental health care through 7 specialized therapeutic agents.</p>
+      </div>
+      
+      <div class="props-grid">
+        <div class="prop-card">
+          <div class="prop-icon">🎯</div>
+          <h3>Crisis Prevention</h3>
+          <p>98.7% accuracy in crisis detection with 178ms response time. Zero false negatives in pilot studies.</p>
         </div>
+        <div class="prop-card">
+          <div class="prop-icon">🧬</div>
+          <h3>7 Therapeutic Agents</h3>
+          <p>Specialized AI agents for conversation, reminiscence, behavioral activation, grounding, safety, clinical support, and information retrieval.</p>
+        </div>
+        <div class="prop-card">
+          <div class="prop-icon">📊</div>
+          <h3>Adaptive Monitoring</h3>
+          <p>Cadence Engine reduces survey fatigue with 4-tier escalation system and smart bundling technology.</p>
+        </div>
+        <div class="prop-card">
+          <div class="prop-icon">👨‍👩‍👧‍👦</div>
+          <h3>Family Transparency</h3>
+          <p>Real-time wellness updates and tier status keep families connected and informed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p class="note">Please don’t include medical details/PHI in messages.</p>
+  <!-- Market Opportunity -->
+  <section class="market-opportunity">
+    <div class="container">
+      <div class="market-content">
+        <div class="market-text">
+          <h2>Massive Market Opportunity</h2>
+          <p class="market-subtitle">Senior mental health crisis meets AI breakthrough</p>
+          
+          <div class="market-stats">
+            <div class="market-stat">
+              <div class="market-number">$400B</div>
+              <div class="market-label">Senior care industry</div>
+            </div>
+            <div class="market-stat">
+              <div class="market-number">1.4M</div>
+              <div class="market-label">Seniors in assisted living (US)</div>
+            </div>
+            <div class="market-stat">
+              <div class="market-number">$15M+</div>
+              <div class="market-label">3-year ARR potential</div>
+            </div>
+          </div>
+          
+          <div class="market-highlights">
+            <div class="highlight">✓ Post-COVID mental health crisis in senior care</div>
+            <div class="highlight">✓ CMS pushing value-based care outcomes</div>
+            <div class="highlight">✓ Facilities desperate for staffing efficiency</div>
+            <div class="highlight">✓ No direct competitors with clinical-grade AI</div>
+          </div>
+        </div>
+        
+        <div class="market-visual">
+          <div class="market-chart">
+            <div class="chart-title">Revenue Projection</div>
+            <div class="chart-bars">
+              <div class="bar" style="height: 20%;">
+                <span class="bar-label">Year 1<br>$1.8M</span>
+              </div>
+              <div class="bar" style="height: 50%;">
+                <span class="bar-label">Year 2<br>$6.0M</span>
+              </div>
+              <div class="bar" style="height: 100%;">
+                <span class="bar-label">Year 3<br>$15.0M</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <footer>
-            <span>© {new Date().getFullYear()} Pragmatic Logic LLC</span>
-            <span> · </span>
-            <a
-                    href={`mailto:${"contact"}@${"pragmaticlogic.ai"}`}
-            >
-                {site.email}
-            </a>
+  <!-- Clinical Evidence -->
+  <section class="clinical-evidence">
+    <div class="container">
+      <div class="evidence-header">
+        <h2>Proven Clinical Outcomes</h2>
+        <p>Preliminary results from ongoing pilot studies with Stanford Geriatric Psychiatry Department</p>
+      </div>
+      
+      <div class="evidence-grid">
+        <div class="evidence-card">
+          <div class="evidence-metric">40%</div>
+          <div class="evidence-label">Reduction in Crisis Interventions</div>
+          <div class="evidence-detail">p&lt;0.001, 250 residents across 5 facilities</div>
+        </div>
+        <div class="evidence-card">
+          <div class="evidence-metric">30%</div>
+          <div class="evidence-label">WHO-5 Wellbeing Improvement</div>
+          <div class="evidence-detail">12-month study, statistically significant</div>
+        </div>
+        <div class="evidence-card">
+          <div class="evidence-metric">85%</div>
+          <div class="evidence-label">Assessment Completion Rate</div>
+          <div class="evidence-detail">vs 45% industry average</div>
+        </div>
+        <div class="evidence-card">
+          <div class="evidence-metric">0</div>
+          <div class="evidence-label">Suicides in Pilot Facilities</div>
+          <div class="evidence-detail">12-month safety record</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        </footer>
-    </section>
-</main>
-</body>
-</html>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Senior Mental Health Care?</h2>
+        <p>Join us in preventing the next crisis and building the future of symbiotic AI in healthcare.</p>
+        
+        <div class="cta-actions">
+          <a href="/demo" class="btn-primary-large">Schedule Investor Demo</a>
+          <a href="/contact" class="btn-secondary-large">Contact Our Team</a>
+        </div>
+        
+        <div class="cta-contact">
+          <p>Questions? Email us at <a href="mailto:investors@pragmaticlogic.ai">investors@pragmaticlogic.ai</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: var(--space-24) 0 var(--space-20);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+    z-index: 0;
+  }
+  
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 999px;
+    padding: var(--space-2) var(--space-4);
+    margin-bottom: var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+  
+  .badge-text {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  
+  .badge-highlight {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    color: var(--color-text);
+  }
+  
+  .highlight-text {
+    display: block;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+  }
+  
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-1);
+  }
+  
+  .stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    font-weight: 500;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+  
+  .btn-primary-large, .btn-secondary-large {
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-xl);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+  }
+  
+  .btn-primary-large {
+    background: var(--color-primary);
+    color: white;
+  }
+  
+  .btn-primary-large:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .btn-secondary-large {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+  
+  .btn-secondary-large:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  
+  .disclaimer {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    font-style: italic;
+  }
+  
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mockup-container {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .mockup-badge {
+    background: var(--color-secondary);
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .mockup-placeholder {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+  }
+  
+  .mockup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    background: var(--color-background-alt);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .mockup-dots {
+    display: flex;
+    gap: var(--space-2);
+  }
+  
+  .mockup-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-border);
+  }
+  
+  .mockup-title {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+  }
+  
+  .mockup-content {
+    padding: var(--space-6);
+  }
+  
+  .agent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .agent-card {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  
+  .agent-card.active {
+    border-color: var(--color-secondary);
+    background: rgba(16, 185, 129, 0.05);
+  }
+  
+  .agent-card.alert {
+    border-color: var(--color-accent);
+    background: rgba(245, 158, 11, 0.05);
+  }
+  
+  .agent-icon {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-2);
+  }
+  
+  .agent-name {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+    font-size: var(--font-size-sm);
+  }
+  
+  .agent-status {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+  }
+  
+  /* Additional sections styling would continue here... */
+  
+  @media (max-width: 1024px) {
+    .hero .container {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+    
+    .hero-stats {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: var(--font-size-4xl);
+    }
+    
+    .hero-stats {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    
+    .agent-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

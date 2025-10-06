@@ -1,0 +1,757 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="HIPAA & Security - Pragmatic Logic" description="Our comprehensive approach to healthcare data security, HIPAA compliance, and protecting patient information in the Lilo Solace platform.">
+  <Navigation />
+  
+  <section class="security-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span class="badge-text">HIPAA Compliant & Secure</span>
+        </div>
+        
+        <h1>Healthcare-Grade Security</h1>
+        <p class="hero-subtitle">
+          Comprehensive data protection and HIPAA compliance built into every aspect of the Lilo Solace platform.
+        </p>
+        
+        <div class="compliance-badges">
+          <div class="badge">HIPAA §164.312 Compliant</div>
+          <div class="badge">SOC 2 Type II Ready</div>
+          <div class="badge">AES-256 Encryption</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIPAA Compliance -->
+  <section class="hipaa-section">
+    <div class="container">
+      <h2>HIPAA Compliance Framework</h2>
+      <div class="hipaa-grid">
+        <div class="hipaa-card">
+          <div class="hipaa-icon">📋</div>
+          <h3>Business Associate Agreements</h3>
+          <p>We execute comprehensive BAAs with all covered entities, ensuring proper handling of PHI according to HIPAA requirements.</p>
+          <ul>
+            <li>Standardized BAA templates</li>
+            <li>Liability and indemnification clauses</li>
+            <li>Breach notification procedures</li>
+            <li>Subcontractor management</li>
+          </ul>
+        </div>
+        
+        <div class="hipaa-card">
+          <div class="hipaa-icon">🔒</div>
+          <h3>Administrative Safeguards</h3>
+          <p>Comprehensive policies and procedures to protect PHI through proper workforce management and access controls.</p>
+          <ul>
+            <li>Security officer designation</li>
+            <li>Workforce training programs</li>
+            <li>Access management procedures</li>
+            <li>Incident response protocols</li>
+          </ul>
+        </div>
+        
+        <div class="hipaa-card">
+          <div class="hipaa-icon">💻</div>
+          <h3>Technical Safeguards</h3>
+          <p>Advanced technical controls to protect electronic PHI from unauthorized access, use, or disclosure.</p>
+          <ul>
+            <li>Multi-factor authentication</li>
+            <li>Role-based access controls</li>
+            <li>Audit trails and logging</li>
+            <li>Automatic session timeouts</li>
+          </ul>
+        </div>
+        
+        <div class="hipaa-card">
+          <div class="hipaa-icon">🏢</div>
+          <h3>Physical Safeguards</h3>
+          <p>Physical protection of systems, equipment, and facilities that house PHI.</p>
+          <ul>
+            <li>Secure data center facilities</li>
+            <li>Controlled facility access</li>
+            <li>Workstation security controls</li>
+            <li>Media disposal procedures</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Architecture -->
+  <section class="security-architecture">
+    <div class="container">
+      <div class="architecture-content">
+        <div class="architecture-text">
+          <h2>Multi-Layer Security Architecture</h2>
+          <p class="section-subtitle">Defense-in-depth approach with multiple security layers</p>
+          
+          <div class="security-layers">
+            <div class="layer">
+              <h3>🌐 Network Security</h3>
+              <ul>
+                <li>Web Application Firewall (WAF)</li>
+                <li>DDoS protection and mitigation</li>
+                <li>Network segmentation</li>
+                <li>Intrusion detection systems</li>
+              </ul>
+            </div>
+            
+            <div class="layer">
+              <h3>🔐 Application Security</h3>
+              <ul>
+                <li>Secure coding practices</li>
+                <li>Regular security testing</li>
+                <li>Input validation and sanitization</li>
+                <li>API security controls</li>
+              </ul>
+            </div>
+            
+            <div class="layer">
+              <h3>💾 Data Security</h3>
+              <ul>
+                <li>AES-256 encryption at rest</li>
+                <li>TLS 1.3 encryption in transit</li>
+                <li>Database encryption</li>
+                <li>Secure key management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="security-visual">
+          <div class="security-diagram">
+            <div class="diagram-layer" style="background: rgba(37, 99, 235, 0.1);">
+              <div class="layer-label">User Access Layer</div>
+              <div class="layer-details">MFA • SSO • RBAC</div>
+            </div>
+            <div class="diagram-layer" style="background: rgba(16, 185, 129, 0.1);">
+              <div class="layer-label">Application Layer</div>
+              <div class="layer-details">WAF • API Gateway • Load Balancer</div>
+            </div>
+            <div class="diagram-layer" style="background: rgba(245, 158, 11, 0.1);">
+              <div class="layer-label">Platform Layer</div>
+              <div class="layer-details">Microservices • Container Security</div>
+            </div>
+            <div class="diagram-layer" style="background: rgba(239, 68, 68, 0.1);">
+              <div class="layer-label">Data Layer</div>
+              <div class="layer-details">Encrypted Database • Backup Security</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Compliance -->
+  <section class="certifications">
+    <div class="container">
+      <h2>Certifications & Standards</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-status completed">✅</div>
+          <h3>HIPAA Compliance</h3>
+          <p>Full compliance with HIPAA Privacy and Security Rules</p>
+          <div class="cert-details">§164.312 Technical Safeguards Certified</div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-status in-progress">🔄</div>
+          <h3>SOC 2 Type II</h3>
+          <p>Independent audit of security, availability, and confidentiality</p>
+          <div class="cert-details">Audit in progress - Q1 2026</div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-status completed">✅</div>
+          <h3>GDPR Compliance</h3>
+          <p>European data protection regulation compliance</p>
+          <div class="cert-details">Privacy by Design implementation</div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-status planned">📅</div>
+          <h3>FedRAMP Ready</h3>
+          <p>Federal government cloud security standards</p>
+          <div class="cert-details">Planned for 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Monitoring -->
+  <section class="monitoring">
+    <div class="container">
+      <div class="monitoring-content">
+        <div class="monitoring-text">
+          <h2>24/7 Security Monitoring</h2>
+          <p>Continuous monitoring and threat detection to protect your data</p>
+          
+          <div class="monitoring-features">
+            <div class="feature">
+              <h3>🔍 Real-Time Monitoring</h3>
+              <p>Continuous surveillance of all system activities and access patterns</p>
+            </div>
+            
+            <div class="feature">
+              <h3>⚠️ Threat Detection</h3>
+              <p>AI-powered anomaly detection and automated threat response</p>
+            </div>
+            
+            <div class="feature">
+              <h3>📊 Audit Logging</h3>
+              <p>Comprehensive audit trails for all data access and modifications</p>
+            </div>
+            
+            <div class="feature">
+              <h3>🚨 Incident Response</h3>
+              <p>Rapid response team with defined escalation procedures</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="monitoring-stats">
+          <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Security Uptime</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">&lt;15min</div>
+            <div class="stat-label">Incident Response Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Security Operations Center</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Handling -->
+  <section class="data-handling">
+    <div class="container">
+      <h2>Secure Data Handling</h2>
+      <div class="handling-grid">
+        <div class="handling-card">
+          <h3>Data Collection</h3>
+          <ul>
+            <li>Minimum necessary principle</li>
+            <li>Purpose limitation</li>
+            <li>Consent management</li>
+            <li>Data minimization</li>
+          </ul>
+        </div>
+        
+        <div class="handling-card">
+          <h3>Data Processing</h3>
+          <ul>
+            <li>Encrypted processing pipelines</li>
+            <li>Secure multi-tenancy</li>
+            <li>Data isolation controls</li>
+            <li>Processing transparency</li>
+          </ul>
+        </div>
+        
+        <div class="handling-card">
+          <h3>Data Storage</h3>
+          <ul>
+            <li>AES-256 encryption at rest</li>
+            <li>Secure backup procedures</li>
+            <li>Geographic data residency</li>
+            <li>Retention policy enforcement</li>
+          </ul>
+        </div>
+        
+        <div class="handling-card">
+          <h3>Data Transmission</h3>
+          <ul>
+            <li>TLS 1.3 encryption</li>
+            <li>Certificate pinning</li>
+            <li>Secure API endpoints</li>
+            <li>End-to-end encryption</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Support -->
+  <section class="security-contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Security & Compliance Support</h2>
+        <p>Our security team is available to address your compliance and security questions.</p>
+        
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Security Team</h3>
+            <p><strong>Email:</strong> <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a></p>
+            <p><strong>Phone:</strong> +1 (404) 470-7991</p>
+            <p>For security incidents and vulnerability reports</p>
+          </div>
+          
+          <div class="contact-card">
+            <h3>Compliance Team</h3>
+            <p><strong>Email:</strong> <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a></p>
+            <p><strong>Phone:</strong> +1 (404) 470-7991</p>
+            <p>For HIPAA, BAA, and regulatory compliance questions</p>
+          </div>
+          
+          <div class="contact-card">
+            <h3>Privacy Officer</h3>
+            <p><strong>Email:</strong> <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a></p>
+            <p><strong>Phone:</strong> +1 (404) 470-7991</p>
+            <p>For privacy rights and data protection inquiries</p>
+          </div>
+        </div>
+        
+        <div class="emergency-contact">
+          <h3>🚨 Security Emergency Hotline</h3>
+          <p><strong>24/7 Emergency:</strong> +1 (404) 470-7991</p>
+          <p>For immediate security incidents requiring urgent response</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .security-hero {
+    background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
+    color: white;
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+  
+  .security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    padding: var(--space-2) var(--space-4);
+    margin-bottom: var(--space-6);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+  
+  .security-hero h1 {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto var(--space-8);
+  }
+  
+  .compliance-badges {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+  
+  .hipaa-section {
+    padding: var(--space-24) 0;
+    background: var(--color-background-alt);
+  }
+  
+  .hipaa-section h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-16);
+    color: var(--color-text);
+  }
+  
+  .hipaa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+  
+  .hipaa-card {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  
+  .hipaa-icon {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .hipaa-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .hipaa-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+  }
+  
+  .hipaa-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .hipaa-card li {
+    color: var(--color-text-light);
+    padding: var(--space-1) 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  
+  .security-architecture {
+    padding: var(--space-24) 0;
+    background: white;
+  }
+  
+  .architecture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
+  }
+  
+  .architecture-text h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-8);
+  }
+  
+  .layer {
+    margin-bottom: var(--space-6);
+  }
+  
+  .layer h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+  
+  .layer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .layer li {
+    color: var(--color-text-light);
+    padding: var(--space-1) 0;
+  }
+  
+  .security-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .diagram-layer {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  
+  .layer-label {
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+  
+  .layer-details {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+  }
+  
+  .certifications {
+    padding: var(--space-20) 0;
+    background: var(--color-background-alt);
+  }
+  
+  .certifications h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-12);
+    color: var(--color-text);
+  }
+  
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+  }
+  
+  .cert-card {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  
+  .cert-status {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .cert-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+  
+  .cert-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-3);
+  }
+  
+  .cert-details {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  
+  .monitoring {
+    padding: var(--space-24) 0;
+    background: white;
+  }
+  
+  .monitoring-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
+  }
+  
+  .monitoring-text h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .monitoring-text p {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-8);
+  }
+  
+  .feature {
+    margin-bottom: var(--space-6);
+  }
+  
+  .feature h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+  
+  .feature p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+  }
+  
+  .monitoring-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .stat-card {
+    background: var(--color-background-alt);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+  
+  .stat-label {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+  }
+  
+  .data-handling {
+    padding: var(--space-20) 0;
+    background: var(--color-background-alt);
+  }
+  
+  .data-handling h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-12);
+    color: var(--color-text);
+  }
+  
+  .handling-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+  }
+  
+  .handling-card {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .handling-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .handling-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .handling-card li {
+    color: var(--color-text-light);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  
+  .security-contact {
+    padding: var(--space-20) 0;
+    background: white;
+  }
+  
+  .contact-content h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .contact-content > p {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-12);
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+  
+  .contact-card {
+    background: var(--color-background-alt);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+  }
+  
+  .contact-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .contact-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-2);
+  }
+  
+  .contact-card a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .emergency-contact {
+    background: rgba(239, 68, 68, 0.05);
+    border: 2px solid rgba(239, 68, 68, 0.2);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+  
+  .emergency-contact h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: var(--space-4);
+  }
+  
+  .emergency-contact p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-2);
+  }
+  
+  @media (max-width: 1024px) {
+    .architecture-content,
+    .monitoring-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+    
+    .compliance-badges {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .security-hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+    
+    .hipaa-grid,
+    .cert-grid,
+    .handling-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

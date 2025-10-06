@@ -1,0 +1,406 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Request Demo - Pragmatic Logic" description="Schedule a personalized demo of Lilo Solace, our clinical-grade multi-agent therapeutic AI platform for senior mental health care.">
+  <Navigation />
+  
+  <section class="demo-hero">
+    <div class="container">
+      <div class="demo-content">
+        <h1>Experience Lilo Solace</h1>
+        <p class="demo-subtitle">See how our multi-agent therapeutic AI platform is transforming senior mental health care with clinical-grade precision.</p>
+        
+        <div class="demo-highlights">
+          <div class="highlight">✓ Live platform walkthrough</div>
+          <div class="highlight">✓ 7 therapeutic agents in action</div>
+          <div class="highlight">✓ Clinical outcomes discussion</div>
+          <div class="highlight">✓ Investment opportunity overview</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-form-section">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Schedule Your Personalized Demo</h2>
+          <p>Choose your preferred demo type and we'll customize the presentation for your needs.</p>
+        </div>
+        
+        <form class="demo-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="demo-type">Demo Type</label>
+            <select id="demo-type" name="demo-type" required>
+              <option value="">Select demo type</option>
+              <option value="investor">Investor Presentation (45 min)</option>
+              <option value="clinical">Clinical Walkthrough (30 min)</option>
+              <option value="facility">Facility Operations (30 min)</option>
+              <option value="technical">Technical Deep Dive (60 min)</option>
+            </select>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company/Organization</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="role">Your Role</label>
+            <select id="role" name="role" required>
+              <option value="">Select your role</option>
+              <option value="investor">Investor/VC</option>
+              <option value="executive">Healthcare Executive</option>
+              <option value="clinical">Clinical Director</option>
+              <option value="operations">Operations Manager</option>
+              <option value="technology">Technology Leader</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="facility-size">Facility Size (if applicable)</label>
+            <select id="facility-size" name="facility-size">
+              <option value="">Select facility size</option>
+              <option value="small">1-50 residents</option>
+              <option value="medium">51-150 residents</option>
+              <option value="large">151-300 residents</option>
+              <option value="enterprise">300+ residents</option>
+              <option value="multiple">Multiple facilities</option>
+              <option value="na">Not applicable</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="timeline">Implementation Timeline</label>
+            <select id="timeline" name="timeline">
+              <option value="">Select timeline</option>
+              <option value="immediate">Immediate (0-3 months)</option>
+              <option value="short">Short-term (3-6 months)</option>
+              <option value="medium">Medium-term (6-12 months)</option>
+              <option value="long">Long-term (12+ months)</option>
+              <option value="exploring">Just exploring</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="interests">Specific Interests (optional)</label>
+            <textarea id="interests" name="interests" rows="4" placeholder="What aspects of Lilo Solace are you most interested in learning about?"></textarea>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="updates" value="yes">
+              <span class="checkmark"></span>
+              I'd like to receive updates about Pragmatic Logic and Lilo Solace
+            </label>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="privacy" value="agreed" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn-primary-large">Schedule Demo</button>
+        </form>
+        
+        <div class="alternative-contact">
+          <p>Prefer to talk directly? Email us at <a href="mailto:demo@pragmaticlogic.ai">demo@pragmaticlogic.ai</a> or call <a href="tel:+1-555-PRAGMAT">+1 (555) PRAGMAT</a></p>
+        </div>
+      </div>
+      
+      <div class="demo-info">
+        <div class="info-card">
+          <h3>What to Expect</h3>
+          <ul>
+            <li>Personalized platform demonstration</li>
+            <li>Clinical outcomes and evidence review</li>
+            <li>Implementation roadmap discussion</li>
+            <li>Q&A with our clinical and technical teams</li>
+            <li>Next steps and partnership opportunities</li>
+          </ul>
+        </div>
+        
+        <div class="info-card">
+          <h3>Demo Highlights</h3>
+          <ul>
+            <li><strong>7 Therapeutic Agents:</strong> See each agent in action</li>
+            <li><strong>Crisis Detection:</strong> 98.7% accuracy demonstration</li>
+            <li><strong>Cadence Engine:</strong> Adaptive monitoring system</li>
+            <li><strong>Family Portal:</strong> Real-time transparency features</li>
+            <li><strong>Clinical Dashboard:</strong> Provider workflow optimization</li>
+          </ul>
+        </div>
+        
+        <div class="info-card">
+          <h3>Preliminary Results</h3>
+          <ul>
+            <li>40% reduction in crisis interventions</li>
+            <li>30% improvement in WHO-5 wellbeing scores</li>
+            <li>85% assessment completion rate</li>
+            <li>Zero suicides in pilot facilities</li>
+            <li>90% family engagement rate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .demo-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding: var(--space-20) 0 var(--space-16);
+    text-align: center;
+  }
+  
+  .demo-content h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+  }
+  
+  .demo-subtitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-8);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .demo-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .highlight {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+  }
+  
+  .demo-form-section {
+    padding: var(--space-20) 0;
+    background: var(--color-background-alt);
+  }
+  
+  .demo-form-section .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-16);
+    max-width: 1200px;
+  }
+  
+  .form-container {
+    background: white;
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .form-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+  
+  .form-header h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .form-header p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+  }
+  
+  .demo-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+  
+  .checkbox-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    margin: 0;
+    width: auto;
+  }
+  
+  .btn-primary-large {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-4) var(--space-8);
+    border: none;
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-primary-large:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .alternative-contact {
+    text-align: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-light);
+  }
+  
+  .alternative-contact a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .demo-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .info-card {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .info-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .info-card li {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-border-light);
+    color: var(--color-text-light);
+  }
+  
+  .info-card li:last-child {
+    border-bottom: none;
+  }
+  
+  .info-card li strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  @media (max-width: 1024px) {
+    .demo-form-section .container {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+    
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .demo-highlights {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .demo-hero {
+      padding: var(--space-16) 0 var(--space-12);
+    }
+    
+    .demo-content h1 {
+      font-size: var(--font-size-3xl);
+    }
+    
+    .form-container {
+      padding: var(--space-6);
+    }
+  }
+</style>
