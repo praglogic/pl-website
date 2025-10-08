@@ -11,10 +11,6 @@ import Footer from '../components/Footer.astro';
   <section class="about-hero">
     <div class="container">
       <div class="hero-content">
-        <div class="company-logo">
-          <img src="/images/pragmatic-logic-logo.png" alt="Pragmatic Logic - Human Ingenuity + AI Symbiosis" class="company-logo-img" />
-        </div>
-
         <h1>The Centaur's Mind</h1>
         <p class="hero-subtitle">
           AI that amplifies human compassion, not replaces it
@@ -244,16 +240,6 @@ import Footer from '../components/Footer.astro';
     z-index: 1;
   }
 
-  .company-logo {
-    margin-bottom: var(--space-8);
-  }
-
-  .company-logo-img {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-    filter: brightness(0) invert(1);
-  }
 
   .about-hero h1 {
     font-size: var(--font-size-5xl);
@@ -264,7 +250,6 @@ import Footer from '../components/Footer.astro';
 
   .hero-subtitle {
     font-size: var(--font-size-2xl);
-    opacity: 0.95;
     font-weight: 400;
     line-height: 1.5;
   }
@@ -299,8 +284,8 @@ import Footer from '../components/Footer.astro';
 
   .philosophy-main p {
     font-size: var(--font-size-lg);
-    color: var(--color-text-light);
-    line-height: 1.75;
+    color: var(--color-text);
+    line-height: 1.8;
     margin-bottom: var(--space-4);
     max-width: 100%;
   }
@@ -392,8 +377,8 @@ import Footer from '../components/Footer.astro';
   }
 
   .mission-card p, .vision-card p {
-    color: var(--color-text-light);
-    line-height: 1.75;
+    color: var(--color-text);
+    line-height: 1.8;
     font-size: var(--font-size-lg);
     margin: 0;
     max-width: 100%;
@@ -453,8 +438,8 @@ import Footer from '../components/Footer.astro';
   }
 
   .founder-bio {
-    color: var(--color-text-light);
-    line-height: 1.75;
+    color: var(--color-text);
+    line-height: 1.8;
     margin-bottom: var(--space-6);
     font-size: var(--font-size-lg);
     max-width: 100%;
@@ -561,10 +546,11 @@ import Footer from '../components/Footer.astro';
   }
 
   .value-card p {
-    color: var(--color-text-light);
-    line-height: 1.75;
+    color: var(--color-text);
+    line-height: 1.8;
     margin: 0;
     max-width: 100%;
+    font-size: var(--font-size-base);
   }
 
   /* CTA Section */
@@ -602,7 +588,6 @@ import Footer from '../components/Footer.astro';
   .about-cta p {
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-8);
-    opacity: 0.95;
     max-width: 100%;
   }
 
@@ -698,10 +683,6 @@ import Footer from '../components/Footer.astro';
   }
 
   @media (max-width: 640px) {
-    .company-logo-img {
-      max-width: 100%;
-    }
-
     .about-hero h1 {
       font-size: var(--font-size-3xl);
     }

@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname;
 <nav class="nav">
   <div class="container nav-container">
     <a href="/" class="logo">
-      <span class="logo-text">Pragmatic Logic</span>
+      <img src="/images/logo-navbar-proper.png" alt="Pragmatic Logic" class="logo-image" />
     </a>
     
     <div class="nav-links">
@@ -45,21 +45,26 @@ const currentPath = Astro.url.pathname;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-4) var(--space-4);
-    min-height: 80px;
+    padding: var(--space-2) var(--space-4);
+    min-height: 60px;
   }
   
   .logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--color-text);
-    font-weight: 700;
     transition: opacity 0.2s ease;
   }
 
   .logo:hover {
     opacity: 0.7;
+  }
+
+  .logo-image {
+    height: 45px;
+    width: auto;
+    max-width: 250px;
+    object-fit: contain;
   }
 
   .logo-text {
