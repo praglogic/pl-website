@@ -9,6 +9,7 @@ const currentPath = Astro.url.pathname;
     </a>
     
     <div class="nav-links">
+      <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
       <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' ? 'active' : ''}>Product</a>
       <a href="/evidence" class={currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'active' : ''}>Evidence</a>
       <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'active' : ''}>Company</a>
