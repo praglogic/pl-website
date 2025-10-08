@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Pragmatic Logic - Symbiotic AI for Healthcare" description="Clinical-grade therapeutic AI that reduces crisis interventions by 40% while keeping families connected. Lilo Solace - our flagship multi-agent platform for senior mental health.">
@@ -10,11 +11,10 @@ import Navigation from '../components/Navigation.astro';
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-text">Series A Fundraising</span>
-          <span class="badge-highlight">$2.5M Target</span>
+        <div class="hero-logo">
+          <img src="/images/pragmatic-logic-logo.png" alt="Pragmatic Logic - Human Ingenuity + AI Symbiosis" class="hero-logo-img" />
         </div>
-        
+
         <h1 class="hero-title">
           Every Senior Deserves to Feel
           <span class="highlight-text">Heard, Understood, and Valued</span>
@@ -48,27 +48,16 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="hero-actions">
-          <a href="/demo" class="btn-primary-large">See How We're Changing Lives</a>
-          <a href="/about#manifesto-section" class="btn-secondary-large">Read Our Mission</a>
+          <a href="/demo" class="btn-primary-large">Request Demo</a>
+          <a href="/product" class="btn-secondary-large">Explore Product</a>
         </div>
         
         <p class="disclaimer">*Preliminary results from ongoing pilot studies</p>
       </div>
       
       <div class="hero-visual">
-        <div class="image-placeholder">
-          <div class="image-description">
-            <h4>🖼️ Suggested Hero Image:</h4>
-            <p><strong>A warm, natural photo showing:</strong></p>
-            <ul>
-              <li>Senior woman (75+) with genuine smile, using tablet</li>
-              <li>Her adult daughter beside her, both engaged and happy</li>
-              <li>Soft natural lighting, comfortable home setting</li>
-              <li>Focus on emotional connection, not technology</li>
-              <li>Conveys: dignity, warmth, family bonds, hope</li>
-            </ul>
-            <p><em>Alternative: Diverse group of seniors in assisted living, laughing together, with subtle technology integration</em></p>
-          </div>
+        <div class="hero-image">
+          <img src="/images/Hero Image Oct 8 2025.png" alt="Senior woman using tablet with her daughter, showing warmth and connection through technology" class="hero-img" />
         </div>
       </div>
     </div>
@@ -199,8 +188,8 @@ import Navigation from '../components/Navigation.astro';
         <p>Every day we wait, more families lose precious moments with their loved ones. Join us in creating AI that doesn't just monitor—it truly cares.</p>
         
         <div class="cta-actions">
-          <a href="/demo" class="btn-primary-large">See Our Impact</a>
-          <a href="/contact" class="btn-secondary-large">Join Our Mission</a>
+          <a href="/demo" class="btn-primary-large">Request Demo</a>
+          <a href="/contact" class="btn-secondary-large">Contact Us</a>
         </div>
         
         <div class="cta-contact">
@@ -209,25 +198,49 @@ import Navigation from '../components/Navigation.astro';
       </div>
     </div>
   </section>
+
+  <Footer />
 </Layout>
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
     padding: var(--space-24) 0 var(--space-20);
     position: relative;
     overflow: hidden;
   }
-  
+
   .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -10%;
+    right: -5%;
+    width: 60%;
+    height: 120%;
+    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+    z-index: 0;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
     z-index: 0;
+    animation: float 25s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-30px, -30px) scale(1.1);
+    }
   }
   
   .hero .container {
@@ -238,17 +251,30 @@ import Navigation from '../components/Navigation.astro';
     position: relative;
     z-index: 1;
   }
-  
+
+  .hero-logo {
+    margin-bottom: var(--space-8);
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .hero-logo-img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+  }
+
   .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    background: rgba(37, 99, 235, 0.1);
-    border: 1px solid rgba(37, 99, 235, 0.2);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(16, 185, 129, 0.12));
+    border: 1px solid rgba(37, 99, 235, 0.25);
     border-radius: 999px;
     padding: var(--space-2) var(--space-4);
     margin-bottom: var(--space-6);
     font-size: var(--font-size-sm);
+    box-shadow: var(--shadow-sm);
+    animation: slideInUp 0.6s ease-out;
   }
   
   .badge-text {
@@ -266,10 +292,12 @@ import Navigation from '../components/Navigation.astro';
   
   .hero-title {
     font-size: var(--font-size-5xl);
-    font-weight: 700;
-    line-height: 1.1;
+    font-weight: 600;
+    line-height: 1.2;
     margin-bottom: var(--space-6);
     color: var(--color-text);
+    animation: slideInUp 0.8s ease-out 0.1s both;
+    letter-spacing: -0.03em;
   }
   
   .highlight-text {
@@ -284,7 +312,8 @@ import Navigation from '../components/Navigation.astro';
     font-size: var(--font-size-xl);
     color: var(--color-text-light);
     margin-bottom: var(--space-8);
-    line-height: 1.6;
+    line-height: 1.75;
+    animation: slideInUp 0.8s ease-out 0.2s both;
   }
   
   .hero-stats {
@@ -356,11 +385,19 @@ import Navigation from '../components/Navigation.astro';
   }
   
   .impact-story {
-    background: rgba(16, 185, 129, 0.05);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(16, 185, 129, 0.02));
     border-left: 4px solid var(--color-secondary);
     padding: var(--space-6);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     margin-bottom: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    animation: slideInUp 0.8s ease-out 0.3s both;
+    transition: all 0.3s ease;
+  }
+
+  .impact-story:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
   }
   
   .story-quote p {
@@ -377,37 +414,23 @@ import Navigation from '../components/Navigation.astro';
     font-weight: 600;
   }
   
-  .image-placeholder {
-    background: var(--color-background-alt);
-    border: 2px dashed var(--color-border);
+  .hero-image {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .hero-img {
+    width: 100%;
+    height: auto;
     border-radius: var(--radius-xl);
-    padding: var(--space-8);
-    text-align: center;
-    max-width: 500px;
+    box-shadow: var(--shadow-xl);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .image-description h4 {
-    color: var(--color-primary);
-    margin-bottom: var(--space-4);
-    font-size: var(--font-size-lg);
-  }
-  
-  .image-description p {
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-    font-size: var(--font-size-sm);
-  }
-  
-  .image-description ul {
-    text-align: left;
-    color: var(--color-text-light);
-    font-size: var(--font-size-sm);
-    margin-bottom: var(--space-3);
-  }
-  
-  .image-description em {
-    color: var(--color-text-light);
-    font-size: var(--font-size-xs);
+  .hero-img:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2xl);
   }
   
   .hero-visual {
@@ -510,37 +533,394 @@ import Navigation from '../components/Navigation.astro';
     color: var(--color-text-light);
   }
   
-  /* Additional sections styling would continue here... */
-  
+  /* Value Props Section */
+  .value-props {
+    padding: var(--space-24) 0;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+  }
+
+  .section-header h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .section-header p {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+    line-height: 1.75;
+  }
+
+  .props-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .prop-card {
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-background-soft), var(--color-background));
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-2xl);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .prop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+  }
+
+  .prop-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    display: inline-block;
+    transition: transform 0.4s ease;
+  }
+
+  .prop-card:hover .prop-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+
+  .prop-card h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .prop-card p {
+    color: var(--color-text-light);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* Market Opportunity Section */
+  .market-opportunity {
+    padding: var(--space-24) 0;
+    background: linear-gradient(180deg, var(--color-background-soft) 0%, white 100%);
+  }
+
+  .market-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  .market-text h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .market-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-8);
+    max-width: 100%;
+  }
+
+  .market-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .market-stat {
+    text-align: center;
+    padding: var(--space-6);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .market-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .market-number {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .market-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+  }
+
+  .market-highlights {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .highlight {
+    color: var(--color-text);
+    font-weight: 500;
+    padding: var(--space-3) 0;
+    border-left: 3px solid var(--color-secondary);
+    padding-left: var(--space-4);
+  }
+
+  /* Clinical Evidence Section */
+  .clinical-evidence {
+    padding: var(--space-24) 0;
+    background: white;
+  }
+
+  .evidence-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+  }
+
+  .evidence-header h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .evidence-header p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    max-width: 100%;
+  }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  .evidence-card {
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-background-soft), white);
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    transition: all 0.4s ease;
+  }
+
+  .evidence-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .evidence-metric {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-3);
+  }
+
+  .evidence-label {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+  }
+
+  .evidence-detail {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: var(--space-24) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-content h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-8);
+    opacity: 0.95;
+    max-width: 100%;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-contact a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .cta-contact a:hover {
+    opacity: 0.8;
+  }
+
   @media (max-width: 1024px) {
     .hero .container {
       grid-template-columns: 1fr;
       gap: var(--space-12);
     }
-    
+
     .hero-stats {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-4);
     }
-    
+
     .hero-actions {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .props-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .market-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+
+    .market-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .evidence-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-actions {
+      flex-wrap: wrap;
     }
   }
-  
-  @media (max-width: 640px) {
+
+  @media (max-width: 768px) {
     .hero-title {
       font-size: var(--font-size-4xl);
     }
-    
+
+    .hero-subtitle {
+      font-size: var(--font-size-lg);
+    }
+
+    .section-header h2 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .section-header p {
+      font-size: var(--font-size-lg);
+    }
+
+    .market-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .evidence-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: var(--space-16) 0 var(--space-12);
+    }
+
+    .hero-logo-img {
+      max-width: 100%;
+    }
+
+    .hero-title {
+      font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-base);
+    }
+
     .hero-stats {
       grid-template-columns: 1fr;
       gap: var(--space-4);
     }
-    
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-primary-large,
+    .btn-secondary-large {
+      width: 100%;
+      text-align: center;
+    }
+
     .agent-grid {
       grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .prop-card h3 {
+      font-size: var(--font-size-xl);
+    }
+
+    .cta-content h2 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .cta-content p {
+      font-size: var(--font-size-lg);
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      width: 100%;
     }
   }
 </style>

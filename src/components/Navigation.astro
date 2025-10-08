@@ -5,21 +5,16 @@ const currentPath = Astro.url.pathname;
 <nav class="nav">
   <div class="container nav-container">
     <a href="/" class="logo">
-      <div class="logo-icon">PL</div>
       <span class="logo-text">Pragmatic Logic</span>
     </a>
     
     <div class="nav-links">
-      <a href="/solutions" class={currentPath.startsWith('/solutions') ? 'active' : ''}>Solutions</a>
-      <a href="/lilo-solace" class={currentPath === '/lilo-solace' ? 'active' : ''}>Lilo Solace</a>
-      <a href="/clinical-evidence" class={currentPath === '/clinical-evidence' ? 'active' : ''}>Clinical Evidence</a>
-      <a href="/technology" class={currentPath === '/technology' ? 'active' : ''}>Technology</a>
-      <a href="/centaur-mind" class={currentPath === '/centaur-mind' ? 'active' : ''}>The Centaur's Mind</a>
-      <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
+      <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' ? 'active' : ''}>Product</a>
+      <a href="/evidence" class={currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'active' : ''}>Evidence</a>
+      <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'active' : ''}>Company</a>
     </div>
-    
+
     <div class="nav-actions">
-      <a href="/contact" class="btn-secondary">Contact</a>
       <a href="/demo" class="btn-primary">Request Demo</a>
     </div>
     
@@ -33,12 +28,17 @@ const currentPath = Astro.url.pathname;
 
 <style>
   .nav {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border-light);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.6);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav:hover {
+    box-shadow: var(--shadow-sm);
   }
   
   .nav-container {
@@ -52,58 +52,62 @@ const currentPath = Astro.url.pathname;
   .logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
     text-decoration: none;
     color: var(--color-text);
-    font-weight: 600;
-  }
-  
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
     font-weight: 700;
-    font-size: var(--font-size-sm);
+    transition: opacity 0.2s ease;
   }
-  
+
+  .logo:hover {
+    opacity: 0.7;
+  }
+
   .logo-text {
     font-size: var(--font-size-xl);
     font-weight: 700;
+    letter-spacing: -0.02em;
   }
   
   .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
+    gap: var(--space-12);
   }
   
   .nav-links a {
     text-decoration: none;
     color: var(--color-text-light);
     font-weight: 500;
-    transition: color 0.2s ease;
+    font-size: var(--font-size-base);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    padding-bottom: 8px;
+    letter-spacing: -0.01em;
   }
-  
+
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+  }
+
   .nav-links a:hover,
   .nav-links a.active {
     color: var(--color-primary);
   }
-  
-  .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
+
+  .nav-links a:hover::before,
+  .nav-links a.active::before {
     left: 0;
     right: 0;
-    height: 2px;
-    background: var(--color-primary);
-    border-radius: 1px;
+    opacity: 1;
   }
   
   .nav-actions {
@@ -114,34 +118,59 @@ const currentPath = Astro.url.pathname;
   
   .btn-primary, .btn-secondary {
     padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     text-decoration: none;
     font-weight: 600;
     font-size: var(--font-size-sm);
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
   }
-  
+
   .btn-primary {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
     color: white;
+    box-shadow: var(--shadow-xs);
   }
-  
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 1;
+  }
+
   .btn-primary:hover {
-    background: var(--color-primary-light);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
   }
-  
+
+  .btn-primary > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .btn-secondary {
     background: transparent;
     color: var(--color-text);
     border-color: var(--color-border);
   }
-  
+
   .btn-secondary:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
+    background: rgba(37, 99, 235, 0.05);
+    transform: translateY(-1px);
   }
   
   .mobile-menu-toggle {
@@ -185,8 +214,9 @@ const currentPath = Astro.url.pathname;
       display: none;
     }
     
-    .nav-actions .btn-secondary {
-      display: none;
+    .btn-primary {
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--font-size-xs);
     }
   }
 </style>
