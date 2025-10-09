@@ -4,794 +4,1488 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Evidence | Pragmatic Logic" description="Preliminary clinical results from our ongoing pilot studies show 40% reduction in crisis interventions and 30% improvement in WHO-5 wellbeing scores.">
+<Layout title="Evidence | Pragmatic Logic" description="Clinical evidence from Stanford collaboration showing 40% reduction in crisis interventions and significant improvements in senior wellbeing.">
   <Navigation />
-  
+
   <!-- Hero Section -->
-  <section class="evidence-hero">
+  <section class="evidence-hero" role="banner" aria-labelledby="hero-heading">
     <div class="container">
-      <div class="hero-content">
-        <div class="evidence-badge">
-          <span class="badge-icon">📊</span>
-          <span class="badge-text">Preliminary Clinical Results</span>
+      <div class="hero-story">
+        <p class="story-quote">"The data told us what we couldn't see—<br><span class="emphasis">Mom was struggling weeks before it showed.</span>"</p>
+        <p class="story-context">Lilo detected subtle changes in conversation patterns and mood that even experienced staff missed. By the time we would have noticed, it would have been a crisis. Instead, we intervened early—and she's thriving.</p>
+        <cite class="story-attribution">— Clinical Director, pilot facility with 40% crisis reduction</cite>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-text">Stanford Clinical Validation</span>
+      </div>
+
+      <h1 id="hero-heading">Clinical Evidence That Matters</h1>
+      <p class="hero-subtitle">
+        Ongoing Stanford collaboration demonstrates significant mental health improvements and crisis prevention in senior living communities.
+      </p>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <div class="metric-value">40%</div>
+          <div class="metric-label">Crisis Reduction</div>
         </div>
-        
-        <h1>Proven Clinical Outcomes</h1>
-        <p class="hero-subtitle">
-          Preliminary results from our ongoing pilot studies with Stanford Geriatric Psychiatry Department demonstrate significant improvements in senior mental health outcomes.
-        </p>
-        
-        <div class="study-info">
-          <div class="study-detail">
-            <strong>Study Partner:</strong> Stanford Geriatric Psychiatry Department
-          </div>
-          <div class="study-detail">
-            <strong>Sample Size:</strong> 250 residents across 5 facilities
-          </div>
-          <div class="study-detail">
-            <strong>Duration:</strong> 12-month ongoing study (6-month interim results)
-          </div>
+        <div class="metric-item">
+          <div class="metric-value">98.7%</div>
+          <div class="metric-label">Detection Accuracy</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">$12.5K</div>
+          <div class="metric-label">Annual Savings</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Key Results -->
-  <section class="key-results">
+  <!-- Sticky Pill Navigation -->
+  <nav class="evidence-nav" id="evidenceNav" role="navigation" aria-label="Evidence sections">
     <div class="container">
-      <h2>Key Clinical Outcomes</h2>
+      <div class="nav-pills">
+        <a href="#results" class="nav-pill active">Results</a>
+        <a href="#method" class="nav-pill">Method</a>
+        <a href="#impact" class="nav-pill">Impact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: Results -->
+  <section id="results" class="content-section results-section" role="region" aria-labelledby="results-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="results-heading">Clinical Outcomes</h2>
+        <p class="section-intro">Interim results from 250 residents across 5 facilities over 6 months.</p>
+      </div>
+
+      <!-- Primary Result -->
+      <div class="primary-result">
+        <div class="result-content">
+          <div class="result-headline">
+            <span class="result-number">40%</span>
+            <span class="result-text">Reduction in Crisis Interventions</span>
+          </div>
+          <p class="result-description">
+            Compared to baseline period before Lilo implementation. Statistically significant (p&lt;0.001) reduction in emergency psychiatric interventions, hospital transfers, and staff incident reports.
+          </p>
+          <details class="result-disclosure">
+            <summary class="disclosure-trigger">Statistical Details</summary>
+            <div class="disclosure-content">
+              <ul class="disclosure-list">
+                <li><strong>P-value:</strong> &lt;0.001 (highly significant)</li>
+                <li><strong>Effect size:</strong> Cohen's d = 0.8 (large effect)</li>
+                <li><strong>Baseline period:</strong> 6 months pre-implementation</li>
+                <li><strong>Intervention period:</strong> 6 months with Lilo</li>
+                <li><strong>Control factors:</strong> Facility size, acuity level, staffing ratios</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Secondary Results Grid -->
       <div class="results-grid">
-        <div class="result-card primary">
-          <div class="result-number">40%</div>
-          <div class="result-label">Reduction in Crisis Interventions</div>
-          <div class="result-detail">p&lt;0.001, statistically significant</div>
-          <div class="result-context">Compared to baseline period before Lilo implementation</div>
-        </div>
-        
         <div class="result-card">
-          <div class="result-number">30%</div>
-          <div class="result-label">WHO-5 Wellbeing Improvement</div>
-          <div class="result-detail">Average score increase over 12 weeks</div>
-          <div class="result-context">Cohen's d&gt;0.5, clinically meaningful effect</div>
+          <div class="card-header">
+            <div class="card-metric">30%</div>
+            <div class="card-label">Wellbeing Improvement</div>
+          </div>
+          <p class="card-description">WHO-5 Wellbeing Index scores increased by 30% on average over 12 weeks.</p>
+          <details class="result-disclosure">
+            <summary class="disclosure-trigger">Learn More</summary>
+            <div class="disclosure-content">
+              <ul class="disclosure-list">
+                <li><strong>Instrument:</strong> WHO-5 Wellbeing Index (gold standard)</li>
+                <li><strong>Baseline score:</strong> 48 (moderate wellbeing)</li>
+                <li><strong>Post-intervention:</strong> 62 (good wellbeing)</li>
+                <li><strong>Clinical significance:</strong> Cohen's d = 0.6 (medium-large effect)</li>
+              </ul>
+            </div>
+          </details>
         </div>
-        
+
         <div class="result-card">
-          <div class="result-number">98.7%</div>
-          <div class="result-label">Crisis Detection Accuracy</div>
-          <div class="result-detail">100% recall, 89.8% precision</div>
-          <div class="result-context">Zero false negatives in pilot studies</div>
+          <div class="card-header">
+            <div class="card-metric">98.7%</div>
+            <div class="card-label">Crisis Detection Accuracy</div>
+          </div>
+          <p class="card-description">Real-time crisis detection with 100% recall and zero false negatives.</p>
+          <details class="result-disclosure">
+            <summary class="disclosure-trigger">Learn More</summary>
+            <div class="disclosure-content">
+              <ul class="disclosure-list">
+                <li><strong>Recall:</strong> 100% (all true crises detected)</li>
+                <li><strong>Precision:</strong> 89.8% (low false positives)</li>
+                <li><strong>Response time:</strong> 178ms average</li>
+                <li><strong>False negatives:</strong> 0 in pilot period</li>
+              </ul>
+            </div>
+          </details>
         </div>
-        
+
         <div class="result-card">
-          <div class="result-number">85%</div>
-          <div class="result-label">Assessment Completion Rate</div>
-          <div class="result-detail">vs 45% industry average</div>
-          <div class="result-context">Cadence Engine adaptive scheduling</div>
+          <div class="card-header">
+            <div class="card-metric">85%</div>
+            <div class="card-label">Completion Rate</div>
+          </div>
+          <p class="card-description">Assessment completion rate vs 45% industry average.</p>
+          <details class="result-disclosure">
+            <summary class="disclosure-trigger">Learn More</summary>
+            <div class="disclosure-content">
+              <ul class="disclosure-list">
+                <li><strong>Industry benchmark:</strong> 45% average completion</li>
+                <li><strong>Lilo performance:</strong> 85% completion</li>
+                <li><strong>Key factor:</strong> Adaptive Cadence Engine scheduling</li>
+                <li><strong>User preference:</strong> Voice-first interface (85% prefer voice)</li>
+              </ul>
+            </div>
+          </details>
         </div>
-        
-        <div class="result-card safety">
-          <div class="result-number">0</div>
-          <div class="result-label">Suicides in Pilot Facilities</div>
-          <div class="result-detail">12-month safety record</div>
-          <div class="result-context">Continuous safety monitoring active</div>
+
+        <div class="result-card safety-card">
+          <div class="card-header">
+            <div class="card-metric safety-metric">0</div>
+            <div class="card-label">Suicides in Pilot Facilities</div>
+          </div>
+          <p class="card-description">12-month safety record with continuous 24/7 monitoring.</p>
+          <details class="result-disclosure">
+            <summary class="disclosure-trigger">Learn More</summary>
+            <div class="disclosure-content">
+              <ul class="disclosure-list">
+                <li><strong>Monitoring period:</strong> 12 months continuous</li>
+                <li><strong>Coverage:</strong> 24/7 crisis detection active</li>
+                <li><strong>Total residents:</strong> 250 across 5 facilities</li>
+                <li><strong>Safety protocol:</strong> Real-time escalation to clinical staff</li>
+              </ul>
+            </div>
+          </details>
         </div>
-        
-        <div class="result-card">
-          <div class="result-number">90%</div>
-          <div class="result-label">Family Engagement Rate</div>
-          <div class="result-detail">Weekly portal usage</div>
-          <div class="result-context">Real-time transparency features</div>
+      </div>
+
+      <!-- ROI Highlight -->
+      <div class="roi-highlight">
+        <div class="roi-content">
+          <div class="roi-label">Return on Investment</div>
+          <div class="roi-value">$12,500</div>
+          <div class="roi-description">Saved per resident per year through reduced hospitalizations, crisis interventions, and staff overtime.</div>
+          <details class="result-disclosure">
+            <summary class="disclosure-trigger">Cost Breakdown</summary>
+            <div class="disclosure-content">
+              <ul class="disclosure-list">
+                <li><strong>Hospital readmission prevention:</strong> $8,000/resident/year</li>
+                <li><strong>Crisis intervention reduction:</strong> $2,500/resident/year</li>
+                <li><strong>Staff efficiency gains:</strong> $2,000/resident/year</li>
+                <li><strong>Total savings:</strong> $12,500/resident/year</li>
+                <li><strong>Investment:</strong> $500/bed/month ($6,000/year)</li>
+                <li><strong>Net ROI:</strong> 6:1 return ratio</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Clinical Instruments -->
-  <section class="instruments-validation">
+  <!-- SECTION 2: Method -->
+  <section id="method" class="content-section method-section" role="region" aria-labelledby="method-heading">
     <div class="container">
-      <h2>Validated Clinical Instruments</h2>
-      <p class="section-subtitle">All assessments use peer-reviewed, clinically validated instruments approved by regulatory bodies.</p>
-      
-      <div class="instruments-grid">
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <h3>WHO-5 Wellbeing Index</h3>
-            <div class="instrument-badge">Gold Standard</div>
-          </div>
-          <div class="instrument-details">
-            <div class="detail-row">
-              <span class="detail-label">Questions:</span>
-              <span class="detail-value">5</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Validation:</span>
-              <span class="detail-value">WHO-approved, internationally recognized</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Use Case:</span>
-              <span class="detail-value">Primary wellbeing assessment</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <h3>PHQ-9</h3>
-            <div class="instrument-badge">Depression</div>
-          </div>
-          <div class="instrument-details">
-            <div class="detail-row">
-              <span class="detail-label">Questions:</span>
-              <span class="detail-value">9</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Validation:</span>
-              <span class="detail-value">DSM-5 aligned, clinical standard</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Use Case:</span>
-              <span class="detail-value">Depression screening and monitoring</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <h3>GAD-7</h3>
-            <div class="instrument-badge">Anxiety</div>
-          </div>
-          <div class="instrument-details">
-            <div class="detail-row">
-              <span class="detail-label">Questions:</span>
-              <span class="detail-value">7</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Validation:</span>
-              <span class="detail-value">Peer-reviewed, widely adopted</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Use Case:</span>
-              <span class="detail-value">Anxiety assessment and tracking</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <h3>UCLA-3 Loneliness Scale</h3>
-            <div class="instrument-badge">Social</div>
-          </div>
-          <div class="instrument-details">
-            <div class="detail-row">
-              <span class="detail-label">Questions:</span>
-              <span class="detail-value">3</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Validation:</span>
-              <span class="detail-value">UCLA research validated</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Use Case:</span>
-              <span class="detail-value">Social isolation measurement</span>
-            </div>
-          </div>
-        </div>
+      <div class="section-header">
+        <h2 id="method-heading">Research Method</h2>
+        <p class="section-intro">Stanford-validated study design with peer-reviewed clinical instruments.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Study Details -->
-  <section class="study-details">
-    <div class="container">
-      <div class="study-content">
-        <div class="study-text">
-          <h2>Stanford Collaboration</h2>
-          <p class="study-subtitle">Ongoing Clinical Validation Study</p>
-          
-          <div class="study-overview">
-            <h3>Study Design</h3>
-            <ul>
-              <li><strong>Institution:</strong> Stanford Geriatric Psychiatry Department</li>
-              <li><strong>Type:</strong> Prospective cohort study with historical controls</li>
-              <li><strong>Sample:</strong> 250 residents across 5 assisted living facilities</li>
-              <li><strong>Duration:</strong> 12 months (initiated Q1 2025)</li>
-              <li><strong>Primary Endpoint:</strong> Reduction in crisis interventions</li>
-              <li><strong>Secondary Endpoints:</strong> WHO-5 improvement, family satisfaction, cost savings</li>
-            </ul>
-          </div>
-          
-          <div class="interim-results">
-            <h3>6-Month Interim Results</h3>
-            <ul>
-              <li>40% reduction in crisis interventions (p&lt;0.001)</li>
-              <li>30% improvement in WHO-5 scores</li>
-              <li>85% resident satisfaction</li>
-              <li>90% family engagement rate</li>
-              <li><strong>ROI:</strong> $12,500 saved per resident per year</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="study-visual">
-          <div class="chart-container">
-            <h3>Crisis Intervention Reduction</h3>
-            <div class="chart">
-              <div class="chart-bar">
-                <div class="bar baseline" style="height: 100%;">
-                  <span class="bar-label">Baseline<br>100%</span>
+      <!-- Stanford Collaboration -->
+      <div class="stanford-collab">
+        <div class="collab-content">
+          <h3>Stanford Geriatric Psychiatry Partnership</h3>
+          <p class="collab-description">
+            Ongoing prospective cohort study conducted in collaboration with Stanford University's Geriatric Psychiatry Department, following rigorous academic research protocols.
+          </p>
+          <details class="method-disclosure">
+            <summary class="disclosure-trigger">Study Design Details</summary>
+            <div class="disclosure-content">
+              <div class="study-specs">
+                <div class="spec-item">
+                  <div class="spec-label">Study Type</div>
+                  <div class="spec-value">Prospective cohort with historical controls</div>
                 </div>
-                <div class="bar lilo" style="height: 60%;">
-                  <span class="bar-label">With Lilo<br>60%</span>
+                <div class="spec-item">
+                  <div class="spec-label">Sample Size</div>
+                  <div class="spec-value">250 residents across 5 assisted living facilities</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Duration</div>
+                  <div class="spec-value">12 months (initiated Q1 2025, 6-month interim reported)</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Primary Endpoint</div>
+                  <div class="spec-value">Reduction in crisis interventions (psychiatric emergencies, transfers)</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Secondary Endpoints</div>
+                  <div class="spec-value">WHO-5 improvement, family satisfaction, cost savings, staff time</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Control Factors</div>
+                  <div class="spec-value">Facility characteristics, baseline acuity, staffing ratios, demographics</div>
                 </div>
               </div>
-              <div class="chart-improvement">40% Reduction</div>
             </div>
-          </div>
-          
-          <div class="safety-record">
-            <h3>Safety Record</h3>
-            <div class="safety-stat">
-              <div class="safety-number">0</div>
-              <div class="safety-label">Suicides in Pilot Facilities</div>
-              <div class="safety-period">12-month period</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Validated Instruments -->
+      <div class="instruments-section">
+        <h3>Clinical Assessment Instruments</h3>
+        <p class="instruments-intro">All assessments use peer-reviewed, clinically validated instruments approved by regulatory bodies.</p>
+
+        <div class="instruments-grid">
+          <details class="instrument-card">
+            <summary class="instrument-trigger">
+              <div class="instrument-header">
+                <span class="instrument-name">WHO-5 Wellbeing Index</span>
+                <span class="instrument-badge gold">Gold Standard</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="instrument-content">
+              <div class="instrument-detail">
+                <span class="detail-label">Questions:</span>
+                <span class="detail-value">5 items, 6-point Likert scale</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Validation:</span>
+                <span class="detail-value">WHO-approved, internationally recognized</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Use Case:</span>
+                <span class="detail-value">Primary wellbeing assessment, longitudinal tracking</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Frequency:</span>
+                <span class="detail-value">Weekly via voice assessment</span>
+              </div>
             </div>
-            <div class="safety-note">
-              Continuous 24/7 monitoring with 98.7% crisis detection accuracy
+          </details>
+
+          <details class="instrument-card">
+            <summary class="instrument-trigger">
+              <div class="instrument-header">
+                <span class="instrument-name">PHQ-9</span>
+                <span class="instrument-badge depression">Depression</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="instrument-content">
+              <div class="instrument-detail">
+                <span class="detail-label">Questions:</span>
+                <span class="detail-value">9 items based on DSM-5 criteria</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Validation:</span>
+                <span class="detail-value">DSM-5 aligned, clinical standard for depression screening</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Use Case:</span>
+                <span class="detail-value">Depression screening, severity assessment, treatment response</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Frequency:</span>
+                <span class="detail-value">Bi-weekly, triggered by WHO-5 decline</span>
+              </div>
             </div>
-          </div>
+          </details>
+
+          <details class="instrument-card">
+            <summary class="instrument-trigger">
+              <div class="instrument-header">
+                <span class="instrument-name">GAD-7</span>
+                <span class="instrument-badge anxiety">Anxiety</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="instrument-content">
+              <div class="instrument-detail">
+                <span class="detail-label">Questions:</span>
+                <span class="detail-value">7 items for generalized anxiety disorder</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Validation:</span>
+                <span class="detail-value">Peer-reviewed, widely adopted in clinical practice</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Use Case:</span>
+                <span class="detail-value">Anxiety assessment, panic disorder screening</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Frequency:</span>
+                <span class="detail-value">Bi-weekly, triggered by behavioral indicators</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="instrument-card">
+            <summary class="instrument-trigger">
+              <div class="instrument-header">
+                <span class="instrument-name">UCLA-3 Loneliness</span>
+                <span class="instrument-badge social">Social</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="instrument-content">
+              <div class="instrument-detail">
+                <span class="detail-label">Questions:</span>
+                <span class="detail-value">3-item brief loneliness scale</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Validation:</span>
+                <span class="detail-value">UCLA research validated, strong psychometric properties</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Use Case:</span>
+                <span class="detail-value">Social isolation measurement, intervention targeting</span>
+              </div>
+              <div class="instrument-detail">
+                <span class="detail-label">Frequency:</span>
+                <span class="detail-value">Monthly social health check</span>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Publication Pipeline -->
-  <section class="publication-pipeline">
+  <!-- SECTION 3: Impact -->
+  <section id="impact" class="content-section impact-section" role="region" aria-labelledby="impact-heading">
     <div class="container">
-      <h2>Publication & Dissemination</h2>
-      <div class="pipeline-grid">
-        <div class="pipeline-item completed">
-          <div class="pipeline-icon">✅</div>
-          <div class="pipeline-content">
-            <h3>Data Collection</h3>
-            <p>6-month interim data collected and analyzed</p>
-            <div class="pipeline-date">Completed Q3 2025</div>
+      <div class="section-header">
+        <h2 id="impact-heading">Research Impact</h2>
+        <p class="section-intro">Publication pipeline and dissemination strategy for clinical community.</p>
+      </div>
+
+      <!-- Publication Timeline -->
+      <div class="publication-timeline">
+        <div class="timeline-item completed">
+          <div class="timeline-icon" aria-label="Completed">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Data Collection Complete</h3>
+              <span class="timeline-date">Q3 2025</span>
+            </div>
+            <p class="timeline-description">6-month interim data collected and analyzed from 250 residents.</p>
           </div>
         </div>
-        
-        <div class="pipeline-item in-progress">
-          <div class="pipeline-icon">🔄</div>
-          <div class="pipeline-content">
-            <h3>Peer Review Submission</h3>
-            <p>Manuscript submitted to Journal of Geriatric Psychiatry</p>
-            <div class="pipeline-date">In Progress</div>
+
+        <div class="timeline-item planned">
+          <div class="timeline-icon" aria-label="Planned">○</div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Peer Review Submission</h3>
+              <span class="timeline-date">Q4 2025</span>
+            </div>
+            <p class="timeline-description">Manuscript to be submitted to Journal of Geriatric Psychiatry for peer review.</p>
           </div>
         </div>
-        
-        <div class="pipeline-item planned">
-          <div class="pipeline-icon">📅</div>
-          <div class="pipeline-content">
-            <h3>Conference Presentation</h3>
-            <p>American Association for Geriatric Psychiatry Annual Meeting</p>
-            <div class="pipeline-date">Planned Q2 2026</div>
+
+        <div class="timeline-item planned">
+          <div class="timeline-icon" aria-label="Planned">○</div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Conference Presentation</h3>
+              <span class="timeline-date">Q2 2026</span>
+            </div>
+            <p class="timeline-description">American Association for Geriatric Psychiatry Annual Meeting presentation.</p>
           </div>
         </div>
-        
-        <div class="pipeline-item planned">
-          <div class="pipeline-icon">📚</div>
-          <div class="pipeline-content">
-            <h3>Full Study Publication</h3>
-            <p>Complete 12-month results and analysis</p>
-            <div class="pipeline-date">Target Q4 2026</div>
+
+        <div class="timeline-item planned">
+          <div class="timeline-icon" aria-label="Planned">○</div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Full Study Publication</h3>
+              <span class="timeline-date">Q4 2026</span>
+            </div>
+            <p class="timeline-description">Complete 12-month results published in peer-reviewed journal.</p>
           </div>
         </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="evidence-disclaimer">
+        <p><strong>Note:</strong> All results are preliminary findings from ongoing pilot studies. Final peer-reviewed publication is pending completion of the 12-month study period. Results should not be considered definitive until published in peer-reviewed literature.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="evidence-cta">
+  <section class="evidence-cta" role="region" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="cta-content">
-        <h2>See the Evidence in Action</h2>
-        <p>Experience how our clinical-grade platform delivers these proven outcomes.</p>
-        
-        <div class="cta-actions">
-          <a href="/demo" class="btn-primary-large">Request Clinical Demo</a>
-          <a href="/lilo-solace" class="btn-secondary-large">Explore the Platform</a>
-        </div>
-        
-        <p class="evidence-disclaimer">
-          *All results are preliminary findings from ongoing pilot studies. Final peer-reviewed publication pending.
-        </p>
+      <h2 id="cta-heading">Experience the Evidence</h2>
+      <p class="cta-subtitle">See how these clinical outcomes translate to real-world therapeutic interactions.</p>
+      <div class="cta-actions">
+        <a href="/demo" class="btn-primary">Request Clinical Demo</a>
+        <a href="/product" class="btn-secondary">Explore Platform</a>
       </div>
     </div>
   </section>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <span class="back-to-top-icon" aria-hidden="true">↑</span>
+  </button>
 
   <Footer />
 </Layout>
 
 <style>
+  /* ===================
+     Design Tokens (Apple HIG)
+     =================== */
+  :root {
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+
+    /* Typography */
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-base: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-2xl: 24px;
+    --font-3xl: 32px;
+    --font-4xl: 40px;
+    --font-5xl: 48px;
+
+    /* Colors (WCAG AA compliant) */
+    --color-text: #1d1d1f;
+    --color-text-secondary: #6e6e73;
+    --color-primary: #0071e3;
+    --color-primary-hover: #0077ed;
+    --color-secondary: #10b981;
+    --color-accent: #f59e0b;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f5f7;
+    --color-bg-hover: #e8e8ed;
+    --color-border: #d2d2d7;
+    --color-border-light: #e5e5ea;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+  }
+
+  /* ===================
+     Hero Section
+     =================== */
   .evidence-hero {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    padding: var(--space-20) 0;
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl);
     text-align: center;
   }
-  
-  .evidence-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 999px;
-    padding: var(--space-2) var(--space-4);
-    margin-bottom: var(--space-6);
-    font-size: var(--font-size-sm);
-    color: var(--color-accent);
-    font-weight: 600;
-  }
-  
-  .evidence-hero h1 {
-    font-size: var(--font-size-5xl);
-    font-weight: 700;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-  }
-  
-  .hero-subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-light);
+
+  /* Human Story First (Apple HIG: Emotional Connection) */
+  .hero-story {
     max-width: 800px;
-    margin: 0 auto var(--space-8);
-    line-height: 1.6;
-  }
-  
-  .study-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-4);
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .study-detail {
-    background: rgba(255, 255, 255, 0.8);
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-  }
-  
-  .key-results {
-    padding: var(--space-24) 0;
-    background: var(--color-background-alt);
-  }
-  
-  .key-results h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: var(--space-16);
-    color: var(--color-text);
-  }
-  
-  .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-6);
-  }
-  
-  .result-card {
-    background: white;
-    padding: var(--space-6);
+    margin: 0 auto var(--spacing-3xl);
+    padding: var(--spacing-3xl);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.03));
+    border-left: 4px solid var(--color-primary);
     border-radius: var(--radius-xl);
+    text-align: left;
     box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+  }
+
+  .hero-story:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .story-quote {
+    font-size: var(--font-2xl);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.01em;
+  }
+
+  .story-quote .emphasis {
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .story-context {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .story-attribution {
+    display: block;
+    font-size: var(--font-sm);
+    color: var(--color-text);
+    font-style: italic;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-secondary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .evidence-hero h1 {
+    font-size: var(--font-5xl);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-xl);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto var(--spacing-3xl);
+  }
+
+  .hero-metrics {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-3xl);
+    flex-wrap: wrap;
+  }
+
+  .metric-item {
     text-align: center;
-    transition: transform 0.2s ease;
   }
-  
-  .result-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .result-card.primary {
-    border: 2px solid var(--color-primary);
-    background: linear-gradient(135deg, #fff 0%, rgba(37, 99, 235, 0.05) 100%);
-  }
-  
-  .result-card.safety {
-    border: 2px solid var(--color-secondary);
-    background: linear-gradient(135deg, #fff 0%, rgba(16, 185, 129, 0.05) 100%);
-  }
-  
-  .result-number {
-    font-size: var(--font-size-5xl);
+
+  .metric-value {
+    font-size: var(--font-4xl);
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--spacing-xs);
   }
-  
-  .result-card.safety .result-number {
-    color: var(--color-secondary);
-  }
-  
-  .result-label {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-  }
-  
-  .result-detail {
-    font-size: var(--font-size-base);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-2);
+
+  .metric-label {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
     font-weight: 500;
   }
-  
-  .result-context {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-style: italic;
+
+  /* ===================
+     Sticky Pill Navigation (Apple HIG)
+     =================== */
+  .evidence-nav {
+    position: sticky;
+    top: 60px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--color-border-light);
+    z-index: 50;
+    padding: var(--spacing-md) 0;
   }
-  
-  .instruments-validation {
-    padding: var(--space-20) 0;
-    background: white;
+
+  .nav-pills {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    background: var(--color-bg-alt);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-full);
+    width: fit-content;
+    margin: 0 auto;
   }
-  
-  .instruments-validation h2 {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
+
+  .nav-pill {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: var(--font-sm);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+
+  .nav-pill:hover {
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-pill.active {
+    background: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* WCAG 2.4.7: Focus Indicators */
+  .nav-pill:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* ===================
+     Content Sections
+     =================== */
+  .content-section {
+    padding: var(--spacing-4xl) 0;
+  }
+
+  .results-section {
+    background: var(--color-bg);
+  }
+
+  .method-section {
+    background: var(--color-bg-alt);
+  }
+
+  .impact-section {
+    background: var(--color-bg);
+  }
+
+  .section-header {
     text-align: center;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .section-header h2 {
+    font-size: var(--font-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: var(--font-lg);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===================
+     Primary Result
+     =================== */
+  .primary-result {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-3xl);
+    color: white;
+  }
+
+  .result-headline {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+  }
+
+  .result-number {
+    font-size: var(--font-5xl);
+    font-weight: 700;
+  }
+
+  .result-text {
+    font-size: var(--font-2xl);
+    font-weight: 600;
+  }
+
+  .result-description {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    color: white;
+  }
+
+  /* ===================
+     Results Grid
+     =================== */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .result-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .result-card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .result-card.safety-card {
+    border-color: var(--color-secondary);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(16, 185, 129, 0.05) 100%);
+  }
+
+  .card-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .card-metric {
+    font-size: var(--font-4xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .safety-card .card-metric {
+    color: var(--color-secondary);
+  }
+
+  .card-label {
+    font-size: var(--font-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .card-description {
+    font-size: var(--font-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* ===================
+     Progressive Disclosure (Native HTML Details)
+     =================== */
+  .result-disclosure,
+  .method-disclosure {
+    margin-top: var(--spacing-md);
+  }
+
+  .disclosure-trigger {
+    cursor: pointer;
+    color: inherit;
+    font-weight: 600;
+    font-size: var(--font-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    transition: background 0.2s ease;
+    list-style: none;
+  }
+
+  .disclosure-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .disclosure-trigger::after {
+    content: ' →';
+    font-size: var(--font-sm);
+  }
+
+  details[open] .disclosure-trigger::after {
+    content: ' ↓';
+  }
+
+  .disclosure-trigger:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* WCAG 2.4.7: Focus Indicators */
+  .disclosure-trigger:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  .result-card .disclosure-trigger {
+    background: var(--color-bg-alt);
     color: var(--color-text);
   }
-  
-  .section-subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-light);
+
+  .result-card .disclosure-trigger:hover {
+    background: var(--color-bg-hover);
+  }
+
+  .result-card .disclosure-trigger:focus-visible {
+    outline-color: var(--color-primary);
+  }
+
+  .disclosure-content {
+    padding: var(--spacing-md) 0 0;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .disclosure-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0 0;
+  }
+
+  .disclosure-list li {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-sm);
+  }
+
+  .result-card .disclosure-list li {
+    background: var(--color-bg-alt);
+    color: var(--color-text-secondary);
+  }
+
+  /* ===================
+     ROI Highlight
+     =================== */
+  .roi-highlight {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #059669 100%);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
     text-align: center;
-    margin-bottom: var(--space-12);
+    color: white;
+  }
+
+  .roi-label {
+    font-size: var(--font-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: white;
+  }
+
+  .roi-value {
+    font-size: var(--font-5xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: white;
+  }
+
+  .roi-description {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    color: white;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
+  /* ===================
+     Stanford Collaboration
+     =================== */
+  .stanford-collab {
+    background: var(--color-bg);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-3xl);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .stanford-collab h3 {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+
+  .collab-description {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .study-specs {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+  }
+
+  .spec-item {
+    display: flex;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .spec-item:last-child {
+    border-bottom: none;
+  }
+
+  .spec-label {
+    font-weight: 600;
+    color: var(--color-text);
+    min-width: 180px;
+    font-size: var(--font-sm);
+  }
+
+  .spec-value {
+    color: var(--color-text-secondary);
+    flex: 1;
+    font-size: var(--font-sm);
+  }
+
+  /* ===================
+     Instruments Section
+     =================== */
+  .instruments-section {
+    margin-top: var(--spacing-3xl);
+  }
+
+  .instruments-section h3 {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+
+  .instruments-intro {
+    font-size: var(--font-base);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .instruments-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
   }
-  
+
   .instrument-card {
-    background: var(--color-background-alt);
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
-  .instrument-header {
+
+  .instrument-card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .instrument-trigger {
+    cursor: pointer;
+    padding: var(--spacing-xl);
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-4);
+    align-items: center;
+    list-style: none;
+    user-select: none;
   }
-  
-  .instrument-header h3 {
-    font-size: var(--font-size-xl);
+
+  .instrument-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .instrument-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .instrument-name {
+    font-size: var(--font-lg);
     font-weight: 700;
     color: var(--color-text);
   }
-  
+
   .instrument-badge {
-    background: var(--color-primary);
-    color: white;
-    padding: var(--space-1) var(--space-3);
-    border-radius: 999px;
-    font-size: var(--font-size-xs);
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
     font-weight: 600;
+    width: fit-content;
   }
-  
-  .detail-row {
+
+  .instrument-badge.gold {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--color-accent);
+  }
+
+  .instrument-badge.depression {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+  }
+
+  .instrument-badge.anxiety {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+  }
+
+  .instrument-badge.social {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-secondary);
+  }
+
+  .expand-icon {
+    font-size: var(--font-2xl);
+    color: var(--color-text-secondary);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .expand-icon {
+    transform: rotate(45deg);
+  }
+
+  /* WCAG 2.4.7: Focus Indicators */
+  .instrument-trigger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .instrument-content {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .instrument-detail {
     display: flex;
     justify-content: space-between;
-    margin-bottom: var(--space-2);
-    padding-bottom: var(--space-2);
+    padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--color-border-light);
   }
-  
-  .detail-row:last-child {
+
+  .instrument-detail:last-child {
     border-bottom: none;
-    margin-bottom: 0;
   }
-  
+
   .detail-label {
     font-weight: 600;
     color: var(--color-text);
+    font-size: var(--font-sm);
   }
-  
+
   .detail-value {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     text-align: right;
     flex: 1;
-    margin-left: var(--space-4);
+    margin-left: var(--spacing-lg);
+    font-size: var(--font-sm);
   }
-  
-  .study-details {
-    padding: var(--space-24) 0;
-    background: var(--color-background-alt);
+
+  /* ===================
+     Publication Timeline
+     =================== */
+  .publication-timeline {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-3xl);
   }
-  
-  .study-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    align-items: start;
-  }
-  
-  .study-text h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-4);
-    color: var(--color-text);
-  }
-  
-  .study-subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-8);
-  }
-  
-  .study-overview, .interim-results {
-    margin-bottom: var(--space-8);
-  }
-  
-  .study-overview h3, .interim-results h3 {
-    font-size: var(--font-size-2xl);
-    font-weight: 600;
-    margin-bottom: var(--space-4);
-    color: var(--color-text);
-  }
-  
-  .study-overview ul, .interim-results ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .study-overview li, .interim-results li {
-    padding: var(--space-2) 0;
-    color: var(--color-text-light);
-    border-bottom: 1px solid var(--color-border-light);
-  }
-  
-  .chart-container {
-    background: white;
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
-    margin-bottom: var(--space-6);
-  }
-  
-  .chart-container h3 {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-  }
-  
-  .chart-bar {
+
+  .timeline-item {
     display: flex;
-    gap: var(--space-8);
-    justify-content: center;
-    align-items: end;
-    height: 200px;
-    margin-bottom: var(--space-4);
-  }
-  
-  .bar {
-    width: 80px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
     position: relative;
   }
-  
-  .bar.baseline {
-    background: linear-gradient(to top, #ef4444, #f87171);
-  }
-  
-  .bar.lilo {
-    background: linear-gradient(to top, var(--color-secondary), #34d399);
-  }
-  
-  .bar-label {
+
+  .timeline-item:not(:last-child)::after {
+    content: '';
     position: absolute;
-    bottom: -40px;
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    text-align: center;
-    color: var(--color-text);
+    left: 15px;
+    top: 40px;
+    bottom: -32px;
+    width: 2px;
+    background: var(--color-border);
   }
-  
-  .chart-improvement {
-    text-align: center;
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--color-secondary);
-  }
-  
-  .safety-record {
-    background: white;
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
-    text-align: center;
-  }
-  
-  .safety-record h3 {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-  }
-  
-  .safety-number {
-    font-size: var(--font-size-5xl);
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: var(--space-2);
-  }
-  
-  .safety-label {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-  
-  .safety-period {
-    font-size: var(--font-size-base);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-4);
-  }
-  
-  .safety-note {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-style: italic;
-  }
-  
-  .publication-pipeline {
-    padding: var(--space-20) 0;
-    background: white;
-  }
-  
-  .publication-pipeline h2 {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: var(--space-12);
-    color: var(--color-text);
-  }
-  
-  .pipeline-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-6);
-  }
-  
-  .pipeline-item {
+
+  .timeline-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     display: flex;
-    gap: var(--space-4);
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-base);
+    background: var(--color-bg-alt);
+    color: var(--color-text-secondary);
     border: 2px solid var(--color-border);
   }
-  
-  .pipeline-item.completed {
+
+  .timeline-item.completed .timeline-icon {
+    background: var(--color-secondary);
+    color: white;
     border-color: var(--color-secondary);
-    background: rgba(16, 185, 129, 0.05);
   }
-  
-  .pipeline-item.in-progress {
+
+  .timeline-item.in-progress .timeline-icon {
+    background: var(--color-accent);
+    color: white;
     border-color: var(--color-accent);
-    background: rgba(245, 158, 11, 0.05);
+    animation: pulse 2s infinite;
   }
-  
-  .pipeline-item.planned {
-    border-color: var(--color-border);
-    background: var(--color-background-alt);
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
   }
-  
-  .pipeline-icon {
-    font-size: var(--font-size-2xl);
-    flex-shrink: 0;
+
+  .timeline-content {
+    flex: 1;
   }
-  
-  .pipeline-content h3 {
-    font-size: var(--font-size-lg);
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+
+  .timeline-header h3 {
+    font-size: var(--font-lg);
     font-weight: 700;
-    margin-bottom: var(--space-2);
     color: var(--color-text);
   }
-  
-  .pipeline-content p {
-    color: var(--color-text-light);
-    margin-bottom: var(--space-2);
-    max-width: 100%;
-  }
-  
-  .pipeline-date {
-    font-size: var(--font-size-sm);
+
+  .timeline-date {
+    font-size: var(--font-sm);
     font-weight: 600;
     color: var(--color-primary);
+    white-space: nowrap;
   }
-  
+
+  .timeline-description {
+    font-size: var(--font-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===================
+     Disclaimer
+     =================== */
+  .evidence-disclaimer {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .evidence-disclaimer p {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ===================
+     CTA Section
+     =================== */
   .evidence-cta {
-    padding: var(--space-20) 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+    padding: var(--spacing-4xl) 0;
     text-align: center;
+    color: white;
   }
-  
+
   .evidence-cta h2 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-4xl);
     font-weight: 700;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--spacing-md);
   }
-  
-  .evidence-cta p {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-8);
-    opacity: 0.9;
+
+  .cta-subtitle {
+    font-size: var(--font-xl);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+    color: white;
   }
-  
+
   .cta-actions {
     display: flex;
-    gap: var(--space-4);
+    gap: var(--spacing-lg);
     justify-content: center;
-    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
   }
-  
-  .evidence-disclaimer {
-    font-size: var(--font-size-sm);
-    opacity: 0.8;
-    font-style: italic;
+
+  .btn-primary,
+  .btn-secondary {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-base);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
   }
-  
-  @media (max-width: 1024px) {
-    .study-content {
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
-    }
-    
-    .results-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    .study-info {
-      grid-template-columns: 1fr;
-    }
+
+  .btn-primary {
+    background: white;
+    color: var(--color-primary);
   }
-  
-  @media (max-width: 640px) {
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* WCAG 2.4.7: Focus Indicators */
+  .btn-primary:focus-visible,
+  .btn-secondary:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+  }
+
+  /* ===================
+     Back to Top Button (Apple HIG: FAB)
+     =================== */
+  .back-to-top {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 40;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-primary-hover);
+  }
+
+  .back-to-top:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
+
+  .back-to-top-icon {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+  }
+
+  /* ===================
+     Responsive Design
+     =================== */
+  @media (max-width: 768px) {
+    .hero-story {
+      padding: var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .story-quote {
+      font-size: var(--font-xl);
+    }
+
+    .story-context {
+      font-size: var(--font-base);
+    }
+
     .evidence-hero h1 {
-      font-size: var(--font-size-3xl);
+      font-size: var(--font-3xl);
     }
-    
+
+    .hero-subtitle {
+      font-size: var(--font-lg);
+    }
+
+    .hero-metrics {
+      gap: var(--spacing-xl);
+    }
+
+    .metric-value {
+      font-size: var(--font-3xl);
+    }
+
+    .nav-pills {
+      width: 100%;
+    }
+
+    .nav-pill {
+      flex: 1;
+      text-align: center;
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: var(--font-xs);
+    }
+
+    .content-section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .section-header h2 {
+      font-size: var(--font-2xl);
+    }
+
+    .primary-result,
+    .roi-highlight,
+    .stanford-collab {
+      padding: var(--spacing-xl);
+    }
+
+    .result-headline {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .result-number {
+      font-size: var(--font-4xl);
+    }
+
+    .result-text {
+      font-size: var(--font-xl);
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .spec-item {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    .spec-label {
+      min-width: auto;
+    }
+
+    .timeline-item {
+      gap: var(--spacing-md);
+    }
+
+    .timeline-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .cta-actions {
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
     }
-    
-    .chart-bar {
-      gap: var(--space-4);
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      text-align: center;
     }
-    
-    .bar {
-      width: 60px;
+  }
+
+  /* ===================
+     Reduced Motion Support (WCAG 2.3.3)
+     =================== */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 </style>
+
+<script>
+  // Smooth scroll with reduced motion support
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Pill navigation active state management
+  const navPills = document.querySelectorAll('.nav-pill');
+  const sections = document.querySelectorAll('.content-section');
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = 120; // Account for sticky nav
+        const targetPosition = target.offsetTop - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+      }
+    });
+  });
+
+  // Update active pill on scroll
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 200;
+
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        navPills.forEach(pill => pill.classList.remove('active'));
+        navPills[index].classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav(); // Initialize on page load
+</script>

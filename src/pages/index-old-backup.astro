@@ -8,11 +8,11 @@ import Footer from '../components/Footer.astro';
   <Navigation />
   
   <!-- Hero Section -->
-  <section class="hero" role="banner" aria-labelledby="hero-title">
+  <section class="hero">
     <div class="container">
       <div class="hero-content">
         <div class="apple-hero-headline">
-          <h1 id="hero-title" class="hero-title-apple">
+          <h1 class="hero-title-apple">
             Every Senior Deserves More Than Care—<br>
             <span class="hero-emphasis">They Deserve Purpose and Belonging.</span>
           </h1>
@@ -29,16 +29,16 @@ import Footer from '../components/Footer.astro';
         <!-- Human Impact Story -->
         <div class="apple-impact-story">
           <div class="impact-opener">
-            <p>"Lilo alerted us three weeks before we noticed<br><span class="impact-highlight">anything was wrong.</span>"</p>
+            <p>"For the first time in months,<br><span class="impact-highlight">Mom smiled.</span>"</p>
           </div>
           <div class="impact-details">
-            <p>Mom kept <span class="impact-emphasis">forgetting</span> recent conversations and repeatedly talked about leaving the facility to return to her village home. Lilo detected the pattern of increasing forgetfulness and <span class="impact-emphasis">depression indicators</span>—things we would have missed until it became a crisis.</p>
+            <p>The AI <span class="impact-emphasis">remembered</span> her stories about teaching kindergarten and <span class="impact-emphasis">asked</span> about her garden.</p>
           </div>
           <div class="impact-conclusion">
-            <p>The care team intervened early. We adjusted her medications and increased family visits. Now she's engaged again, and we prevented what could have been a devastating spiral.</p>
+            <p>Someone finally understood her.</p>
           </div>
           <div class="impact-attribution">
-            <cite>Amudha P., daughter of Lilo Solace user</cite>
+            <cite>Javeria M., daughter of Lilo Solace user</cite>
           </div>
         </div>
         
@@ -77,10 +77,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Value Proposition Section -->
-  <section class="value-props" role="region" aria-labelledby="value-props-heading">
+  <section class="value-props">
     <div class="container">
       <div class="section-header apple-hero">
-        <h2 id="value-props-heading" class="apple-headline">Beyond Technology.<br>Into Humanity.</h2>
+        <h2 class="apple-headline">Beyond Technology.<br>Into Humanity.</h2>
         <div class="apple-statement">
           <p class="statement-intro">While others build chatbots,</p>
           <p class="statement-main">we've created AI companions that <span class="highlight-word">remember</span> your mother's favorite stories, <span class="highlight-word">understand</span> when your father needs encouragement, and <span class="highlight-word">know</span> when to alert you that something's wrong.</p>
@@ -132,10 +132,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Market Opportunity -->
-  <section class="market-opportunity" role="region" aria-labelledby="market-heading">
+  <section class="market-opportunity">
     <div class="container">
       <div class="apple-market-hero">
-        <h2 id="market-heading" class="market-headline">The Perfect Storm.<br><span class="market-emphasis">The Perfect Solution.</span></h2>
+        <h2 class="market-headline">The Perfect Storm.<br><span class="market-emphasis">The Perfect Solution.</span></h2>
         <p class="market-tagline">Senior mental health crisis meets AI breakthrough</p>
       </div>
 
@@ -210,10 +210,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Clinical Evidence -->
-  <section class="clinical-evidence" role="region" aria-labelledby="evidence-heading">
+  <section class="clinical-evidence">
     <div class="container">
       <div class="apple-evidence-hero">
-        <h2 id="evidence-heading" class="evidence-headline">Data That Speaks.<br><span class="evidence-emphasis">Lives That Matter.</span></h2>
+        <h2 class="evidence-headline">Data That Speaks.<br><span class="evidence-emphasis">Lives That Matter.</span></h2>
         <div class="stanford-badge">
           <span class="badge-icon">🎓</span>
           <span class="badge-text">Stanford Geriatric Psychiatry Department</span>
@@ -266,10 +266,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section" role="region" aria-labelledby="cta-heading">
+  <section class="cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2 id="cta-heading">Help Us Build a World Where No Senior Feels Forgotten</h2>
+        <h2>Help Us Build a World Where No Senior Feels Forgotten</h2>
         <p>Every day we wait, more families lose precious moments with their loved ones. Join us in creating AI that doesn't just monitor—it truly cares.</p>
         
         <div class="cta-actions">
@@ -283,11 +283,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
-
-  <!-- Back to Top Button -->
-  <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    <span class="back-to-top-icon" aria-hidden="true">↑</span>
-  </button>
 
   <Footer />
 </Layout>
@@ -729,7 +724,7 @@ import Footer from '../components/Footer.astro';
 
   .impact-details p {
     font-size: clamp(1rem, 2vw, 1.125rem);
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--color-text-light);
     font-weight: 400;
     line-height: 1.5;
     margin: 0;
@@ -763,9 +758,10 @@ import Footer from '../components/Footer.astro';
 
   .impact-attribution cite {
     font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text-light);
     font-weight: 500;
     font-style: normal;
+    opacity: 0.8;
   }
   
   .story-quote p {
@@ -1655,7 +1651,7 @@ import Footer from '../components/Footer.astro';
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-8);
     max-width: 100%;
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
   }
 
@@ -1667,7 +1663,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .cta-contact {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .cta-contact a {
@@ -1809,55 +1805,6 @@ import Footer from '../components/Footer.astro';
     .cta-actions {
       flex-direction: column;
       width: 100%;
-    }
-  }
-
-  /* ===================
-     Back to Top Button (Apple HIG: FAB)
-     =================== */
-  .back-to-top {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 40;
-  }
-
-  .back-to-top:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-    background: var(--color-primary-light);
-  }
-
-  .back-to-top:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 4px;
-  }
-
-  .back-to-top-icon {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  /* ===================
-     Reduced Motion Support (WCAG 2.3.3)
-     =================== */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
     }
   }
 </style>

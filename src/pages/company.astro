@@ -4,317 +4,620 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Company | Pragmatic Logic" description="Building emotionally intelligent AI that amplifies human compassion in healthcare. Meet the team creating the future of senior mental health care.">
+<Layout title="Company | Pragmatic Logic" description="Building emotionally intelligent AI that amplifies human compassion in healthcare. The Centaur's Mind philosophy driving the future of senior mental health.">
   <Navigation />
 
   <!-- Hero Section -->
-  <section class="about-hero">
+  <section class="company-hero" role="banner" aria-labelledby="hero-heading">
     <div class="container">
-      <div class="hero-content">
-        <h1>The Centaur's Mind</h1>
-        <p class="hero-subtitle">
-          AI that amplifies human compassion, not replaces it
+      <div class="hero-badge">
+        <span class="badge-text">The Centaur's Mind</span>
+      </div>
+
+      <h1 id="hero-heading">AI That Amplifies Human Compassion</h1>
+      <p class="hero-subtitle">
+        Like the mythical centaur combining human intelligence with raw strength, we unite emotional wisdom with computational power to transform senior mental healthcare.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky Pill Navigation -->
+  <nav class="company-nav" id="companyNav" role="navigation" aria-label="Company sections">
+    <div class="container">
+      <div class="nav-pills">
+        <a href="#philosophy" class="nav-pill active">Philosophy</a>
+        <a href="#team" class="nav-pill">Team</a>
+        <a href="#values" class="nav-pill">Values</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: Philosophy -->
+  <section id="philosophy" class="content-section philosophy-section" role="region" aria-labelledby="philosophy-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="philosophy-heading">Why We Exist</h2>
+        <p class="section-intro">Healthcare AI excels at pattern recognition but lacks what truly heals: emotional intelligence.</p>
+      </div>
+
+      <!-- Core Problem Statement -->
+      <div class="problem-statement">
+        <div class="statement-content">
+          <p class="lead-text">
+            Patients need more than accurate diagnoses—they need to feel <strong>heard, understood, and cared for</strong>. Current AI systems can process clinical data but can't truly understand the human experience.
+          </p>
+          <p class="statement-description">
+            Our philosophy of the Centaur's Mind creates a symbiotic relationship where artificial intelligence amplifies human empathy rather than replacing it, combining the best of both worlds.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Principles -->
+      <div class="principles-section">
+        <h3>Core Principles</h3>
+        <div class="principles-grid">
+          <details class="principle-card">
+            <summary class="principle-trigger">
+              <div class="principle-header">
+                <span class="principle-icon" aria-hidden="true">🤝</span>
+                <span class="principle-name">Symbiosis Over Replacement</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="principle-content">
+              <p>AI should enhance human capabilities, not replace them. Our platform empowers caregivers to provide better care by automating routine assessments, detecting early warning signs, and freeing up time for meaningful human connection.</p>
+              <ul class="principle-examples">
+                <li>Automated WHO-5 assessments save 2.5 hours per resident per week</li>
+                <li>Real-time crisis alerts let staff intervene proactively</li>
+                <li>Data insights guide personalized care plans</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="principle-card">
+            <summary class="principle-trigger">
+              <div class="principle-header">
+                <span class="principle-icon" aria-hidden="true">❤️</span>
+                <span class="principle-name">Emotional Intelligence First</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="principle-content">
+              <p>Technical accuracy alone cannot heal. Our AI is designed to recognize emotional nuance, respond with empathy, and adapt to individual communication styles—creating therapeutic relationships that feel genuinely caring.</p>
+              <ul class="principle-examples">
+                <li>Voice-first interface preferred by 85% of seniors</li>
+                <li>Conversational AI trained on therapeutic dialogue patterns</li>
+                <li>Adaptive response based on emotional state detection</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="principle-card">
+            <summary class="principle-trigger">
+              <div class="principle-header">
+                <span class="principle-icon" aria-hidden="true">🎯</span>
+                <span class="principle-name">Clinical-Grade Precision</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="principle-content">
+              <p>Empathy must be paired with rigor. Every clinical decision is grounded in peer-reviewed research, validated instruments, and evidence-based therapeutic approaches—ensuring both warmth and effectiveness.</p>
+              <ul class="principle-examples">
+                <li>98.7% crisis detection accuracy with 100% recall</li>
+                <li>WHO-5, PHQ-9, GAD-7 validated instruments</li>
+                <li>Stanford University clinical validation partnership</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- The Centaur Metaphor -->
+      <div class="metaphor-section">
+        <h3>The Centaur Metaphor</h3>
+        <p class="metaphor-description">
+          In Greek mythology, the centaur combined human intelligence with equine strength. Neither fully human nor fully beast, the centaur represented a powerful synthesis where two disparate natures created something greater than either alone.
         </p>
+        <details class="metaphor-disclosure">
+          <summary class="disclosure-trigger">Why This Matters for Healthcare AI</summary>
+          <div class="disclosure-content">
+            <div class="metaphor-grid">
+              <div class="metaphor-item">
+                <h4>Human Wisdom</h4>
+                <p>Emotional intelligence, contextual understanding, ethical judgment, therapeutic presence</p>
+              </div>
+              <div class="metaphor-item">
+                <h4>AI Strength</h4>
+                <p>Continuous monitoring, pattern detection, data processing, scalable assessments</p>
+              </div>
+              <div class="metaphor-item">
+                <h4>Symbiotic Result</h4>
+                <p>Proactive mental health care that combines human compassion with AI reliability to prevent crises before they happen</p>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- Philosophy Section -->
-  <section class="philosophy-section">
+  <!-- SECTION 2: Team -->
+  <section id="team" class="content-section team-section" role="region" aria-labelledby="team-heading">
     <div class="container">
-      <div class="philosophy-grid">
-        <div class="philosophy-main">
-          <h2>Why We Exist</h2>
-          <p class="lead">
-            Healthcare AI today excels at pattern recognition but lacks what truly heals: <strong>emotional intelligence</strong>. Patients need more than accurate diagnoses—they need to feel heard, understood, and cared for.
-          </p>
-          <p>
-            Like the mythical centaur that combines human intelligence with raw strength, we unite human emotional wisdom with AI's computational power. This symbiotic relationship amplifies both human empathy and artificial intelligence.
-          </p>
-        </div>
-
-        <div class="principles-card">
-          <h3>Core Principles</h3>
-          <div class="principle">
-            <span class="principle-icon">🤝</span>
-            <div>
-              <h4>Symbiosis Over Replacement</h4>
-              <p>Enhancing human capabilities</p>
-            </div>
-          </div>
-          <div class="principle">
-            <span class="principle-icon">❤️</span>
-            <div>
-              <h4>Emotional Intelligence First</h4>
-              <p>Technical accuracy can't heal alone</p>
-            </div>
-          </div>
-          <div class="principle">
-            <span class="principle-icon">🎯</span>
-            <div>
-              <h4>Clinical-Grade Precision</h4>
-              <p>Empathy paired with rigor</p>
-            </div>
-          </div>
-        </div>
+      <div class="section-header">
+        <h2 id="team-heading">Meet the Founder</h2>
+        <p class="section-intro">28 years building mission-critical platforms that bridge healthcare and technology.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Mission & Vision -->
-  <section class="mission-section">
-    <div class="container">
-      <div class="mission-grid">
-        <div class="mission-card">
-          <h2>Mission</h2>
-          <p>
-            Create emotionally intelligent therapeutic AI that works in symbiosis with human caregivers, transforming senior mental health through the fusion of empathy and technology.
-          </p>
+      <!-- Founder Profile -->
+      <div class="founder-profile">
+        <div class="founder-visual">
+          <img src="/images/aejaz-profile.jpg" alt="Aejaz Sheriff Quaraishi, Founder & Principal Architect" class="founder-photo">
+          <div class="founder-credentials">
+            <h3>Aejaz Sheriff Quaraishi</h3>
+            <div class="founder-title">Founder & Principal Architect</div>
+            <div class="founder-contact">
+              <a href="mailto:contact@pragmaticlogic.ai" aria-label="Email Aejaz">contact@pragmaticlogic.ai</a>
+              <span aria-hidden="true">•</span>
+              <a href="https://www.linkedin.com/in/asheriff/" target="_blank" rel="noopener noreferrer" aria-label="Aejaz's LinkedIn profile">LinkedIn</a>
+            </div>
+          </div>
         </div>
 
-        <div class="vision-card">
-          <h2>Vision</h2>
-          <p>
-            A future where every senior receives personalized, empathetic mental health support—where AI amplifies human compassion to prevent crises and restore dignity to aging.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Founder Section -->
-  <section class="founder-section">
-    <div class="container">
-      <h2>Meet the Founder</h2>
-      <div class="founder-content">
-        <div class="founder-image">
-          <img src="/images/aejaz-profile.jpg" alt="Aejaz Sheriff Quaraishi" class="profile-photo">
-        </div>
-
-        <div class="founder-info">
-          <h3>Aejaz Sheriff Quaraishi</h3>
-          <div class="founder-title">Founder & Principal Architect</div>
-
-          <p class="founder-bio">
+        <div class="founder-story">
+          <p class="founder-intro">
             28 years building regulated, mission-critical platforms across healthcare, AI, and enterprise systems. Expert in clinical data interoperability (HL7 FHIR), multi-agent AI architectures, and HIPAA-compliant systems.
           </p>
 
-          <div class="founder-highlights">
-            <div class="highlight-item">
-              <strong>Built:</strong> 26-microservice clinical-grade AI platform
+          <details class="story-disclosure">
+            <summary class="disclosure-trigger">Key Achievements</summary>
+            <div class="disclosure-content">
+              <div class="achievement-grid">
+                <div class="achievement-item">
+                  <div class="achievement-metric">26</div>
+                  <div class="achievement-label">Microservices</div>
+                  <p class="achievement-desc">Built clinical-grade AI platform from ground up</p>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-metric">100%</div>
+                  <div class="achievement-label">Recall Rate</div>
+                  <p class="achievement-desc">Zero false negatives in crisis detection</p>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-metric">128 Days</div>
+                  <div class="achievement-label">Ahead of Plan</div>
+                  <p class="achievement-desc">Saved $1.75M–$2.55M in development costs</p>
+                </div>
+              </div>
             </div>
-            <div class="highlight-item">
-              <strong>Achieved:</strong> 100% recall, zero false negatives in crisis detection
-            </div>
-            <div class="highlight-item">
-              <strong>Delivered:</strong> 128 days ahead of plan, saving $1.75M–$2.55M
-            </div>
-          </div>
+          </details>
 
           <blockquote class="founder-quote">
-            "After three decades in healthcare technology, I recognized a critical gap: AI that could process clinical data but couldn't truly understand the human experience. Pragmatic Logic represents my vision of The Centaur's Mind—where artificial intelligence amplifies human empathy rather than replacing it."
+            <p>"After three decades in healthcare technology, I recognized a critical gap: AI that could process clinical data but couldn't truly understand the human experience. Pragmatic Logic represents my vision of The Centaur's Mind—where artificial intelligence amplifies human empathy rather than replacing it."</p>
+            <cite>— Aejaz Sheriff Quaraishi</cite>
           </blockquote>
+        </div>
+      </div>
 
-          <div class="founder-contact">
-            <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a>
-            <span>•</span>
-            <a href="https://www.linkedin.com/in/asheriff/" target="_blank">LinkedIn</a>
-          </div>
+      <!-- Mission & Vision -->
+      <div class="mission-vision">
+        <h3>Our Direction</h3>
+        <div class="mission-vision-grid">
+          <details class="mission-card">
+            <summary class="mission-trigger">
+              <div class="mission-header">
+                <span class="mission-label">Mission</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="mission-content">
+              <p>Create emotionally intelligent therapeutic AI that works in symbiosis with human caregivers, transforming senior mental health through the fusion of empathy and technology.</p>
+              <div class="mission-focus">
+                <h4>Our Focus:</h4>
+                <ul>
+                  <li>Voice-first therapeutic AI for seniors</li>
+                  <li>Proactive crisis prevention, not reactive intervention</li>
+                  <li>Empowering caregivers, not replacing them</li>
+                  <li>Clinical-grade precision with human warmth</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="vision-card">
+            <summary class="vision-trigger">
+              <div class="vision-header">
+                <span class="vision-label">Vision</span>
+              </div>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="vision-content">
+              <p>A future where every senior receives personalized, empathetic mental health support—where AI amplifies human compassion to prevent crises and restore dignity to aging.</p>
+              <div class="vision-impact">
+                <h4>Impact Goals:</h4>
+                <ul>
+                  <li>Zero preventable mental health crises in senior living</li>
+                  <li>Universal access to therapeutic AI regardless of geography</li>
+                  <li>10x increase in caregiver capacity through AI augmentation</li>
+                  <li>New standard of care combining technology and humanity</li>
+                </ul>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Values -->
-  <section class="values-section">
+  <!-- SECTION 3: Values -->
+  <section id="values" class="content-section values-section" role="region" aria-labelledby="values-heading">
     <div class="container">
-      <h2>Our Values</h2>
+      <div class="section-header">
+        <h2 id="values-heading">Our Values</h2>
+        <p class="section-intro">The principles that guide every decision, from product design to partnership strategy.</p>
+      </div>
+
+      <!-- Values Grid -->
       <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon">🧠</div>
-          <h3>Clinical Excellence</h3>
-          <p>Every decision grounded in peer-reviewed research</p>
-        </div>
+        <details class="value-card">
+          <summary class="value-trigger">
+            <div class="value-header">
+              <span class="value-icon" aria-hidden="true">🧠</span>
+              <span class="value-name">Clinical Excellence</span>
+            </div>
+            <span class="expand-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="value-content">
+            <p>Every clinical decision is grounded in peer-reviewed research, validated instruments, and evidence-based therapeutic approaches. We partner with leading academic institutions like Stanford to ensure our platform meets the highest standards of clinical rigor.</p>
+          </div>
+        </details>
 
-        <div class="value-card">
-          <div class="value-icon">💝</div>
-          <h3>Human-Centered Design</h3>
-          <p>Technology should serve humanity</p>
-        </div>
+        <details class="value-card">
+          <summary class="value-trigger">
+            <div class="value-header">
+              <span class="value-icon" aria-hidden="true">💝</span>
+              <span class="value-name">Human-Centered Design</span>
+            </div>
+            <span class="expand-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="value-content">
+            <p>Technology should serve humanity, not the other way around. Our voice-first interface adapts to seniors' preferences, our dashboards prioritize caregiver workflow, and our family portal provides transparency without complexity.</p>
+          </div>
+        </details>
 
-        <div class="value-card">
-          <div class="value-icon">🔒</div>
-          <h3>Privacy & Security</h3>
-          <p>Healthcare data deserves the highest protection</p>
-        </div>
+        <details class="value-card">
+          <summary class="value-trigger">
+            <div class="value-header">
+              <span class="value-icon" aria-hidden="true">🔒</span>
+              <span class="value-name">Privacy & Security</span>
+            </div>
+            <span class="expand-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="value-content">
+            <p>Healthcare data deserves the highest protection. Our platform is built HIPAA-compliant from the ground up, with end-to-end encryption, 7-year audit logging, and role-based access control ensuring patient privacy at every layer.</p>
+          </div>
+        </details>
 
-        <div class="value-card">
-          <div class="value-icon">⚖️</div>
-          <h3>Ethical AI</h3>
-          <p>Transparent, fair, and accountable</p>
-        </div>
+        <details class="value-card">
+          <summary class="value-trigger">
+            <div class="value-header">
+              <span class="value-icon" aria-hidden="true">⚖️</span>
+              <span class="value-name">Ethical AI</span>
+            </div>
+            <span class="expand-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="value-content">
+            <p>Transparency, fairness, and accountability guide our AI development. We publish our crisis detection accuracy metrics, document our algorithmic decision-making, and maintain human oversight for all critical clinical decisions.</p>
+          </div>
+        </details>
 
-        <div class="value-card">
-          <div class="value-icon">🌟</div>
-          <h3>Continuous Innovation</h3>
-          <p>The pursuit of better outcomes never stops</p>
-        </div>
+        <details class="value-card">
+          <summary class="value-trigger">
+            <div class="value-header">
+              <span class="value-icon" aria-hidden="true">🌟</span>
+              <span class="value-name">Continuous Innovation</span>
+            </div>
+            <span class="expand-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="value-content">
+            <p>The pursuit of better outcomes never stops. We continuously refine our therapeutic agents, expand our clinical instrument library, and incorporate feedback from caregivers, families, and residents to improve the platform.</p>
+          </div>
+        </details>
 
-        <div class="value-card">
-          <div class="value-icon">🤲</div>
-          <h3>Compassionate Care</h3>
-          <p>Every interaction should add value</p>
-        </div>
+        <details class="value-card">
+          <summary class="value-trigger">
+            <div class="value-header">
+              <span class="value-icon" aria-hidden="true">🤲</span>
+              <span class="value-name">Compassionate Care</span>
+            </div>
+            <span class="expand-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="value-content">
+            <p>Every interaction should add value to a resident's life. Whether it's a voice assessment, a crisis alert, or a family update, we design for dignity, respect, and genuine care—not just clinical efficiency.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="about-cta">
+  <section class="company-cta" role="region" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="cta-content">
-        <h2>Join Us in Building the Future</h2>
-        <p>
-          Looking for investors, partners, and team members who share our vision of emotionally intelligent healthcare AI.
-        </p>
-
-        <div class="cta-actions">
-          <a href="/demo" class="btn-primary-large">See Our Vision in Action</a>
-          <a href="mailto:contact@pragmaticlogic.ai" class="btn-secondary-large">Get in Touch</a>
-        </div>
+      <h2 id="cta-heading">Join Us in Building the Future</h2>
+      <p class="cta-subtitle">Looking for investors, partners, and team members who share our vision of emotionally intelligent healthcare AI.</p>
+      <div class="cta-actions">
+        <a href="/demo" class="btn-primary">Request Demo</a>
+        <a href="mailto:contact@pragmaticlogic.ai" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
   </section>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <span class="back-to-top-icon" aria-hidden="true">↑</span>
+  </button>
 
   <Footer />
 </Layout>
 
 <style>
-  /* Hero Section */
-  .about-hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: white;
-    padding: var(--space-24) 0 var(--space-20);
-    position: relative;
-    overflow: hidden;
+  /* ===================
+     Design Tokens (Apple HIG)
+     =================== */
+  :root {
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+
+    /* Typography */
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-base: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-2xl: 24px;
+    --font-3xl: 32px;
+    --font-4xl: 40px;
+    --font-5xl: 48px;
+
+    /* Colors (WCAG AA compliant) */
+    --color-text: #1d1d1f;
+    --color-text-secondary: #6e6e73;
+    --color-primary: #0071e3;
+    --color-primary-hover: #0077ed;
+    --color-secondary: #10b981;
+    --color-accent: #f59e0b;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f5f7;
+    --color-bg-hover: #e8e8ed;
+    --color-border: #d2d2d7;
+    --color-border-light: #e5e5ea;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
   }
 
-  .about-hero::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: -10%;
-    width: 60%;
-    height: 140%;
-    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 60%);
-    pointer-events: none;
-    animation: float 25s ease-in-out infinite;
-  }
-
-  .about-hero::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    right: -10%;
-    width: 50%;
-    height: 120%;
-    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.2) 0%, transparent 60%);
-    pointer-events: none;
-    animation: float 30s ease-in-out infinite reverse;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(-20px, -20px) scale(1.1);
-    }
-  }
-
-  .hero-content {
-    max-width: 900px;
-    margin: 0 auto;
+  /* ===================
+     Hero Section
+     =================== */
+  .company-hero {
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl);
     text-align: center;
-    position: relative;
-    z-index: 1;
   }
 
+  .hero-badge {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+  }
 
-  .about-hero h1 {
-    font-size: var(--font-size-5xl);
+  .company-hero h1 {
+    font-size: var(--font-5xl);
     font-weight: 700;
-    margin-bottom: var(--space-4);
-    letter-spacing: -0.03em;
-  }
-
-  .hero-subtitle {
-    font-size: var(--font-size-2xl);
-    font-weight: 400;
-    line-height: 1.5;
-  }
-
-  /* Philosophy Section */
-  .philosophy-section {
-    padding: var(--space-24) 0;
-    background: white;
-  }
-
-  .philosophy-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--space-16);
-    align-items: start;
-  }
-
-  .philosophy-main h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-6);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
     color: var(--color-text);
     letter-spacing: -0.02em;
   }
 
-  .lead {
-    font-size: var(--font-size-xl);
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-    line-height: 1.7;
+  .hero-subtitle {
+    font-size: var(--font-xl);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  .philosophy-main p {
-    font-size: var(--font-size-lg);
-    color: var(--color-text);
-    line-height: 1.8;
-    margin-bottom: var(--space-4);
-    max-width: 100%;
-  }
-
-  .principles-card {
+  /* ===================
+     Sticky Pill Navigation (Apple HIG)
+     =================== */
+  .company-nav {
     position: sticky;
-    top: var(--space-8);
-    background: linear-gradient(135deg, var(--color-background-soft), var(--color-background));
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
+    top: 60px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--color-border-light);
+    z-index: 50;
+    padding: var(--spacing-md) 0;
+  }
+
+  .nav-pills {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    background: var(--color-bg-alt);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-full);
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .nav-pill {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: var(--font-sm);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+
+  .nav-pill:hover {
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-pill.active {
+    background: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* WCAG 2.4.7: Focus Indicators */
+  .nav-pill:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* ===================
+     Content Sections
+     =================== */
+  .content-section {
+    padding: var(--spacing-4xl) 0;
+  }
+
+  .philosophy-section {
+    background: var(--color-bg);
+  }
+
+  .team-section {
+    background: var(--color-bg-alt);
+  }
+
+  .values-section {
+    background: var(--color-bg);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .section-header h2 {
+    font-size: var(--font-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: var(--font-lg);
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===================
+     Problem Statement
+     =================== */
+  .problem-statement {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-3xl);
+    color: white;
+  }
+
+  .lead-text {
+    font-size: var(--font-2xl);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 400;
+  }
+
+  .statement-description {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    color: white;
+  }
+
+  /* ===================
+     Principles Section
+     =================== */
+  .principles-section {
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .principles-section h3 {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text);
+  }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .principle-card {
+    background: var(--color-bg);
     border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .principle-card:hover {
+    border-color: var(--color-border);
     box-shadow: var(--shadow-md);
   }
 
-  .principles-card h3 {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-  }
-
-  .principle {
+  .principle-trigger {
+    cursor: pointer;
+    padding: var(--spacing-xl);
     display: flex;
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
   }
 
-  .principle:last-child {
-    margin-bottom: 0;
+  .principle-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .principle-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
   }
 
   .principle-icon {
@@ -322,396 +625,733 @@ import Footer from '../components/Footer.astro';
     flex-shrink: 0;
   }
 
-  .principle h4 {
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-1);
-  }
-
-  .principle p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    margin: 0;
-    max-width: 100%;
-  }
-
-  /* Mission Section */
-  .mission-section {
-    padding: var(--space-20) 0;
-    background: var(--color-background-soft);
-  }
-
-  .mission-section h2 {
-    text-align: center;
-    font-size: var(--font-size-3xl);
+  .principle-name {
+    font-size: var(--font-lg);
     font-weight: 700;
-    margin-bottom: var(--space-12);
     color: var(--color-text);
   }
 
-  .mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
+  .expand-icon {
+    font-size: var(--font-2xl);
+    color: var(--color-text-secondary);
+    transition: transform 0.2s ease;
   }
 
-  .mission-card, .vision-card {
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
-    background: white;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+  details[open] .expand-icon {
+    transform: rotate(45deg);
   }
 
-  .mission-card:hover, .vision-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+  /* WCAG 2.4.7: Focus Indicators */
+  .principle-trigger:focus-visible,
+  .value-trigger:focus-visible,
+  .mission-trigger:focus-visible,
+  .vision-trigger:focus-visible,
+  .story-disclosure summary:focus-visible,
+  .metaphor-disclosure summary:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 
-  .mission-card h2, .vision-card h2 {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    margin-bottom: var(--space-4);
+  .principle-content {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .principle-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-base);
+  }
+
+  .principle-examples {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0 0;
+  }
+
+  .principle-examples li {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .principle-examples li::before {
+    content: '→ ';
     color: var(--color-primary);
-  }
-
-  .mission-card p, .vision-card p {
-    color: var(--color-text);
-    line-height: 1.8;
-    font-size: var(--font-size-lg);
-    margin: 0;
-    max-width: 100%;
-  }
-
-  /* Founder Section */
-  .founder-section {
-    padding: var(--space-24) 0;
-    background: white;
-  }
-
-  .founder-section > h2 {
-    font-size: var(--font-size-4xl);
     font-weight: 700;
-    text-align: center;
-    margin-bottom: var(--space-12);
+  }
+
+  /* ===================
+     Metaphor Section
+     =================== */
+  .metaphor-section {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+  }
+
+  .metaphor-section h3 {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
     color: var(--color-text);
   }
 
-  .founder-content {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: var(--space-12);
-    align-items: start;
+  .metaphor-description {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
   }
 
-  .founder-image {
+  .metaphor-disclosure summary {
+    cursor: pointer;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--font-base);
+    color: var(--color-text);
+    list-style: none;
+    transition: background 0.2s ease;
+  }
+
+  .metaphor-disclosure summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .metaphor-disclosure summary::after {
+    content: ' →';
+    font-size: var(--font-sm);
+  }
+
+  .metaphor-disclosure[open] summary::after {
+    content: ' ↓';
+  }
+
+  .metaphor-disclosure summary:hover {
+    background: var(--color-bg-hover);
+  }
+
+  .metaphor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .metaphor-item {
+    padding: var(--spacing-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .metaphor-item h4 {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+
+  .metaphor-item p {
+    font-size: var(--font-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* ===================
+     Founder Profile
+     =================== */
+  .founder-profile {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .founder-visual {
     text-align: center;
   }
 
-  .profile-photo {
-    width: 300px;
-    height: 300px;
+  .founder-photo {
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: var(--shadow-xl);
-    border: 4px solid white;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--color-bg);
+    margin-bottom: var(--spacing-lg);
     transition: transform 0.3s ease;
   }
 
-  .profile-photo:hover {
+  .founder-photo:hover {
     transform: scale(1.05);
   }
 
-  .founder-info h3 {
-    font-size: var(--font-size-3xl);
+  .founder-credentials h3 {
+    font-size: var(--font-2xl);
     font-weight: 700;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--spacing-xs);
     color: var(--color-text);
   }
 
   .founder-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-base);
     color: var(--color-primary);
     font-weight: 600;
-    margin-bottom: var(--space-6);
-  }
-
-  .founder-bio {
-    color: var(--color-text);
-    line-height: 1.8;
-    margin-bottom: var(--space-6);
-    font-size: var(--font-size-lg);
-    max-width: 100%;
-  }
-
-  .founder-highlights {
-    display: grid;
-    gap: var(--space-3);
-    margin-bottom: var(--space-6);
-  }
-
-  .highlight-item {
-    padding: var(--space-3) var(--space-4);
-    background: var(--color-background-soft);
-    border-radius: var(--radius-lg);
-    border-left: 3px solid var(--color-secondary);
-    font-size: var(--font-size-base);
-  }
-
-  .highlight-item strong {
-    color: var(--color-text);
-  }
-
-  .founder-quote {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
-    border-left: 4px solid var(--color-primary);
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
-    font-style: italic;
-    color: var(--color-text);
-    line-height: 1.75;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--spacing-md);
   }
 
   .founder-contact {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
-    font-size: var(--font-size-base);
+    gap: var(--spacing-sm);
+    font-size: var(--font-sm);
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .founder-contact a {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.2s ease;
   }
 
   .founder-contact a:hover {
     text-decoration: underline;
   }
 
-  /* Values Section */
-  .values-section {
-    padding: var(--space-20) 0;
-    background: var(--color-background-soft);
+  .founder-contact a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
   }
 
-  .values-section h2 {
-    font-size: var(--font-size-3xl);
+  .founder-story {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .founder-intro {
+    font-size: var(--font-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .story-disclosure summary {
+    cursor: pointer;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--font-base);
+    color: var(--color-text);
+    list-style: none;
+    transition: all 0.2s ease;
+  }
+
+  .story-disclosure summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .story-disclosure summary::after {
+    content: ' →';
+    font-size: var(--font-sm);
+  }
+
+  .story-disclosure[open] summary::after {
+    content: ' ↓';
+  }
+
+  .story-disclosure summary:hover {
+    background: var(--color-bg-hover);
+    border-color: var(--color-border);
+  }
+
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .achievement-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .achievement-metric {
+    font-size: var(--font-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .achievement-label {
+    font-size: var(--font-base);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .achievement-desc {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .founder-quote {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+    border-left: 4px solid var(--color-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+  }
+
+  .founder-quote p {
+    font-size: var(--font-lg);
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-md);
+  }
+
+  .founder-quote cite {
+    font-size: var(--font-sm);
+    font-style: normal;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+  }
+
+  /* ===================
+     Mission & Vision
+     =================== */
+  .mission-vision {
+    background: var(--color-bg);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .mission-vision h3 {
+    font-size: var(--font-2xl);
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--spacing-xl);
     color: var(--color-text);
   }
 
+  .mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .mission-card,
+  .vision-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mission-card:hover,
+  .vision-card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .mission-trigger,
+  .vision-trigger {
+    cursor: pointer;
+    padding: var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+  }
+
+  .mission-trigger::-webkit-details-marker,
+  .vision-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .mission-label,
+  .vision-label {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .mission-content,
+  .vision-content {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .mission-content p,
+  .vision-content p {
+    font-size: var(--font-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .mission-focus h4,
+  .vision-impact h4 {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .mission-focus ul,
+  .vision-impact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mission-focus li,
+  .vision-impact li {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .mission-focus li::before,
+  .vision-impact li::before {
+    content: '→ ';
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  /* ===================
+     Values Grid
+     =================== */
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
   }
 
   .value-card {
-    background: white;
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-bg);
     border: 1px solid var(--color-border-light);
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-primary);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .value-trigger {
+    cursor: pointer;
+    padding: var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+  }
+
+  .value-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .value-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
   }
 
   .value-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-4);
-    display: inline-block;
-    transition: transform 0.4s ease;
+    font-size: 2rem;
+    flex-shrink: 0;
   }
 
-  .value-card:hover .value-icon {
-    transform: scale(1.2) rotate(5deg);
-  }
-
-  .value-card h3 {
-    font-size: var(--font-size-xl);
+  .value-name {
+    font-size: var(--font-lg);
     font-weight: 700;
-    margin-bottom: var(--space-3);
     color: var(--color-text);
   }
 
-  .value-card p {
-    color: var(--color-text);
-    line-height: 1.8;
+  .value-content {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .value-content p {
+    font-size: var(--font-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
     margin: 0;
-    max-width: 100%;
-    font-size: var(--font-size-base);
   }
 
-  /* CTA Section */
-  .about-cta {
-    padding: var(--space-20) 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: white;
+  /* ===================
+     CTA Section
+     =================== */
+  .company-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+    padding: var(--spacing-4xl) 0;
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    color: white;
   }
 
-  .about-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .cta-content {
-    position: relative;
-    z-index: 1;
-  }
-
-  .about-cta h2 {
-    font-size: var(--font-size-3xl);
+  .company-cta h2 {
+    font-size: var(--font-4xl);
     font-weight: 700;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--spacing-md);
   }
 
-  .about-cta p {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-8);
-    max-width: 100%;
+  .cta-subtitle {
+    font-size: var(--font-xl);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+    color: white;
   }
 
   .cta-actions {
     display: flex;
-    gap: var(--space-4);
+    gap: var(--spacing-lg);
     justify-content: center;
+    flex-wrap: wrap;
   }
 
-  .btn-primary-large, .btn-secondary-large {
-    padding: var(--space-4) var(--space-8);
-    border-radius: var(--radius-xl);
-    font-weight: 600;
-    font-size: var(--font-size-lg);
+  .btn-primary,
+  .btn-secondary {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--radius-full);
     text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+    font-weight: 600;
+    font-size: var(--font-base);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
   }
 
-  .btn-primary-large {
+  .btn-primary {
     background: white;
     color: var(--color-primary);
   }
 
-  .btn-primary-large:hover {
+  .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
   }
 
-  .btn-secondary-large {
+  .btn-secondary {
     background: transparent;
     color: white;
-    border-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
   }
 
-  .btn-secondary-large:hover {
-    border-color: white;
+  .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .philosophy-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
+  /* WCAG 2.4.7: Focus Indicators */
+  .btn-primary:focus-visible,
+  .btn-secondary:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+  }
+
+  /* ===================
+     Back to Top Button (Apple HIG: FAB)
+     =================== */
+  .back-to-top {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 40;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-primary-hover);
+  }
+
+  .back-to-top:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
+
+  .back-to-top-icon {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+  }
+
+  /* ===================
+     Responsive Design
+     =================== */
+  @media (max-width: 768px) {
+    .company-hero h1 {
+      font-size: var(--font-3xl);
     }
 
-    .principles-card {
-      position: relative;
-      top: 0;
+    .hero-subtitle {
+      font-size: var(--font-lg);
     }
 
-    .mission-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
+    .nav-pills {
+      width: 100%;
     }
 
-    .founder-content {
+    .nav-pill {
+      flex: 1;
+      text-align: center;
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: var(--font-xs);
+    }
+
+    .content-section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .section-header h2 {
+      font-size: var(--font-2xl);
+    }
+
+    .problem-statement {
+      padding: var(--spacing-xl);
+    }
+
+    .lead-text {
+      font-size: var(--font-xl);
+    }
+
+    .principles-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-8);
+    }
+
+    .founder-profile {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
       text-align: center;
     }
 
-    .founder-image {
-      justify-self: center;
-    }
-
-    .values-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .about-hero {
-      padding: var(--space-16) 0;
-    }
-
-    .about-hero h1 {
-      font-size: var(--font-size-4xl);
-    }
-
-    .hero-subtitle {
-      font-size: var(--font-size-xl);
-    }
-
-    .values-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .founder-info h3 {
-      font-size: var(--font-size-2xl);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .about-hero h1 {
-      font-size: var(--font-size-3xl);
-    }
-
-    .hero-subtitle {
-      font-size: var(--font-size-lg);
-    }
-
-    .cta-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .btn-primary-large,
-    .btn-secondary-large {
-      width: 100%;
-    }
-
-    .profile-photo {
+    .founder-photo {
       width: 200px;
       height: 200px;
     }
 
-    .about-cta h2 {
-      font-size: var(--font-size-2xl);
+    .founder-contact {
+      justify-content: center;
     }
 
-    .about-cta p {
-      font-size: var(--font-size-base);
+    .mission-vision-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* ===================
+     Reduced Motion Support (WCAG 2.3.3)
+     =================== */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 </style>
+
+<script>
+  // Smooth scroll with reduced motion support
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Pill navigation active state management
+  const navPills = document.querySelectorAll('.nav-pill');
+  const sections = document.querySelectorAll('.content-section');
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = 120; // Account for sticky nav
+        const targetPosition = target.offsetTop - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+      }
+    });
+  });
+
+  // Update active pill on scroll
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 200;
+
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        navPills.forEach(pill => pill.classList.remove('active'));
+        navPills[index].classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav(); // Initialize on page load
+</script>
