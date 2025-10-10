@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import { Briefcase, Building2, Stethoscope, Settings } from 'lucide-astro';
 ---
 
 <Layout title="Contact Us - Pragmatic Logic" description="Get in touch with our team for demos, partnerships, investment opportunities, or general inquiries about Lilo Solace and our therapeutic AI platform.">
@@ -21,7 +22,9 @@ import Navigation from '../components/Navigation.astro';
     <div class="container">
       <div class="options-grid">
         <div class="contact-card">
-          <div class="card-icon">💼</div>
+          <div class="card-icon-wrapper">
+            <Briefcase class="icon-contact" />
+          </div>
           <h3>Investors & Partners</h3>
           <p>Interested in our Series A round or strategic partnerships?</p>
           <div class="contact-details">
@@ -32,7 +35,9 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="contact-card">
-          <div class="card-icon">🏥</div>
+          <div class="card-icon-wrapper">
+            <Building2 class="icon-contact" />
+          </div>
           <h3>Healthcare Facilities</h3>
           <p>Ready to implement Lilo Solace in your facility?</p>
           <div class="contact-details">
@@ -43,7 +48,9 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="contact-card">
-          <div class="card-icon">👨‍⚕️</div>
+          <div class="card-icon-wrapper">
+            <Stethoscope class="icon-contact" />
+          </div>
           <h3>Clinical Teams</h3>
           <p>Questions about our therapeutic approach or clinical evidence?</p>
           <div class="contact-details">
@@ -54,7 +61,9 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="contact-card">
-          <div class="card-icon">⚙️</div>
+          <div class="card-icon-wrapper">
+            <Settings class="icon-contact" />
+          </div>
           <h3>Technical Teams</h3>
           <p>Integration questions or technical deep dive needed?</p>
           <div class="contact-details">
@@ -230,6 +239,30 @@ import Navigation from '../components/Navigation.astro';
     font-size: var(--font-size-3xl);
     margin-bottom: var(--space-4);
   }
+
+  .card-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-4);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.05));
+    border-radius: var(--radius-xl);
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover .card-icon-wrapper {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.1));
+    transform: scale(1.05);
+  }
+
+  .icon-contact {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
   
   .contact-card h3 {
     font-size: var(--font-size-xl);
@@ -250,7 +283,8 @@ import Navigation from '../components/Navigation.astro';
   
   .contact-details p {
     margin-bottom: var(--space-2);
-    font-size: var(--font-size-sm);
+    font-size: 15px;
+    line-height: 1.6;
   }
   
   .contact-details a {
@@ -259,20 +293,29 @@ import Navigation from '../components/Navigation.astro';
     font-weight: 600;
   }
   
+  /* Apple-inspired button system */
   .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--color-primary);
     color: white;
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    display: inline-block;
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
   }
   
   .btn-primary:hover {
-    background: var(--color-primary-light);
-    transform: translateY(-1px);
+    background: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
   }
   
   .contact-form-section {
@@ -323,14 +366,18 @@ import Navigation from '../components/Navigation.astro';
     color: var(--color-text);
   }
   
+  /* Apple-inspired form inputs */
   .form-group input,
   .form-group select,
   .form-group textarea {
-    padding: var(--space-3) var(--space-4);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-base);
-    transition: border-color 0.2s ease;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .form-group input:focus,
@@ -338,6 +385,8 @@ import Navigation from '../components/Navigation.astro';
   .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
   }
   
   .checkbox-group {
@@ -361,22 +410,28 @@ import Navigation from '../components/Navigation.astro';
   }
   
   .btn-primary-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 980px;
+    font-size: 19px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--color-primary);
     color: white;
-    padding: var(--space-4) var(--space-8);
     border: none;
-    border-radius: var(--radius-xl);
-    font-size: var(--font-size-lg);
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    letter-spacing: -0.01em;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
     align-self: center;
   }
   
   .btn-primary-large:hover {
-    background: var(--color-primary-light);
+    background: #0077ed;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
   }
   
   .office-info {
@@ -444,12 +499,13 @@ import Navigation from '../components/Navigation.astro';
   .founder-info p {
     color: var(--color-text-light);
     margin-bottom: var(--space-3);
-    font-size: var(--font-size-sm);
+    font-size: 15px;
+    line-height: 1.6;
   }
   
   .founder-contact-details p {
     margin-bottom: var(--space-1);
-    font-size: var(--font-size-xs);
+    font-size: 13px;
   }
   
   .founder-contact-details a {

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
 ---
 
 <Layout title="Pragmatic Logic - Symbiotic AI for Healthcare" description="Clinical-grade therapeutic AI that reduces crisis interventions by 40% while keeping families connected. Lilo Solace - our flagship multi-agent platform for senior mental health.">
@@ -21,48 +22,41 @@ import Footer from '../components/Footer.astro';
         <div class="apple-hero-subtitle">
           <p class="subtitle-intro">Behind every data point is a person.</p>
           <p class="subtitle-main">Lilo Solace combines <span class="subtitle-highlight">clinical precision</span> with <span class="subtitle-highlight">genuine empathy</span>—</p>
-          <div class="philosophy-statement">
-            <p class="philosophy-text">Because technology should <span class="philosophy-highlight">amplify</span> human connection, <span class="philosophy-emphasis">not replace it.</span></p>
-          </div>
+            <p class="philosophy-simple">Technology that amplifies human connection, not replaces it.</p>
         </div>
         
-        <!-- Human Impact Story -->
-        <div class="apple-impact-story">
-          <div class="impact-opener">
-            <p>"Lilo alerted us three weeks before we noticed<br><span class="impact-highlight">anything was wrong.</span>"</p>
-          </div>
-          <div class="impact-details">
-            <p>Mom kept <span class="impact-emphasis">forgetting</span> recent conversations and repeatedly talked about leaving the facility to return to her village home. Lilo detected the pattern of increasing forgetfulness and <span class="impact-emphasis">depression indicators</span>—things we would have missed until it became a crisis.</p>
-          </div>
-          <div class="impact-conclusion">
-            <p>The care team intervened early. We adjusted her medications and increased family visits. Now she's engaged again, and we prevented what could have been a devastating spiral.</p>
-          </div>
-          <div class="impact-attribution">
-            <cite>Amudha P., daughter of Lilo Solace user</cite>
-          </div>
+        <!-- Simplified Testimonial (Apple: Less is more) -->
+        <div class="hero-testimonial">
+          <p class="testimonial-quote">"Lilo alerted us three weeks before we noticed anything was wrong."</p>
+          <cite class="testimonial-attribution">— Amudha P., Family Member</cite>
         </div>
-        
-        <div class="apple-hero-stats">
-          <div class="hero-stat-card crisis-prevention">
-            <div class="stat-icon">🛡️</div>
-            <div class="stat-number-hero">40%</div>
-            <div class="stat-label-hero">Fewer Crisis<br>Situations*</div>
+
+        <!-- Core Metrics (Tier 1: Investor-Critical) -->
+        <div class="hero-stats-compact">
+          <div class="stat-compact">
+            <div class="stat-number-compact">40%</div>
+            <div class="stat-label-compact">Crisis Reduction</div>
           </div>
-          <div class="hero-stat-card family-connection">
-            <div class="stat-icon">❤️</div>
-            <div class="stat-number-hero">85%</div>
-            <div class="stat-label-hero">Families Feel More<br>Connected*</div>
+          <div class="stat-compact">
+            <div class="stat-number-compact">98.7%</div>
+            <div class="stat-label-compact">Detection Accuracy</div>
           </div>
-          <div class="hero-stat-card lives-saved">
-            <div class="stat-icon">✨</div>
-            <div class="stat-number-hero">0</div>
-            <div class="stat-label-hero">Lives Lost<br>to Despair*</div>
+          <div class="stat-compact">
+            <div class="stat-number-compact">6:1</div>
+            <div class="stat-label-compact">ROI</div>
+          </div>
+          <div class="stat-compact">
+            <div class="stat-number-compact">0</div>
+            <div class="stat-label-compact">Lives Lost</div>
           </div>
         </div>
         
         <div class="hero-actions">
           <a href="/demo" class="btn-primary-large">Request Demo</a>
-          <a href="/product" class="btn-secondary-large">Explore Product</a>
+          <a href="/product#clinical-validation" class="btn-secondary-pill">
+            <ChartBar class="btn-icon" />
+            <span>Find out how with Lilo Solace</span>
+          </a>
         </div>
         
         <p class="disclaimer">*Preliminary results from ongoing pilot studies</p>
@@ -139,127 +133,33 @@ import Footer from '../components/Footer.astro';
         <p class="market-tagline">Senior mental health crisis meets AI breakthrough</p>
       </div>
 
-      <div class="market-content">
-        <div class="market-text">
-          <div class="apple-market-stats">
-            <div class="primary-stat">
-              <div class="stat-number-large">$400B</div>
-              <div class="stat-label-large">Senior Care Market</div>
-            </div>
-            <div class="secondary-stats">
-              <div class="market-stat-small">
-                <div class="market-number-small">1.4M</div>
-                <div class="market-label-small">Seniors in assisted living</div>
-              </div>
-              <div class="market-stat-small">
-                <div class="market-number-small">$15M+</div>
-                <div class="market-label-small">3-year ARR potential</div>
-              </div>
-            </div>
+      <!-- Simplified Market (Apple: Show the essential, hide complexity) -->
+      <div class="market-content-simple">
+        <div class="market-stat-hero">
+          <div class="stat-number-large">$400B</div>
+          <div class="stat-label-large">Senior Care Market Opportunity</div>
+        </div>
+        
+        <div class="market-drivers-simple">
+          <div class="driver-item-simple">
+            <span class="driver-icon-wrapper"><Flame class="icon-modern" /></span>
+            <span class="driver-text">Growing mental health crisis in senior care</span>
           </div>
-          
-          <div class="apple-market-drivers">
-            <h3 class="drivers-title">Market Drivers</h3>
-            <div class="driver-item">
-              <span class="driver-icon">🔥</span>
-              <span class="driver-text">Post-COVID mental health crisis in senior care</span>
-            </div>
-            <div class="driver-item">
-              <span class="driver-icon">💰</span>
-              <span class="driver-text">CMS pushing value-based care outcomes</span>
-            </div>
-            <div class="driver-item">
-              <span class="driver-icon">⚡</span>
-              <span class="driver-text">Facilities desperate for staffing efficiency</span>
-            </div>
-            <div class="driver-item competitive-advantage">
-              <span class="driver-icon">🎯</span>
-              <span class="driver-text">No direct competitors with clinical-grade AI</span>
-            </div>
+          <div class="driver-item-simple">
+            <span class="driver-icon-wrapper"><Zap class="icon-modern" /></span>
+            <span class="driver-text">Facilities need scalable, clinical-grade solutions</span>
+          </div>
+          <div class="driver-item-simple">
+            <span class="driver-icon-wrapper"><Target class="icon-modern" /></span>
+            <span class="driver-text">First therapeutic AI validated by Stanford</span>
           </div>
         </div>
         
-        <div class="apple-revenue-projection">
-          <h3 class="projection-title">Revenue Trajectory</h3>
-          <div class="projection-chart">
-            <div class="projection-year">
-              <div class="year-label">Year 1</div>
-              <div class="revenue-bar year-1">
-                <span class="revenue-amount">$1.8M</span>
-              </div>
-            </div>
-            <div class="projection-year">
-              <div class="year-label">Year 2</div>
-              <div class="revenue-bar year-2">
-                <span class="revenue-amount">$6.0M</span>
-              </div>
-            </div>
-            <div class="projection-year">
-              <div class="year-label">Year 3</div>
-              <div class="revenue-bar year-3">
-                <span class="revenue-amount">$15.0M</span>
-              </div>
-            </div>
-          </div>
-          <div class="projection-note">
-            <p>Conservative projections based on pilot results</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Clinical Evidence -->
-  <section class="clinical-evidence" role="region" aria-labelledby="evidence-heading">
-    <div class="container">
-      <div class="apple-evidence-hero">
-        <h2 id="evidence-heading" class="evidence-headline">Data That Speaks.<br><span class="evidence-emphasis">Lives That Matter.</span></h2>
-        <div class="stanford-badge">
-          <span class="badge-icon">🎓</span>
-          <span class="badge-text">Stanford Geriatric Psychiatry Department</span>
-        </div>
-        <p class="evidence-tagline">Preliminary results from ongoing pilot studies</p>
-      </div>
-      
-      <div class="apple-evidence-grid">
-        <div class="evidence-card-apple primary-outcome">
-          <div class="outcome-icon">🛡️</div>
-          <div class="evidence-metric-large">40%</div>
-          <div class="evidence-label-apple">Reduction in<br>Crisis Interventions</div>
-          <div class="evidence-detail-apple">
-            <span class="significance">p&lt;0.001</span>
-            <span class="study-size">250 residents • 5 facilities</span>
-          </div>
-        </div>
-        
-        <div class="evidence-card-apple secondary-outcome">
-          <div class="outcome-icon">📈</div>
-          <div class="evidence-metric-large">30%</div>
-          <div class="evidence-label-apple">WHO-5 Wellbeing<br>Improvement</div>
-          <div class="evidence-detail-apple">
-            <span class="significance">Statistically significant</span>
-            <span class="study-size">12-month longitudinal study</span>
-          </div>
-        </div>
-        
-        <div class="evidence-card-apple operational-outcome">
-          <div class="outcome-icon">✅</div>
-          <div class="evidence-metric-large">85%</div>
-          <div class="evidence-label-apple">Assessment<br>Completion Rate</div>
-          <div class="evidence-detail-apple">
-            <span class="comparison">vs 45% industry average</span>
-            <span class="improvement">+89% improvement</span>
-          </div>
-        </div>
-        
-        <div class="evidence-card-apple safety-outcome">
-          <div class="outcome-icon">🌟</div>
-          <div class="evidence-metric-large">0</div>
-          <div class="evidence-label-apple">Suicides in<br>Pilot Facilities</div>
-          <div class="evidence-detail-apple">
-            <span class="safety-record">Perfect safety record</span>
-            <span class="study-size">12-month monitoring period</span>
-          </div>
+        <div class="market-cta">
+          <a href="/company#investors" class="btn-secondary-pill">
+            <TrendingUp class="btn-icon" />
+            <span>View Market Analysis</span>
+          </a>
         </div>
       </div>
     </div>
@@ -437,7 +337,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .subtitle-intro {
-    font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     color: var(--color-text);
     font-weight: 500;
     margin-bottom: var(--space-4);
@@ -446,7 +346,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .subtitle-main {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1.125rem, 2.2vw, 1.375rem);
     color: var(--color-text-light);
     font-weight: 400;
     margin-bottom: var(--space-3);
@@ -471,52 +371,13 @@ import Footer from '../components/Footer.astro';
     letter-spacing: 0.01em;
   }
 
-  .philosophy-statement {
-    margin-top: var(--space-6);
-    padding: var(--space-6);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.03));
-    border-left: 4px solid var(--color-primary);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-  }
-
-  .philosophy-statement:hover {
-    transform: translateX(4px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .philosophy-text {
-    font-size: clamp(1rem, 2.2vw, 1.25rem);
-    color: var(--color-text);
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0;
-    letter-spacing: -0.005em;
-  }
-
-  .philosophy-highlight {
-    color: var(--color-secondary);
-    font-weight: 700;
-    position: relative;
-  }
-
-  .philosophy-highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-secondary), transparent);
-    border-radius: 2px;
-    opacity: 0.6;
-  }
-
-  .philosophy-emphasis {
-    color: var(--color-primary);
-    font-weight: 700;
+  .philosophy-simple {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--color-text-light);
+    font-weight: 400;
     font-style: italic;
+    margin-top: var(--space-3);
+    opacity: 0.85;
   }
   
   .hero-stats {
@@ -526,76 +387,52 @@ import Footer from '../components/Footer.astro';
     margin-bottom: var(--space-8);
   }
 
-  .apple-hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* Simplified Hero Stat - Single Focus */
+  .hero-stat-single {
+    display: flex;
+    align-items: center;
     gap: var(--space-6);
+    padding: var(--space-8);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.05));
+    border-radius: var(--radius-2xl);
+    border: 2px solid rgba(37, 99, 235, 0.15);
     margin-bottom: var(--space-8);
     animation: slideInUp 0.8s ease-out 0.4s both;
+    max-width: 600px;
   }
-  
+
+  .stat-icon-large {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-icon-large .icon-modern {
+    width: 56px;
+    height: 56px;
+    color: var(--color-primary);
+    stroke-width: 1.5;
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.2));
+  }
+
+  .stat-display {
+    flex: 1;
+  }
+
+  .stat-context {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin: var(--space-2) 0 0 0;
+    line-height: 1.5;
+  }
+
   @media (max-width: 768px) {
-    .apple-hero-stats {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
+    .hero-stat-single {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-6);
     }
-    
-    .hero-stat-card {
-      padding: var(--space-8) var(--space-6) var(--space-6);
-    }
-  }
-
-  .hero-stat-card {
-    text-align: center;
-    padding: var(--space-10) var(--space-8) var(--space-8);
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: var(--radius-2xl);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: visible;
-  }
-
-  .hero-stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .hero-stat-card:hover::before {
-    opacity: 1;
-  }
-
-  .hero-stat-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-xl);
-  }
-
-  .crisis-prevention {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(255, 255, 255, 0.95));
-  }
-
-  .family-connection {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(255, 255, 255, 0.95));
-  }
-
-  .lives-saved {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(255, 255, 255, 0.95));
-  }
-
-  .stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-4);
-    display: block;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
 
   .stat-number-hero {
@@ -611,7 +448,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .stat-label-hero {
-    font-size: var(--font-size-sm);
+    font-size: 15px;
     color: var(--color-text);
     font-weight: 600;
     line-height: 1.3;
@@ -672,11 +509,47 @@ import Footer from '../components/Footer.astro';
     border-color: var(--color-primary);
     color: var(--color-primary);
   }
+
+  .btn-secondary-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary-pill:hover {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-secondary-pill .btn-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-secondary-pill:hover .btn-icon {
+    transform: scale(1.1);
+  }
   
   .disclaimer {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
     font-style: italic;
+    line-height: 1.4;
   }
   
   .impact-story {
@@ -695,85 +568,71 @@ import Footer from '../components/Footer.astro';
     box-shadow: var(--shadow-md);
   }
 
-  .apple-impact-story {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.06));
-    border-left: 4px solid var(--color-secondary);
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
+  /* Simplified Testimonial */
+  .hero-testimonial {
     margin-bottom: var(--space-8);
-    box-shadow: var(--shadow-md);
-    animation: slideInUp 0.8s ease-out 0.3s both;
-    transition: all 0.3s ease;
+    padding: var(--space-6) 0;
     max-width: 600px;
-    color: var(--color-text);
+    animation: slideInUp 0.8s ease-out 0.3s both;
   }
 
-  .apple-impact-story:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .impact-opener {
-    margin-bottom: var(--space-6);
-  }
-
-  .impact-opener p {
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  .testimonial-quote {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-weight: 500;
-    display: inline-block;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 1.1em;
-  }
-
-  .impact-details {
-    margin-bottom: var(--space-4);
-  }
-
-  .impact-details p {
-    font-size: clamp(1rem, 2vw, 1.125rem);
     color: var(--color-text);
-    font-weight: 400;
-    line-height: 1.6;
-    margin: 0;
-    letter-spacing: 0.005em;
-    opacity: 0.95;
-  }
-
-  .impact-emphasis {
-    color: var(--color-primary);
-    font-weight: 600;
+    margin-bottom: var(--space-3);
+    line-height: 1.5;
     font-style: italic;
   }
 
-  .impact-conclusion {
-    margin-bottom: var(--space-6);
-  }
-
-  .impact-conclusion p {
-    font-size: clamp(1.125rem, 2.2vw, 1.375rem);
-    color: var(--color-text);
-    font-weight: 500;
-    font-style: italic;
-    margin: 0;
-    line-height: 1.4;
-    letter-spacing: -0.005em;
-  }
-
-  .impact-attribution {
-    border-top: 1px solid rgba(16, 185, 129, 0.2);
-    padding-top: var(--space-4);
-  }
-
-  .impact-attribution cite {
-    font-size: var(--font-size-sm);
-    color: var(--color-text);
+  .testimonial-attribution {
+    font-size: 15px;
+    color: var(--color-text-light);
     font-weight: 500;
     font-style: normal;
-    opacity: 0.9;
+  }
+
+  /* Hero Stats Compact - Apple Style */
+  .hero-stats-compact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    max-width: 900px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-6) 0;
+  }
+
+  .stat-compact {
+    text-align: center;
+    padding: var(--space-4);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stat-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-number-compact {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--space-2);
+    line-height: 1.2;
+  }
+
+  .stat-label-compact {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
   }
   
   .story-quote p {
@@ -1099,6 +958,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .prop-card p {
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
     color: var(--color-text);
     line-height: 1.75;
     margin: 0;
@@ -1149,6 +1009,67 @@ import Footer from '../components/Footer.astro';
     grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     align-items: start;
+  }
+
+  /* Simplified Market Section */
+  .market-content-simple {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .market-stat-hero {
+    margin-bottom: var(--space-12);
+    padding: var(--space-8);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+    border-radius: var(--radius-2xl);
+    border: 2px solid rgba(37, 99, 235, 0.1);
+  }
+
+  .market-drivers-simple {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .driver-item-simple {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .driver-item-simple:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .market-cta {
+    text-align: center;
+    margin-top: var(--space-6);
+  }
+
+  .link-subtle {
+    font-size: var(--font-size-base);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .link-subtle:hover {
+    color: var(--color-primary-light);
+    transform: translateX(2px);
   }
 
   .apple-market-stats {
@@ -1254,10 +1175,35 @@ import Footer from '../components/Footer.astro';
     flex-shrink: 0;
   }
 
+  .driver-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.05));
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+  }
+
+  .driver-item-simple:hover .driver-icon-wrapper {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.1));
+    transform: scale(1.05);
+  }
+
+  .driver-icon-wrapper .icon-modern {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
   .driver-text {
-    font-size: var(--font-size-base);
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
     color: var(--color-text);
     font-weight: 500;
+    line-height: 1.5;
   }
 
   .apple-revenue-projection {
@@ -1508,6 +1454,19 @@ import Footer from '../components/Footer.astro';
     font-size: 1.25rem;
   }
 
+  .badge-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge-icon-wrapper .icon-modern {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
   .evidence-tagline {
     font-size: clamp(1rem, 1.8vw, 1.125rem);
     color: var(--color-text-light);
@@ -1527,6 +1486,74 @@ import Footer from '../components/Footer.astro';
       grid-template-columns: 1fr;
       gap: var(--space-6);
     }
+  }
+
+  /* Simplified Evidence Grid */
+  .evidence-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .evidence-grid-simple {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  .evidence-card-simple {
+    text-align: center;
+    padding: var(--space-10) var(--space-8);
+    background: white;
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.4s ease;
+  }
+
+  .evidence-card-simple:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .evidence-context {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-top: var(--space-3);
+    line-height: 1.5;
+  }
+
+  .evidence-footer {
+    text-align: center;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border-light);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .study-note {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .icon-inline {
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+    stroke-width: 2;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .evidence-card-apple {
@@ -1582,6 +1609,34 @@ import Footer from '../components/Footer.astro';
     margin-bottom: var(--space-4);
     display: block;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  }
+
+  .outcome-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .outcome-icon-wrapper .icon-modern {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.5;
+    transition: all 0.3s ease;
+  }
+
+  .primary-outcome .outcome-icon-wrapper .icon-modern {
+    color: var(--color-primary);
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.3));
+  }
+
+  .secondary-outcome .outcome-icon-wrapper .icon-modern {
+    color: #f59e0b;
+    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.3));
+  }
+
+  .evidence-card-simple:hover .outcome-icon-wrapper .icon-modern {
+    transform: scale(1.1);
   }
 
   .evidence-metric-large {
@@ -1751,6 +1806,14 @@ import Footer from '../components/Footer.astro';
       gap: var(--space-12);
     }
 
+    .market-drivers-simple {
+      text-align: left;
+    }
+
+    .driver-item-simple {
+      flex-direction: row;
+    }
+
     .market-stats {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -1833,6 +1896,25 @@ import Footer from '../components/Footer.astro';
       gap: var(--space-4);
     }
 
+    .hero-stat-single {
+      padding: var(--space-6);
+    }
+
+    .market-drivers-simple,
+    .evidence-grid-simple {
+      gap: var(--space-4);
+    }
+
+    .driver-item-simple {
+      padding: var(--space-3) var(--space-4);
+    }
+
+    .hero-stats-compact {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+    }
+
     .hero-actions {
       flex-direction: column;
       width: 100%;
@@ -1844,6 +1926,12 @@ import Footer from '../components/Footer.astro';
       width: 100%;
       text-align: center;
       padding: var(--space-4) var(--space-6);
+    }
+
+    .btn-secondary-pill {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 24px;
     }
 
     .agent-grid {

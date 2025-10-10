@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import { Shield, FileText, Lock, Globe, ShieldCheck, CheckCircle, RefreshCw, AlertTriangle, BarChart3, Database, Search, Bell, Calendar, AlertOctagon, Monitor, Building } from 'lucide-astro';
 ---
 
 <Layout title="HIPAA & Security - Pragmatic Logic" description="Our comprehensive approach to healthcare data security, HIPAA compliance, and protecting patient information in the Lilo Solace platform.">
@@ -10,7 +11,7 @@ import Navigation from '../components/Navigation.astro';
     <div class="container">
       <div class="hero-content">
         <div class="security-badge">
-          <span class="badge-icon">🛡️</span>
+          <span class="badge-icon"><Shield class="icon-badge-security" /></span>
           <span class="badge-text">HIPAA Compliant & Secure</span>
         </div>
         
@@ -34,7 +35,7 @@ import Navigation from '../components/Navigation.astro';
       <h2>HIPAA Compliance Framework</h2>
       <div class="hipaa-grid">
         <div class="hipaa-card">
-          <div class="hipaa-icon">📋</div>
+          <div class="hipaa-icon"><FileText class="icon-hipaa" /></div>
           <h3>Business Associate Agreements</h3>
           <p>We execute comprehensive BAAs with all covered entities, ensuring proper handling of PHI according to HIPAA requirements.</p>
           <ul>
@@ -46,7 +47,7 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="hipaa-card">
-          <div class="hipaa-icon">🔒</div>
+          <div class="hipaa-icon"><Lock class="icon-hipaa" /></div>
           <h3>Administrative Safeguards</h3>
           <p>Comprehensive policies and procedures to protect PHI through proper workforce management and access controls.</p>
           <ul>
@@ -58,7 +59,7 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="hipaa-card">
-          <div class="hipaa-icon">💻</div>
+          <div class="hipaa-icon"><Monitor class="icon-hipaa" /></div>
           <h3>Technical Safeguards</h3>
           <p>Advanced technical controls to protect electronic PHI from unauthorized access, use, or disclosure.</p>
           <ul>
@@ -70,7 +71,7 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="hipaa-card">
-          <div class="hipaa-icon">🏢</div>
+          <div class="hipaa-icon"><Building class="icon-hipaa" /></div>
           <h3>Physical Safeguards</h3>
           <p>Physical protection of systems, equipment, and facilities that house PHI.</p>
           <ul>
@@ -94,7 +95,7 @@ import Navigation from '../components/Navigation.astro';
           
           <div class="security-layers">
             <div class="layer">
-              <h3>🌐 Network Security</h3>
+              <h3><Globe class="icon-layer" /> Network Security</h3>
               <ul>
                 <li>Web Application Firewall (WAF)</li>
                 <li>DDoS protection and mitigation</li>
@@ -104,7 +105,7 @@ import Navigation from '../components/Navigation.astro';
             </div>
             
             <div class="layer">
-              <h3>🔐 Application Security</h3>
+              <h3><ShieldCheck class="icon-layer" /> Application Security</h3>
               <ul>
                 <li>Secure coding practices</li>
                 <li>Regular security testing</li>
@@ -114,7 +115,7 @@ import Navigation from '../components/Navigation.astro';
             </div>
             
             <div class="layer">
-              <h3>💾 Data Security</h3>
+              <h3><Database class="icon-layer" /> Data Security</h3>
               <ul>
                 <li>AES-256 encryption at rest</li>
                 <li>TLS 1.3 encryption in transit</li>
@@ -155,28 +156,28 @@ import Navigation from '../components/Navigation.astro';
       <h2>Certifications & Standards</h2>
       <div class="cert-grid">
         <div class="cert-card">
-          <div class="cert-status completed">✅</div>
+          <div class="cert-status completed"><CheckCircle class="icon-cert" /></div>
           <h3>HIPAA Compliance</h3>
           <p>Full compliance with HIPAA Privacy and Security Rules</p>
           <div class="cert-details">§164.312 Technical Safeguards Certified</div>
         </div>
         
         <div class="cert-card">
-          <div class="cert-status in-progress">🔄</div>
+          <div class="cert-status in-progress"><RefreshCw class="icon-cert" /></div>
           <h3>SOC 2 Type II</h3>
           <p>Independent audit of security, availability, and confidentiality</p>
           <div class="cert-details">Audit in progress - Q1 2026</div>
         </div>
         
         <div class="cert-card">
-          <div class="cert-status completed">✅</div>
+          <div class="cert-status completed"><CheckCircle class="icon-cert" /></div>
           <h3>GDPR Compliance</h3>
           <p>European data protection regulation compliance</p>
           <div class="cert-details">Privacy by Design implementation</div>
         </div>
         
         <div class="cert-card">
-          <div class="cert-status planned">📅</div>
+          <div class="cert-status planned"><Calendar class="icon-cert" /></div>
           <h3>FedRAMP Ready</h3>
           <p>Federal government cloud security standards</p>
           <div class="cert-details">Planned for 2026</div>
@@ -195,22 +196,22 @@ import Navigation from '../components/Navigation.astro';
           
           <div class="monitoring-features">
             <div class="feature">
-              <h3>🔍 Real-Time Monitoring</h3>
+              <h3><Search class="icon-layer" /> Real-Time Monitoring</h3>
               <p>Continuous surveillance of all system activities and access patterns</p>
             </div>
             
             <div class="feature">
-              <h3>⚠️ Threat Detection</h3>
+              <h3><AlertTriangle class="icon-layer" /> Threat Detection</h3>
               <p>AI-powered anomaly detection and automated threat response</p>
             </div>
             
             <div class="feature">
-              <h3>📊 Audit Logging</h3>
+              <h3><BarChart3 class="icon-layer" /> Audit Logging</h3>
               <p>Comprehensive audit trails for all data access and modifications</p>
             </div>
             
             <div class="feature">
-              <h3>🚨 Incident Response</h3>
+              <h3><Bell class="icon-layer" /> Incident Response</h3>
               <p>Rapid response team with defined escalation procedures</p>
             </div>
           </div>
@@ -313,7 +314,7 @@ import Navigation from '../components/Navigation.astro';
         </div>
         
         <div class="emergency-contact">
-          <h3>🚨 Security Emergency Hotline</h3>
+          <h3><AlertOctagon class="icon-layer" /> Security Emergency Hotline</h3>
           <p><strong>24/7 Emergency:</strong> +1 (678) 764-0066</p>
           <p>For immediate security incidents requiring urgent response</p>
         </div>
@@ -323,6 +324,49 @@ import Navigation from '../components/Navigation.astro';
 </Layout>
 
 <style>
+  /* Modern Icon Styles */
+  .icon-badge-security {
+    width: 20px;
+    height: 20px;
+    color: white;
+    stroke-width: 2;
+  }
+
+  .icon-hipaa {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primary, #0071e3);
+    stroke-width: 1.5;
+  }
+
+  .icon-layer {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary, #0071e3);
+    stroke-width: 2;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  .icon-cert {
+    width: 32px;
+    height: 32px;
+    stroke-width: 2;
+  }
+
+  .cert-status.completed .icon-cert {
+    color: #10b981;
+  }
+
+  .cert-status.in-progress .icon-cert {
+    color: #f59e0b;
+  }
+
+  .cert-status.planned .icon-cert {
+    color: #6b7280;
+  }
+
   .security-hero {
     background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
     color: white;
