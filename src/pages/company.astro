@@ -1226,9 +1226,43 @@ import Footer from '../components/Footer.astro';
   /* ===================
      Responsive Design
      =================== */
+  @media (max-width: 1024px) {
+    .company-hero {
+      padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    }
+    
+    .founder-profile {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-2xl);
+      text-align: center;
+    }
+    
+    .founder-photo {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto var(--spacing-lg);
+    }
+    
+    .founder-contact {
+      justify-content: center;
+    }
+    
+    .achievement-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+  }
+  
   @media (max-width: 768px) {
+    .company-nav {
+      top: 60px;
+    }
+    
+    .company-hero {
+      padding: var(--spacing-2xl) 0;
+    }
+    
     .company-hero h1 {
-      font-size: var(--font-3xl);
+      font-size: clamp(2rem, 8vw, 3rem);
     }
 
     .hero-subtitle {
@@ -1237,6 +1271,7 @@ import Footer from '../components/Footer.astro';
 
     .nav-pills {
       width: 100%;
+      padding: 4px;
     }
 
     .nav-pill {
@@ -1292,12 +1327,74 @@ import Footer from '../components/Footer.astro';
     .cta-actions {
       flex-direction: column;
       align-items: stretch;
+      gap: var(--spacing-md);
     }
 
     .btn-primary,
     .btn-secondary {
       width: 100%;
       text-align: center;
+      min-height: 48px;
+      padding: var(--spacing-md) var(--spacing-xl);
+    }
+    
+    .metaphor-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .company-hero h1 {
+      font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+    
+    .hero-subtitle {
+      font-size: var(--font-base);
+    }
+    
+    .nav-pill {
+      font-size: 11px;
+      padding: 6px 8px;
+    }
+    
+    .section-header h2 {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+    
+    .problem-statement {
+      padding: var(--spacing-lg);
+    }
+    
+    .lead-text {
+      font-size: var(--font-lg);
+    }
+    
+    .founder-photo {
+      width: 160px;
+      height: 160px;
+    }
+    
+    .achievement-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+    }
+    
+    .company-cta {
+      padding: var(--spacing-3xl) 0;
+    }
+    
+    .company-cta h2 {
+      font-size: var(--font-2xl);
+    }
+    
+    .cta-subtitle {
+      font-size: var(--font-base);
     }
   }
 

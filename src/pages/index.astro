@@ -533,10 +533,21 @@ import Footer from '../components/Footer.astro';
     margin-bottom: var(--space-8);
     animation: slideInUp 0.8s ease-out 0.4s both;
   }
+  
+  @media (max-width: 768px) {
+    .apple-hero-stats {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    
+    .hero-stat-card {
+      padding: var(--space-8) var(--space-6) var(--space-6);
+    }
+  }
 
   .hero-stat-card {
     text-align: center;
-    padding: var(--space-8);
+    padding: var(--space-10) var(--space-8) var(--space-8);
     background: rgba(255, 255, 255, 0.95);
     border-radius: var(--radius-2xl);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -544,7 +555,7 @@ import Footer from '../components/Footer.astro';
     backdrop-filter: blur(10px);
     transition: all 0.4s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .hero-stat-card::before {
@@ -595,7 +606,8 @@ import Footer from '../components/Footer.astro';
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1;
+    line-height: 1.1;
+    display: block;
   }
 
   .stat-label-hero {
@@ -1055,6 +1067,20 @@ import Footer from '../components/Footer.astro';
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
   }
+  
+  @media (max-width: 768px) {
+    .prop-img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .prop-img {
+      width: 100px;
+      height: 100px;
+    }
+  }
 
 
   .prop-content {
@@ -1495,6 +1521,13 @@ import Footer from '../components/Footer.astro';
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
   }
+  
+  @media (max-width: 768px) {
+    .apple-evidence-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
 
   .evidence-card-apple {
     text-align: center;
@@ -1694,6 +1727,10 @@ import Footer from '../components/Footer.astro';
       gap: var(--space-12);
     }
 
+    .hero-visual {
+      order: -1;
+    }
+
     .hero-stats {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-4);
@@ -1715,7 +1752,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .market-stats {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .evidence-grid {
@@ -1725,15 +1762,34 @@ import Footer from '../components/Footer.astro';
     .cta-actions {
       flex-wrap: wrap;
     }
+    
+    .secondary-stats {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 768px) {
-    .hero-title {
+    .hero {
+      padding: var(--space-20) 0 var(--space-16);
+    }
+    
+    .hero-title,
+    .hero-title-apple {
       font-size: var(--font-size-4xl);
     }
 
     .hero-subtitle {
       font-size: var(--font-size-lg);
+    }
+    
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .prop-card-horizontal {
+      flex-direction: column;
+      text-align: center;
     }
 
     .section-header h2 {
@@ -1751,6 +1807,10 @@ import Footer from '../components/Footer.astro';
     .evidence-grid {
       grid-template-columns: 1fr;
     }
+    
+    .projection-chart {
+      height: 150px;
+    }
   }
 
   @media (max-width: 640px) {
@@ -1758,15 +1818,17 @@ import Footer from '../components/Footer.astro';
       padding: var(--space-16) 0 var(--space-12);
     }
 
-    .hero-title {
-      font-size: var(--font-size-3xl);
+    .hero-title,
+    .hero-title-apple {
+      font-size: clamp(1.875rem, 8vw, 2.5rem);
     }
 
     .hero-subtitle {
       font-size: var(--font-size-base);
     }
 
-    .hero-stats {
+    .hero-stats,
+    .apple-hero-stats {
       grid-template-columns: 1fr;
       gap: var(--space-4);
     }
@@ -1774,12 +1836,14 @@ import Footer from '../components/Footer.astro';
     .hero-actions {
       flex-direction: column;
       width: 100%;
+      gap: var(--space-3);
     }
 
     .btn-primary-large,
     .btn-secondary-large {
       width: 100%;
       text-align: center;
+      padding: var(--space-4) var(--space-6);
     }
 
     .agent-grid {
@@ -1805,6 +1869,28 @@ import Footer from '../components/Footer.astro';
     .cta-actions {
       flex-direction: column;
       width: 100%;
+    }
+    
+    .apple-impact-story {
+      padding: var(--space-6);
+    }
+    
+    .philosophy-statement {
+      padding: var(--space-4);
+    }
+    
+    .value-props,
+    .market-opportunity,
+    .clinical-evidence,
+    .cta-section {
+      padding: var(--space-16) 0;
+    }
+    
+    .back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
     }
   }
 
