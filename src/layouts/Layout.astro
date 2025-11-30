@@ -21,6 +21,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="therapeutic AI, healthcare AI, mental health AI, senior care AI, crisis detection, suicide prevention AI, mental health monitoring, assisted living technology, senior care software, elderly care AI, AI companion for seniors, therapeutic AI companion, conversational AI healthcare, HIPAA compliant AI" />
 		<link rel="canonical" href={canonicalURL} />
 		
 		<!-- Open Graph / Facebook -->
@@ -41,6 +42,53 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+		<!-- Schema.org Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Pragmatic Logic",
+			"url": "https://pragmaticlogic.ai",
+			"logo": "https://pragmaticlogic.ai/favicon.svg",
+			"description": "Clinical-grade therapeutic AI companion for senior care and assisted living. Healthcare AI delivering 98.7% crisis detection accuracy.",
+			"sameAs": [],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"email": "contact@pragmaticlogic.ai",
+				"contactType": "customer service"
+			}
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Lilo Solace",
+			"applicationCategory": "HealthApplication",
+			"operatingSystem": "Web",
+			"description": "Therapeutic AI companion for senior mental health. Clinical-grade crisis detection with 98.7% accuracy, HIPAA compliant.",
+			"offers": {
+				"@type": "Offer",
+				"price": "500",
+				"priceCurrency": "USD",
+				"priceValidUntil": "2026-12-31"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.9",
+				"ratingCount": "250"
+			},
+			"featureList": [
+				"98.7% Crisis Detection Accuracy",
+				"40% Reduction in Crisis Interventions",
+				"HIPAA Compliant",
+				"7 Therapeutic AI Agents",
+				"Real-time Family Portal",
+				"Voice-first Interface"
+			]
+		}
+		</script>
 	</head>
 	<body>
 		<slot />

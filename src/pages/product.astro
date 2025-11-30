@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles, GraduationCap } from 'lucide-astro';
+import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles, GraduationCap, Briefcase, Code, Cpu, Database, LineChart, Target, Users, Clock, Building, Globe, Layers, GitBranch, Shield, Activity } from 'lucide-astro';
 ---
 
-<Layout title="Lilo Solace | Pragmatic Logic" description="98.7% crisis detection accuracy. Clinical-grade AI that prevents senior mental health crises before they happen.">
+<Layout title="Lilo Solace - Therapeutic AI Companion for Assisted Living | Healthcare AI for Crisis Prevention" description="98.7% crisis detection accuracy. HIPAA-compliant therapeutic AI companion for senior mental health. Reduces crisis interventions by 40%. AI-powered elderly care monitoring for assisted living facilities.">
   <Navigation />
 
   <!-- Desktop: Side Context Menu | Mobile: Top Pills -->
@@ -24,6 +24,14 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
         <li><a href="#how" class="sidebar-link" data-section="how">
           <span class="link-dot"></span>
           <span class="link-text">How It Works</span>
+        </a></li>
+        <li><a href="#investors" class="sidebar-link" data-section="investors">
+          <span class="link-dot"></span>
+          <span class="link-text">For Investors</span>
+        </a></li>
+        <li><a href="#technology" class="sidebar-link" data-section="technology">
+          <span class="link-dot"></span>
+          <span class="link-text">Technology</span>
         </a></li>
         <li><a href="#evidence" class="sidebar-link" data-section="evidence">
           <span class="link-dot"></span>
@@ -44,6 +52,8 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
         <a href="#why" class="nav-pill active">Why</a>
         <a href="#solution" class="nav-pill">Solution</a>
         <a href="#how" class="nav-pill">How</a>
+        <a href="#investors" class="nav-pill">Investors</a>
+        <a href="#technology" class="nav-pill">Tech</a>
         <a href="#evidence" class="nav-pill">Evidence</a>
         <a href="#roi" class="nav-pill">ROI</a>
       </div>
@@ -199,6 +209,379 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- For Investors Section -->
+  <section class="investors-section" id="investors" aria-labelledby="investors-heading">
+    <div class="container">
+      <div class="section-header-centered">
+        <div class="section-badge">
+          <Briefcase class="badge-icon-modern" />
+          <span>Investment Opportunity</span>
+        </div>
+        <h2 id="investors-heading" class="section-title-emphasized">For Investors<br><span class="title-gradient">Market-Defining Opportunity</span></h2>
+        <p class="section-subtitle">Positioned to capture the intersection of senior care and AI healthcare markets</p>
+      </div>
+
+      <details class="expandable-section" open>
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Globe class="trigger-icon" />
+            <span class="trigger-text">Market Opportunity</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="investor-grid">
+            <div class="investor-card highlight">
+              <div class="investor-stat">$3T+</div>
+              <div class="investor-label">Total Addressable Market</div>
+              <p class="investor-detail">Elderly care + mental health intersection</p>
+            </div>
+            <div class="investor-card">
+              <div class="investor-stat">30,600</div>
+              <div class="investor-label">U.S. Assisted Living Facilities</div>
+              <p class="investor-detail">Primary target market</p>
+            </div>
+            <div class="investor-card">
+              <div class="investor-stat">$720M-2.16B</div>
+              <div class="investor-label">ARR Potential at Scale</div>
+              <p class="investor-detail">Revenue projection</p>
+            </div>
+            <div class="investor-card">
+              <div class="investor-stat">$50-150</div>
+              <div class="investor-label">Per Resident Monthly</div>
+              <p class="investor-detail">Unit economics</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Target class="trigger-icon" />
+            <span class="trigger-text">Competitive Advantages</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="advantages-list">
+            <div class="advantage-item">
+              <ShieldCheck class="advantage-icon" />
+              <div class="advantage-content">
+                <h4>100% Crisis Recall</h4>
+                <p>Zero missed critical events across all test scenarios</p>
+              </div>
+            </div>
+            <div class="advantage-item">
+              <Zap class="advantage-icon" />
+              <div class="advantage-content">
+                <h4>Sub-Second Detection</h4>
+                <p>Exceeds Joint Commission compliance requirements</p>
+              </div>
+            </div>
+            <div class="advantage-item">
+              <Building class="advantage-icon" />
+              <div class="advantage-content">
+                <h4>Production-Ready Deployment</h4>
+                <p>Healthcare-grade infrastructure ready for enterprise scale</p>
+              </div>
+            </div>
+            <div class="advantage-item">
+              <Shield class="advantage-icon" />
+              <div class="advantage-content">
+                <h4>Complete HIPAA Compliance</h4>
+                <p>Full §164.312 technical safeguards implementation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Clock class="trigger-icon" />
+            <span class="trigger-text">Development Roadmap</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="roadmap-timeline">
+            <div class="roadmap-item completed">
+              <div class="roadmap-status">Complete</div>
+              <h4>Platform Architecture</h4>
+              <p>12-layer distributed system with 17 microservices</p>
+            </div>
+            <div class="roadmap-item completed">
+              <div class="roadmap-status">Complete</div>
+              <h4>HIPAA Compliance</h4>
+              <p>Full technical safeguards and audit logging</p>
+            </div>
+            <div class="roadmap-item completed">
+              <div class="roadmap-status">Complete</div>
+              <h4>Crisis Detection Validation</h4>
+              <p>100% recall achieved on 871 test scenarios</p>
+            </div>
+            <div class="roadmap-item in-progress">
+              <div class="roadmap-status">In Progress</div>
+              <h4>Clinical Pilot</h4>
+              <p>Stanford Geriatric Psychiatry partnership</p>
+            </div>
+            <div class="roadmap-item upcoming">
+              <div class="roadmap-status">Q2 2026</div>
+              <h4>First Enterprise Customers</h4>
+              <p>Commercial deployment target</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <LineChart class="trigger-icon" />
+            <span class="trigger-text">Business Metrics</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="metrics-summary">
+            <div class="metric-highlight">
+              <div class="metric-value">6:1</div>
+              <div class="metric-title">Return on Investment</div>
+              <p>$6 saved for every $1 invested</p>
+            </div>
+            <div class="metric-highlight">
+              <div class="metric-value">$12,500</div>
+              <div class="metric-title">Saved Per Resident/Year</div>
+              <p>Reduced hospitalizations + crisis interventions</p>
+            </div>
+            <div class="metric-highlight">
+              <div class="metric-value">+15pts</div>
+              <div class="metric-title">CMS Star Rating Impact</div>
+              <p>Quality metric improvement</p>
+            </div>
+            <div class="metric-highlight">
+              <div class="metric-value">$50K-150K</div>
+              <div class="metric-title">Annual Facility Savings</div>
+              <p>Per 100-bed facility</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Technology Deep Dive Section -->
+  <section class="technology-section" id="technology" aria-labelledby="technology-heading">
+    <div class="container">
+      <div class="section-header-centered">
+        <div class="section-badge tech-badge">
+          <Code class="badge-icon-modern" />
+          <span>Technical Excellence</span>
+        </div>
+        <h2 id="technology-heading" class="section-title-emphasized">Technology Deep Dive<br><span class="title-gradient">Enterprise-Grade Architecture</span></h2>
+        <p class="section-subtitle">Built from scratch with healthcare-grade reliability and scalability</p>
+      </div>
+
+      <details class="expandable-section" open>
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Layers class="trigger-icon" />
+            <span class="trigger-text">Architecture Overview</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="architecture-grid">
+            <div class="arch-card">
+              <div class="arch-number">12</div>
+              <div class="arch-label">Layer Distributed Architecture</div>
+              <p>From client interfaces to data persistence</p>
+            </div>
+            <div class="arch-card">
+              <div class="arch-number">17</div>
+              <div class="arch-label">Specialized Microservices</div>
+              <p>Independently scalable components</p>
+            </div>
+            <div class="arch-card">
+              <div class="arch-number">7</div>
+              <div class="arch-label">Therapeutic AI Agents</div>
+              <p>Multi-agent orchestration system</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Cpu class="trigger-icon" />
+            <span class="trigger-text">Core Technologies</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="tech-categories">
+            <div class="tech-category">
+              <h4><Cpu class="category-icon" /> AI/ML Stack</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">PyTorch 2.8</span>
+                <span class="tech-tag">Transformers 4.48</span>
+                <span class="tech-tag">FAISS</span>
+                <span class="tech-tag">llama.cpp</span>
+                <span class="tech-tag">sentence-transformers</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4><Database class="category-icon" /> Backend & Data</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">FastAPI (Python)</span>
+                <span class="tech-tag">Gin (Go)</span>
+                <span class="tech-tag">PostgreSQL 16 + pgvector</span>
+                <span class="tech-tag">Redis 7</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4><GitBranch class="category-icon" /> Models</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Qwen 2.5-7B (LLM)</span>
+                <span class="tech-tag">BGE-base-en-v1.5 (Embeddings)</span>
+                <span class="tech-tag">Whisper STT</span>
+                <span class="tech-tag">Piper TTS</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4><Layers class="category-icon" /> Infrastructure</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">WebSocket</span>
+                <span class="tech-tag">Redis Pub/Sub</span>
+                <span class="tech-tag">HL7 FHIR R4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Activity class="trigger-icon" />
+            <span class="trigger-text">Performance Metrics</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="performance-grid">
+            <div class="perf-card">
+              <div class="perf-value">&lt;1s</div>
+              <div class="perf-label">Crisis Detection Response</div>
+              <p>Regulatory requirement: 30s</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">~200ms</div>
+              <div class="perf-label">P50 Latency</div>
+              <p>Full request-response cycle</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">~450ms</div>
+              <div class="perf-label">P95 Latency</div>
+              <p>Tail latency performance</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">100%</div>
+              <div class="perf-label">Crisis Recall</div>
+              <p>871 test scenarios</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">&lt;5%</div>
+              <div class="perf-label">False Positive Rate</div>
+              <p>High precision detection</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">303</div>
+              <div class="perf-label">Intent Prototypes</div>
+              <p>Across 10 therapeutic categories</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Shield class="trigger-icon" />
+            <span class="trigger-text">Safety Systems</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="safety-features">
+            <div class="safety-item">
+              <h4>Multi-Stage Crisis Detection</h4>
+              <p>Semantic matching against 871 patterns + trajectory analysis</p>
+            </div>
+            <div class="safety-item">
+              <h4>5-Level C-SSRS Stratification</h4>
+              <p>CRITICAL → HIGH → MODERATE → LOW → NONE</p>
+            </div>
+            <div class="safety-item">
+              <h4>Deterioration Pattern Analysis</h4>
+              <p>5-message sliding window for trend detection</p>
+            </div>
+            <div class="safety-item">
+              <h4>Automated Escalation Protocols</h4>
+              <p>CRITICAL: &lt;10s | HIGH: 30s regulatory compliance</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <div class="trigger-content">
+            <Users class="trigger-icon" />
+            <span class="trigger-text">Therapeutic Agents</span>
+          </div>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="agents-grid">
+            <div class="agent-card-detailed">
+              <h4>Behavioral Activation</h4>
+              <p>Depression intervention through activity scheduling</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Reminiscence Therapy</h4>
+              <p>Identity reinforcement via life story integration</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Grounding Techniques</h4>
+              <p>Anxiety management and present-moment focus</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>CBT-Based Interventions</h4>
+              <p>Cognitive restructuring for mood disorders</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Safety Assessment</h4>
+              <p>Continuous risk monitoring and escalation</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Social Connection</h4>
+              <p>Isolation prevention and engagement</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>RAG-Enhanced Responses</h4>
+              <p>Knowledge base + clinical history integration</p>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -1095,6 +1478,529 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
   .disclosure-content p {
     margin: var(--spacing-xs) 0;
+  }
+
+  /* ==========================================
+     INVESTORS & TECHNOLOGY SECTIONS
+     ========================================== */
+
+  /* Shared Section Header Styles */
+  .section-header-centered {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.1), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(0, 113, 227, 0.2);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .section-badge.tech-badge {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.05));
+    border-color: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+  }
+
+  .section-badge.tech-badge .badge-icon-modern {
+    color: #8b5cf6;
+  }
+
+  /* Investors Section */
+  .investors-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, #f5f5f7 0%, white 100%);
+  }
+
+  /* Technology Section */
+  .technology-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, white 0%, #f5f5f7 100%);
+  }
+
+  /* Expandable Section Styles */
+  .expandable-section {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .expandable-section:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .expandable-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    cursor: pointer;
+    background: #fafafa;
+    transition: background 0.2s ease;
+    list-style: none;
+  }
+
+  .expandable-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .expandable-trigger:hover {
+    background: #f0f0f5;
+  }
+
+  .trigger-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .trigger-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
+  .trigger-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .trigger-arrow {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .trigger-arrow {
+    transform: rotate(180deg);
+  }
+
+  .expandable-content {
+    padding: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Investor Grid */
+  .investor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .investor-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+  }
+
+  .investor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .investor-card.highlight {
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.05), rgba(16, 185, 129, 0.03));
+    border-color: var(--color-primary);
+  }
+
+  .investor-stat {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .investor-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .investor-detail {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Advantages List */
+  .advantages-list {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+  }
+
+  .advantage-item:hover {
+    background: #f0f0f5;
+    transform: translateX(4px);
+  }
+
+  .advantage-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+
+  .advantage-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .advantage-content p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Roadmap Timeline */
+  .roadmap-timeline {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .roadmap-item {
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-border);
+    transition: all 0.2s ease;
+  }
+
+  .roadmap-item.completed {
+    border-left-color: #10b981;
+  }
+
+  .roadmap-item.in-progress {
+    border-left-color: var(--color-primary);
+    background: linear-gradient(90deg, rgba(0, 113, 227, 0.05), transparent);
+  }
+
+  .roadmap-item.upcoming {
+    border-left-color: #f59e0b;
+  }
+
+  .roadmap-status {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .roadmap-item.completed .roadmap-status {
+    color: #10b981;
+  }
+
+  .roadmap-item.in-progress .roadmap-status {
+    color: var(--color-primary);
+  }
+
+  .roadmap-item.upcoming .roadmap-status {
+    color: #f59e0b;
+  }
+
+  .roadmap-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .roadmap-item p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Metrics Summary */
+  .metrics-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .metric-highlight {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .metric-highlight .metric-value {
+    font-size: clamp(32px, 4vw, 40px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .metric-highlight .metric-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .metric-highlight p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Architecture Grid */
+  .architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .arch-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(59, 130, 246, 0.03));
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+  }
+
+  .arch-number {
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .arch-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .arch-card p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Tech Categories */
+  .tech-categories {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .tech-category {
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+  }
+
+  .tech-category h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .category-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .tech-tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+  }
+
+  .tech-tag:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* Performance Grid */
+  .performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .perf-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .perf-value {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .perf-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .perf-card p {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Safety Features */
+  .safety-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .safety-item {
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.03), rgba(239, 68, 68, 0.01));
+    border-radius: var(--radius-md);
+    border-left: 4px solid #ef4444;
+  }
+
+  .safety-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-sm) 0;
+  }
+
+  .safety-item p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Agents Grid */
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .agent-card-detailed {
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: all 0.2s ease;
+  }
+
+  .agent-card-detailed:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .agent-card-detailed h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .agent-card-detailed p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Responsive for new sections */
+  @media (max-width: 1200px) {
+    .investor-grid,
+    .metrics-summary,
+    .safety-features,
+    .agents-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .architecture-grid,
+    .performance-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .architecture-grid,
+    .performance-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .expandable-trigger {
+      padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .expandable-content {
+      padding: var(--spacing-lg);
+    }
+
+    .trigger-text {
+      font-size: 15px;
+    }
   }
 
   /* Proof Section */

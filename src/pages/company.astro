@@ -147,7 +147,7 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
     <div class="container">
       <div class="section-header">
         <h2 id="team-heading">Meet the Founder</h2>
-        <p class="section-intro">28 years building mission-critical platforms that bridge healthcare and technology.</p>
+        <p class="section-intro">27 years building mission-critical platforms that bridge healthcare and technology.</p>
       </div>
 
       <!-- Founder Profile -->
@@ -156,38 +156,74 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
           <img src="/images/aejaz-profile.jpg" alt="Aejaz Sheriff Quaraishi, Founder & Principal Architect" class="founder-photo">
           <div class="founder-credentials">
             <h3>Aejaz Sheriff Quaraishi</h3>
-            <div class="founder-title">Founder & Principal Architect</div>
+            <div class="founder-title">Founder & Principal AI Architect</div>
+            <div class="founder-certifications">
+              <span class="cert-badge">TOGAF 9.1</span>
+              <span class="cert-badge">HIPAA Security</span>
+              <span class="cert-badge">HL7 FHIR</span>
+            </div>
             <div class="founder-contact">
               <a href="mailto:contact@pragmaticlogic.ai" aria-label="Email Aejaz">contact@pragmaticlogic.ai</a>
               <span aria-hidden="true">•</span>
               <a href="https://www.linkedin.com/in/asheriff/" target="_blank" rel="noopener noreferrer" aria-label="Aejaz's LinkedIn profile">LinkedIn</a>
+              <span aria-hidden="true">•</span>
+              <a href="https://github.com/asq-sheriff" target="_blank" rel="noopener noreferrer" aria-label="Aejaz's GitHub profile">GitHub</a>
             </div>
           </div>
         </div>
 
         <div class="founder-story">
           <p class="founder-intro">
-            28 years building regulated, mission-critical platforms across healthcare, AI, and enterprise systems. Expert in clinical data interoperability (HL7 FHIR), multi-agent AI architectures, and HIPAA-compliant systems.
+            27 years of progressive enterprise systems architecture: 12 years at Blue Cross Blue Shield serving 6M+ healthcare members, 10 years at IBM Labs. Expert in clinical data interoperability (HL7 FHIR), multi-agent AI architectures, production MLOps, and HIPAA-compliant systems.
           </p>
+
+          <details class="story-disclosure">
+            <summary class="disclosure-trigger">Technical Expertise</summary>
+            <div class="disclosure-content">
+              <div class="expertise-grid">
+                <div class="expertise-category">
+                  <h4>AI/ML Infrastructure</h4>
+                  <p>PyTorch, LangChain, MLflow, Hugging Face, Vertex AI, RAG pipelines</p>
+                </div>
+                <div class="expertise-category">
+                  <h4>Backend & Data</h4>
+                  <p>FastAPI, Go/Gin, PostgreSQL, MongoDB, Redis, ScyllaDB</p>
+                </div>
+                <div class="expertise-category">
+                  <h4>Cloud & DevOps</h4>
+                  <p>AWS, GCP, Terraform, Docker, Kubernetes</p>
+                </div>
+                <div class="expertise-category">
+                  <h4>Healthcare Compliance</h4>
+                  <p>HIPAA, FDA-ready systems, HL7 FHIR R4, clinical governance</p>
+                </div>
+              </div>
+            </div>
+          </details>
 
           <details class="story-disclosure">
             <summary class="disclosure-trigger">Key Achievements</summary>
             <div class="disclosure-content">
               <div class="achievement-grid">
                 <div class="achievement-item">
-                  <div class="achievement-metric">26</div>
+                  <div class="achievement-metric">17</div>
                   <div class="achievement-label">Microservices</div>
                   <p class="achievement-desc">Built clinical-grade AI platform from ground up</p>
                 </div>
                 <div class="achievement-item">
                   <div class="achievement-metric">100%</div>
-                  <div class="achievement-label">Recall Rate</div>
-                  <p class="achievement-desc">Zero false negatives in crisis detection</p>
+                  <div class="achievement-label">Crisis Recall</div>
+                  <p class="achievement-desc">Zero false negatives on 871 test scenarios</p>
                 </div>
                 <div class="achievement-item">
-                  <div class="achievement-metric">128 Days</div>
-                  <div class="achievement-label">Ahead of Plan</div>
-                  <p class="achievement-desc">Saved $1.75M–$2.55M in development costs</p>
+                  <div class="achievement-metric">&lt;200ms</div>
+                  <div class="achievement-label">P50 Latency</div>
+                  <p class="achievement-desc">Production-ready performance at scale</p>
+                </div>
+                <div class="achievement-item">
+                  <div class="achievement-metric">93.3</div>
+                  <div class="achievement-label">Quality Score</div>
+                  <p class="achievement-desc">40% above CMS 5-Star benchmark</p>
                 </div>
               </div>
             </div>
@@ -834,7 +870,26 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
     font-size: var(--font-base);
     color: var(--color-primary);
     font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .founder-certifications {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: var(--spacing-md);
+  }
+
+  .cert-badge {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(0, 113, 227, 0.08);
+    border: 1px solid rgba(0, 113, 227, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
   }
 
   .founder-contact {
@@ -947,6 +1002,41 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
     color: var(--color-text-secondary);
     margin: 0;
     line-height: 1.5;
+  }
+
+  /* Expertise Grid */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .expertise-category {
+    padding: var(--spacing-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .expertise-category h4 {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-sm) 0;
+  }
+
+  .expertise-category p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .founder-quote {
