@@ -16,9 +16,50 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.local
+.env.*.local
 
 # macOS-specific files
 .DS_Store
+*.swp
+*.swo
+.Spotlight-V100
+.Trashes
 
-# jetbrains setting folder
+# Claude AI
+.claude/
+claude.json
+
+# IDE - JetBrains (IntelliJ, WebStorm, etc.)
 .idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IDE - Vim
+*.vim
+Session.vim
+.netrwhist
+
+# IDE - Emacs
+*~
+\#*\#
+.#*
+
+# IDE - Eclipse
+.project
+.classpath
+.settings/
+
+# Editor temp files
+*.bak
+*.tmp
+*.temp
