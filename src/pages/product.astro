@@ -396,8 +396,32 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
-          <div class="architecture-diagram-wrapper">
+          <div class="architecture-diagram-wrapper" id="archDiagramWrapper">
             <img src="/images/architecture-lilo.png" alt="Lilo Engine 12-Layer Architecture Diagram showing all 17 microservices, data flows, and integration points" class="architecture-diagram" loading="lazy" />
+            <div class="zoom-hint">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+                <path d="M11 8v6M8 11h6"/>
+              </svg>
+              <span>Click to enlarge</span>
+            </div>
+          </div>
+
+          <!-- Image Magnifier Modal -->
+          <div class="image-modal" id="imageModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+              <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+              <div class="modal-image-container">
+                <img src="/images/architecture-lilo.png" alt="Lilo Engine 12-Layer Architecture Diagram - Enlarged View" class="modal-image" />
+              </div>
+              <p class="modal-caption">Lilo Engine 12-Layer Architecture • Scroll to zoom • Drag to pan</p>
+            </div>
           </div>
           <div class="architecture-grid">
             <div class="arch-card">
@@ -897,6 +921,117 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
       backToTop.classList.remove('visible');
     }
   });
+
+  // Image Modal / Magnifier functionality
+  const archDiagramWrapper = document.getElementById('archDiagramWrapper');
+  const imageModal = document.getElementById('imageModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalBackdrop = imageModal?.querySelector('.modal-backdrop');
+  const modalImage = imageModal?.querySelector('.modal-image');
+  const modalImageContainer = imageModal?.querySelector('.modal-image-container');
+
+  let currentZoom = 1;
+  const minZoom = 1;
+  const maxZoom = 3;
+  const zoomStep = 0.25;
+
+  function openModal() {
+    if (imageModal) {
+      imageModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      currentZoom = 1;
+      if (modalImage) modalImage.style.transform = `scale(${currentZoom})`;
+    }
+  }
+
+  function closeModal() {
+    if (imageModal) {
+      imageModal.classList.remove('active');
+      document.body.style.overflow = '';
+      currentZoom = 1;
+      if (modalImage) modalImage.style.transform = `scale(${currentZoom})`;
+    }
+  }
+
+  // Open modal on diagram click
+  archDiagramWrapper?.addEventListener('click', openModal);
+
+  // Close modal handlers
+  modalClose?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal?.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Scroll to zoom functionality
+  modalImageContainer?.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -zoomStep : zoomStep;
+    currentZoom = Math.min(maxZoom, Math.max(minZoom, currentZoom + delta));
+    if (modalImage) {
+      modalImage.style.transform = `scale(${currentZoom})`;
+    }
+  }, { passive: false });
+
+  // Drag to pan functionality
+  let isDragging = false;
+  let startX, startY, scrollLeft, scrollTop;
+
+  modalImageContainer?.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - modalImageContainer.offsetLeft;
+    startY = e.pageY - modalImageContainer.offsetTop;
+    scrollLeft = modalImageContainer.scrollLeft;
+    scrollTop = modalImageContainer.scrollTop;
+  });
+
+  modalImageContainer?.addEventListener('mouseleave', () => {
+    isDragging = false;
+  });
+
+  modalImageContainer?.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  modalImageContainer?.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - modalImageContainer.offsetLeft;
+    const y = e.pageY - modalImageContainer.offsetTop;
+    const walkX = (x - startX) * 1.5;
+    const walkY = (y - startY) * 1.5;
+    modalImageContainer.scrollLeft = scrollLeft - walkX;
+    modalImageContainer.scrollTop = scrollTop - walkY;
+  });
+
+  // Touch support for mobile
+  modalImageContainer?.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].pageX - modalImageContainer.offsetLeft;
+      startY = e.touches[0].pageY - modalImageContainer.offsetTop;
+      scrollLeft = modalImageContainer.scrollLeft;
+      scrollTop = modalImageContainer.scrollTop;
+    }
+  }, { passive: true });
+
+  modalImageContainer?.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  modalImageContainer?.addEventListener('touchmove', (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    const x = e.touches[0].pageX - modalImageContainer.offsetLeft;
+    const y = e.touches[0].pageY - modalImageContainer.offsetTop;
+    const walkX = (x - startX) * 1.5;
+    const walkY = (y - startY) * 1.5;
+    modalImageContainer.scrollLeft = scrollLeft - walkX;
+    modalImageContainer.scrollTop = scrollTop - walkY;
+  }, { passive: true });
 </script>
 
 <style>
@@ -1794,6 +1929,160 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .architecture-diagram-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .architecture-diagram-wrapper:hover .zoom-hint {
+    opacity: 1;
+  }
+
+  .zoom-hint {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 980px;
+    color: #1d1d1f;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .zoom-hint svg {
+    flex-shrink: 0;
+  }
+
+  /* Image Modal */
+  .image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .image-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+  }
+
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  .modal-image-container {
+    max-width: 95vw;
+    max-height: 85vh;
+    overflow: auto;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+    padding: var(--spacing-lg);
+    cursor: grab;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .image-modal.active .modal-image-container {
+    transform: scale(1);
+  }
+
+  .modal-image-container:active {
+    cursor: grabbing;
+  }
+
+  .modal-image {
+    display: block;
+    max-width: none;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+  }
+
+  .modal-caption {
+    margin-top: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  @media (max-width: 834px) {
+    .zoom-hint span {
+      display: none;
+    }
+
+    .zoom-hint {
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .modal-content {
+      padding: var(--spacing-md);
+    }
+
+    .modal-close {
+      top: 10px;
+      right: 10px;
+    }
   }
 
   .architecture-diagram {
