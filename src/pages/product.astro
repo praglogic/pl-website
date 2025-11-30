@@ -396,6 +396,9 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
+          <div class="architecture-diagram-wrapper">
+            <img src="/images/architecture-lilo.png" alt="Lilo Engine 12-Layer Architecture Diagram showing all 17 microservices, data flows, and integration points" class="architecture-diagram" loading="lazy" />
+          </div>
           <div class="architecture-grid">
             <div class="arch-card">
               <div class="arch-number">12</div>
@@ -1780,6 +1783,23 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     font-size: 13px;
     color: var(--color-text-secondary);
     margin: 0;
+  }
+
+  /* Architecture Diagram */
+  .architecture-diagram-wrapper {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .architecture-diagram {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
   }
 
   /* Architecture Grid */
