@@ -102,11 +102,20 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		   Refined colors, generous spacing, subtle depth
 		   ========================================== */
 
+		/* Premium Dark Bands (Lucid-style, clinical blue-black) */
+		--color-premium-dark: #070B14;
+		--color-premium-dark-text: #eaf0ff;
+		--color-premium-dark-muted: rgba(234, 240, 255, 0.72);
+		--color-premium-dark-hairline: rgba(234, 240, 255, 0.12);
+		--color-premium-dark-surface: rgba(255, 255, 255, 0.06);
+
 		/* Primary Palette - Apple Blue refined */
 		--color-primary: #0071e3;
 		--color-primary-light: #42a5f5;
 		--color-primary-dark: #0058b0;
 		--color-primary-subtle: rgba(0, 113, 227, 0.08);
+		--color-accent-blue: #2563eb;
+		--color-accent-green: #10b981;
 
 		/* Secondary - Teal accent */
 		--color-secondary: #00c7be;
@@ -131,6 +140,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		--color-background-tertiary: #fbfbfd;
 		--color-background-elevated: #ffffff;
 		--color-background-warm: #fefcfa;
+		--color-background-soft: #f7f8fa;
 
 		/* Borders - Ultra subtle */
 		--color-border: #d2d2d7;
@@ -249,7 +259,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 	body {
 		margin: 0;
 		padding: 0;
-		background-color: var(--color-background);
+		background-color: var(--color-background-soft, var(--color-background));
 		color: var(--color-text);
 		font-size: var(--font-size-base);
 		line-height: var(--line-height-relaxed);
@@ -257,6 +267,33 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		-moz-osx-font-smoothing: grayscale;
 		overflow-x: hidden;
 		font-feature-settings: 'kern' 1, 'liga' 1;
+	}
+
+	/* ==========================================
+	   PREMIUM DARK BANDS (Lucid-style)
+	   ========================================== */
+
+	.pl-dark-band {
+		background: var(--color-premium-dark);
+		color: var(--color-premium-dark-text);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pl-dark-band.pl-dark-glow::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(80% 60% at 50% 0%, rgba(37, 99, 235, 0.18), transparent 60%);
+		pointer-events: none;
+	}
+
+	.pl-dark-text-muted {
+		color: var(--color-premium-dark-muted);
+	}
+
+	.pl-dark-hairline {
+		border-color: var(--color-premium-dark-hairline);
 	}
 
 	* {

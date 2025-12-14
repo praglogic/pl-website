@@ -1,0 +1,16 @@
+---
+export interface Props {
+  as?: string;
+  variant?: 'default' | 'wide' | 'narrow';
+  class?: string;
+}
+
+const { as = 'div', variant = 'default', class: className } = Astro.props;
+const Tag = as;
+const containerClass =
+  variant === 'wide' ? 'container-wide' : variant === 'narrow' ? 'container-narrow' : 'container';
+---
+
+<Tag class:list={[containerClass, className]}>
+  <slot />
+</Tag>

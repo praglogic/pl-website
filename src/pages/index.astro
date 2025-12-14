@@ -130,7 +130,7 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
   </section>
 
   <!-- Market Opportunity -->
-  <section class="market-opportunity" role="region" aria-labelledby="market-heading">
+  <section class="market-opportunity pl-dark-band pl-dark-glow" role="region" aria-labelledby="market-heading">
     <div class="container">
       <div class="apple-market-hero">
         <h2 id="market-heading" class="market-headline">The Perfect Storm.<br><span class="market-emphasis">The Perfect Solution.</span></h2>
@@ -960,7 +960,44 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
   /* Market Opportunity Section */
   .market-opportunity {
     padding: var(--space-24) 0;
-    background: linear-gradient(180deg, var(--color-background-soft) 0%, white 100%);
+    background: var(--color-premium-dark);
+  }
+
+  .market-opportunity .market-headline {
+    color: var(--color-premium-dark-text);
+  }
+
+  .market-opportunity .market-tagline {
+    color: var(--color-premium-dark-muted);
+  }
+
+  .market-opportunity .market-emphasis {
+    background: linear-gradient(90deg, var(--color-accent-blue), rgba(16, 185, 129, 0.85));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .market-opportunity .market-stat-hero {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--color-premium-dark-hairline);
+  }
+
+  .market-opportunity .stat-label-large {
+    color: var(--color-premium-dark-text);
+  }
+
+  .market-opportunity .stat-context {
+    color: var(--color-premium-dark-muted);
+  }
+
+  .market-opportunity .driver-item-simple {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-premium-dark-hairline);
+  }
+
+  .market-opportunity .driver-text {
+    color: var(--color-premium-dark-text);
   }
 
   .apple-market-hero {

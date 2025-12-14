@@ -1,0 +1,45 @@
+---
+export interface Props {
+  as?: string;
+  variant?: 'light' | 'dark';
+  glow?: boolean;
+  class?: string;
+  ariaLabelledby?: string;
+  id?: string;
+}
+
+const {
+  as = 'section',
+  variant = 'light',
+  glow = false,
+  class: className,
+  ariaLabelledby,
+  id,
+} = Astro.props;
+
+const Tag = as;
+---
+
+<Tag
+  id={id}
+  class:list={['pl-section', glow && variant === 'dark' && 'pl-dark-glow', className]}
+  data-variant={variant}
+  aria-labelledby={ariaLabelledby}
+>
+  <slot />
+</Tag>
+
+<style>
+  .pl-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pl-dark-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(80% 60% at 50% 0%, rgba(37, 99, 235, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+</style>

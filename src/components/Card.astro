@@ -1,0 +1,36 @@
+---
+export interface Props {
+  as?: string;
+  variant?: 'light' | 'dark';
+  class?: string;
+}
+
+const { as = 'div', variant = 'light', class: className } = Astro.props;
+const Tag = as;
+---
+
+<Tag class:list={['pl-card', `pl-card--${variant}`, className]}>
+  <slot />
+</Tag>
+
+<style>
+  .pl-card {
+    border-radius: var(--radius-xl, 16px);
+    border: 1px solid;
+  }
+
+  .pl-card--light {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border-color: rgba(15, 23, 42, 0.10);
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+  }
+
+  .pl-card--dark {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border-color: rgba(234, 240, 255, 0.12);
+  }
+</style>

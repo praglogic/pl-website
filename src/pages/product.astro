@@ -621,11 +621,9 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
           </div>
         </div>
       </details>
-    </div>
-  </section>
 
   <!-- Clinical Evidence Section: The Proof -->
-  <section class="proof-section" id="evidence" aria-labelledby="evidence-heading">
+  <section class="proof-section pl-dark-band pl-dark-glow" id="evidence" aria-labelledby="evidence-heading">
     <div class="container">
       <div class="proof-header">
         <div class="stanford-badge" role="img" aria-label="Stanford University partnership">
@@ -2390,7 +2388,51 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   /* Proof Section */
   .proof-section {
     padding: var(--spacing-3xl) 0;
-    background: white;
+    background: var(--color-premium-dark);
+  }
+
+  .proof-section .section-subtitle,
+  .proof-section .badge-text {
+    color: var(--color-premium-dark-muted);
+  }
+
+  .proof-section .section-title-emphasized {
+    color: var(--color-premium-dark-text);
+  }
+
+  .proof-section .title-gradient {
+    background: linear-gradient(90deg, var(--color-accent-blue), rgba(16, 185, 129, 0.85));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .proof-section .evidence-card {
+    background: var(--color-premium-dark-surface);
+    border-color: var(--color-premium-dark-hairline);
+  }
+
+  .proof-section .evidence-label,
+  .proof-section .evidence-description {
+    color: var(--color-premium-dark-text);
+  }
+
+  .proof-section .evidence-description {
+    color: var(--color-premium-dark-muted);
+  }
+
+  .proof-section .disclosure-trigger,
+  .proof-section .method-trigger {
+    color: var(--color-premium-dark-text);
+    border-color: var(--color-premium-dark-hairline);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .proof-section .disclosure-content,
+  .proof-section .method-content {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-premium-dark-hairline);
+    color: var(--color-premium-dark-text);
   }
 
   .proof-header {
