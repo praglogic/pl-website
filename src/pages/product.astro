@@ -152,58 +152,74 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   <!-- How Section: 3-Step Process (HIG: Progressive Disclosure) -->
   <section class="how-section" id="how" aria-labelledby="how-heading">
     <div class="container">
-      <h2 id="how-heading" class="section-title">Three Steps. Profound Impact.</h2>
-      <p class="section-subtitle">From conversation to crisis prevention in under 3 minutes</p>
+      <div class="how-header">
+        <h2 id="how-heading" class="section-title">Three Steps. Profound Impact.</h2>
+        <p class="section-subtitle">From conversation to crisis prevention in under 3 minutes</p>
+      </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-content">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-card-header">
+            <div class="step-number">1</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-card-body">
             <h3 class="step-title">Senior Speaks Naturally</h3>
             <p class="step-text">Voice-first interface with 3-second pause tolerance, hearing aid compatibility, and medical vocabulary</p>
             <details class="step-disclosure">
-              <summary class="disclosure-trigger">Technical Details</summary>
+              <summary class="disclosure-trigger"><span class="trigger-icon">+</span> Technical Details</summary>
               <div class="disclosure-content">
-                <p>• Whisper STT + Piper TTS = $0 API costs</p>
-                <p>• 95%+ accuracy for senior voices</p>
-                <p>• Background noise filtering</p>
+                <ul class="disclosure-list">
+                  <li>Whisper STT + Piper TTS = $0 API costs</li>
+                  <li>95%+ accuracy for senior voices</li>
+                  <li>Background noise filtering</li>
+                </ul>
               </div>
             </details>
           </div>
         </div>
 
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-content">
+        <div class="step-card">
+          <div class="step-card-header">
+            <div class="step-number">2</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-card-body">
             <h3 class="step-title">AI Analyzes & Responds</h3>
             <p class="step-text">7 therapeutic agents provide clinical-grade support with 98.7% crisis detection accuracy</p>
             <details class="step-disclosure">
-              <summary class="disclosure-trigger">See Agents</summary>
+              <summary class="disclosure-trigger"><span class="trigger-icon">+</span> See Agents</summary>
               <div class="disclosure-content">
-                <p>• Behavioral Activation (depression)</p>
-                <p>• CBT (anxiety, mood disorders)</p>
-                <p>• Reminiscence Therapy (identity)</p>
-                <p>• Social Connection (isolation)</p>
-                <p>• Mindfulness (stress reduction)</p>
-                <p>• Crisis Assessment (safety)</p>
-                <p>• Care Coordination (integration)</p>
+                <ul class="disclosure-list">
+                  <li><strong>Behavioral Activation</strong> — depression</li>
+                  <li><strong>CBT</strong> — anxiety, mood disorders</li>
+                  <li><strong>Reminiscence Therapy</strong> — identity</li>
+                  <li><strong>Social Connection</strong> — isolation</li>
+                  <li><strong>Mindfulness</strong> — stress reduction</li>
+                  <li><strong>Crisis Assessment</strong> — safety</li>
+                  <li><strong>Care Coordination</strong> — integration</li>
+                </ul>
               </div>
             </details>
           </div>
         </div>
 
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-content">
+        <div class="step-card">
+          <div class="step-card-header">
+            <div class="step-number">3</div>
+          </div>
+          <div class="step-card-body">
             <h3 class="step-title">Care Team Alerted</h3>
             <p class="step-text">Real-time notifications with severity-based routing and SLA timer tracking</p>
             <details class="step-disclosure">
-              <summary class="disclosure-trigger">Enterprise Features</summary>
+              <summary class="disclosure-trigger"><span class="trigger-icon">+</span> Enterprise Features</summary>
               <div class="disclosure-content">
-                <p>• 26-microservice architecture</p>
-                <p>• HIPAA compliant with 7-year audit logs</p>
-                <p>• HL7 FHIR R4 EHR integration</p>
-                <p>• 99.99% uptime SLA</p>
+                <ul class="disclosure-list">
+                  <li>17-microservice architecture</li>
+                  <li>HIPAA compliant with 7-year audit logs</li>
+                  <li>HL7 FHIR R4 EHR integration</li>
+                  <li>99.99% uptime SLA</li>
+                </ul>
               </div>
             </details>
           </div>
@@ -878,10 +894,12 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   // HIG: Smooth scroll with reduced motion support
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+      const target = document.querySelector<HTMLElement>(href);
       if (target) {
         target.scrollIntoView({
           behavior: prefersReducedMotion ? 'auto' : 'smooth',
@@ -894,14 +912,14 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   // Active nav on scroll (both sidebar and mobile pills)
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
   const navPills = document.querySelectorAll('.nav-pill');
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll<HTMLElement>('section[id]');
 
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(section => {
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       if (scrollY >= sectionTop - 150) {
-        current = section.getAttribute('id');
+        current = section.id;
       }
     });
 
@@ -923,8 +941,9 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   });
 
   // Show back-to-top button
-  const backToTop = document.querySelector('.back-to-top');
+  const backToTop = document.querySelector<HTMLElement>('.back-to-top');
   window.addEventListener('scroll', () => {
+    if (!backToTop) return;
     if (scrollY > 500) {
       backToTop.classList.add('visible');
     } else {
@@ -936,9 +955,9 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   const archDiagramWrapper = document.getElementById('archDiagramWrapper');
   const imageModal = document.getElementById('imageModal');
   const modalClose = document.getElementById('modalClose');
-  const modalBackdrop = imageModal?.querySelector('.modal-backdrop');
-  const modalImage = imageModal?.querySelector('.modal-image');
-  const modalImageContainer = imageModal?.querySelector('.modal-image-container');
+  const modalBackdrop = imageModal?.querySelector<HTMLElement>('.modal-backdrop') ?? null;
+  const modalImage = imageModal?.querySelector<HTMLElement>('.modal-image') ?? null;
+  const modalImageContainer = imageModal?.querySelector<HTMLElement>('.modal-image-container') ?? null;
 
   let currentZoom = 1;
   const minZoom = 1;
@@ -978,7 +997,7 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   });
 
   // Scroll to zoom functionality
-  modalImageContainer?.addEventListener('wheel', (e) => {
+  modalImageContainer?.addEventListener('wheel', (e: WheelEvent) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? -zoomStep : zoomStep;
     currentZoom = Math.min(maxZoom, Math.max(minZoom, currentZoom + delta));
@@ -989,10 +1008,14 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
   // Drag to pan functionality
   let isDragging = false;
-  let startX, startY, scrollLeft, scrollTop;
+  let startX = 0;
+  let startY = 0;
+  let scrollLeft = 0;
+  let scrollTop = 0;
 
-  modalImageContainer?.addEventListener('mousedown', (e) => {
+  modalImageContainer?.addEventListener('mousedown', (e: MouseEvent) => {
     isDragging = true;
+    if (!modalImageContainer) return;
     startX = e.pageX - modalImageContainer.offsetLeft;
     startY = e.pageY - modalImageContainer.offsetTop;
     scrollLeft = modalImageContainer.scrollLeft;
@@ -1007,9 +1030,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     isDragging = false;
   });
 
-  modalImageContainer?.addEventListener('mousemove', (e) => {
+  modalImageContainer?.addEventListener('mousemove', (e: MouseEvent) => {
     if (!isDragging) return;
     e.preventDefault();
+    if (!modalImageContainer) return;
     const x = e.pageX - modalImageContainer.offsetLeft;
     const y = e.pageY - modalImageContainer.offsetTop;
     const walkX = (x - startX) * 1.5;
@@ -1019,7 +1043,8 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   });
 
   // Touch support for mobile
-  modalImageContainer?.addEventListener('touchstart', (e) => {
+  modalImageContainer?.addEventListener('touchstart', (e: TouchEvent) => {
+    if (!modalImageContainer) return;
     if (e.touches.length === 1) {
       isDragging = true;
       startX = e.touches[0].pageX - modalImageContainer.offsetLeft;
@@ -1033,7 +1058,8 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     isDragging = false;
   });
 
-  modalImageContainer?.addEventListener('touchmove', (e) => {
+  modalImageContainer?.addEventListener('touchmove', (e: TouchEvent) => {
+    if (!modalImageContainer) return;
     if (!isDragging || e.touches.length !== 1) return;
     const x = e.touches[0].pageX - modalImageContainer.offsetLeft;
     const y = e.touches[0].pageY - modalImageContainer.offsetTop;
@@ -1544,27 +1570,49 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   /* How Section: Progressive Disclosure */
   .how-section {
     padding: var(--spacing-3xl) 0;
-    background: var(--color-bg-alt);
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, white 100%);
   }
 
-  .steps {
+  .how-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .steps-grid {
     display: grid;
-    gap: var(--spacing-xl);
-    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1100px;
     margin: 0 auto;
   }
 
-  .step {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--spacing-lg);
-    align-items: start;
+  .step-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .step-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+  }
+
+  .step-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
   }
 
   .step-number {
-    width: 48px;
-    height: 48px;
-    background: var(--color-primary);
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0058b0 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1573,6 +1621,27 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     font-weight: 700;
     font-size: var(--font-xl);
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+  }
+
+  .step-connector {
+    position: absolute;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), transparent);
+  }
+
+  .step-card:last-child .step-connector {
+    display: none;
+  }
+
+  .step-card-body {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
   }
 
   .step-title {
@@ -1586,11 +1655,14 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-md);
     line-height: 1.6;
+    flex-grow: 1;
   }
 
   /* HIG: Disclosure (Native HTML Details) */
   .step-disclosure {
-    margin-top: var(--spacing-md);
+    margin-top: auto;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
   }
 
   .disclosure-trigger {
@@ -1599,33 +1671,76 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     font-weight: 600;
     cursor: pointer;
     list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: color 0.2s ease;
+  }
+
+  .disclosure-trigger:hover {
+    color: var(--color-primary-dark);
   }
 
   .disclosure-trigger::-webkit-details-marker {
     display: none;
   }
 
-  .disclosure-trigger::before {
-    content: '+ ';
-    margin-right: var(--spacing-xs);
+  .trigger-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 113, 227, 0.1);
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s ease;
   }
 
-  details[open] .disclosure-trigger::before {
-    content: '− ';
+  details[open] .trigger-icon {
+    background: var(--color-primary);
+    color: white;
+    transform: rotate(45deg);
   }
 
   .disclosure-content {
     margin-top: var(--spacing-md);
     padding: var(--spacing-md);
-    background: white;
+    background: var(--color-bg-alt);
     border-radius: var(--radius-sm);
-    font-size: 15px;
+    font-size: 14px;
     color: var(--color-text-secondary);
     line-height: 1.6;
   }
 
-  .disclosure-content p {
+  .disclosure-list {
+    margin: 0;
+    padding-left: var(--spacing-lg);
+  }
+
+  .disclosure-list li {
     margin: var(--spacing-xs) 0;
+  }
+
+  .disclosure-list li strong {
+    color: var(--color-text);
+  }
+
+  /* Responsive: Stack cards on smaller screens */
+  @media (max-width: 900px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+
+    .step-connector {
+      display: none;
+    }
+
+    .step-card-body {
+      min-height: auto;
+    }
   }
 
   /* ==========================================

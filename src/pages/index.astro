@@ -10,66 +10,52 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
   
   <!-- Hero Section -->
   <section class="hero" role="banner" aria-labelledby="hero-title">
-    <div class="container">
+    <div class="container hero-grid">
       <div class="hero-content">
-        <div class="apple-hero-headline">
-          <h1 id="hero-title" class="hero-title-apple">
-            Every Senior Deserves More Than Care—<br>
-            <span class="hero-emphasis">They Deserve Purpose and Belonging.</span>
-          </h1>
-        </div>
+        <h1 id="hero-title" class="hero-title">
+          Every senior deserves more than care.
+          <span class="hero-emphasis">They deserve purpose and belonging.</span>
+        </h1>
         
-        <div class="apple-hero-subtitle">
-          <p class="subtitle-intro">Behind every data point is a person.</p>
-          <p class="subtitle-main">Lilo Solace combines <span class="subtitle-highlight">clinical precision</span> with <span class="subtitle-highlight">genuine empathy</span>—</p>
-            <p class="philosophy-simple">Technology that amplifies human connection, not replaces it.</p>
-        </div>
-        
-        <!-- Simplified Testimonial (Apple: Less is more) -->
-        <div class="hero-testimonial">
-          <p class="testimonial-quote">"Lilo alerted us three weeks before we noticed anything was wrong."</p>
-          <cite class="testimonial-attribution">— Amudha P., Family Member</cite>
-        </div>
-
-        <!-- Core Metrics (Tier 1: Investor-Critical) -->
-        <div class="hero-stats-compact">
-          <div class="stat-compact">
-            <div class="stat-number-compact">40%</div>
-            <div class="stat-label-compact">Fewer Crisis Events</div>
-            <div class="stat-context">Reduction in behavioral emergencies requiring intervention</div>
-          </div>
-          <div class="stat-compact">
-            <div class="stat-number-compact">98.7%</div>
-            <div class="stat-label-compact">Detection Accuracy</div>
-            <div class="stat-context">Validated in clinical trials with 99.1% specificity</div>
-          </div>
-          <div class="stat-compact">
-            <div class="stat-number-compact">6:1</div>
-            <div class="stat-label-compact">Return on Investment</div>
-            <div class="stat-context">$6 saved for every $1 invested in prevention</div>
-          </div>
-          <div class="stat-compact">
-            <div class="stat-number-compact">0</div>
-            <div class="stat-label-compact">Lives Lost</div>
-            <div class="stat-context">Zero critical incidents across all monitored facilities</div>
-          </div>
-        </div>
+        <p class="hero-subtitle">Lilo Solace combines clinical precision with genuine empathy—technology that amplifies human connection, not replaces it.</p>
         
         <div class="hero-actions">
           <a href="/demo" class="btn-primary-large">Request Demo</a>
-          <a href="/product#clinical-validation" class="btn-secondary-pill">
-            <ChartBar class="btn-icon" />
-            <span>Find out how with Lilo Solace</span>
-          </a>
+          <a href="/product" class="btn-secondary-large">Learn More</a>
         </div>
         
         <p class="disclaimer">*Preliminary results from ongoing pilot studies</p>
       </div>
       
       <div class="hero-visual">
-        <div class="hero-image">
-          <img src="/images/Hero Image Oct 8 2025.png" alt="Senior woman using tablet with her daughter, showing warmth and connection through technology" class="hero-img" />
+        <img src="/images/Hero Image Oct 8 2025.png" alt="Senior woman using tablet with her daughter, showing warmth and connection through technology" class="hero-img" />
+      </div>
+    </div>
+    
+    <!-- Stats below the fold -->
+    <div class="container">
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">40%</div>
+          <div class="stat-label">Fewer Crisis Events</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-number">98.7%</div>
+          <div class="stat-label">Detection Accuracy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6:1</div>
+          <div class="stat-label">ROI</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Lives Lost</div>
+        </div>
+      </div>
+      
+      <div class="hero-testimonial">
+        <blockquote>"Lilo alerted us three weeks before we noticed anything was wrong."</blockquote>
+        <cite>— Amudha P., Family Member</cite>
       </div>
     </div>
   </section>
@@ -146,18 +132,18 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
         </div>
         
         <div class="market-drivers-simple">
-          <div class="driver-item-simple">
+          <a class="driver-item-simple" href="/product#why">
             <span class="driver-icon-wrapper"><Flame class="icon-modern" /></span>
             <span class="driver-text">Growing mental health crisis in senior care</span>
-          </div>
-          <div class="driver-item-simple">
+          </a>
+          <a class="driver-item-simple" href="/product#technology">
             <span class="driver-icon-wrapper"><Zap class="icon-modern" /></span>
             <span class="driver-text">Facilities need scalable, clinical-grade solutions</span>
-          </div>
-          <div class="driver-item-simple">
+          </a>
+          <a class="driver-item-simple" href="/product#evidence">
             <span class="driver-icon-wrapper"><Target class="icon-modern" /></span>
             <span class="driver-text">First therapeutic AI validated by Stanford</span>
-          </div>
+          </a>
         </div>
         
         <div class="market-cta">
@@ -198,146 +184,219 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
 </Layout>
 
 <style>
+  /* ==========================================
+     HERO SECTION - Clean, balanced layout
+     ========================================== */
   .hero {
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
-    padding: var(--space-24) 0 var(--space-20);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    padding: var(--space-20) 0 var(--space-16);
     position: relative;
     overflow: hidden;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    right: -5%;
-    width: 60%;
-    height: 120%;
-    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
-    z-index: 0;
-    animation: float 20s ease-in-out infinite;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -10%;
-    left: -5%;
-    width: 50%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
-    z-index: 0;
-    animation: float 25s ease-in-out infinite reverse;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(-30px, -30px) scale(1.1);
-    }
-  }
-  
-  .hero .container {
+  .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     align-items: center;
-    position: relative;
-    z-index: 1;
+    margin-bottom: var(--space-16);
   }
 
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+      text-align: center;
+    }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(16, 185, 129, 0.12));
-    border: 1px solid rgba(37, 99, 235, 0.25);
-    border-radius: 999px;
-    padding: var(--space-2) var(--space-4);
-    margin-bottom: var(--space-6);
-    font-size: var(--font-size-sm);
-    box-shadow: var(--shadow-sm);
-    animation: slideInUp 0.6s ease-out;
+    .hero-visual {
+      order: -1;
+    }
   }
-  
-  .badge-text {
-    color: var(--color-primary);
-    font-weight: 500;
+
+  .hero-content {
+    max-width: 560px;
   }
-  
-  .badge-highlight {
-    background: var(--color-primary);
-    color: white;
-    padding: var(--space-1) var(--space-3);
-    border-radius: 999px;
-    font-weight: 600;
+
+  @media (max-width: 900px) {
+    .hero-content {
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
-  
+
   .hero-title {
-    font-size: var(--font-size-5xl);
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-    animation: slideInUp 0.8s ease-out 0.1s both;
-    letter-spacing: -0.03em;
-  }
-
-  .apple-hero-headline {
-    margin-bottom: var(--space-8);
-    animation: slideInUp 0.8s ease-out 0.1s both;
-  }
-
-  .hero-title-apple {
     font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-    font-weight: 600;
-    line-height: 1.15;
-    margin: 0;
+    font-weight: 300;
+    line-height: 1.25;
+    margin: 0 0 var(--space-6) 0;
     color: var(--color-text);
-    letter-spacing: -0.025em;
-    text-align: left;
+    letter-spacing: -0.01em;
   }
 
   .hero-emphasis {
-    display: inline-block;
+    display: block;
+    margin-top: var(--space-3);
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0 0 var(--space-8) 0;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Hero Stats - Horizontal row */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 600px) {
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 700;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-size: 1.1em;
+    line-height: 1;
+    margin-bottom: var(--space-1);
   }
 
-  .hero-tagline {
-    display: inline-block;
-    font-weight: 400;
-    color: var(--color-text-light);
-    font-size: 0.85em;
-    opacity: 0.9;
+  .stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+  }
+
+  /* Hero Testimonial */
+  .hero-testimonial {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hero-testimonial blockquote {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
     font-style: italic;
-  }
-  
-  .highlight-text {
-    display: block;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .hero-subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-8);
-    line-height: 1.75;
-    animation: slideInUp 0.8s ease-out 0.2s both;
+    color: var(--color-text);
+    margin: 0 0 var(--space-3) 0;
+    line-height: 1.6;
   }
 
+  .hero-testimonial cite {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* Hero Actions */
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (max-width: 900px) {
+    .hero-actions {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions {
+      flex-direction: column;
+    }
+  }
+
+  .disclaimer {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .disclaimer {
+      text-align: center;
+    }
+  }
+
+  /* Buttons */
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-xl);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary-large {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary-large:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-secondary-large {
+    background: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-border);
+  }
+
+  .btn-secondary-large:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-subtle);
+  }
+
+  /* Legacy styles kept for compatibility */
   .apple-hero-subtitle {
     margin-bottom: var(--space-8);
-    animation: slideInUp 0.8s ease-out 0.2s both;
     max-width: 600px;
   }
 
@@ -586,10 +645,15 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
   .hero-stats-compact {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-    max-width: 900px;
-    margin: 0 auto var(--space-8);
-    padding: var(--space-6) 0;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-4) 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-stats-compact {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .stat-compact {
@@ -639,29 +703,45 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
     font-weight: 600;
   }
   
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: var(--space-8);
+  }
+
   .hero-image {
-    position: relative;
-    max-width: 600px;
+    position: sticky;
+    top: 120px;
     width: 100%;
+    max-width: 480px;
   }
   
   .hero-img {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-xl);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-2xl);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .hero-img:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-2xl);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
   }
-  
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  @media (max-width: 1024px) {
+    .hero-visual {
+      order: -1;
+      padding-top: 0;
+    }
+
+    .hero-image {
+      position: relative;
+      top: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
   
   .mockup-container {
@@ -868,93 +948,96 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
   .props-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .prop-card {
-    padding: var(--space-8);
-    background: linear-gradient(135deg, var(--color-background-soft), var(--color-background));
+    padding: var(--space-6);
+    background: white;
     border: 1px solid var(--color-border-light);
     border-radius: var(--radius-2xl);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .prop-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--color-primary);
   }
 
-  .prop-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-4);
-    display: inline-block;
-    transition: transform 0.4s ease;
-  }
-
-  .prop-card:hover .prop-icon {
-    transform: scale(1.2) rotate(5deg);
-  }
-
   .prop-card-horizontal {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-5);
+    align-items: start;
   }
 
   .prop-icon-image {
-    margin-bottom: 0;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
   }
 
   .prop-img {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
   }
-  
-  @media (max-width: 768px) {
-    .prop-img {
-      width: 150px;
-      height: 150px;
+
+  .prop-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 140px;
+  }
+
+  .prop-card:hover .prop-icon-image {
+    transform: scale(1.02);
+  }
+
+  .prop-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .prop-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .props-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
     }
   }
-  
-  @media (max-width: 480px) {
+
+  @media (max-width: 600px) {
+    .prop-card-horizontal {
+      grid-template-columns: 100px 1fr;
+      gap: var(--space-4);
+    }
+
     .prop-img {
       width: 100px;
       height: 100px;
     }
-  }
 
-
-  .prop-content {
-    flex: 1;
-  }
-
-  .prop-card:hover .prop-icon-image {
-    transform: translateY(-4px);
-  }
-
-  .prop-card h3 {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-    color: var(--color-text);
-  }
-
-  .prop-card p {
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
-    color: var(--color-text);
-    line-height: 1.75;
-    margin: 0;
-    max-width: 100%;
-    font-weight: 500;
-    opacity: 0.9;
+    .prop-content {
+      min-height: auto;
+    }
   }
 
   /* Market Opportunity Section */
@@ -1073,11 +1156,19 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
   .driver-item-simple:hover {
     transform: translateX(4px);
     box-shadow: var(--shadow-md);
+  }
+
+  .driver-item-simple:focus-visible {
+    outline: 2px solid rgba(37, 99, 235, 0.65);
+    outline-offset: 2px;
   }
 
   .market-cta {

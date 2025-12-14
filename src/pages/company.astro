@@ -1549,11 +1549,12 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
   const sections = document.querySelectorAll('.content-section');
 
   // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
+      const targetId = anchor.getAttribute('href');
+      if (!targetId) return;
+      const target = document.querySelector<HTMLElement>(targetId);
       if (target) {
         const offset = 120; // Account for sticky nav
         const targetPosition = target.offsetTop - offset;
@@ -1570,12 +1571,14 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
     const scrollPos = window.scrollY + 200;
 
     sections.forEach((section, index) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+      const el = section as HTMLElement;
+      const sectionTop = el.offsetTop;
+      const sectionHeight = el.offsetHeight;
 
       if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
         navPills.forEach(pill => pill.classList.remove('active'));
-        navPills[index].classList.add('active');
+        const activePill = navPills[index];
+        if (activePill) activePill.classList.add('active');
       }
     });
   }
