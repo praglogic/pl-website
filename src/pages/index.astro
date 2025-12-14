@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
+import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, Heart } from 'lucide-astro';
 ---
 
 <Layout title="Pragmatic Logic - Therapeutic AI Companion for Senior Care | Crisis Prevention & Mental Health AI" description="Clinical-grade therapeutic AI companion for assisted living and senior care. Our healthcare AI delivers 98.7% crisis detection accuracy, 40% fewer crisis interventions, and 6:1 ROI. HIPAA-compliant mental health monitoring for elderly care facilities.">
@@ -32,30 +32,48 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
       </div>
     </div>
     
-    <!-- Stats below the fold -->
+    <!-- Impact Stats -->
     <div class="container">
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">40%</div>
-          <div class="stat-label">Fewer Crisis Events</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">98.7%</div>
-          <div class="stat-label">Detection Accuracy</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">6:1</div>
-          <div class="stat-label">ROI</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">0</div>
-          <div class="stat-label">Lives Lost</div>
+      <div class="impact-stats">
+          <div class="impact-stat">
+            <div class="impact-icon"><TrendingDown size={28} strokeWidth={1.5} /></div>
+            <div class="impact-number">40%</div>
+            <div class="impact-label">Fewer Crisis Events</div>
+            <div class="impact-context">Reduction in behavioral emergencies</div>
+          </div>
+          <div class="impact-stat">
+            <div class="impact-icon"><Crosshair size={28} strokeWidth={1.5} /></div>
+            <div class="impact-number">98.7%</div>
+            <div class="impact-label">Detection Accuracy</div>
+            <div class="impact-context">Clinically validated precision</div>
+          </div>
+          <div class="impact-stat">
+            <div class="impact-icon"><DollarSign size={28} strokeWidth={1.5} /></div>
+            <div class="impact-number">6:1</div>
+            <div class="impact-label">Return on Investment</div>
+            <div class="impact-context">$6 saved for every $1 spent</div>
+          </div>
+          <div class="impact-stat highlight">
+            <div class="impact-icon"><Heart size={28} strokeWidth={1.5} /></div>
+            <div class="impact-number">0</div>
+            <div class="impact-label">Lives Lost</div>
+            <div class="impact-context">Zero critical incidents</div>
+          </div>
         </div>
       </div>
-      
-      <div class="hero-testimonial">
-        <blockquote>"Lilo alerted us three weeks before we noticed anything was wrong."</blockquote>
-        <cite>— Amudha P., Family Member</cite>
+    
+    <!-- Testimonial -->
+    <div class="container">
+      <div class="testimonial-card">
+        <div class="testimonial-quote-mark">"</div>
+        <blockquote class="testimonial-text">Lilo alerted us three weeks before we noticed anything was wrong.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">AP</div>
+          <div class="author-info">
+            <cite class="author-name">Amudha P.</cite>
+            <span class="author-role">Family Member</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -120,36 +138,48 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
     <div class="container">
       <div class="apple-market-hero">
         <h2 id="market-heading" class="market-headline">The Perfect Storm.<br><span class="market-emphasis">The Perfect Solution.</span></h2>
-        <p class="market-tagline">Senior mental health crisis meets AI breakthrough</p>
+        <p class="market-tagline">A crisis that can't be solved with human labor alone</p>
       </div>
 
-      <!-- Simplified Market (Apple: Show the essential, hide complexity) -->
+      <!-- Research-backed market drivers -->
       <div class="market-content-simple">
-        <div class="market-stat-hero">
-          <div class="stat-number-large">$1.2T+</div>
-          <div class="stat-label-large">Global Senior Care Market (2025)</div>
-          <div class="stat-context">Projected to reach $1.6T by 2030</div>
+        <div class="market-crisis-stats">
+          <div class="crisis-stat-item">
+            <div class="crisis-number">65-90%</div>
+            <div class="crisis-label">of nursing home residents have a diagnosable mental disorder</div>
+            <div class="crisis-source">Industry research data, 2024</div>
+          </div>
+          <div class="crisis-stat-item">
+            <div class="crisis-number">99%</div>
+            <div class="crisis-label">of nursing homes currently have open staff positions</div>
+            <div class="crisis-source">AHCA State of the Sector Report, 2024</div>
+          </div>
+          <div class="crisis-stat-item">
+            <div class="crisis-number">$1.2T+</div>
+            <div class="crisis-label">global senior care market projected to reach $1.6T by 2030</div>
+            <div class="crisis-source">Market Research, 2025</div>
+          </div>
         </div>
         
         <div class="market-drivers-simple">
-          <a class="driver-item-simple" href="/product#why">
+          <a class="driver-item-simple" href="/product#crisis">
             <span class="driver-icon-wrapper"><Flame class="icon-modern" /></span>
-            <span class="driver-text">Growing mental health crisis in senior care</span>
+            <span class="driver-text">The silent epidemic: workforce collapse meets mental health crisis</span>
           </a>
-          <a class="driver-item-simple" href="/product#technology">
+          <a class="driver-item-simple" href="/product#solution">
             <span class="driver-icon-wrapper"><Zap class="icon-modern" /></span>
-            <span class="driver-text">Facilities need scalable, clinical-grade solutions</span>
+            <span class="driver-text">AI that forms therapeutic bonds in days, not weeks</span>
           </a>
           <a class="driver-item-simple" href="/product#evidence">
             <span class="driver-icon-wrapper"><Target class="icon-modern" /></span>
-            <span class="driver-text">First therapeutic AI validated by Stanford</span>
+            <span class="driver-text">Clinical-grade precision with 98.7% detection accuracy</span>
           </a>
         </div>
         
         <div class="market-cta">
-          <a href="/company#investors" class="btn-secondary-pill">
+          <a href="/product#investors" class="btn-secondary-pill">
             <TrendingUp class="btn-icon" />
-            <span>View Market Analysis</span>
+            <span>View Investment Opportunity</span>
           </a>
         </div>
       </div>
@@ -265,39 +295,150 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
     box-shadow: var(--shadow-xl);
   }
 
-  /* Hero Stats - Horizontal row */
-  .hero-stats {
+  /* Impact Stats - Light cards */
+  .impact-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-8);
-    margin-bottom: var(--space-10);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: var(--space-6);
+    margin: var(--space-12) 0;
   }
 
-  @media (max-width: 600px) {
-    .hero-stats {
+  @media (max-width: 900px) {
+    .impact-stats {
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-6);
     }
   }
 
-  .stat-item {
-    text-align: center;
+  @media (max-width: 480px) {
+    .impact-stats {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .stat-number {
-    font-size: clamp(2rem, 3.5vw, 3rem);
+  .impact-stat {
+    text-align: center;
+    padding: var(--space-8) var(--space-6);
+    background: white;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+  }
+
+  .impact-stat:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+
+  .impact-stat.highlight {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(37, 99, 235, 0.08));
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+
+  .impact-icon {
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+  }
+
+  .impact-icon :global(svg) {
+    width: 28px;
+    height: 28px;
+  }
+
+  .impact-number {
+    font-size: clamp(2.5rem, 5vw, 3rem);
     font-weight: 700;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1;
-    margin-bottom: var(--space-1);
+    margin-bottom: var(--space-2);
   }
 
+  .impact-label {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+  }
+
+  .impact-context {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  /* Testimonial Card */
+  .testimonial-card {
+    max-width: 700px;
+    margin: var(--space-12) auto 0;
+    padding: var(--space-10);
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    position: relative;
+    text-align: center;
+  }
+
+  .testimonial-quote-mark {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6rem;
+    font-family: Georgia, serif;
+    color: var(--color-primary);
+    opacity: 0.15;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0 0 var(--space-6) 0;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+  }
+
+  .author-info {
+    text-align: left;
+  }
+
+  .author-name {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+  }
+
+  .author-role {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  /* Legacy - keep for compatibility */
   .stat-label {
     font-size: 13px;
     font-weight: 500;
@@ -592,6 +733,23 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
 
   .btn-secondary-pill:hover .btn-icon {
     transform: scale(1.1);
+  }
+
+  /* Dark band button variant */
+  .pl-dark-band .btn-secondary-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .pl-dark-band .btn-secondary-pill:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .pl-dark-band .btn-secondary-pill .btn-icon {
+    color: white;
   }
   
   .disclaimer {
@@ -1448,6 +1606,49 @@ import { Flame, Zap, Target, ChartBar, TrendingUp } from 'lucide-astro';
   .market-label {
     font-size: var(--font-size-sm);
     color: var(--color-text-light);
+  }
+
+  /* Market Crisis Stats */
+  .market-crisis-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-10);
+  }
+
+  @media (max-width: 768px) {
+    .market-crisis-stats {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+
+  .crisis-stat-item {
+    text-align: center;
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .crisis-number {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-2);
+  }
+
+  .crisis-label {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+  }
+
+  .crisis-source {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: var(--space-2);
+    font-style: italic;
   }
 
   .market-highlights {

@@ -90,6 +90,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		--color-text-secondary: #6e6e73;
 		--color-text-tertiary: #86868b;
 		--color-text-quaternary: #aeaeb2;
+		--color-text-light: #6e6e73;
 
 		/* Backgrounds - Subtle warmth */
 		--color-background: #ffffff;
@@ -98,6 +99,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		--color-background-elevated: #ffffff;
 		--color-background-warm: #fefcfa;
 		--color-background-soft: #f7f8fa;
+		--color-background-alt: #f5f5f7;
 
 		/* Borders - Ultra subtle */
 		--color-border: #d2d2d7;
@@ -206,7 +208,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 	   ========================================== */
 
 	html {
-		font-family: var(--font-family);
+		font-family: var(--font-family), sans-serif;
 		scroll-behavior: smooth;
 		font-size: 16px;
 		text-rendering: optimizeLegibility;

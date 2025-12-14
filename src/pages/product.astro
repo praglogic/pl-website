@@ -2,43 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles, GraduationCap, Briefcase, Code, Cpu, Database, LineChart, Target, Users, Clock, Building, Globe, Layers, GitBranch, Shield, Activity } from 'lucide-astro';
+import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles, GraduationCap, Briefcase, Code, Cpu, Database, LineChart, Target, Users, Building, Globe, Layers, GitBranch, Shield, Activity } from 'lucide-astro';
 ---
 
 <Layout title="Lilo Solace - Therapeutic AI Companion for Assisted Living | Healthcare AI for Crisis Prevention" description="98.7% crisis detection accuracy. HIPAA-compliant therapeutic AI companion for senior mental health. Reduces crisis interventions by 40%. AI-powered elderly care monitoring for assisted living facilities.">
   <Navigation />
 
-  <!-- Desktop: Side Context Menu | Mobile: Top Pills -->
+  <!-- Desktop: Side Context Menu -->
   <nav class="product-nav-sidebar" id="productNav" role="navigation" aria-label="Product sections">
     <div class="sidebar-content">
-      <div class="sidebar-title">Product Guide</div>
+      <div class="sidebar-header">
+        <span class="sidebar-label">On this page</span>
+      </div>
       <ul class="sidebar-menu">
         <li><a href="#why" class="sidebar-link active" data-section="why">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">Why It Matters</span>
         </a></li>
+        <li><a href="#crisis" class="sidebar-link" data-section="crisis">
+          <span class="link-indicator"></span>
+          <span class="link-text">The Crisis</span>
+        </a></li>
         <li><a href="#solution" class="sidebar-link" data-section="solution">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">The Solution</span>
         </a></li>
         <li><a href="#how" class="sidebar-link" data-section="how">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">How It Works</span>
         </a></li>
         <li><a href="#investors" class="sidebar-link" data-section="investors">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">For Investors</span>
         </a></li>
         <li><a href="#technology" class="sidebar-link" data-section="technology">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">Technology</span>
         </a></li>
         <li><a href="#evidence" class="sidebar-link" data-section="evidence">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">Clinical Evidence</span>
         </a></li>
         <li><a href="#roi" class="sidebar-link" data-section="roi">
-          <span class="link-dot"></span>
+          <span class="link-indicator"></span>
           <span class="link-text">ROI & Impact</span>
         </a></li>
       </ul>
@@ -106,11 +112,53 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     </div>
   </section>
 
+  <!-- The Crisis: Research-backed problem statement -->
+  <section class="crisis-section" id="crisis" aria-labelledby="crisis-heading">
+    <div class="container">
+      <div class="crisis-header">
+        <span class="crisis-label">The Silent Epidemic</span>
+        <h2 id="crisis-heading" class="section-title">A Crisis That Can't Be Solved With Human Labor Alone</h2>
+        <p class="section-subtitle">The convergence of mental health prevalence and workforce collapse demands a new paradigm</p>
+      </div>
+      
+      <div class="crisis-stats-grid">
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">65-90%</div>
+          <div class="crisis-stat-label">of nursing home residents have a diagnosable mental disorder</div>
+          <div class="crisis-stat-source">Industry research data, 2024</div>
+        </div>
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">99%</div>
+          <div class="crisis-stat-label">of nursing homes currently have open staff positions</div>
+          <div class="crisis-stat-source">AHCA State of the Sector Report, 2024</div>
+        </div>
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">1 in 3</div>
+          <div class="crisis-stat-label">older adults report feeling lonely or isolated</div>
+          <div class="crisis-stat-source">University of Michigan National Poll on Healthy Aging, 2024</div>
+        </div>
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">50%+</div>
+          <div class="crisis-stat-label">annual staff turnover erodes therapeutic relationships</div>
+          <div class="crisis-stat-source">AHCA Workforce Report, 2024</div>
+        </div>
+      </div>
+
+      <div class="crisis-insight">
+        <div class="insight-content">
+          <h3>The Staffing Paradox</h3>
+          <p>When staff are unavailable, care retracts to basic physiological needs—feeding, toileting, medication. Psychosocial needs become "luxuries" that can't be afforded. This strips residents of meaningful connection, reinforcing isolation and accelerating decline.</p>
+          <p class="insight-highlight">The industry is mathematically incapable of solving this crisis with human labor alone. A paradigm shift is required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Solution Section: Value Proposition -->
   <section class="value-section" id="solution" aria-labelledby="value-heading">
     <div class="container">
       <h2 id="value-heading" class="section-title">Prevents Crises. Saves Lives. Scales Care.</h2>
-      <p class="section-subtitle">40% fewer crisis interventions through continuous AI monitoring</p>
+      <p class="section-subtitle">Clinical-grade AI that forms therapeutic bonds non-inferior to human therapists</p>
 
       <!-- HIG: 4 cards maximum per row -->
       <div class="cards-grid" role="list">
@@ -242,10 +290,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section" open>
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Globe class="trigger-icon" />
             <span class="trigger-text">Market Opportunity</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -276,10 +324,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section">
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Target class="trigger-icon" />
             <span class="trigger-text">Competitive Advantages</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -318,49 +366,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section">
         <summary class="expandable-trigger">
-          <div class="trigger-content">
-            <Clock class="trigger-icon" />
-            <span class="trigger-text">Development Roadmap</span>
-          </div>
-          <span class="trigger-arrow">↓</span>
-        </summary>
-        <div class="expandable-content">
-          <div class="roadmap-timeline">
-            <div class="roadmap-item completed">
-              <div class="roadmap-status">Complete</div>
-              <h4>Platform Architecture</h4>
-              <p>12-layer distributed system with 17 microservices</p>
-            </div>
-            <div class="roadmap-item completed">
-              <div class="roadmap-status">Complete</div>
-              <h4>HIPAA Compliance</h4>
-              <p>Full technical safeguards and audit logging</p>
-            </div>
-            <div class="roadmap-item completed">
-              <div class="roadmap-status">Complete</div>
-              <h4>Crisis Detection Validation</h4>
-              <p>100% recall achieved on 871 test scenarios</p>
-            </div>
-            <div class="roadmap-item in-progress">
-              <div class="roadmap-status">In Progress</div>
-              <h4>Clinical Pilot</h4>
-              <p>Stanford Geriatric Psychiatry partnership</p>
-            </div>
-            <div class="roadmap-item upcoming">
-              <div class="roadmap-status">Q2 2026</div>
-              <h4>First Enterprise Customers</h4>
-              <p>Commercial deployment target</p>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details class="expandable-section">
-        <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <LineChart class="trigger-icon" />
             <span class="trigger-text">Business Metrics</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -405,10 +414,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section" open>
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Layers class="trigger-icon" />
             <span class="trigger-text">Architecture Overview</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -473,10 +482,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section">
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Cpu class="trigger-icon" />
             <span class="trigger-text">Core Technologies</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -524,10 +533,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section">
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Activity class="trigger-icon" />
             <span class="trigger-text">Performance Metrics</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -568,10 +577,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section">
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Shield class="trigger-icon" />
             <span class="trigger-text">Safety Systems</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -598,10 +607,10 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
       <details class="expandable-section">
         <summary class="expandable-trigger">
-          <div class="trigger-content">
+          <span class="trigger-content">
             <Users class="trigger-icon" />
             <span class="trigger-text">Therapeutic Agents</span>
-          </div>
+          </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
@@ -637,14 +646,16 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
           </div>
         </div>
       </details>
+    </div>
+  </section>
 
   <!-- Clinical Evidence Section: The Proof -->
   <section class="proof-section pl-dark-band pl-dark-glow" id="evidence" aria-labelledby="evidence-heading">
     <div class="container">
       <div class="proof-header">
-        <div class="stanford-badge" role="img" aria-label="Stanford University partnership">
+        <div class="clinical-badge" role="img" aria-label="Clinical validation">
           <span class="badge-icon-wrapper-product"><GraduationCap class="badge-icon-modern" /></span>
-          <span class="badge-text">Stanford Geriatric Psychiatry Department</span>
+          <span class="badge-text">Ongoing prospective cohort study following rigorous academic research protocols</span>
         </div>
         <h2 id="proof-heading" class="section-title-emphasized">Data That Speaks.<br><span class="title-gradient">Lives That Matter.</span></h2>
         <p class="section-subtitle">Preliminary results from ongoing pilot studies</p>
@@ -742,7 +753,7 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
         <details class="method-disclosure">
           <summary class="method-trigger">View Research Methodology</summary>
           <div class="method-content">
-            <h3>Stanford Geriatric Psychiatry Partnership</h3>
+            <h3>Clinical Research Methodology</h3>
             <p>Ongoing prospective cohort study following rigorous academic research protocols.</p>
             <div class="study-specs-grid">
               <div class="spec-item">
@@ -1110,7 +1121,7 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   .product-layout {
     width: 100%;
     margin: 0;
-    padding-left: 280px; /* Space for sidebar */
+    padding-left: 220px; /* Space for sidebar */
   }
 
   .product-layout .container {
@@ -1119,89 +1130,74 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     padding: 0 var(--spacing-xl);
   }
 
-  /* Desktop: Side Context Menu */
+  /* Desktop: Side Context Menu - Clean Apple-style */
   .product-nav-sidebar {
     position: fixed;
     left: 0;
-    top: 60px;
-    width: 280px;
-    height: calc(100vh - 60px);
-    background: #fafafa;
-    border-right: 1px solid var(--color-border);
+    top: 52px;
+    width: 220px;
+    height: calc(100vh - 52px);
+    background: transparent;
     z-index: 90;
     overflow-y: auto;
-    padding: var(--spacing-2xl) var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 
   .sidebar-content {
     position: sticky;
-    top: var(--spacing-2xl);
+    top: var(--spacing-xl);
   }
 
-  .sidebar-title {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
-    padding-left: 20px;
+  .sidebar-header {
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .sidebar-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
   }
 
   .sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
+    border-left: 1px solid var(--color-border);
   }
 
   .sidebar-menu li {
-    margin-bottom: 4px;
+    margin: 0;
   }
 
   .sidebar-link {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--radius-md);
+    gap: 0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-left: -1px;
+    border-left: 2px solid transparent;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
     color: var(--color-text-secondary);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.15s ease;
     position: relative;
   }
 
   .sidebar-link:hover {
-    background: rgba(0, 113, 227, 0.06);
     color: var(--color-text);
+    border-left-color: var(--color-border);
   }
 
   .sidebar-link.active {
     color: var(--color-primary);
-    background: rgba(0, 113, 227, 0.08);
-    font-weight: 600;
+    border-left-color: var(--color-primary);
+    font-weight: 500;
   }
 
-  .link-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-border);
-    transition: all 0.2s ease;
-    flex-shrink: 0;
-  }
-
-  .sidebar-link:hover .link-dot {
-    background: var(--color-primary);
-    transform: scale(1.3);
-  }
-
-  .sidebar-link.active .link-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-primary);
-    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.2);
+  .link-indicator {
+    display: none;
   }
 
   .sidebar-link:focus-visible {
@@ -1245,6 +1241,110 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
   .nav-pill:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+  }
+
+  /* Crisis Section */
+  .crisis-section {
+    padding: var(--spacing-3xl) 0;
+    background: #f5f5f7;
+  }
+
+  .crisis-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .crisis-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.1);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .crisis-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  @media (max-width: 900px) {
+    .crisis-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .crisis-stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .crisis-stat {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .crisis-stat-number {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .crisis-stat-label {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+  }
+
+  .crisis-stat-source {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+  }
+
+  .crisis-insight {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .insight-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .insight-content p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .insight-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .insight-highlight {
+    font-weight: 600;
+    color: var(--color-text) !important;
+    font-style: italic;
   }
 
   /* HIG: Hero Section */
