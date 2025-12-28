@@ -247,6 +247,7 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
                   <li><strong>Crisis Assessment</strong> — safety</li>
                   <li><strong>Care Coordination</strong> — integration</li>
                 </ul>
+                <a href="#technology" class="disclosure-link">See full agent details in Technology →</a>
               </div>
             </details>
           </div>
@@ -2810,6 +2811,20 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
 
   .disclosure-list li:last-child {
     border-bottom: none;
+  }
+
+  .disclosure-link {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .disclosure-link:hover {
+    opacity: 0.7;
   }
 
   /* Study Methodology - Apple Progressive Disclosure */
