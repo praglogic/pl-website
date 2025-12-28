@@ -1,0 +1,296 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Executive Brief - CONFIDENTIAL | Pragmatic Logic">
+  <div id="loading-state" class="loading-container">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <p>Verifying access...</p>
+    </div>
+  </div>
+
+  <div id="access-denied" class="access-denied-container hidden">
+    <div class="access-denied-card">
+      <div class="denied-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+        </svg>
+      </div>
+      <h1>Access Denied</h1>
+      <p id="denied-reason">You must sign in and accept the confidentiality agreement to view this document.</p>
+      <div class="denied-actions">
+        <a href="/auth/signin" class="btn-primary">Sign In</a>
+        <a href="/" class="btn-secondary">Return Home</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="document-container" class="document-container hidden">
+    <div class="document-header">
+      <div class="header-content">
+        <a href="/" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          Back to Pragmatic Logic
+        </a>
+        <div class="user-info">
+          <span id="user-email"></span>
+          <button id="signout-btn" class="btn-signout">Sign Out</button>
+        </div>
+      </div>
+    </div>
+    
+    <iframe 
+      id="document-frame"
+      src=""
+      title="Lilo Engine Executive Brief"
+      class="document-frame"
+    ></iframe>
+  </div>
+</Layout>
+
+<script>
+  import { supabase } from '../../lib/supabase';
+
+  const loadingState = document.getElementById('loading-state') as HTMLDivElement;
+  const accessDenied = document.getElementById('access-denied') as HTMLDivElement;
+  const deniedReason = document.getElementById('denied-reason') as HTMLParagraphElement;
+  const documentContainer = document.getElementById('document-container') as HTMLDivElement;
+  const documentFrame = document.getElementById('document-frame') as HTMLIFrameElement;
+  const userEmailSpan = document.getElementById('user-email') as HTMLSpanElement;
+  const signoutBtn = document.getElementById('signout-btn') as HTMLButtonElement;
+
+  async function verifyAccess() {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+      loadingState.classList.add('hidden');
+      deniedReason.textContent = 'You must sign in to view this document.';
+      accessDenied.classList.remove('hidden');
+      return;
+    }
+
+    // Check if user has accepted confidentiality agreement
+    const { data: agreement, error } = await supabase
+      .from('confidentiality_agreements')
+      .select('*')
+      .eq('user_id', session.user.id)
+      .single();
+
+    if (!agreement || error) {
+      loadingState.classList.add('hidden');
+      deniedReason.textContent = 'You must accept the confidentiality agreement to view this document.';
+      accessDenied.classList.remove('hidden');
+      
+      // Add link to agreement page
+      const agreementLink = document.createElement('a');
+      agreementLink.href = '/confidential/agreement';
+      agreementLink.className = 'btn-primary';
+      agreementLink.textContent = 'View Agreement';
+      
+      const actionsDiv = document.querySelector('.denied-actions');
+      if (actionsDiv) {
+        actionsDiv.innerHTML = '';
+        actionsDiv.appendChild(agreementLink);
+      }
+      return;
+    }
+
+    // Access granted - show document
+    loadingState.classList.add('hidden');
+    documentContainer.classList.remove('hidden');
+    userEmailSpan.textContent = session.user.email || '';
+    
+    // Load the document
+    documentFrame.src = '/docs/Lilo_Engine_Executive_Brief.html';
+  }
+
+  signoutBtn.addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    window.location.href = '/';
+  });
+
+  // Initialize
+  verifyAccess();
+</script>
+
+<style>
+  .loading-container,
+  .access-denied-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+    padding: var(--space-4);
+  }
+
+  .loading-card,
+  .access-denied-card {
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-10);
+    text-align: center;
+    max-width: 400px;
+  }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--color-border-light);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--space-4);
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .loading-card p {
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .denied-icon {
+    color: var(--color-error);
+    margin-bottom: var(--space-4);
+  }
+
+  .access-denied-card h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .access-denied-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .denied-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: var(--color-text);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-background-secondary);
+  }
+
+  .document-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #1a365d;
+  }
+
+  .document-header {
+    background: rgba(26, 54, 93, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-3) var(--space-6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+    transition: opacity var(--duration-fast);
+  }
+
+  .back-link:hover {
+    opacity: 1;
+    color: white;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  #user-email {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-sm);
+  }
+
+  .btn-signout {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+  }
+
+  .btn-signout:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .document-frame {
+    flex: 1;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    border: none;
+    background: white;
+  }
+</style>
