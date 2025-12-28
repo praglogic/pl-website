@@ -397,6 +397,44 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
           </div>
         </div>
       </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <span class="trigger-content">
+            <Shield class="trigger-icon" />
+            <span class="trigger-text">Confidential Documents</span>
+          </span>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="confidential-docs-intro">
+            <p>Detailed documentation available for qualified investors and partners under NDA.</p>
+          </div>
+          <div class="confidential-docs-grid">
+            <a href="/auth/signin" class="confidential-doc-card">
+              <div class="doc-icon">
+                <Cpu class="doc-icon-svg" />
+              </div>
+              <div class="doc-content">
+                <h4>Technical Architecture Brief</h4>
+                <p>Complete Lilo Engine architecture, 7 AI agents, infrastructure details, and security specifications.</p>
+              </div>
+              <span class="doc-arrow">→</span>
+            </a>
+            <div class="confidential-doc-card coming-soon">
+              <div class="doc-icon">
+                <DollarSign class="doc-icon-svg" />
+              </div>
+              <div class="doc-content">
+                <h4>Business & Financial Overview</h4>
+                <p>Market analysis, financial projections, go-to-market strategy, and investment terms.</p>
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <p class="confidential-docs-note">Access requires account creation and acceptance of confidentiality agreement.</p>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -3249,6 +3287,123 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
       font-size: 11px;
       padding: var(--spacing-sm);
     }
+  }
+
+  /* Confidential Documents Section */
+  .confidential-docs-intro {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .confidential-docs-intro p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-base);
+    margin: 0;
+  }
+
+  .confidential-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .confidential-doc-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .confidential-doc-card:not(.coming-soon):hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .confidential-doc-card.coming-soon {
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .doc-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary-subtle), rgba(0, 199, 190, 0.1));
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+  }
+
+  .doc-icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .doc-content {
+    flex: 1;
+  }
+
+  .doc-content h4 {
+    font-size: var(--font-base);
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs);
+    color: var(--color-text);
+  }
+
+  .doc-content p {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .doc-arrow {
+    flex-shrink: 0;
+    font-size: 20px;
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.2s ease;
+  }
+
+  .confidential-doc-card:not(.coming-soon):hover .doc-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 4px 10px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+  }
+
+  .confidential-docs-note {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .confidential-docs-note::before {
+    content: "🔒";
+    font-size: 14px;
   }
 
   /* Accessibility: Reduced Motion */
