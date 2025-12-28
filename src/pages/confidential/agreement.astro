@@ -1,0 +1,476 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Confidentiality Agreement | Pragmatic Logic">
+  <div class="agreement-container">
+    <div class="agreement-card">
+      <div class="agreement-header">
+        <div class="lock-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h1>Confidentiality Agreement</h1>
+        <p class="subtitle">Please review and accept the following terms to access the technical architecture document.</p>
+      </div>
+
+      <div id="loading-state" class="loading-state">
+        <div class="spinner"></div>
+        <p>Checking your access status...</p>
+      </div>
+
+      <div id="not-signed-in" class="not-signed-in hidden">
+        <p>You must be signed in to access confidential documents.</p>
+        <a href="/auth/signin" class="btn-primary">Sign In</a>
+      </div>
+
+      <div id="agreement-content" class="agreement-content hidden">
+        <div class="agreement-text">
+          <h2>Non-Disclosure Agreement</h2>
+          
+          <p>By accessing this document, I agree to the following terms:</p>
+          
+          <ol>
+            <li>
+              <strong>Confidentiality.</strong> I understand that the Lilo Engine Technical Architecture Brief and all related materials ("Confidential Information") contain proprietary trade secrets and intellectual property of Pragmatic Logic, Inc.
+            </li>
+            <li>
+              <strong>Non-Disclosure.</strong> I agree not to disclose, publish, or otherwise reveal any Confidential Information to any third party without prior written consent from Pragmatic Logic, Inc.
+            </li>
+            <li>
+              <strong>Limited Use.</strong> I will use the Confidential Information solely for the purpose of evaluating a potential business relationship with Pragmatic Logic, Inc.
+            </li>
+            <li>
+              <strong>No Reproduction.</strong> I will not copy, reproduce, or distribute the Confidential Information except as necessary for the permitted purpose stated above.
+            </li>
+            <li>
+              <strong>Return of Materials.</strong> Upon request, I will return or destroy all copies of the Confidential Information in my possession.
+            </li>
+            <li>
+              <strong>Duration.</strong> This obligation of confidentiality shall remain in effect for a period of three (3) years from the date of acceptance.
+            </li>
+            <li>
+              <strong>Remedies.</strong> I acknowledge that any breach of this agreement may cause irreparable harm to Pragmatic Logic, Inc., and that monetary damages may be inadequate. Therefore, Pragmatic Logic, Inc. shall be entitled to seek equitable relief, including injunction and specific performance.
+            </li>
+          </ol>
+
+          <div class="agreement-meta">
+            <p><strong>Effective Date:</strong> Upon acceptance</p>
+            <p><strong>Governing Law:</strong> State of Georgia, United States</p>
+          </div>
+        </div>
+
+        <div class="agreement-actions">
+          <label class="checkbox-container">
+            <input type="checkbox" id="agree-checkbox" />
+            <span class="checkmark"></span>
+            <span class="checkbox-text">
+              I have read, understand, and agree to the terms of this Confidentiality Agreement.
+            </span>
+          </label>
+
+          <button id="accept-btn" class="btn-accept" disabled>
+            <span class="btn-text">Accept & View Document</span>
+            <span class="btn-loading hidden">
+              <svg class="spinner-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="32" stroke-dashoffset="32">
+                  <animate attributeName="stroke-dashoffset" values="32;0" dur="0.8s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              Processing...
+            </span>
+          </button>
+
+          <p class="agreement-note">
+            Your acceptance will be logged with timestamp for legal purposes.
+          </p>
+        </div>
+      </div>
+
+      <div id="already-agreed" class="already-agreed hidden">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h2>Agreement Already Accepted</h2>
+        <p id="agreed-date">You accepted the confidentiality agreement on <span></span>.</p>
+        <a href="/confidential/architecture" class="btn-primary">View Architecture Document</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { supabase } from '../../lib/supabase';
+
+  const loadingState = document.getElementById('loading-state') as HTMLDivElement;
+  const notSignedIn = document.getElementById('not-signed-in') as HTMLDivElement;
+  const agreementContent = document.getElementById('agreement-content') as HTMLDivElement;
+  const alreadyAgreed = document.getElementById('already-agreed') as HTMLDivElement;
+  const agreedDateSpan = document.querySelector('#agreed-date span') as HTMLSpanElement;
+  const agreeCheckbox = document.getElementById('agree-checkbox') as HTMLInputElement;
+  const acceptBtn = document.getElementById('accept-btn') as HTMLButtonElement;
+
+  async function checkAuthAndAgreement() {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+      loadingState.classList.add('hidden');
+      notSignedIn.classList.remove('hidden');
+      return;
+    }
+
+    // Check if user has already agreed
+    const { data: agreement, error } = await supabase
+      .from('confidentiality_agreements')
+      .select('*')
+      .eq('user_id', session.user.id)
+      .single();
+
+    loadingState.classList.add('hidden');
+
+    if (agreement && !error) {
+      // Already agreed
+      const agreedDate = new Date(agreement.agreed_at).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      agreedDateSpan.textContent = agreedDate;
+      alreadyAgreed.classList.remove('hidden');
+    } else {
+      // Need to accept agreement
+      agreementContent.classList.remove('hidden');
+    }
+  }
+
+  agreeCheckbox.addEventListener('change', () => {
+    acceptBtn.disabled = !agreeCheckbox.checked;
+  });
+
+  acceptBtn.addEventListener('click', async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (!session) {
+      window.location.href = '/auth/signin';
+      return;
+    }
+
+    const btnText = acceptBtn.querySelector('.btn-text') as HTMLElement;
+    const btnLoading = acceptBtn.querySelector('.btn-loading') as HTMLElement;
+    
+    acceptBtn.disabled = true;
+    btnText.classList.add('hidden');
+    btnLoading.classList.remove('hidden');
+
+    try {
+      const { error } = await supabase
+        .from('confidentiality_agreements')
+        .insert({
+          user_id: session.user.id,
+          user_email: session.user.email,
+          agreed_at: new Date().toISOString(),
+          user_agent: navigator.userAgent,
+        });
+
+      if (error) {
+        console.error('Error saving agreement:', error);
+        alert('Failed to save your agreement. Please try again.');
+        acceptBtn.disabled = false;
+        btnText.classList.remove('hidden');
+        btnLoading.classList.add('hidden');
+        return;
+      }
+
+      // Success - redirect to document
+      window.location.href = '/confidential/architecture';
+    } catch (err) {
+      console.error('Error:', err);
+      alert('An error occurred. Please try again.');
+      acceptBtn.disabled = false;
+      btnText.classList.remove('hidden');
+      btnLoading.classList.add('hidden');
+    }
+  });
+
+  // Initialize
+  checkAuthAndAgreement();
+</script>
+
+<style>
+  .agreement-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .agreement-card {
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-10);
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .agreement-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .lock-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-4);
+    color: #d97706;
+  }
+
+  .agreement-header h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+
+  .subtitle {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+    margin: 0;
+  }
+
+  .loading-state {
+    text-align: center;
+    padding: var(--space-8);
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-border-light);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--space-4);
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .loading-state p {
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .not-signed-in {
+    text-align: center;
+    padding: var(--space-8);
+  }
+
+  .not-signed-in p {
+    margin-bottom: var(--space-6);
+    color: var(--color-text-secondary);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+
+  .agreement-text {
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: var(--space-6);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .agreement-text h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-4);
+  }
+
+  .agreement-text p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+  }
+
+  .agreement-text ol {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .agreement-text li {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+    line-height: 1.6;
+  }
+
+  .agreement-text li strong {
+    color: var(--color-text);
+  }
+
+  .agreement-meta {
+    border-top: 1px solid var(--color-border-light);
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .agreement-meta p {
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-1);
+  }
+
+  .agreement-actions {
+    text-align: center;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    cursor: pointer;
+    margin-bottom: var(--space-6);
+    text-align: left;
+  }
+
+  .checkbox-container input {
+    display: none;
+  }
+
+  .checkmark {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+
+  .checkbox-container input:checked + .checkmark {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .checkbox-container input:checked + .checkmark::after {
+    content: '';
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+  }
+
+  .checkbox-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .btn-accept {
+    width: 100%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .btn-accept:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+  }
+
+  .btn-accept:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-text.hidden,
+  .btn-loading.hidden {
+    display: none;
+  }
+
+  .btn-loading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .spinner-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .agreement-note {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-4);
+    margin-bottom: 0;
+  }
+
+  .already-agreed {
+    text-align: center;
+    padding: var(--space-4);
+  }
+
+  .success-icon {
+    color: var(--color-success);
+    margin-bottom: var(--space-4);
+  }
+
+  .already-agreed h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .already-agreed p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+</style>

@@ -63,3 +63,6 @@ Session.vim
 *.bak
 *.tmp
 *.temp
+
+# Confidential documents (optional - uncomment to exclude from repo)
+# public/confidential-docs/
