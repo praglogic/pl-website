@@ -98,7 +98,7 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         <h2>Agreement Already Accepted</h2>
         <p id="agreed-date">You accepted the confidentiality agreement on <span></span>.</p>
-        <a href="/confidential/architecture" class="btn-primary">View Architecture Document</a>
+        <a href="/confidential" class="btn-primary">View Documents</a>
       </div>
     </div>
   </div>
@@ -189,7 +189,7 @@ import Layout from '../../layouts/Layout.astro';
       }
 
       // Success - redirect to document
-      window.location.href = '/confidential/architecture';
+      window.location.href = '/confidential';
     } catch (err) {
       console.error('Error:', err);
       alert('An error occurred. Please try again.');
