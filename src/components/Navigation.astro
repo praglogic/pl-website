@@ -11,6 +11,7 @@ const currentPath = Astro.url.pathname;
     <div class="nav-links">
       <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
       <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'active' : ''}>Product</a>
+      <a href="/research" class={currentPath === '/research' ? 'active' : ''}>Research</a>
       <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'active' : ''}>Company</a>
     </div>
 
@@ -36,6 +37,7 @@ const currentPath = Astro.url.pathname;
     <nav class="mobile-menu-nav">
       <a href="/" class={currentPath === '/' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Home</a>
       <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Product</a>
+      <a href="/research" class={currentPath === '/research' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Research</a>
       <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Company</a>
       <a href="/demo" class="mobile-nav-cta">Request Demo</a>
     </nav>
