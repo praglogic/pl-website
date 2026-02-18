@@ -434,21 +434,52 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
         <summary class="expandable-trigger">
           <span class="trigger-content">
             <Layers class="trigger-icon" />
-            <span class="trigger-text">Architecture Overview</span>
+            <span class="trigger-text">Deployment Architecture</span>
           </span>
           <span class="trigger-arrow">↓</span>
         </summary>
         <div class="expandable-content">
-          <div class="architecture-diagram-wrapper" id="archDiagramWrapper">
-            <img src="/images/architecture-lilo-v2.png" alt="Lilo Engine Architecture Diagram showing all 19 microservices across 6 layers: Gateway & Security, AI Core, Host Services, Communication, Healthcare Dashboards, and Data Layer" class="architecture-diagram" loading="lazy" />
-            <div class="zoom-hint">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-                <path d="M11 8v6M8 11h6"/>
-              </svg>
-              <span>Click to enlarge</span>
+          <!-- Deployment Tabs -->
+          <div class="deploy-tabs" role="tablist" aria-label="Deployment scenarios">
+            <button class="deploy-tab active" role="tab" aria-selected="true" aria-controls="tab-home" id="btn-home" data-tab="home">At-Home Care</button>
+            <button class="deploy-tab" role="tab" aria-selected="false" aria-controls="tab-small" id="btn-small" data-tab="small">Small Facility</button>
+            <button class="deploy-tab" role="tab" aria-selected="false" aria-controls="tab-large" id="btn-large" data-tab="large">Large Facility</button>
+          </div>
+
+          <!-- At-Home Panel -->
+          <div class="deploy-tab-panel active" id="tab-home" role="tabpanel" aria-labelledby="btn-home">
+            <div class="architecture-diagram-wrapper" data-modal="modal-home">
+              <img src="/images/deploy-at-home.png" alt="Lilo Engine At-Home deployment: Minisforum UM890 Pro 32GB running all 19 microservices co-located, 1-2 users, ~$590" class="architecture-diagram" loading="lazy" />
+              <div class="zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                <span>Click to enlarge</span>
+              </div>
             </div>
+            <p class="diagram-caption"><strong>At-Home Care (1–2 users)</strong> — Minisforum UM890 Pro 32GB, ~$590. Full stack on one silent box. All safety-critical models co-located. 45-65W, shelf-mountable.</p>
+          </div>
+
+          <!-- Small Facility Panel -->
+          <div class="deploy-tab-panel" id="tab-small" role="tabpanel" aria-labelledby="btn-small">
+            <div class="architecture-diagram-wrapper" data-modal="modal-small">
+              <img src="/images/deploy-small-facility.png" alt="Lilo Engine Small Facility deployment: 1-2 Minisforum edge devices with NGINX load balancing and central server, 10-30 residents" class="architecture-diagram" loading="lazy" />
+              <div class="zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                <span>Click to enlarge</span>
+              </div>
+            </div>
+            <p class="diagram-caption"><strong>Small Facility (10–30 residents)</strong> — 1-2× Minisforum edge devices ($590–$1,180) with NGINX load balancing. Each runs full safety stack independently. Central server for dashboards and persistent storage.</p>
+          </div>
+
+          <!-- Large Facility Panel -->
+          <div class="deploy-tab-panel" id="tab-large" role="tabpanel" aria-labelledby="btn-large">
+            <div class="architecture-diagram-wrapper" data-modal="modal-large">
+              <img src="/images/deploy-large-facility.png" alt="Lilo Engine Large Facility deployment: Dell PowerEdge R760 rack server with multi-GPU inference, VLAN segmentation, 100-200 residents" class="architecture-diagram" loading="lazy" />
+              <div class="zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                <span>Click to enlarge</span>
+              </div>
+            </div>
+            <p class="diagram-caption"><strong>Large Facility (100–200 residents)</strong> — Dell PowerEdge R760, AMD EPYC, 128GB+ RAM, NVIDIA GPU(s), $3,000–$8,000. Multi-GPU inference, VLAN segmentation, dual PSU, iDRAC remote management.</p>
           </div>
 
           <!-- Image Magnifier Modal -->
@@ -461,9 +492,9 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
                 </svg>
               </button>
               <div class="modal-image-container">
-                <img src="/images/architecture-lilo-v2.png" alt="Lilo Engine Architecture Diagram - Enlarged View showing 19 microservices, data flows, and integration points" class="modal-image" />
+                <img src="" alt="" class="modal-image" id="modalImage" />
               </div>
-              <p class="modal-caption">Lilo Engine Architecture — 19 Microservices • 6 Layers • Scroll to zoom • Drag to pan</p>
+              <p class="modal-caption" id="modalCaption"></p>
             </div>
           </div>
           <div class="architecture-grid">
@@ -1140,25 +1171,51 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     }
   });
 
+  // Deployment tab switching
+  const deployTabs = document.querySelectorAll<HTMLButtonElement>('.deploy-tab');
+  const deployPanels = document.querySelectorAll<HTMLElement>('.deploy-tab-panel');
+
+  deployTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      deployTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      deployPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(`tab-${target}`);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
   // Image Modal / Magnifier functionality
-  const archDiagramWrapper = document.getElementById('archDiagramWrapper');
   const imageModal = document.getElementById('imageModal');
   const modalClose = document.getElementById('modalClose');
   const modalBackdrop = imageModal?.querySelector<HTMLElement>('.modal-backdrop') ?? null;
-  const modalImage = imageModal?.querySelector<HTMLElement>('.modal-image') ?? null;
+  const modalImage = document.getElementById('modalImage') as HTMLImageElement | null;
+  const modalCaption = document.getElementById('modalCaption');
   const modalImageContainer = imageModal?.querySelector<HTMLElement>('.modal-image-container') ?? null;
+
+  const diagramData: Record<string, { src: string; alt: string; caption: string }> = {
+    'modal-home': { src: '/images/deploy-at-home.png', alt: 'At-Home Deployment — Enlarged', caption: 'At-Home Care — Minisforum UM890 Pro 32GB • All services co-located • Scroll to zoom • Drag to pan' },
+    'modal-small': { src: '/images/deploy-small-facility.png', alt: 'Small Facility Deployment — Enlarged', caption: 'Small Facility (10–30 residents) • Edge devices + central server • Scroll to zoom • Drag to pan' },
+    'modal-large': { src: '/images/deploy-large-facility.png', alt: 'Large Facility Deployment — Enlarged', caption: 'Large Facility (100–200 residents) • Dell PowerEdge R760 • Scroll to zoom • Drag to pan' },
+  };
 
   let currentZoom = 1;
   const minZoom = 1;
   const maxZoom = 3;
   const zoomStep = 0.25;
 
-  function openModal() {
-    if (imageModal) {
+  function openModal(modalKey: string) {
+    const data = diagramData[modalKey];
+    if (imageModal && modalImage && data) {
+      modalImage.src = data.src;
+      modalImage.alt = data.alt;
+      if (modalCaption) modalCaption.textContent = data.caption;
       imageModal.classList.add('active');
       document.body.style.overflow = 'hidden';
       currentZoom = 1;
-      if (modalImage) modalImage.style.transform = `scale(${currentZoom})`;
+      modalImage.style.transform = `scale(${currentZoom})`;
     }
   }
 
@@ -1171,8 +1228,13 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     }
   }
 
-  // Open modal on diagram click
-  archDiagramWrapper?.addEventListener('click', openModal);
+  // Open modal on any diagram wrapper click
+  document.querySelectorAll<HTMLElement>('.architecture-diagram-wrapper[data-modal]').forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const key = wrapper.dataset.modal;
+      if (key) openModal(key);
+    });
+  });
 
   // Close modal handlers
   modalClose?.addEventListener('click', closeModal);
@@ -2321,6 +2383,83 @@ import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles,
     font-size: 13px;
     color: var(--color-text-secondary);
     margin: 0;
+  }
+
+  /* Deployment Tabs */
+  .deploy-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    background: var(--color-background-secondary);
+    padding: 4px;
+    border-radius: var(--radius-full);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .deploy-tab {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .deploy-tab:hover {
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .deploy-tab.active {
+    background: white;
+    color: var(--color-text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .deploy-tab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .deploy-tab-panel {
+    display: none;
+  }
+
+  .deploy-tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .diagram-caption {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.6;
+    margin-top: var(--spacing-md);
+    padding: 0 var(--spacing-lg);
+  }
+
+  @media (max-width: 640px) {
+    .deploy-tabs {
+      flex-direction: column;
+      border-radius: var(--radius-lg);
+      width: 100%;
+    }
+    .deploy-tab {
+      border-radius: var(--radius-md);
+    }
   }
 
   /* Architecture Diagram */
