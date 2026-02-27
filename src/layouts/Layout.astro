@@ -5,7 +5,7 @@ export interface Props {
 	image?: string;
 }
 
-const { title, description = "Pragmatic Logic - Symbiotic AI for Healthcare. Clinical-grade therapeutic AI that reduces crisis interventions by 40% while keeping families connected.", image = "/og-image.png" } = Astro.props;
+const { title, description = "Pragmatic Logic - Open Source Therapeutic AI for Senior Care. Community-driven clinical-grade AI that reduces crisis interventions by 40% while keeping families connected.", image = "/og-image.png" } = Astro.props;
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new URL(Astro.url.pathname, `http://localhost:4321`);
 ---
 
@@ -45,7 +45,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 
 		<!-- Schema.org Structured Data -->
 		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"Organization","name":"Pragmatic Logic","url":"https://pragmaticlogic.ai","logo":"https://pragmaticlogic.ai/favicon.svg","description":"Clinical-grade therapeutic AI companion for senior care and assisted living. Deterministic safety pipeline with 100% crisis recall across 3,720 scenarios.","sameAs":[],"contactPoint":{"@type":"ContactPoint","email":"contact@pragmaticlogic.ai","contactType":"customer service"}}`} />
-		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Lilo Solace","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"Therapeutic AI companion for senior mental health. 100% crisis recall, 28.7ms detection latency, deterministic 5-layer safety pipeline. HIPAA compliant.","offers":{"@type":"Offer","price":"500","priceCurrency":"USD","priceValidUntil":"2026-12-31"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"250"},"featureList":["100% Crisis Recall (3,720 scenarios)","28.7ms Detection Latency","5-Layer Deterministic Safety Pipeline","13 Validated Clinical Instruments","HIPAA Compliant On-Premise","Voice-first Senior Interface"]}`} />
+		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Lilo Solace","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"Open source therapeutic AI companion for senior mental health. 100% crisis recall, 28.7ms detection latency, deterministic 5-layer safety pipeline. HIPAA compliant. Community-driven development.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["100% Crisis Recall (3,720 scenarios)","28.7ms Detection Latency","5-Layer Deterministic Safety Pipeline","13 Validated Clinical Instruments","HIPAA Compliant On-Premise","Voice-first Senior Interface","Open Source & Community-Driven"]}`} />
 	</head>
 	<body>
 		<slot />

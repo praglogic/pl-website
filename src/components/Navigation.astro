@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div class="nav-actions">
-      <a href="/demo" class="btn-primary">Request Demo</a>
+      <a href="/contact" class="btn-primary">Join the Community</a>
     </div>
     
     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" id="mobileMenuToggle">
@@ -39,7 +39,7 @@ const currentPath = Astro.url.pathname;
       <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Product</a>
       <a href="/research" class={currentPath === '/research' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Research</a>
       <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Company</a>
-      <a href="/demo" class="mobile-nav-cta">Request Demo</a>
+      <a href="/contact" class="mobile-nav-cta">Join the Community</a>
     </nav>
   </div>
   <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>

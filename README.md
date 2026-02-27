@@ -1,20 +1,20 @@
 # Pragmatic Logic Website
 
-**Investor-focused website for Pragmatic Logic LLC and the Lilo Solace therapeutic AI platform.**
+**Open source community website for Pragmatic Logic LLC and the Lilo Solace therapeutic AI platform.**
 
 ## Overview
 
-Production-ready website showcasing Lilo Solace as an enterprise-ready, voice-first therapeutic AI platform that prevents senior mental health crises before they happen. Built with Apple Human Interface Guidelines and optimized for investor engagement and enterprise sales.
+Production-ready website showcasing Lilo Solace as an open source, voice-first therapeutic AI platform that prevents senior mental health crises before they happen. Built with Apple Human Interface Guidelines and optimized for community engagement and contributor onboarding.
 
 ### Key Positioning
-- **Primary Audience:** Investors (Series A fundraising)
-- **Secondary Audience:** Healthcare decision-makers, facility administrators
+- **Primary Audience:** Open Source Community & Contributors
+- **Secondary Audience:** Healthcare decision-makers, facility administrators, researchers
 - **Product Focus:** Lilo Solace as flagship therapeutic AI platform
 - **Design Philosophy:** Apple HIG + Clinical clean + Human-centric storytelling
 
 ### Recent Major Updates (October 2025)
 - ✅ **Product/Evidence Consolidation:** Unified clinical evidence into Product page with side navigation
-- ✅ **Statistics Hierarchy:** Consistent 4 core metrics (40% crisis reduction, 98.7% accuracy, 6:1 ROI, 0 lives lost)
+- ✅ **Statistics Hierarchy:** Consistent core metrics (40% crisis reduction, 100% crisis recall, 0 lives lost)
 - ✅ **Typography System:** 15px minimum body text, fluid `clamp()` scaling, Apple-style gradients
 - ✅ **Responsive Design:** 100% compliant across desktop/tablet/mobile with 44px+ touch targets
 - ✅ **Codebase Cleanup:** Removed 6 obsolete files, optimized redirects, recovered 150KB
@@ -64,16 +64,16 @@ Production-ready website showcasing Lilo Solace as an enterprise-ready, voice-fi
 
 ## Pages & User Journeys
 
-### Primary Navigation (Investor-Focused - 3 Pages)
-- **🏠 Homepage** (`/`) - 4 hero stats → Emotional story → Value props → $400B market → CTA
+### Primary Navigation (Community-Focused - 3 Pages)
+- **🏠 Homepage** (`/`) - 4 hero stats → Emotional story → Value props → Market context → CTA
 - **🔬 Product** (`/product`) - **Unified page with side navigation:**
-  - Human story → Solution → 7 Agents → **Clinical Evidence** (40%, 98.7%, 6:1, 0) → ROI breakdown → CTA
-  - Desktop: Side context menu (5 sections)
+  - Human story → Solution → 7 Agents → **Clinical Evidence** (40%, 100%, 0) → CTA
+  - Desktop: Side context menu
   - Mobile: Top pills navigation
 - **🏢 Company** (`/company`) - Centaur's Mind philosophy → Principles → Founder → Mission/Vision → Values
 
 ### Conversion Pages
-- **📞 Contact** (`/contact`) - Investor relations, partnerships, general inquiries
+- **📞 Contact** (`/contact`) - Community contributions, partnerships, general inquiries
 - **🎬 Demo** (`/demo`) - Live demo scheduling (Calendly integration coming)
 - **📋 Legal** - Privacy Policy (HIPAA), Terms of Service, Security & Compliance
 
@@ -83,21 +83,19 @@ Each page follows a consistent narrative arc:
 2. **Clear value proposition** - Crisis prevention, not reactive intervention
 3. **Credible proof points** - 4 core metrics consistently displayed
 4. **Technical depth** - Expandable disclosures (pill-shaped buttons)
-5. **Clear call-to-action** - Request demo, view evidence, contact
+5. **Clear call-to-action** - Join the community, view evidence, get in touch
 
-### Statistics Hierarchy (Investor-Focused)
+### Statistics Hierarchy (Community-Focused)
 **Tier 1: Core Metrics** (displayed on Home + Product hero):
 - **40%** Crisis Reduction
-- **98.7%** Detection Accuracy
-- **6:1** ROI
+- **100%** Crisis Recall
+- **Open** Source & Community
 - **0** Lives Lost
 
 **Tier 2: Supporting Evidence** (Product Evidence section only):
 - 30% Wellbeing Improvement
 - 85% Assessment Completion
-- $12,500 Saved/resident/year
 - 2.5 hrs Staff Time Saved
-- +15pts CMS Quality
 
 ### URL Redirects (Clean 301s for SEO)
 All legacy URLs redirect to consolidated pages:
@@ -190,7 +188,7 @@ All commands are run from the root of the project:
 
 ### Clinical Validation
 - **🎓 Stanford Partnership:** University-validated research and clinical outcomes
-- **📈 Proven ROI:** $500/bed/month investment saves $3,000+ in readmission costs (6:1 ROI)
+- **📈 Proven Impact:** 40% reduction in crisis interventions with clinical-grade precision
 - **🛡️ Crisis Prevention:** 40% reduction in crisis interventions, 2.5 hours staff time saved per resident/week
 - **👨‍⚕️ Clinical Integration:** Severity-based routing, SLA timers, care team coordination
 
@@ -281,10 +279,10 @@ Desktop:      1200px+          (Multi-column, side menu on Product)
 - ✅ **Single Source of Truth:** All clinical data lives in one place, easier to maintain
 
 ### Statistics Consolidation
-- ✅ **4 Core Metrics:** Consistent across Home and Product pages (40%, 98.7%, 6:1, 0)
+- ✅ **Core Metrics:** Consistent across Home and Product pages (40%, 100%, Open Source, 0)
 - ✅ **Clear Hierarchy:** Tier 1 (hero), Tier 2 (evidence section), Tier 3 (qualitative)
-- ✅ **No Duplication:** Removed conflicting 85% stats, standardized ROI mentions
-- ✅ **Investor Focus:** Most important metrics always visible
+- ✅ **No Duplication:** Removed conflicting stats, standardized messaging
+- ✅ **Community Focus:** Most important metrics always visible
 
 ### Typography Improvements
 - ✅ **15px Minimum:** All body text upgraded from 14px to 15px for better readability
@@ -322,16 +320,15 @@ After Improvements:
 ## Contact & Support
 
 **Pragmatic Logic LLC**
-- **Investor Relations:** contact@pragmaticlogic.ai
+- **Community & Contributors:** contact@pragmaticlogic.ai
 - **Partnership Inquiries:** contact@pragmaticlogic.ai 
 - **General Contact:** contact@pragmaticlogic.ai
 - **Phone:** +1 (678) 764-0066
 - **Location:** Atlanta, Georgia, USA
 
-### Demo & Sales
-- **Request Demo:** [/demo](http://localhost:4321/demo) - Schedule your personalized walkthrough
-- **Clinical Evidence:** [/product#evidence](http://localhost:4321/product#evidence) - Stanford validation, 40% crisis reduction
-- **ROI Calculator:** [/product#roi](http://localhost:4321/product#roi) - Interactive 6:1 cost-benefit analysis
+### Community & Resources
+- **Join the Community:** [/contact](http://localhost:4321/contact) - Get involved with Lilo Solace
+- **Clinical Evidence:** [/product#evidence](http://localhost:4321/product#evidence) - Research validation, 40% crisis reduction
 - **Company Info:** [/company](http://localhost:4321/company) - Centaur's Mind philosophy, founder credentials
 
 ## License & Legal
