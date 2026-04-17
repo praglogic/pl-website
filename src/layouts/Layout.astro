@@ -5,7 +5,7 @@ export interface Props {
 	image?: string;
 }
 
-const { title, description = "Pragmatic Logic — AI for human good. Lilo Solace (therapeutic AI for assisted living) and EmbedIQ (Claude Code configuration wizard).", image = "/og-image.png" } = Astro.props;
+const { title, description = "Praglogic — AI for human good. Lilo Solace (therapeutic AI for assisted living) and EmbedIQ (Claude Code configuration wizard).", image = "/og-image.png" } = Astro.props;
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new URL(Astro.url.pathname, `http://localhost:4321`);
 ---
 
@@ -44,7 +44,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 		<!-- Schema.org Structured Data: Organization (per-product SoftwareApplication schemas live on the product pages) -->
-		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"Organization","name":"Pragmatic Logic","url":"https://pragmaticlogic.ai","logo":"https://pragmaticlogic.ai/favicon.svg","description":"Pragmatic Logic builds therapeutic AI (Lilo Solace) for assisted living and developer tools (EmbedIQ) for Claude Code.","sameAs":[],"contactPoint":{"@type":"ContactPoint","email":"contact@pragmaticlogic.ai","contactType":"customer service"}}`} />
+		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"Organization","name":"Praglogic","url":"https://pragmaticlogic.ai","logo":"https://pragmaticlogic.ai/favicon.svg","description":"Praglogic builds therapeutic AI (Lilo Solace) for assisted living and developer tools (EmbedIQ) for Claude Code.","sameAs":[],"contactPoint":{"@type":"ContactPoint","email":"contact@pragmaticlogic.ai","contactType":"customer service"}}`} />
 	</head>
 	<body>
 		<slot />

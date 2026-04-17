@@ -2,52 +2,377 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
-import { Settings2, ArrowLeft } from 'lucide-astro';
+import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldCheck, Lock, Terminal, Github, ArrowRight, Stethoscope, CreditCard, GraduationCap, FileText, Gauge, ListChecks, BookOpen, Cpu, Wrench, Brain, Hand, PackageCheck, Map, Archive } from 'lucide-astro';
 ---
 
 <Layout
-  title="EmbedIQ — Pragmatic Logic"
-  description="EmbedIQ: adaptive wizard that generates a complete Claude Code environment tailored to your role, stack, and compliance needs. Page in progress — join the waitlist."
+  title="EmbedIQ — Claude Code configuration wizard | Praglogic"
+  description="EmbedIQ is an adaptive wizard that generates a complete Claude Code environment — 15 to 40 files tailored to your role, stack, and compliance profile. Healthcare, finance, and education packs included. Deterministic generation, no runtime LLM, no telemetry. MIT licensed."
 >
   <Navigation />
 
-  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that generates a complete Claude Code environment (CLAUDE.md, rules, hooks, skills, compliance controls) tailored to the user's role, tech stack, and industry. Deterministic generation with no runtime LLM. CLI and web interfaces. Shipping v2.1.","featureList":["Adaptive Q&A across seven dimensions","Healthcare, finance, education compliance packs","Deterministic generation, no LLM at runtime","CLI and stateless web API","Docker and Kubernetes deployment"]}`} />
+  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that generates a complete Claude Code environment (CLAUDE.md, rules, hooks, skills, commands, agents, MCP servers, compliance controls) tailored to the user's role, tech stack, and industry. Deterministic generation with no runtime LLM. CLI and web interfaces. Version 2.1. MIT licensed.","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","featureList":["Adaptive 71-question interview across seven dimensions","12 generators producing 15-40 configuration files","Healthcare (HIPAA), finance (PCI-DSS/SOX/GLBA), education (FERPA/COPPA) compliance packs","Deterministic generation, no runtime LLM","Zero data persistence, optional OpenTelemetry","Web UI and CLI interfaces","Docker and Kubernetes deployment"]}`} />
 
-  <main class="placeholder-main">
-    <section class="placeholder-hero">
-      <div class="container container-narrow text-center">
+  <main class="embediq-page">
+    <!-- Hero -->
+    <section class="embediq-hero" id="top">
+      <div class="container">
         <a href="/products/" class="back-link"><ArrowLeft class="back-icon" /> All products</a>
-        <div class="placeholder-icon"><Settings2 class="icon" /></div>
-        <p class="eyebrow">Developer Tools · Shipping v2.1</p>
-        <h1 class="placeholder-title">EmbedIQ</h1>
-        <p class="placeholder-lead">Adaptive wizard that interviews your team and generates a complete Claude Code environment — CLAUDE.md, rules, hooks, skills, compliance controls — tailored to your role, stack, and industry.</p>
 
-        <div class="placeholder-notice">
-          <p><strong>Full product page coming soon.</strong> We&rsquo;re writing the page now. In the meantime, if you&rsquo;d like early access or a walkthrough, reach out and we&rsquo;ll get you set up.</p>
+        <div class="hero-meta">
+          <span class="category-chip">Developer Tools</span>
+          <span class="status-chip status-shipping">
+            <span class="status-dot"></span>
+            Shipping · v2.1 · MIT license
+          </span>
         </div>
 
-        <div class="placeholder-actions">
-          <a href="/contact?interest=embediq" class="btn btn-primary btn-lg">Get early access</a>
-          <a href="/products/" class="btn btn-secondary btn-lg">Back to products</a>
+        <h1 class="hero-title">EmbedIQ</h1>
+        <p class="hero-tagline">Answer a few questions.<br /><span class="text-gradient-embediq">We generate your ideal Claude Code setup.</span></p>
+        <p class="hero-lead">Setting up Claude Code for a real team means writing CLAUDE.md, permission rules, hooks, skills, commands, agents, MCP configs, and compliance controls — and keeping all of it consistent across machines. EmbedIQ interviews you, then generates the whole thing. 15 to 40 files. Deterministic. No runtime LLM.</p>
+
+        <div class="hero-actions">
+          <a href="/contact?interest=embediq" class="btn-embediq-primary">Get early access</a>
+          <a href="#how-it-works" class="btn-embediq-secondary">See how it works</a>
         </div>
 
-        <div class="placeholder-highlights">
-          <div class="highlight">
-            <h3>Adaptive interviewing</h3>
-            <p>Branching Q&amp;A across seven dimensions means every user sees only the questions relevant to their role and stack.</p>
+        <div class="hero-meta-row">
+          <div class="meta-stat">
+            <span class="meta-num">71</span>
+            <span class="meta-label">adaptive questions<br />across 7 dimensions</span>
           </div>
-          <div class="highlight">
-            <h3>Compliance-ready output</h3>
-            <p>Pre-built domain packs for healthcare (HIPAA), finance (PCI-DSS), and education (FERPA) — DLP patterns, audit hooks, and role-based controls included.</p>
+          <div class="meta-stat">
+            <span class="meta-num">12</span>
+            <span class="meta-label">generators produce<br />15&ndash;40 config files</span>
           </div>
-          <div class="highlight">
-            <h3>Deterministic, no telemetry</h3>
-            <p>Generation logic is rules-based. No answers sent to third-party AI APIs at runtime. Zero data persistence.</p>
+          <div class="meta-stat">
+            <span class="meta-num">3</span>
+            <span class="meta-label">compliance packs<br />(healthcare, finance, education)</span>
           </div>
-          <div class="highlight">
-            <h3>CLI or web, your call</h3>
-            <p>Identical core logic behind both interfaces. Stateless REST API means no database, no sessions — deploys cleanly in Docker or Kubernetes.</p>
+          <div class="meta-stat">
+            <span class="meta-num">0</span>
+            <span class="meta-label">runtime LLM calls<br />zero data persistence</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem -->
+    <section class="problem-section" id="problem">
+      <div class="container">
+        <p class="eyebrow">The problem</p>
+        <h2>Claude Code is powerful. Configuring it is not.</h2>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <h3>Today</h3>
+            <ul>
+              <li>Someone writes CLAUDE.md from scratch, guessing which tech-stack details matter.</li>
+              <li>Security and compliance teams share PDFs. Developers translate them into Python hooks by hand.</li>
+              <li>Every teammate&rsquo;s local Claude Code setup drifts a little.</li>
+              <li>When compliance requirements change, someone updates settings, rules, and hooks across every machine.</li>
+              <li>No validation that the configuration actually meets HIPAA, PCI-DSS, or SOC 2 before you ship.</li>
+            </ul>
+          </div>
+          <div class="problem-card problem-card-after">
+            <h3>With EmbedIQ</h3>
+            <ul>
+              <li>Open the wizard. Answer 25 to 40 contextual questions — branching adapts to your role, stack, and industry.</li>
+              <li>Review your derived profile with confidence scores. Correct anything before generating.</li>
+              <li>EmbedIQ generates a complete <code>.claude/</code> structure plus <code>CLAUDE.md</code>, <code>.mcp.json.template</code>, and an association map.</li>
+              <li>Output validation flags missing compliance controls, over-permissive settings, and DLP coverage gaps before files hit disk.</li>
+              <li>Check the generated files into git. Your whole team gets identical, compliant setup.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+        <p class="eyebrow">How it works</p>
+        <h2>Interview. Review. Generate.</h2>
+        <p class="section-lead">Three steps. The wizard handles the rest.</p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div class="step-icon"><MessageCircleQuestion class="icon" /></div>
+            <h3>Interview</h3>
+            <p>71 questions live in the bank across seven dimensions. Branching logic means you only see the 25 to 40 that actually matter for your role, stack, and industry. Each question has help text; none is a trick.</p>
+            <details class="step-detail">
+              <summary>See sample questions</summary>
+              <ul class="sample-questions">
+                <li><strong>Strategic Intent —</strong> What is the primary purpose of your project?</li>
+                <li><strong>Operational Reality —</strong> Do you want to use Claude Code agent teams for parallel coordination?</li>
+                <li><strong>Technology —</strong> Which MCP servers would be useful for your workflow? (GitHub, Context7, Sequential Thinking, Filesystem, Playwright, Database, or &ldquo;recommend for me&rdquo;)</li>
+                <li><strong>Regulatory —</strong> Do you need Data Loss Prevention (DLP) controls in Claude Code?</li>
+                <li><strong>Financial —</strong> Do you want to use model routing to optimize costs?</li>
+                <li><strong>Innovation —</strong> Do you want to generate custom slash commands for your team workflows?</li>
+              </ul>
+            </details>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div class="step-icon"><Eye class="icon" /></div>
+            <h3>Review</h3>
+            <p>Before anything is written, EmbedIQ plays back your derived profile with confidence scores on each priority. You correct whatever is off. Non-technical roles (BA, PM, exec) get a &ldquo;Claude coworker&rdquo; setup focused on research, analysis, and documentation rather than code.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div class="step-icon"><FileCode2 class="icon" /></div>
+            <h3>Generate</h3>
+            <p>12 generators run in parallel. Output is validated against your compliance profile before files are written. You end up with 15 to 40 files: a tailored <code>CLAUDE.md</code>, permission rules, Python hook scripts, role-specific agents, slash commands with model routing, MCP server templates, and a documentation registry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you get: 12 generators -->
+    <section class="generators-section pl-dark-band pl-dark-glow" id="generators">
+      <div class="container">
+        <p class="eyebrow eyebrow-light">What you get</p>
+        <h2 class="dark-title">Twelve generators. One coherent environment.</h2>
+        <p class="section-lead-light">Each generator owns one slice of the Claude Code configuration. Together they produce a complete, consistent setup that works the same on every teammate&rsquo;s machine.</p>
+
+        <div class="generators-grid">
+          <div class="gen-card">
+            <div class="gen-icon"><FileText /></div>
+            <h3>CLAUDE.md</h3>
+            <p>Root tech-stack document with your build and test commands, code conventions, security requirements, CI/CD setup, and role-specific guidance.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Settings2 /></div>
+            <h3>settings.json</h3>
+            <p>Core configuration: hook pipelines (PreToolUse, PostToolUse), model routing, permission scopes, and security-concern mapping.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Lock /></div>
+            <h3>settings.local.json</h3>
+            <p>Permission allow and deny rules based on your chosen security tier (Permissive, Balanced, Strict, Lockdown). Always-deny blocks for shell commands and credential paths.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><ListChecks /></div>
+            <h3>Rules</h3>
+            <p>Markdown rules files: <code>testing.md</code>, <code>security.md</code>, <code>compliance.md</code>. Enforces standards like TDD, OWASP Top 10, and secret-prohibition policies.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Terminal /></div>
+            <h3>Commands</h3>
+            <p>Slash commands with model routing: <code>/quick</code> (Haiku for fast lookups), <code>/code</code> (Sonnet for coding), <code>/think</code> (Opus for architecture). Plus <code>/review</code>, <code>/test-gaps</code>, <code>/health</code>.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Brain /></div>
+            <h3>Agents</h3>
+            <p>Role-specific agent definitions: security-reviewer, compliance-checker, test-writer. Each gets its own allowed-tools list — read-only for reviewers.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Hand /></div>
+            <h3>Skills</h3>
+            <p>Cross-cutting skills: memory-sync, impact-analysis. For managing elastic context and tracking code-to-test-to-doc impact across files.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><ShieldCheck /></div>
+            <h3>Hooks</h3>
+            <p>Python hook scripts: <code>dlp-scanner.py</code> (SSNs, credit cards, API keys, medical record numbers), <code>command-guard.py</code> (blocks dangerous shell), <code>audit-logger.py</code>, <code>egress-guard.py</code>.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Archive /></div>
+            <h3>.claudeignore</h3>
+            <p>Sensible ignore patterns for <code>node_modules</code>, build outputs, IDE configs, secrets, and test data. Extended per-industry with PHI or cardholder-data paths.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Cpu /></div>
+            <h3>.mcp.json.template</h3>
+            <p>Pre-configured MCP server definitions: Context7, Sequential Thinking, GitHub, Filesystem, Playwright, Database. Copy to <code>.mcp.json</code>, add your keys, go.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Map /></div>
+            <h3>Association map</h3>
+            <p>YAML map of code files to their tests, docs, and infrastructure. Enables impact analysis and co-commit enforcement when rules require it.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><BookOpen /></div>
+            <h3>Document state registry</h3>
+            <p><code>docs/document_state.yaml</code> categorizing documentation by lifecycle (CURRENT, FUTURE, REFERENCE, ARCHIVED). Plays well with CI gates and staleness checks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance packs -->
+    <section class="compliance-section" id="compliance">
+      <div class="container">
+        <p class="eyebrow">Compliance packs</p>
+        <h2>Your regulatory profile, generated as code.</h2>
+        <p class="section-lead">Tell the wizard which framework applies. It produces matching detection patterns, deny rules, audit hooks, and role-based access — then validates the whole bundle before writing anything to disk.</p>
+
+        <div class="compliance-grid">
+          <div class="compliance-card">
+            <div class="compliance-icon"><Stethoscope /></div>
+            <h3>Healthcare</h3>
+            <p class="compliance-frameworks">HIPAA · HITECH</p>
+            <ul>
+              <li>PHI detection patterns (medical record numbers, patient fields)</li>
+              <li><code>.claudeignore</code> entries for <code>patient_data/</code> and <code>phi/</code></li>
+              <li>Deny rules blocking writes to PHI paths</li>
+              <li>Full-session audit logging</li>
+              <li>DLP scanning for SSNs and credit card numbers</li>
+            </ul>
+          </div>
+
+          <div class="compliance-card">
+            <div class="compliance-icon"><CreditCard /></div>
+            <h3>Finance</h3>
+            <p class="compliance-frameworks">PCI-DSS · SOX · GLBA</p>
+            <ul>
+              <li>Cardholder-data detection patterns</li>
+              <li>Credit-card-number DLP scanning</li>
+              <li>Minimum-necessary principle enforced in <code>settings.local.json</code></li>
+              <li>Permission tiers mapped to SOC 2 trust services</li>
+              <li>Access restrictions via deny rules</li>
+            </ul>
+          </div>
+
+          <div class="compliance-card">
+            <div class="compliance-icon"><GraduationCap /></div>
+            <h3>Education</h3>
+            <p class="compliance-frameworks">FERPA · COPPA</p>
+            <ul>
+              <li>Student-data protection patterns</li>
+              <li>Restricted-path deny rules</li>
+              <li>Audit logging for <code>student_data/</code> and <code>ferpa/</code></li>
+              <li>Role-based access enforcement</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="compliance-note">A SOC 2 / GDPR-oriented pack and a FedRAMP extension are in the roadmap. The three packs above are shipping today.</p>
+      </div>
+    </section>
+
+    <!-- Privacy / deterministic -->
+    <section class="privacy-section pl-dark-band pl-dark-glow" id="privacy">
+      <div class="container">
+        <p class="eyebrow eyebrow-light">Privacy posture</p>
+        <h2 class="dark-title">Deterministic. No telemetry. No runtime LLM.</h2>
+        <p class="section-lead-light">EmbedIQ was built for regulated teams. The design enforces privacy in the generator itself, not through policy alone.</p>
+
+        <div class="privacy-grid">
+          <div class="privacy-card">
+            <h3>Rules-based generation</h3>
+            <p>The Branch Evaluator uses ten deterministic operators to decide which questions to show and which rules to emit. No third-party AI call is made while you run the wizard.</p>
+          </div>
+          <div class="privacy-card">
+            <h3>Zero data persistence</h3>
+            <p>Your answers live only in volatile memory — process heap for the CLI, browser memory for the web UI. No database. No logging of user input.</p>
+          </div>
+          <div class="privacy-card">
+            <h3>Stateless REST API</h3>
+            <p>The optional web interface exposes a stateless API. No sessions, no user store, no analytics beacons. Auth is pluggable (Basic, OIDC, Proxy Header) and off by default for local use.</p>
+          </div>
+          <div class="privacy-card">
+            <h3>Optional OpenTelemetry</h3>
+            <p>Instrumentation is opt-in via <code>EMBEDIQ_OTEL_ENABLED</code>. When disabled, the SDK is never loaded.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quickstart -->
+    <section class="quickstart-section" id="quickstart">
+      <div class="container">
+        <p class="eyebrow">Quickstart</p>
+        <h2>Install. Interview. Generate.</h2>
+        <p class="section-lead">EmbedIQ is MIT-licensed. Today it installs from source; public package distribution is on the roadmap.</p>
+
+        <div class="code-blocks">
+          <div class="code-block">
+            <div class="code-header">
+              <Terminal class="code-icon" />
+              <span>Run the web wizard</span>
+            </div>
+            <pre><code>git clone &lt;repo-url&gt;
+cd embediq
+npm install
+npm run start:web
+# open http://localhost:3000</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <Terminal class="code-icon" />
+              <span>Or use the CLI</span>
+            </div>
+            <pre><code>npm start
+# or: make start</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <PackageCheck class="code-icon" />
+              <span>After generation, in your project</span>
+            </div>
+            <pre><code>cp .mcp.json.template .mcp.json      # add your API keys
+cd /path/to/your/project
+claude                               # launch Claude Code
+git add CLAUDE.md .claude/ .claudeignore .mcp.json.template
+git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
+          </div>
+
+          <div class="local-note">
+            <strong>Keep these local (git-ignored):</strong> <code>.claude/settings.local.json</code>, <code>.mcp.json</code>, <code>.claude/logs/</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's shipping vs planned -->
+    <section class="roadmap-section" id="roadmap">
+      <div class="container">
+        <p class="eyebrow">Status</p>
+        <h2>Shipping today. Growing.</h2>
+        <div class="roadmap-grid">
+          <div class="roadmap-col roadmap-now">
+            <h3>Shipping (v2.1)</h3>
+            <ul>
+              <li>71-question adaptive wizard with branching logic</li>
+              <li>12 generators producing 15&ndash;40 configuration files</li>
+              <li>Compliance packs: HIPAA, PCI-DSS/SOX/GLBA, FERPA/COPPA</li>
+              <li>Output validation before files are written</li>
+              <li>Role-adaptive output (technical and non-technical)</li>
+              <li>Web UI and CLI with identical core logic</li>
+              <li>Pluggable auth (Basic, OIDC, Proxy Header)</li>
+              <li>Docker and Kubernetes deployment manifests</li>
+              <li>Optional OpenTelemetry instrumentation</li>
+              <li>MIT license</li>
+            </ul>
+          </div>
+          <div class="roadmap-col roadmap-next">
+            <h3>On the roadmap</h3>
+            <ul>
+              <li>Public package distribution (npm install command)</li>
+              <li>External plugin loading from <code>plugins/</code> directory</li>
+              <li>SOC 2 / GDPR-oriented compliance pack</li>
+              <li>FedRAMP extension</li>
+              <li>Headless CI/CD integration</li>
+              <li>Expanded agent-team coordination patterns</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="embediq-cta">
+      <div class="container container-narrow text-center">
+        <h2>Ready to see it run against your stack?</h2>
+        <p>EmbedIQ is in active early-access. Reach out and we&rsquo;ll set up a walkthrough or give you repo access.</p>
+        <div class="cta-buttons">
+          <a href="/contact?interest=embediq" class="btn-embediq-primary btn-embediq-lg">Get early access</a>
+          <a href="/products/" class="btn-embediq-secondary btn-embediq-lg">Back to products</a>
         </div>
       </div>
     </section>
@@ -57,12 +382,15 @@ import { Settings2, ArrowLeft } from 'lucide-astro';
 </Layout>
 
 <style>
-  .placeholder-main {
+  .embediq-page {
     background: var(--color-background-soft, #f7f8fa);
   }
 
-  .placeholder-hero {
-    padding: var(--space-16) 0 var(--space-24);
+  /* Hero */
+  .embediq-hero {
+    padding: var(--space-16) 0 var(--space-12);
+    background: linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--color-border-subtle);
   }
 
   .back-link {
@@ -72,34 +400,168 @@ import { Settings2, ArrowLeft } from 'lucide-astro';
     color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
     margin-bottom: var(--space-8);
+    text-decoration: none;
   }
 
-  .back-link:hover {
-    color: var(--color-text);
-  }
+  .back-link:hover { color: var(--color-text); }
 
-  .back-icon {
-    width: 14px;
-    height: 14px;
-  }
+  .back-icon { width: 14px; height: 14px; }
 
-  .placeholder-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    border-radius: var(--radius-xl);
-    background: rgba(99, 102, 241, 0.1);
-    color: #6366f1;
+  .hero-meta {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
     margin-bottom: var(--space-6);
   }
 
-  .icon {
-    width: 32px;
-    height: 32px;
+  .category-chip {
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-background-secondary);
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    font-weight: 500;
   }
 
+  .status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .status-shipping {
+    background: rgba(48, 209, 88, 0.12);
+    color: #0f7b3e;
+    border: 1px solid rgba(48, 209, 88, 0.25);
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #30d158;
+    box-shadow: 0 0 0 3px rgba(48, 209, 88, 0.18);
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--color-text);
+    margin-bottom: var(--space-5);
+    max-width: 760px;
+  }
+
+  .text-gradient-embediq {
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-lead {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 720px;
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-12);
+  }
+
+  .btn-embediq-primary,
+  .btn-embediq-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 22px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-embediq-primary {
+    background: #6366f1;
+    color: #ffffff;
+    border: 1px solid #6366f1;
+  }
+
+  .btn-embediq-primary:hover {
+    background: #4f46e5;
+    border-color: #4f46e5;
+  }
+
+  .btn-embediq-secondary {
+    background: #ffffff;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-embediq-secondary:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+  }
+
+  .btn-embediq-lg {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .hero-meta-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  @media (max-width: 834px) {
+    .hero-meta-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 520px) {
+    .hero-meta-row { grid-template-columns: 1fr; }
+  }
+
+  .meta-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-num {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #6366f1;
+    line-height: 1;
+  }
+
+  .meta-label {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.45;
+  }
+
+  /* Generic section styling */
   .eyebrow {
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -109,74 +571,603 @@ import { Settings2, ArrowLeft } from 'lucide-astro';
     margin-bottom: var(--space-3);
   }
 
-  .placeholder-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: var(--space-5);
+  .eyebrow-light {
+    color: rgba(234, 240, 255, 0.6);
   }
 
-  .placeholder-lead {
+  .dark-title {
+    color: #ffffff;
+  }
+
+  .section-lead {
     font-size: var(--font-size-lg);
     color: var(--color-text-secondary);
     line-height: 1.6;
-    max-width: 640px;
-    margin: 0 auto var(--space-8);
+    max-width: 720px;
+    margin-bottom: var(--space-12);
   }
 
-  .placeholder-notice {
-    max-width: 600px;
-    margin: 0 auto var(--space-8);
-    padding: var(--space-5) var(--space-6);
-    background: rgba(99, 102, 241, 0.06);
-    border: 1px solid rgba(99, 102, 241, 0.18);
-    border-radius: var(--radius-lg);
+  .section-lead-light {
+    font-size: var(--font-size-lg);
+    color: rgba(234, 240, 255, 0.78);
+    line-height: 1.6;
+    max-width: 720px;
+    margin-bottom: var(--space-12);
   }
 
-  .placeholder-notice p {
+  /* Problem section */
+  .problem-section {
+    padding: var(--space-20) 0;
+  }
+
+  .problem-section h2 {
+    max-width: 820px;
+    margin-bottom: var(--space-10);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 834px) {
+    .problem-grid { grid-template-columns: 1fr; }
+  }
+
+  .problem-card {
+    padding: var(--space-7);
+    background: #ffffff;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+  }
+
+  .problem-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .problem-card-after h3 {
+    color: #6366f1;
+  }
+
+  .problem-card ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .problem-card li {
+    position: relative;
+    padding-left: 22px;
     font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
     line-height: 1.55;
   }
 
-  .placeholder-actions {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-3);
-    flex-wrap: wrap;
-    margin-bottom: var(--space-20);
+  .problem-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-border);
   }
 
-  .placeholder-highlights {
+  .problem-card-after li::before {
+    background: #6366f1;
+    opacity: 0.6;
+  }
+
+  /* How it works */
+  .how-section {
+    padding: var(--space-20) 0;
+    background: #ffffff;
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .steps-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-5);
-    text-align: left;
-    max-width: 780px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
   }
 
-  @media (max-width: 640px) {
-    .placeholder-highlights {
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 834px) {
+    .steps-grid { grid-template-columns: 1fr; }
   }
 
-  .highlight {
+  .step-card {
+    padding: var(--space-7);
+    background: var(--color-background-soft);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    position: relative;
+  }
+
+  .step-num {
+    position: absolute;
+    top: var(--space-7);
+    right: var(--space-7);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(99, 102, 241, 0.15);
+    line-height: 1;
+  }
+
+  .step-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    margin-bottom: var(--space-4);
+  }
+
+  .step-icon .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .step-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .step-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+    margin-bottom: var(--space-4);
+  }
+
+  .step-detail {
+    margin-top: var(--space-4);
+    font-size: 13px;
+  }
+
+  .step-detail summary {
+    cursor: pointer;
+    color: #6366f1;
+    font-weight: 500;
+    padding: 6px 0;
+    list-style: none;
+  }
+
+  .step-detail summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .step-detail summary::before {
+    content: '+ ';
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  .step-detail[open] summary::before {
+    content: '− ';
+  }
+
+  .sample-questions {
+    list-style: none;
+    padding: var(--space-3) 0 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .sample-questions strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* Generators dark band */
+  .generators-section {
+    padding: var(--space-24) 0;
+  }
+
+  .generators-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 1024px) {
+    .generators-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 520px) {
+    .generators-grid { grid-template-columns: 1fr; }
+  }
+
+  .gen-card {
     padding: var(--space-5);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(234, 240, 255, 0.12);
+    border-radius: var(--radius-lg);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .gen-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  .gen-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5a8f5;
+    margin-bottom: var(--space-3);
+  }
+
+  .gen-icon :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+
+  .gen-card h3 {
+    font-size: var(--font-size-md);
+    color: #ffffff;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.01em;
+  }
+
+  .gen-card p {
+    font-size: 13px;
+    color: rgba(234, 240, 255, 0.72);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .gen-card code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    background: rgba(99, 102, 241, 0.15);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: #c7cafa;
+  }
+
+  /* Compliance */
+  .compliance-section {
+    padding: var(--space-20) 0;
+  }
+
+  .compliance-section h2 {
+    max-width: 820px;
+    margin-bottom: var(--space-4);
+  }
+
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-6);
+  }
+
+  @media (max-width: 834px) {
+    .compliance-grid { grid-template-columns: 1fr; }
+  }
+
+  .compliance-card {
+    padding: var(--space-7);
     background: #ffffff;
     border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
   }
 
-  .highlight h3 {
-    font-size: var(--font-size-lg);
+  .compliance-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    margin-bottom: var(--space-4);
+  }
+
+  .compliance-icon :global(svg) {
+    width: 22px;
+    height: 22px;
+  }
+
+  .compliance-card h3 {
+    font-size: var(--font-size-xl);
     margin-bottom: var(--space-2);
   }
 
-  .highlight p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+  .compliance-frameworks {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6366f1;
+    margin-bottom: var(--space-4);
+  }
+
+  .compliance-card ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .compliance-card li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
     line-height: 1.55;
+  }
+
+  .compliance-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6366f1;
+    opacity: 0.6;
+  }
+
+  .compliance-card code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    background: var(--color-background-secondary);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  .compliance-note {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin-top: var(--space-4);
+  }
+
+  /* Privacy */
+  .privacy-section {
+    padding: var(--space-24) 0;
+  }
+
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  @media (max-width: 834px) {
+    .privacy-grid { grid-template-columns: 1fr; }
+  }
+
+  .privacy-card {
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(234, 240, 255, 0.12);
+    border-radius: var(--radius-lg);
+  }
+
+  .privacy-card h3 {
+    font-size: var(--font-size-lg);
+    color: #ffffff;
+    margin-bottom: var(--space-2);
+  }
+
+  .privacy-card p {
+    font-size: 14px;
+    color: rgba(234, 240, 255, 0.78);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .privacy-card code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    background: rgba(99, 102, 241, 0.18);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: #c7cafa;
+  }
+
+  /* Quickstart */
+  .quickstart-section {
+    padding: var(--space-20) 0;
+    background: #ffffff;
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .code-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 820px;
+  }
+
+  .code-block {
+    background: #0d1117;
+    border: 1px solid #1f242c;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #151a22;
+    color: rgba(234, 240, 255, 0.75);
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid #1f242c;
+  }
+
+  .code-icon {
+    width: 14px;
+    height: 14px;
+    color: #6366f1;
+  }
+
+  .code-block pre {
+    margin: 0;
+    padding: 16px 20px;
+    overflow-x: auto;
+    background: #0d1117;
+  }
+
+  .code-block code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 13px;
+    color: #e5e7eb;
+    line-height: 1.6;
+    background: transparent;
+    padding: 0;
+    white-space: pre;
+  }
+
+  .local-note {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    padding: 12px 16px;
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-md);
+    border-left: 3px solid #6366f1;
+  }
+
+  .local-note code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    background: #ffffff;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border-light);
+  }
+
+  /* Roadmap */
+  .roadmap-section {
+    padding: var(--space-20) 0;
+  }
+
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  @media (max-width: 834px) {
+    .roadmap-grid { grid-template-columns: 1fr; }
+  }
+
+  .roadmap-col {
+    padding: var(--space-7);
+    background: #ffffff;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+  }
+
+  .roadmap-col h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .roadmap-now h3 {
+    color: #0f7b3e;
+  }
+
+  .roadmap-next h3 {
+    color: #6366f1;
+  }
+
+  .roadmap-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .roadmap-col li {
+    position: relative;
+    padding-left: 22px;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+  }
+
+  .roadmap-now li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #30d158;
+    font-weight: 700;
+  }
+
+  .roadmap-next li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #6366f1;
+    font-weight: 700;
+  }
+
+  .roadmap-col code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    background: var(--color-background-secondary);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  /* CTA */
+  .embediq-cta {
+    padding: var(--space-24) 0;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+    text-align: center;
+  }
+
+  .embediq-cta h2 {
+    max-width: 640px;
+    margin: 0 auto var(--space-4);
+  }
+
+  .embediq-cta p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    max-width: 560px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    justify-content: center;
   }
 </style>
