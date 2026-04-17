@@ -111,6 +111,42 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
     </div>
   </section>
 
+  <!-- About the author(s) -->
+  <section id="about" class="about-author-section">
+    <div class="container">
+      <h2 class="section-title">About the author(s)</h2>
+      <p class="section-subtitle">Academic and industry background informing the research above.</p>
+
+      <div class="author-block">
+        <div class="author-header">
+          <span class="author-affiliation">Praglogic · Principal Architect &amp; Research Lead</span>
+          <h3 class="author-role">Aejaz Sheriff</h3>
+        </div>
+
+        <div class="author-grid">
+          <div class="author-item">
+            <h4>Industry experience</h4>
+            <p>Twenty-nine years in enterprise healthcare technology, including fifteen years at a major US health insurer delivering claims adjudication, benefits administration, and provider-network platforms for more than eleven million members, and ten years at an enterprise software lab on platform architecture.</p>
+          </div>
+          <div class="author-item">
+            <h4>Education</h4>
+            <p>B.E. in Computer Engineering; University Gold Medalist.</p>
+          </div>
+          <div class="author-item">
+            <h4>Professional certifications</h4>
+            <p>Google Cloud Professional Cloud Architect; AWS Solutions Architect; TOGAF; HIPAA Security Officer; HL7 FHIR; ITIL 4.</p>
+          </div>
+          <div class="author-item">
+            <h4>Research focus</h4>
+            <p>Deterministic safety architectures for clinical AI; structural invariants for crisis-detection pipelines; multimodal emotion and trajectory analysis for geriatric mental-health contexts; regulatory pathways for AI-mediated therapeutic software.</p>
+          </div>
+        </div>
+
+        <p class="author-note">Author contact and correspondence: <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- The Problem We're Solving: Published Evidence -->
   <section class="evidence-context pl-dark-band pl-dark-glow">
     <div class="container">
@@ -1092,5 +1128,97 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   .btn-secondary-large:hover {
     border-color: var(--color-primary);
     background: var(--color-primary-subtle);
+  }
+
+  /* === About the author(s) === */
+  .about-author-section {
+    padding: var(--space-16) 0;
+    background: var(--color-background-soft, #f7f8fa);
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .about-author-section .section-title {
+    margin-bottom: var(--space-2);
+  }
+
+  .about-author-section .section-subtitle {
+    max-width: 680px;
+    margin-bottom: var(--space-10);
+  }
+
+  .author-block {
+    max-width: 880px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+  }
+
+  .author-header {
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: var(--space-6);
+  }
+
+  .author-affiliation {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .author-role {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .author-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  @media (max-width: 720px) {
+    .author-grid { grid-template-columns: 1fr; }
+  }
+
+  .author-item h4 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-2);
+    letter-spacing: -0.01em;
+  }
+
+  .author-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .author-note {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border-light);
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+
+  .author-note a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .author-note a:hover {
+    text-decoration: underline;
   }
 </style>

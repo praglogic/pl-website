@@ -10,6 +10,11 @@ Sitemap: https://pragmaticlogic.ai/sitemap.xml
 # Crawl-delay for polite crawling
 Crawl-delay: 1
 
-# Disallow admin or private pages (if any)
+# Private and auth-gated areas
+Disallow: /auth/
+Disallow: /confidential/
+Disallow: /confidential-docs/
+
+# Build artifacts and APIs
 Disallow: /api/
 Disallow: /_astro/

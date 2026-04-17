@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, HeartHandshake } from 'lucide-astro';
 ---
 
-<Layout title="Company | Praglogic" description="Building emotionally intelligent AI that amplifies human compassion in healthcare. The Centaur's Mind philosophy driving the future of senior mental health.">
+<Layout title="Company | Praglogic" description="Praglogic builds therapeutic AI (Lilo Solace) and developer tooling (EmbedIQ). Our team combines 29 years of enterprise healthcare architecture with peer-reviewed clinical AI research.">
   <Navigation />
 
   <!-- Hero Section -->
@@ -106,7 +106,7 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
               <ul class="principle-examples">
                 <li>WHO-5, PHQ-9, GAD-7 validated clinical instruments</li>
                 <li>Rigorous clinical validation studies</li>
-                <li><a href="/product#evidence" style="color: var(--color-primary); text-decoration: none; font-weight: 600;">View clinical evidence →</a></li>
+                <li><a href="/products/lilo-solace/#validation-plan" style="color: var(--color-primary); text-decoration: none; font-weight: 600;">View our validation plan →</a></li>
               </ul>
             </div>
           </details>
@@ -146,47 +146,41 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
   <section id="team" class="content-section team-section" role="region" aria-labelledby="team-heading">
     <div class="container">
       <div class="section-header">
-        <h2 id="team-heading">Leadership & Team</h2>
-        <p class="section-intro">Deep healthcare domain expertise meets hands-on AI engineering.</p>
+        <h2 id="team-heading">Team</h2>
+        <p class="section-intro">Our team combines 29 years of enterprise healthcare architecture experience with peer-reviewed clinical AI research.</p>
       </div>
 
-      <!-- Founder Profile -->
-      <div class="founder-profile">
-        <div class="founder-visual">
-          <img src="/images/aejaz-profile.jpg" alt="Aejaz Sheriff Quaraishi, Founder & Principal Architect" class="founder-photo">
-          <div class="founder-credentials">
-            <h3>Aejaz Sheriff Quaraishi</h3>
-            <div class="founder-title">Founder & Principal AI Architect</div>
-            <div class="founder-contact">
-              <a href="mailto:contact@pragmaticlogic.ai" aria-label="Email Aejaz">contact@pragmaticlogic.ai</a>
-              <span aria-hidden="true">•</span>
-              <a href="https://www.linkedin.com/in/asheriff/" target="_blank" rel="noopener noreferrer" aria-label="Aejaz's LinkedIn profile">LinkedIn</a>
-              <span aria-hidden="true">•</span>
-              <a href="https://github.com/asq-sheriff" target="_blank" rel="noopener noreferrer" aria-label="Aejaz's GitHub profile">GitHub</a>
-            </div>
-          </div>
+      <!-- Capability summary -->
+      <div class="capability-grid">
+        <div class="capability-card">
+          <h3>Enterprise healthcare architecture</h3>
+          <p>Twenty-nine years delivering production healthcare platforms at scale, including fifteen years at a major US health insurer operating claims adjudication, benefits administration, and provider-network systems for more than eleven million members, and ten years at an enterprise software lab on platform architecture.</p>
         </div>
-
-        <div class="founder-story">
-          <ul class="founder-credentials-list">
-            <li><strong>29 years</strong> in enterprise healthcare technology</li>
-            <li><strong>15 years at Blue Cross Blue Shield</strong> — 11.6M+ members, claims adjudication, benefits administration, provider networks</li>
-            <li><strong>10 years at IBM Software Labs</strong> — enterprise platform architecture</li>
-            <li><strong>B.E. Computer Engineering</strong> — University Gold Medalist</li>
-            <li><strong>Certifications:</strong> GCP Pro Cloud Architect, AWS Solutions Architect, TOGAF, HIPAA Security Officer, HL7 FHIR, ITIL 4</li>
-          </ul>
-
-          <blockquote class="founder-quote">
-            <p>"AI that processes clinical data but can't understand the human experience isn't enough. Safety must be architectural, not aspirational."</p>
-          </blockquote>
+        <div class="capability-card">
+          <h3>Clinical AI research</h3>
+          <p>Active research in deterministic safety architectures for clinical AI, with manuscripts under peer review at a leading digital-medicine journal and a health-policy journal. Grounded in published geriatric mental-health literature (behavioral activation, reminiscence therapy, grounding, C-SSRS).</p>
+          <p class="capability-link"><a href="/research#about">Read the academic background →</a></p>
         </div>
+        <div class="capability-card">
+          <h3>Cloud, compliance, and engineering</h3>
+          <p>Certifications across GCP Professional Cloud Architect, AWS Solutions Architect, TOGAF, HIPAA Security Officer, HL7 FHIR, and ITIL 4. Engineering across Python, Go, TypeScript, and Kubernetes, with HIPAA-aligned controls baked in from the start rather than bolted on after.</p>
+        </div>
+      </div>
+
+      <!-- Open role framing -->
+      <div class="role-card">
+        <div class="role-header">
+          <span class="role-label">Current team role</span>
+          <h3>Principal Architect &amp; Research Lead</h3>
+        </div>
+        <p>Responsible for the Lilo Solace safety architecture, the EmbedIQ configuration pipeline, the clinical-instrument framework, and the peer-review and regulatory strategy. Leads engineering, research, and clinical-validation planning across both product lines.</p>
       </div>
 
       <!-- Advisory -->
       <div class="advisory-section">
-        <h3>Advisory</h3>
+        <h3>Clinical advisory</h3>
         <p class="advisory-description">We are building a clinical advisory board to guide product development, validation protocols, and regulatory strategy. If you are a clinician, researcher, or policy expert interested in advancing safe therapeutic AI for seniors, we welcome the conversation.</p>
-        <a href="/contact" class="advisory-cta">Get in Touch →</a>
+        <a href="/contact?interest=advisor" class="advisory-cta">Get in touch →</a>
       </div>
 
       <!-- Mission & Vision -->
@@ -784,8 +778,96 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
   }
 
   /* ===================
-     Founder Profile
+     Capability Grid (replaces personalized founder profile)
      =================== */
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  @media (max-width: 900px) {
+    .capability-grid { grid-template-columns: 1fr; }
+  }
+
+  .capability-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .capability-card h3 {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-sm);
+    letter-spacing: -0.01em;
+  }
+
+  .capability-card p {
+    font-size: var(--font-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .capability-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .capability-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-sm);
+  }
+
+  .capability-link a:hover {
+    text-decoration: underline;
+  }
+
+  /* Current-role card (role-only, no personal identifiers) */
+  .role-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .role-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .role-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .role-card h3 {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .role-card p {
+    font-size: var(--font-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Legacy founder-profile styles kept for reference but unused after depersonalization */
   .founder-profile {
     display: grid;
     grid-template-columns: 320px 1fr;
