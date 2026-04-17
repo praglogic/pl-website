@@ -1,0 +1,4016 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { ShieldCheck, Heart, Zap, DollarSign, TrendingUp, CheckCircle, Sparkles, GraduationCap, Briefcase, Code, Cpu, Database, Target, Users, Building, Globe, Layers, GitBranch, Shield, Activity } from 'lucide-astro';
+---
+
+<Layout title="Lilo Solace — Therapeutic AI Companion for Assisted Living | Pragmatic Logic" description="Deterministic safety pipeline for elderly mental-health support in assisted living. 100% recall on the internal safety-test suite; sub-second crisis detection on cloud and edge. Clinical feasibility pilot (n=20) recruiting for summer 2026.">
+  <Navigation />
+
+  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Lilo Solace","applicationCategory":"HealthApplication","operatingSystem":"Web, Linux, macOS","description":"Therapeutic AI companion for elderly mental-health support in assisted living. Deterministic five-layer safety pipeline, sub-second crisis detection, 13 clinical instruments integrated, HIPAA-compliant. Pre-pilot — clinical feasibility study recruiting for summer 2026.","featureList":["Deterministic four-gate crisis detection","100% recall on internal 456-test safety suite","13 clinical instruments (PHQ-9, GAD-7, C-SSRS, and others)","HIPAA §164.312 technical safeguards","Cloud SaaS or on-premise deployment","Voice-first senior interface"]}`} />
+
+  <!-- Desktop: Side Context Menu -->
+  <nav class="product-nav-sidebar" id="productNav" role="navigation" aria-label="Product sections">
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <span class="sidebar-label">On this page</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="#why" class="sidebar-link active" data-section="why">
+          <span class="link-indicator"></span>
+          <span class="link-text">Why It Matters</span>
+        </a></li>
+        <li><a href="#crisis" class="sidebar-link" data-section="crisis">
+          <span class="link-indicator"></span>
+          <span class="link-text">The Problem</span>
+        </a></li>
+        <li><a href="#solution" class="sidebar-link" data-section="solution">
+          <span class="link-indicator"></span>
+          <span class="link-text">The Solution</span>
+        </a></li>
+        <li><a href="#how" class="sidebar-link" data-section="how">
+          <span class="link-indicator"></span>
+          <span class="link-text">How It Works</span>
+        </a></li>
+        <li><a href="#technology" class="sidebar-link" data-section="technology">
+          <span class="link-indicator"></span>
+          <span class="link-text">Technology</span>
+        </a></li>
+        <li><a href="#pipeline" class="sidebar-link" data-section="pipeline">
+          <span class="link-indicator"></span>
+          <span class="link-text">Why Pipelines</span>
+        </a></li>
+        <li><a href="#instruments" class="sidebar-link" data-section="instruments">
+          <span class="link-indicator"></span>
+          <span class="link-text">Clinical Instruments</span>
+        </a></li>
+        <li><a href="#deployment" class="sidebar-link" data-section="deployment">
+          <span class="link-indicator"></span>
+          <span class="link-text">Deployment</span>
+        </a></li>
+        <li><a href="#validation-plan" class="sidebar-link" data-section="validation-plan">
+          <span class="link-indicator"></span>
+          <span class="link-text">Validation Plan</span>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile: Top Pills (hidden on desktop) -->
+  <nav class="product-nav-mobile" role="navigation" aria-label="Product sections mobile">
+    <div class="container">
+      <div class="nav-pills">
+        <a href="#why" class="nav-pill active">Why</a>
+        <a href="#solution" class="nav-pill">Solution</a>
+        <a href="#how" class="nav-pill">How</a>
+        <a href="#technology" class="nav-pill">Tech</a>
+        <a href="#pipeline" class="nav-pill">Pipeline</a>
+        <a href="#instruments" class="nav-pill">Instruments</a>
+        <a href="#deployment" class="nav-pill">Deploy</a>
+        <a href="#validation-plan" class="nav-pill">Validation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <div class="product-layout">
+
+  <!-- Hero: Human Story First (HIG: Emotional Connection) -->
+  <section class="hero" id="why" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero-story">
+        <p class="story-quote">"Living an ocean away, I used to worry every single day.<br><span class="emphasis">Now I see Dad's wellbeing in real time."</span></p>
+        <p class="story-context">Lilo speaks with my father in his first language every morning. The family portal shows mood patterns, engagement, and alerts for early signs of withdrawal — so the care team can intervene before small concerns become crises.</p>
+        <cite class="story-attribution">— Illustrative scenario based on early pilot conversations. Composite, not an individual user.</cite>
+      </div>
+
+      <div class="hero-status-badge" role="status" aria-label="Product status">
+        <span class="status-dot"></span>
+        <span class="status-text">Pre-pilot · Engineering validation complete · Recruiting pilot partners and advisors</span>
+      </div>
+
+      <h1 id="hero-heading" class="hero-title">Lilo Solace</h1>
+      <p class="hero-subtitle">A deterministic safety pipeline designed to surface and de-escalate mental-health crises in assisted-living residents — engineered for the moments that can't be missed.</p>
+
+      <!-- Audience switcher -->
+      <div class="audience-chips" role="group" aria-label="Focus the page for your role">
+        <span class="audience-chips-label">I am a…</span>
+        <button class="audience-chip active" data-audience="operator">Facility operator</button>
+        <button class="audience-chip" data-audience="funder">Funder or collaborator</button>
+        <button class="audience-chip" data-audience="advisor">Clinical advisor</button>
+      </div>
+
+      <!-- Honest metrics: what we have actually measured -->
+      <div class="metrics" role="list" aria-label="Engineering validation metrics">
+        <div class="metric" role="listitem">
+          <div class="metric-number">100%</div>
+          <div class="metric-label">Crisis recall</div>
+          <div class="metric-context">On our internal safety test suite. No product-generated clinical outcomes yet — that's what the pilot is for.</div>
+        </div>
+        <div class="metric" role="listitem">
+          <div class="metric-number">&lt;1s</div>
+          <div class="metric-label">Crisis detection latency</div>
+          <div class="metric-context">Measured on GCP L4 cloud and M1 edge. Regulatory bar is 30 seconds.</div>
+        </div>
+        <div class="metric" role="listitem">
+          <div class="metric-number">13</div>
+          <div class="metric-label">Clinical instruments integrated</div>
+          <div class="metric-context">Scoring implementations align to the published protocols (PHQ-9, GAD-7, C-SSRS, and more).</div>
+        </div>
+        <div class="metric" role="listitem">
+          <div class="metric-number">n=20</div>
+          <div class="metric-label">Pilot recruiting</div>
+          <div class="metric-context">Feasibility study. IRB submission targeted June 2026; enrollment Q3 2026.</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="/contact?interest=pilot" class="btn-primary">Become a pilot partner</a>
+        <a href="#validation-plan" class="btn-secondary">Read the validation plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Crisis: Research-backed problem statement -->
+  <section class="crisis-section" id="crisis" aria-labelledby="crisis-heading">
+    <div class="container">
+      <div class="crisis-header">
+        <span class="crisis-label">The Silent Epidemic</span>
+        <h2 id="crisis-heading" class="section-title">A Crisis That Can't Be Solved With Human Labor Alone</h2>
+        <p class="section-subtitle">The convergence of mental health prevalence and workforce collapse demands a new paradigm</p>
+      </div>
+      
+      <div class="crisis-stats-grid">
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">65-90%</div>
+          <div class="crisis-stat-label">of nursing home residents have a diagnosable mental disorder</div>
+          <div class="crisis-stat-source">Industry research data, 2024</div>
+        </div>
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">99%</div>
+          <div class="crisis-stat-label">of nursing homes currently have open staff positions</div>
+          <div class="crisis-stat-source">AHCA State of the Sector Report, 2024</div>
+        </div>
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">1 in 3</div>
+          <div class="crisis-stat-label">older adults report feeling lonely or isolated</div>
+          <div class="crisis-stat-source">University of Michigan National Poll on Healthy Aging, 2024</div>
+        </div>
+        <div class="crisis-stat">
+          <div class="crisis-stat-number">50%+</div>
+          <div class="crisis-stat-label">annual staff turnover erodes therapeutic relationships</div>
+          <div class="crisis-stat-source">AHCA Workforce Report, 2024</div>
+        </div>
+      </div>
+
+      <div class="crisis-insight">
+        <div class="insight-content">
+          <h3>The Staffing Paradox</h3>
+          <p>When staff are unavailable, care retracts to basic physiological needs—feeding, toileting, medication. Psychosocial needs become "luxuries" that can't be afforded. This strips residents of meaningful connection, reinforcing isolation and accelerating decline.</p>
+          <p class="insight-highlight">The industry is mathematically incapable of solving this crisis with human labor alone. A paradigm shift is required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section: Value Proposition -->
+  <section class="value-section" id="solution" aria-labelledby="value-heading">
+    <div class="container">
+      <h2 id="value-heading" class="section-title">Prevents Crises. Saves Lives. Scales Care.</h2>
+      <p class="section-subtitle">Deterministic safety pipeline with 5 evidence-based therapeutic skills</p>
+
+      <!-- HIG: 4 cards maximum per row -->
+      <div class="cards-grid" role="list">
+        <div class="card" role="listitem">
+          <div class="card-icon-wrapper">
+            <ShieldCheck class="card-icon-modern" />
+          </div>
+          <h3 class="card-title">Crisis Prevention</h3>
+          <p class="card-text">100% recall rate—zero false negatives in detecting mental health crises before escalation</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <div class="card-icon-wrapper">
+            <Heart class="card-icon-modern" />
+          </div>
+          <h3 class="card-title">Family Connection</h3>
+          <p class="card-text">Transparent wellness dashboards keep families engaged with real-time updates on mood, activities, and health patterns</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <div class="card-icon-wrapper">
+            <Zap class="card-icon-modern" />
+          </div>
+          <h3 class="card-title">Staff Efficiency</h3>
+          <p class="card-text">Automated assessments and proactive alerts free caregivers to focus on meaningful human connection</p>
+        </div>
+
+        <div class="card" role="listitem">
+          <div class="card-icon-wrapper">
+            <DollarSign class="card-icon-modern" />
+          </div>
+          <h3 class="card-title">Financial Impact</h3>
+          <p class="card-text">Proven cost savings through reduced hospitalizations, lower readmission rates, and improved quality metrics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Section: 3-Step Process (HIG: Progressive Disclosure) -->
+  <section class="how-section" id="how" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="how-header">
+        <h2 id="how-heading" class="section-title">Three Steps. Profound Impact.</h2>
+        <p class="section-subtitle">From conversation to crisis prevention in under 3 minutes</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-card-header">
+            <div class="step-number">1</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-title">Senior Speaks Naturally</h3>
+            <p class="step-text">Voice-first interface with 3-second pause tolerance, hearing aid compatibility, and medical vocabulary</p>
+            <details class="step-disclosure">
+              <summary class="disclosure-trigger"><span class="trigger-icon">+</span> Technical Details</summary>
+              <div class="disclosure-content">
+                <ul class="disclosure-list">
+                  <li>Whisper STT + Piper TTS = $0 API costs</li>
+                  <li>95%+ accuracy for senior voices</li>
+                  <li>Background noise filtering</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-header">
+            <div class="step-number">2</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-title">AI Analyzes & Responds</h3>
+            <p class="step-text">Five-layer deterministic pipeline. 100% recall on the internal safety-test suite, sub-second crisis detection latency on cloud and edge hardware.</p>
+            <details class="step-disclosure">
+              <summary class="disclosure-trigger"><span class="trigger-icon">+</span> See Pipeline Layers</summary>
+              <div class="disclosure-content">
+                <ul class="disclosure-list">
+                  <li><strong>L1: Guardian</strong> — PII redaction + 4-gate deterministic crisis detection</li>
+                  <li><strong>L2: Cognitive Kernel</strong> — intent classification across 11 categories</li>
+                  <li><strong>L3: Clinical Services</strong> — 13-instrument clinical assessment framework</li>
+                  <li><strong>L4: Empathy Engine</strong> — 7 evidence-based therapeutic skills + LLM generation</li>
+                  <li><strong>L5: Reflector</strong> — safety validation + hallucination detection</li>
+                </ul>
+                <a href="#technology" class="disclosure-link">See full architecture in Technology →</a>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-header">
+            <div class="step-number">3</div>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-title">Care Team Alerted</h3>
+            <p class="step-text">Real-time notifications with severity-based routing and SLA timer tracking</p>
+            <details class="step-disclosure">
+              <summary class="disclosure-trigger"><span class="trigger-icon">+</span> Platform Details</summary>
+              <div class="disclosure-content">
+                <ul class="disclosure-list">
+                  <li>16-service architecture (13 Docker containers + 3 host processes)</li>
+                  <li>HIPAA §164.312 technical safeguards implemented; 7-year audit-log retention</li>
+                  <li>HL7 FHIR R4 integration: code-ready, not yet enabled in production</li>
+                  <li>Severity-based routing and SLA timers in the alert pipeline</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Technology Deep Dive Section -->
+  <section class="technology-section" id="technology" aria-labelledby="technology-heading">
+    <div class="container">
+      <div class="section-header-centered">
+        <div class="section-badge tech-badge">
+          <Code class="badge-icon-modern" />
+          <span>Technical Excellence</span>
+        </div>
+        <h2 id="technology-heading" class="section-title-emphasized">Technology Deep Dive<br><span class="title-gradient">Enterprise-Grade Architecture</span></h2>
+        <p class="section-subtitle">Built from scratch with healthcare-grade reliability and scalability</p>
+      </div>
+
+      <details class="expandable-section" open>
+        <summary class="expandable-trigger">
+          <span class="trigger-content">
+            <Layers class="trigger-icon" />
+            <span class="trigger-text">Deployment Architecture</span>
+          </span>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <!-- Deployment Tabs -->
+          <div class="deploy-tabs" role="tablist" aria-label="Deployment scenarios">
+            <button class="deploy-tab active" role="tab" aria-selected="true" aria-controls="tab-home" id="btn-home" data-tab="home">At-Home Care</button>
+            <button class="deploy-tab" role="tab" aria-selected="false" aria-controls="tab-small" id="btn-small" data-tab="small">Small Facility</button>
+            <button class="deploy-tab" role="tab" aria-selected="false" aria-controls="tab-large" id="btn-large" data-tab="large">Large Facility</button>
+          </div>
+
+          <!-- At-Home Panel -->
+          <div class="deploy-tab-panel active" id="tab-home" role="tabpanel" aria-labelledby="btn-home">
+            <div class="architecture-diagram-wrapper" data-modal="modal-home">
+              <img src="/images/deploy-at-home.png" alt="Lilo Engine At-Home deployment: Minisforum UM890 Pro 32GB running all services co-located, 1-2 users, ~$590" class="architecture-diagram" loading="lazy" />
+              <div class="zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                <span>Click to enlarge</span>
+              </div>
+            </div>
+            <p class="diagram-caption"><strong>At-Home Care (1–2 users)</strong> — Minisforum UM890 Pro 32GB, ~$590. Full stack on one silent box. All safety-critical models co-located. 45-65W, shelf-mountable.</p>
+          </div>
+
+          <!-- Small Facility Panel -->
+          <div class="deploy-tab-panel" id="tab-small" role="tabpanel" aria-labelledby="btn-small">
+            <div class="architecture-diagram-wrapper" data-modal="modal-small">
+              <img src="/images/deploy-small-facility.png" alt="Lilo Engine Small Facility deployment: 1-2 Minisforum edge devices with NGINX load balancing and central server, 10-30 residents" class="architecture-diagram" />
+              <div class="zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                <span>Click to enlarge</span>
+              </div>
+            </div>
+            <p class="diagram-caption"><strong>Small Facility (10–30 residents)</strong> — 1-2× Minisforum edge devices ($590–$1,180) with NGINX load balancing. Each runs full safety stack independently. Central server for dashboards and persistent storage.</p>
+          </div>
+
+          <!-- Large Facility Panel -->
+          <div class="deploy-tab-panel" id="tab-large" role="tabpanel" aria-labelledby="btn-large">
+            <div class="architecture-diagram-wrapper" data-modal="modal-large">
+              <img src="/images/deploy-large-facility.png" alt="Lilo Engine Large Facility deployment: Dell PowerEdge R760 rack server with multi-GPU inference, VLAN segmentation, 100-200 residents" class="architecture-diagram" />
+              <div class="zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                <span>Click to enlarge</span>
+              </div>
+            </div>
+            <p class="diagram-caption"><strong>Large Facility (100–200 residents)</strong> — Dell PowerEdge R760, AMD EPYC, 128GB+ RAM, NVIDIA GPU(s), $3,000–$8,000. Multi-GPU inference, VLAN segmentation, dual PSU, iDRAC remote management.</p>
+          </div>
+
+          <!-- Image Magnifier Modal -->
+          <div class="image-modal" id="imageModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+              <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+              <div class="modal-image-container">
+                <img src="" alt="" class="modal-image" id="modalImage" />
+              </div>
+              <p class="modal-caption" id="modalCaption"></p>
+            </div>
+          </div>
+          <div class="architecture-grid">
+            <div class="arch-card">
+              <div class="arch-number">5</div>
+              <div class="arch-label">Layer Deterministic Pipeline</div>
+              <p>Guardian → Cognitive → Clinical → Empathy → Reflector</p>
+            </div>
+            <div class="arch-card">
+              <div class="arch-number">16</div>
+              <div class="arch-label">Specialized Services</div>
+              <p>13 Docker containers + 3 host processes</p>
+            </div>
+            <div class="arch-card">
+              <div class="arch-number">11</div>
+              <div class="arch-label">ML Models</div>
+              <p>All on-premise, zero cloud dependency for safety</p>
+            </div>
+          </div>
+
+          <div class="github-cta">
+            <a href="https://github.com/asq-sheriff/SHOWCASE_REPO-Therapeutic_AI_Companion" target="_blank" rel="noopener noreferrer" class="btn-github">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>Explore Full Technical Documentation</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-icon">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <span class="trigger-content">
+            <Cpu class="trigger-icon" />
+            <span class="trigger-text">Core Technologies</span>
+          </span>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="tech-categories">
+            <div class="tech-category">
+              <h4><Cpu class="category-icon" /> AI/ML Stack</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">PyTorch 2.8</span>
+                <span class="tech-tag">Transformers 4.48</span>
+                <span class="tech-tag">FAISS</span>
+                <span class="tech-tag">llama.cpp</span>
+                <span class="tech-tag">sentence-transformers</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4><Database class="category-icon" /> Backend & Data</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">FastAPI (Python)</span>
+                <span class="tech-tag">Gin (Go)</span>
+                <span class="tech-tag">PostgreSQL 16 + pgvector</span>
+                <span class="tech-tag">Redis 7</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4><GitBranch class="category-icon" /> Models</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Qwen 3.5-4B (edge MLX + generation service)</span>
+                <span class="tech-tag">SGLang on GCP L4 GPU (cloud)</span>
+                <span class="tech-tag">BGE-base-en-v1.5 (embeddings, 768-dim)</span>
+                <span class="tech-tag">faster-whisper large-v3 (STT)</span>
+                <span class="tech-tag">Piper (TTS)</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4><Layers class="category-icon" /> Infrastructure</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">WebSocket</span>
+                <span class="tech-tag">Redis Pub/Sub</span>
+                <span class="tech-tag">HL7 FHIR R4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <span class="trigger-content">
+            <Activity class="trigger-icon" />
+            <span class="trigger-text">Performance Metrics</span>
+          </span>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <p class="perf-context">All numbers below are measured on internal evaluation infrastructure. No product-generated clinical outcome data yet — see the <a href="#validation-plan">Validation Plan</a>.</p>
+          <div class="performance-grid">
+            <div class="perf-card">
+              <div class="perf-value">&lt;1s</div>
+              <div class="perf-label">Crisis-detection latency</div>
+              <p>Measured on GCP L4 cloud and M1 edge. Regulatory bar is 30 s.</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">2.64s</div>
+              <div class="perf-label">Mean end-to-end response</div>
+              <p>On GCP L4 (150-token response). M1 dev box: ~6.9 s.</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">100%</div>
+              <div class="perf-label">Crisis recall</div>
+              <p>On the internal 456-test safety suite. 165-example crisis training set (80 crisis + 85 non-crisis).</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">98.8</div>
+              <div class="perf-label">Therapeutic quality score</div>
+              <p>On our internal therapeutic evaluation suite (target was 93.3).</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">96.4%</div>
+              <div class="perf-label">Intent classification</div>
+              <p>Across 11 therapeutic intent categories.</p>
+            </div>
+            <div class="perf-card">
+              <div class="perf-value">&lt;5ms</div>
+              <div class="perf-label">PII redaction</div>
+              <p>Dual-pass on input and output, 7 regex patterns plus clinical PHI detection.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <span class="trigger-content">
+            <Shield class="trigger-icon" />
+            <span class="trigger-text">Safety Systems</span>
+          </span>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <div class="safety-features">
+            <div class="safety-item">
+              <h4>4-Gate OR Crisis Detection</h4>
+              <p>Semantic (BGE ≥ 0.65) | Keyword safety net | Clinical context (PHQ-9 Item 9) | Bereavement / life-story anchor — any single gate triggers a crisis response. Deterministic and auditable.</p>
+            </div>
+            <div class="safety-item">
+              <h4>Zero-false-negative design architecture</h4>
+              <p>The four-gate OR logic is structured so that missing a crisis would require simultaneous failure of independent detectors. Empirically validated on our internal 456-test suite; clinical effectiveness to be measured in the pilot.</p>
+            </div>
+            <div class="safety-item">
+              <h4>5-level C-SSRS stratification</h4>
+              <p>CRITICAL → HIGH → MODERATE → LOW → NONE, using the Columbia-Suicide Severity Rating Scale (FDA-recognized standard).</p>
+            </div>
+            <div class="safety-item">
+              <h4>Deterioration pattern analysis</h4>
+              <p>5-message sliding window for trend detection. Surfaces gradual declines that individual-message gates may not catch.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary class="expandable-trigger">
+          <span class="trigger-content">
+            <Users class="trigger-icon" />
+            <span class="trigger-text">Therapeutic Skills</span>
+          </span>
+          <span class="trigger-arrow">↓</span>
+        </summary>
+        <div class="expandable-content">
+          <p class="agents-context">These methods are grounded in published literature. Lilo delivers them through an AI companion; the pilot is designed to measure whether doing so produces the effects reported in the underlying literature.</p>
+          <div class="agents-grid">
+            <div class="agent-card-detailed">
+              <h4>Behavioral Activation</h4>
+              <p>Activity scheduling for depression (Cuijpers et al., Dimidjian et al.).</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Reminiscence Therapy</h4>
+              <p>Identity reinforcement via life-story graph integration (Pinquart & Forstmeier).</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Grounding Techniques</h4>
+              <p>Anxiety management and present-moment focus (Najavits; van der Kolk).</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Conversational Support</h4>
+              <p>Person-centered therapeutic dialogue on Rogerian principles.</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Bridge-Building</h4>
+              <p>Connecting residents to the people and activities that matter to them, not away from them.</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Web Search</h4>
+              <p>Practical information needs and real-world knowledge retrieval, bounded by the safety pipeline.</p>
+            </div>
+            <div class="agent-card-detailed">
+              <h4>Safety Assessment</h4>
+              <p>Structured C-SSRS-driven evaluation when a crisis gate fires.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Why Pipelines, Not Agents -->
+  <section class="pipeline-section" id="pipeline" aria-labelledby="pipeline-heading">
+    <div class="container">
+      <div class="section-header-centered">
+        <div class="section-badge pipeline-badge">
+          <Layers class="badge-icon-modern" />
+          <span>Core Innovation</span>
+        </div>
+        <h2 id="pipeline-heading" class="section-title-emphasized">Why Pipelines, Not Agents<br><span class="title-gradient">Safety by Architecture, Not Convention</span></h2>
+        <p class="section-subtitle">Agentic AI systems exhibit 0.5–2% failure rates. In a facility handling 100 interactions/day, that means potentially missing one crisis every two days. We eliminated this risk entirely.</p>
+      </div>
+
+      <div class="pipeline-comparison">
+        <div class="pipeline-col pipeline-bad">
+          <h3 class="pipeline-col-title">Agentic Orchestration</h3>
+          <ul class="pipeline-list">
+            <li class="pipeline-item bad"><span class="item-label">Crisis detection</span><span class="item-value">Convention (bypassable)</span></li>
+            <li class="pipeline-item bad"><span class="item-label">Execution paths</span><span class="item-value">7+ variable</span></li>
+            <li class="pipeline-item bad"><span class="item-label">LLM calls/request</span><span class="item-value">1–3+ (variable)</span></li>
+            <li class="pipeline-item bad"><span class="item-label">Audit trail</span><span class="item-value">Non-deterministic</span></li>
+            <li class="pipeline-item bad"><span class="item-label">Failure mode</span><span class="item-value">Silent reasoning errors</span></li>
+            <li class="pipeline-item bad"><span class="item-label">Response time</span><span class="item-value">7–20+ seconds</span></li>
+          </ul>
+        </div>
+        <div class="pipeline-col pipeline-good">
+          <h3 class="pipeline-col-title">Deterministic Pipeline (Lilo)</h3>
+          <ul class="pipeline-list">
+            <li class="pipeline-item good"><span class="item-label">Crisis detection</span><span class="item-value">Structural invariant</span></li>
+            <li class="pipeline-item good"><span class="item-label">Execution paths</span><span class="item-value">Exactly 2</span></li>
+            <li class="pipeline-item good"><span class="item-label">LLM calls per request</span><span class="item-value">Exactly 1 (Layer 4)</span></li>
+            <li class="pipeline-item good"><span class="item-label">Audit trail</span><span class="item-value">Deterministic (L1→L5)</span></li>
+            <li class="pipeline-item good"><span class="item-label">Failure mode</span><span class="item-value">Explicit stage failures</span></li>
+            <li class="pipeline-item good"><span class="item-label">Response time</span><span class="item-value">2.64 s mean on L4 cloud</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pipeline-insight">
+        <blockquote>Our core design principle: safety must be enforced through structural invariants that cannot be bypassed regardless of system state — not through conventions that degrade as code complexity grows.</blockquote>
+        <a href="/research" class="pipeline-link">Learn more about our research →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13-Instrument Clinical Framework -->
+  <section class="instruments-section pl-dark-band pl-dark-glow" id="instruments" aria-labelledby="instruments-heading">
+    <div class="container">
+      <div class="section-header-centered">
+        <h2 id="instruments-heading" class="section-title-emphasized">13 Clinical Instruments, Integrated<br><span class="title-gradient">Scoring implementations aligned to the published protocols</span></h2>
+        <p class="section-subtitle">A three-tier framework that feeds directly into the crisis detection gates. "Validated" here means the scoring logic conforms to the published protocols (PHQ-9, GAD-7, C-SSRS, and the rest) — clinical outcome validation is the job of the pilot.</p>
+      </div>
+
+      <div class="instrument-tiers">
+        <div class="tier-card-product">
+          <div class="tier-badge tier-1-badge">Tier 1: Universal Screening</div>
+          <p class="tier-cadence">Every resident, scheduled intervals</p>
+          <div class="instrument-chips">
+            <span class="instrument-chip">GDS-15 <em>Depression</em></span>
+            <span class="instrument-chip">GAD-7 <em>Anxiety</em></span>
+            <span class="instrument-chip">UCLA-3 <em>Loneliness</em></span>
+            <span class="instrument-chip">WHO-5 <em>Well-being</em></span>
+            <span class="instrument-chip highlight-chip">C-SSRS <em>Suicidality → Gate 3</em></span>
+          </div>
+        </div>
+        <div class="tier-card-product">
+          <div class="tier-badge tier-2-badge">Tier 2: Triggered / Adaptive</div>
+          <p class="tier-cadence">On clinical indication, feeds crisis detection</p>
+          <div class="instrument-chips">
+            <span class="instrument-chip highlight-chip">PHQ-9 <em>Depression → Gate 3</em></span>
+            <span class="instrument-chip">ISI <em>Insomnia</em></span>
+            <span class="instrument-chip highlight-chip">PG-13 <em>Grief → Gate 4</em></span>
+            <span class="instrument-chip">CAM <em>Delirium</em></span>
+          </div>
+        </div>
+        <div class="tier-card-product">
+          <div class="tier-badge tier-3-badge">Tier 3: Longitudinal / Clinical</div>
+          <p class="tier-cadence">Baseline + 90/180 days, track trajectories</p>
+          <div class="instrument-chips">
+            <span class="instrument-chip">MoCA <em>Cognitive</em></span>
+            <span class="instrument-chip">Katz ADL <em>Functional</em></span>
+            <span class="instrument-chip">EQ-5D-5L <em>Quality of Life</em></span>
+            <span class="instrument-chip">LSNS-6 <em>Social Network</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Premise Deployment -->
+  <section class="onprem-section" id="deployment" aria-labelledby="deployment-heading">
+    <div class="container">
+      <div class="section-header-centered">
+        <div class="section-badge">
+          <Cpu class="badge-icon-modern" />
+          <span>On-Premise by Design</span>
+        </div>
+        <h2 id="deployment-heading" class="section-title-emphasized">Cloud SaaS or on-premise edge<br><span class="title-gradient">Crisis detection never depends on the internet.</span></h2>
+        <p class="section-subtitle">Cloud SaaS is the default — fastest to get going. On-premise is available for facilities that need data sovereignty or offline safety guarantees. On the edge option, all services and models run locally on a single device; patient data never leaves the premises.</p>
+      </div>
+
+      <!-- Co-Location Principle -->
+      <div class="colocation-principle">
+        <div class="colocation-icon"><Shield class="badge-icon-modern" /></div>
+        <div class="colocation-content">
+          <h3>Architectural Invariant: Model Co-Location</h3>
+          <p>All safety-critical models (BGE embedding + SLM generation) are co-located on every device. Crisis detection never depends on network connectivity. If the internet goes down, the device continues all operations autonomously — crisis detection, therapeutic response, storage, and dashboards all remain fully functional.</p>
+        </div>
+      </div>
+
+      <!-- Key Stats -->
+      <div class="onprem-grid">
+        <div class="onprem-card">
+          <div class="onprem-number">$590</div>
+          <div class="onprem-label">Total Hardware Cost</div>
+          <p>Minisforum UM890 Pro barebones ($479) + 32GB DDR5 ($60) + 1TB NVMe ($50)</p>
+        </div>
+        <div class="onprem-card">
+          <div class="onprem-number">0</div>
+          <div class="onprem-label">External API Calls for Safety</div>
+          <p>Crisis detection, embeddings, and LLM generation all run locally on-device</p>
+        </div>
+        <div class="onprem-card">
+          <div class="onprem-number">7yr</div>
+          <div class="onprem-label">Immutable Audit Logs</div>
+          <p>HIPAA §164.312 compliant with TLS 1.3 + AES-256 encryption</p>
+        </div>
+        <div class="onprem-card">
+          <div class="onprem-number">45W</div>
+          <div class="onprem-label">Power Consumption</div>
+          <p>Silent, fanless 24/7 operation — fits on a shelf or wall-mount</p>
+        </div>
+      </div>
+
+      <!-- 3-Tier Deployment Scaling -->
+      <div class="deployment-tiers">
+        <h3 class="tiers-title">Scales From Home to Enterprise</h3>
+        <div class="tier-row">
+          <div class="deploy-tier-card">
+            <div class="tier-scale-badge">At-Home Care</div>
+            <div class="tier-users">1–2 users</div>
+            <div class="tier-hw">Minisforum UM890 Pro 32GB</div>
+            <div class="tier-cost">~$590</div>
+            <p>Full stack on one silent box. 45-65W, shelf-mountable. Models ~7-8GB + services ~4-6GB + OS ~3-4GB = 14-18GB used, 14-18GB free.</p>
+          </div>
+          <div class="deploy-tier-card">
+            <div class="tier-scale-badge">Small Facility</div>
+            <div class="tier-users">10–30 residents</div>
+            <div class="tier-hw">1-2× Minisforum units</div>
+            <div class="tier-cost">~$590–$1,180</div>
+            <p>Peak 3-5 concurrent users. Each unit runs the full stack independently with NGINX load balancing. 2 LLM slots per device.</p>
+          </div>
+          <div class="deploy-tier-card">
+            <div class="tier-scale-badge">Large Facility</div>
+            <div class="tier-users">100–200 residents</div>
+            <div class="tier-hw">Dell PowerEdge R760</div>
+            <div class="tier-cost">$3,000–$8,000</div>
+            <p>15-30 concurrent users. Multi-GPU inference, 128GB+ RAM, dual PSU, remote management via iDRAC. Enterprise reliability.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cross-Platform -->
+      <div class="cross-platform-note">
+        <p><strong>Cross-platform by design:</strong> Model weights (GGUF format) are portable across Metal, CUDA, Vulkan, and ROCm backends. Same deterministic pipeline, same safety guarantees, any hardware.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Validation Plan: Honest pre-pilot positioning -->
+  <section class="proof-section pl-dark-band pl-dark-glow" id="validation-plan" aria-labelledby="validation-heading">
+    <div class="container">
+      <div class="proof-header">
+        <div class="clinical-badge" role="img" aria-label="Validation stage">
+          <span class="badge-icon-wrapper-product"><GraduationCap class="badge-icon-modern" /></span>
+          <span class="badge-text">Pre-pilot · engineering validation complete · clinical validation begins summer 2026</span>
+        </div>
+        <h2 id="validation-heading" class="section-title-emphasized">Our path to clinical evidence<br><span class="title-gradient">Engineered today. Clinically measured next.</span></h2>
+        <p class="section-subtitle">We are not in a position to claim clinical outcomes yet — the pilot is designed to produce them. Here is exactly where we are, and how we get there honestly.</p>
+      </div>
+
+      <div class="validation-block">
+        <h3 class="validation-block-title">What has been validated</h3>
+        <p>The engineering. The deterministic safety pipeline, the 4-gate OR crisis detection, sub-second detection latency on cloud and edge hardware, 100% recall on our internal 456-test safety suite, scoring implementations for 13 clinical instruments aligned to their published protocols, HIPAA §164.312 technical safeguards with 7-year audit-log retention, and row-level-security multi-tenancy tested on 61 entity tests.</p>
+        <p>No Lilo-generated clinical outcomes exist yet. Any effectiveness associated with the therapeutic methods we use comes from the <strong>published literature on those methods</strong> — behavioral activation in geriatric depression (Cuijpers, Dimidjian), reminiscence therapy (Pinquart &amp; Forstmeier), grounding (Najavits, van der Kolk), and the C-SSRS suicide-risk assessment. Lilo's pilot measures whether delivering those methods through an AI companion produces the effects reported in the source literature.</p>
+      </div>
+
+      <div class="validation-grid">
+        <div class="validation-card">
+          <div class="validation-card-badge">Phase 1 · recruiting</div>
+          <h3 class="validation-card-title">Feasibility pilot</h3>
+          <ul class="validation-card-list">
+            <li><strong>Design</strong> — single-arm feasibility study (not an RCT)</li>
+            <li><strong>Sample</strong> — n = 20 residents at 1–4 facilities, 90-day intervention</li>
+            <li><strong>Primary endpoint</strong> — PHQ-9 change at 90 days</li>
+            <li><strong>Secondary endpoints</strong> — GAD-7, UCLA-3, WHO-5 change; engagement; safety events</li>
+            <li><strong>IRB submission</strong> — targeted June 2026</li>
+            <li><strong>Enrollment</strong> — Q3 2026, pending IRB approval</li>
+            <li><strong>Preliminary results</strong> — Q4 2026 / early 2027</li>
+          </ul>
+        </div>
+
+        <div class="validation-card">
+          <div class="validation-card-badge">Phase 2 · planned</div>
+          <h3 class="validation-card-title">Prospective evidence study</h3>
+          <ul class="validation-card-list">
+            <li><strong>Sample</strong> — n = 100, prospective, Aug 2026 – Mar 2027</li>
+            <li><strong>Purpose</strong> — primary efficacy data for the FDA evidence package</li>
+            <li><strong>Endpoints</strong> — PHQ-9, GAD-7, UCLA-3, WHO-5; safety; engagement</li>
+            <li><strong>Design</strong> — controlled (historical or concurrent, per IRB protocol)</li>
+          </ul>
+        </div>
+
+        <div class="validation-card">
+          <div class="validation-card-badge">Phase 3 · post-clearance</div>
+          <h3 class="validation-card-title">Randomized controlled trial</h3>
+          <ul class="validation-card-list">
+            <li><strong>Sample</strong> — n = 200 randomized, multi-site</li>
+            <li><strong>Timing</strong> — starts after FDA clearance (Jul 2027 design, Aug 2027 launch)</li>
+            <li><strong>Purpose</strong> — definitive evidence for guideline inclusion</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="validation-block regulatory-block">
+        <h3 class="validation-block-title">Regulatory path</h3>
+        <p><strong>FDA De Novo pathway.</strong> Pre-submission meeting targeted Q3 2026; De Novo submission targeted Q4 2026 (October 2026); clearance target Q2–Q3 2027 (June 2027 estimate).</p>
+        <p><strong>Not currently FDA-cleared.</strong> No claims of regulatory clearance until after FDA review. No claims about medical-device status until post-clearance.</p>
+      </div>
+
+      <div class="validation-block ip-block">
+        <h3 class="validation-block-title">Intellectual property</h3>
+        <p>Provisional patent filing targeted May 15, 2026 — three claim families covering distributed inference + safety architecture, emotional gravity, and audio-native crisis detection.</p>
+      </div>
+
+      <div class="validation-cta">
+        <p><strong>Interested in partnering on the pilot, advising clinically, or funding the work?</strong></p>
+        <div class="validation-cta-buttons">
+          <a href="/contact?interest=pilot" class="btn-primary">For facility operators</a>
+          <a href="/contact?interest=funder" class="btn-secondary">For funders &amp; collaborators</a>
+          <a href="/contact?interest=advisor" class="btn-secondary">For clinical advisors</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA Section: Three targeted audiences -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading">Let's build the evidence together</h2>
+      <p>Three ways to engage, depending on where you sit.</p>
+      <div class="cta-actions cta-actions-triple">
+        <a href="/contact?interest=pilot" class="btn-primary-large">Become a pilot partner</a>
+        <a href="/contact?interest=funder" class="btn-secondary-large">Fund or collaborate</a>
+        <a href="/contact?interest=advisor" class="btn-secondary-large">Advise clinically</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top (HIG: User Control) -->
+  <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <span class="back-to-top-icon">↑</span>
+  </button>
+
+  </div><!-- End product-layout -->
+
+  <Footer />
+</Layout>
+
+<script>
+  // HIG: Smooth scroll with reduced motion support
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+      const target = document.querySelector<HTMLElement>(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Active nav on scroll (both sidebar and mobile pills)
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const navPills = document.querySelectorAll('.nav-pill');
+  const sections = document.querySelectorAll<HTMLElement>('section[id]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (scrollY >= sectionTop - 150) {
+        current = section.id;
+      }
+    });
+
+    // Update sidebar links
+    sidebarLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('data-section') === current) {
+        link.classList.add('active');
+      }
+    });
+
+    // Update mobile pills
+    navPills.forEach(pill => {
+      pill.classList.remove('active');
+      if (pill.getAttribute('href') === `#${current}`) {
+        pill.classList.add('active');
+      }
+    });
+  });
+
+  // Show back-to-top button
+  const backToTop = document.querySelector<HTMLElement>('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (!backToTop) return;
+    if (scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+
+  // Deployment tab switching
+  const deployTabs = document.querySelectorAll<HTMLButtonElement>('.deploy-tab');
+  const deployPanels = document.querySelectorAll<HTMLElement>('.deploy-tab-panel');
+
+  deployTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      deployTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      deployPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(`tab-${target}`);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // Image Modal / Magnifier functionality
+  const imageModal = document.getElementById('imageModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalBackdrop = imageModal?.querySelector<HTMLElement>('.modal-backdrop') ?? null;
+  const modalImage = document.getElementById('modalImage') as HTMLImageElement | null;
+  const modalCaption = document.getElementById('modalCaption');
+  const modalImageContainer = imageModal?.querySelector<HTMLElement>('.modal-image-container') ?? null;
+
+  const diagramData: Record<string, { src: string; alt: string; caption: string }> = {
+    'modal-home': { src: '/images/deploy-at-home.png', alt: 'At-Home Deployment — Enlarged', caption: 'At-Home Care — Minisforum UM890 Pro 32GB • All services co-located • Scroll to zoom • Drag to pan' },
+    'modal-small': { src: '/images/deploy-small-facility.png', alt: 'Small Facility Deployment — Enlarged', caption: 'Small Facility (10–30 residents) • Edge devices + central server • Scroll to zoom • Drag to pan' },
+    'modal-large': { src: '/images/deploy-large-facility.png', alt: 'Large Facility Deployment — Enlarged', caption: 'Large Facility (100–200 residents) • Dell PowerEdge R760 • Scroll to zoom • Drag to pan' },
+  };
+
+  let currentZoom = 1;
+  const minZoom = 1;
+  const maxZoom = 3;
+  const zoomStep = 0.25;
+
+  function openModal(modalKey: string) {
+    const data = diagramData[modalKey];
+    if (imageModal && modalImage && data) {
+      modalImage.src = data.src;
+      modalImage.alt = data.alt;
+      if (modalCaption) modalCaption.textContent = data.caption;
+      imageModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      currentZoom = 1;
+      modalImage.style.transform = `scale(${currentZoom})`;
+    }
+  }
+
+  function closeModal() {
+    if (imageModal) {
+      imageModal.classList.remove('active');
+      document.body.style.overflow = '';
+      currentZoom = 1;
+      if (modalImage) modalImage.style.transform = `scale(${currentZoom})`;
+    }
+  }
+
+  // Open modal on any diagram wrapper click
+  document.querySelectorAll<HTMLElement>('.architecture-diagram-wrapper[data-modal]').forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const key = wrapper.dataset.modal;
+      if (key) openModal(key);
+    });
+  });
+
+  // Close modal handlers
+  modalClose?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal?.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Scroll to zoom functionality
+  modalImageContainer?.addEventListener('wheel', (e: WheelEvent) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -zoomStep : zoomStep;
+    currentZoom = Math.min(maxZoom, Math.max(minZoom, currentZoom + delta));
+    if (modalImage) {
+      modalImage.style.transform = `scale(${currentZoom})`;
+    }
+  }, { passive: false });
+
+  // Drag to pan functionality
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let scrollLeft = 0;
+  let scrollTop = 0;
+
+  modalImageContainer?.addEventListener('mousedown', (e: MouseEvent) => {
+    isDragging = true;
+    if (!modalImageContainer) return;
+    startX = e.pageX - modalImageContainer.offsetLeft;
+    startY = e.pageY - modalImageContainer.offsetTop;
+    scrollLeft = modalImageContainer.scrollLeft;
+    scrollTop = modalImageContainer.scrollTop;
+  });
+
+  modalImageContainer?.addEventListener('mouseleave', () => {
+    isDragging = false;
+  });
+
+  modalImageContainer?.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  modalImageContainer?.addEventListener('mousemove', (e: MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    if (!modalImageContainer) return;
+    const x = e.pageX - modalImageContainer.offsetLeft;
+    const y = e.pageY - modalImageContainer.offsetTop;
+    const walkX = (x - startX) * 1.5;
+    const walkY = (y - startY) * 1.5;
+    modalImageContainer.scrollLeft = scrollLeft - walkX;
+    modalImageContainer.scrollTop = scrollTop - walkY;
+  });
+
+  // Touch support for mobile
+  modalImageContainer?.addEventListener('touchstart', (e: TouchEvent) => {
+    if (!modalImageContainer) return;
+    if (e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].pageX - modalImageContainer.offsetLeft;
+      startY = e.touches[0].pageY - modalImageContainer.offsetTop;
+      scrollLeft = modalImageContainer.scrollLeft;
+      scrollTop = modalImageContainer.scrollTop;
+    }
+  }, { passive: true });
+
+  modalImageContainer?.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  modalImageContainer?.addEventListener('touchmove', (e: TouchEvent) => {
+    if (!modalImageContainer) return;
+    if (!isDragging || e.touches.length !== 1) return;
+    const x = e.touches[0].pageX - modalImageContainer.offsetLeft;
+    const y = e.touches[0].pageY - modalImageContainer.offsetTop;
+    const walkX = (x - startX) * 1.5;
+    const walkY = (y - startY) * 1.5;
+    modalImageContainer.scrollLeft = scrollLeft - walkX;
+    modalImageContainer.scrollTop = scrollTop - walkY;
+  }, { passive: true });
+
+  // Audience switcher: open the <details> most useful to the chosen audience
+  const audienceChips = document.querySelectorAll<HTMLButtonElement>('.audience-chip');
+  const expandableSections = document.querySelectorAll<HTMLDetailsElement>('.expandable-section');
+
+  const audiencePreferences: Record<string, string[]> = {
+    operator: ['Deployment Architecture', 'Safety Systems'],
+    funder: ['Performance Metrics', 'Safety Systems'],
+    advisor: ['Therapeutic Skills', 'Safety Systems'],
+  };
+
+  function applyAudience(audience: string) {
+    const preferred = audiencePreferences[audience] ?? [];
+    expandableSections.forEach((section) => {
+      const triggerText = section.querySelector('.trigger-text')?.textContent?.trim() ?? '';
+      section.open = preferred.includes(triggerText);
+    });
+  }
+
+  // Read ?audience= query param on load
+  const initialAudience = new URLSearchParams(window.location.search).get('audience');
+  if (initialAudience && audiencePreferences[initialAudience]) {
+    audienceChips.forEach((chip) => {
+      chip.classList.toggle('active', chip.dataset.audience === initialAudience);
+    });
+    applyAudience(initialAudience);
+  }
+
+  audienceChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      audienceChips.forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
+      const audience = chip.dataset.audience;
+      if (audience) applyAudience(audience);
+    });
+  });
+</script>
+
+<style>
+  /* HIG: Design Tokens */
+  :root {
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-base: 16px;
+    --font-lg: 18px;
+    --font-xl: 24px;
+    --font-2xl: 32px;
+    --font-3xl: 48px;
+
+    --color-text: #1d1d1f;
+    --color-text-secondary: #6e6e73;
+    --color-primary: #0071e3;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f5f7;
+    --color-border: #d2d2d7;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 999px;
+  }
+
+  /* Product Layout with Sidebar */
+  .product-layout {
+    width: 100%;
+    margin: 0;
+    padding-left: 220px; /* Space for sidebar */
+  }
+
+  .product-layout .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+  }
+
+  /* Desktop: Side Context Menu - Clean Apple-style */
+  .product-nav-sidebar {
+    position: fixed;
+    left: 0;
+    top: 52px;
+    width: 220px;
+    height: calc(100vh - 52px);
+    background: transparent;
+    z-index: 90;
+    overflow-y: auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .sidebar-content {
+    position: sticky;
+    top: var(--spacing-xl);
+  }
+
+  .sidebar-header {
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .sidebar-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .sidebar-menu li {
+    margin: 0;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    transition: all 0.15s ease;
+    position: relative;
+  }
+
+  .sidebar-link:hover {
+    color: var(--color-text);
+    border-left-color: var(--color-border);
+  }
+
+  .sidebar-link.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .link-indicator {
+    display: none;
+  }
+
+  .sidebar-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Mobile: Top Pills (hidden on desktop) */
+  .product-nav-mobile {
+    display: none;
+  }
+
+  .nav-pills {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .nav-pill {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-alt);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: var(--font-sm);
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-pill:hover {
+    background: #e8e8ed;
+    color: var(--color-text);
+  }
+
+  .nav-pill.active {
+    background: var(--color-text);
+    color: white;
+  }
+
+  .nav-pill:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Crisis Section */
+  .crisis-section {
+    padding: var(--spacing-3xl) 0;
+    background: #f5f5f7;
+  }
+
+  .crisis-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .crisis-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.1);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .crisis-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  @media (max-width: 900px) {
+    .crisis-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .crisis-stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .crisis-stat {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .crisis-stat-number {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .crisis-stat-label {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+  }
+
+  .crisis-stat-source {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+  }
+
+  .crisis-insight {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .insight-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .insight-content p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .insight-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .insight-highlight {
+    font-weight: 600;
+    color: var(--color-text) !important;
+    font-style: italic;
+  }
+
+  /* HIG: Hero Section */
+  .hero {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+    text-align: center;
+  }
+
+  .hero-story {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-2xl);
+  }
+
+  .story-quote {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .emphasis {
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  /* WCAG 1.4.3: Color Contrast Fix */
+  .story-context {
+    font-size: var(--font-lg);
+    color: var(--color-text-secondary); /* 7:1 contrast ratio */
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .story-attribution {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* HIG: Metrics Grid */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-2xl);
+  }
+
+  .metric {
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .metric:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .metric-number {
+    font-size: var(--font-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .metric-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: var(--spacing-xs) 0 4px 0;
+  }
+  
+  .metric-context {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    opacity: 0.9;
+  }
+
+  /* HIG: Buttons */
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Apple-inspired button system */
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  }
+
+  .btn-primary:hover {
+    background: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(37, 99, 235, 0.2);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 2px;
+  }
+
+  .btn-secondary {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--color-text);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Large button variants */
+  .btn-primary-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 980px;
+    font-size: 19px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  }
+
+  .btn-primary-large:hover {
+    background: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+  }
+
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 980px;
+    font-size: 19px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--color-text);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary-large:hover {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Value Section */
+  .value-section {
+    padding: var(--spacing-3xl) 0;
+    background: white;
+  }
+
+  .section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .section-title-emphasized {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .title-gradient {
+    display: inline-block;
+    background: linear-gradient(135deg, #0071e3, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-lg);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  /* HIG: Cards Grid (4 max per row) */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    padding: var(--spacing-xl);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+  }
+
+  .card-icon {
+    font-size: 40px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Modern Lucide Icons */
+  .card-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.05));
+    border-radius: var(--radius-lg);
+    margin: 0 auto var(--spacing-md);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover .card-icon-wrapper {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.1));
+    transform: scale(1.05);
+  }
+
+  .card-icon-modern {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
+  .card-title {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+
+  .card-text {
+    font-size: var(--font-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* How Section: Progressive Disclosure */
+  .how-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, white 100%);
+  }
+
+  .how-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .step-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .step-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+  }
+
+  .step-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0058b0 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-xl);
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+  }
+
+  .step-connector {
+    position: absolute;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), transparent);
+  }
+
+  .step-card:last-child .step-connector {
+    display: none;
+  }
+
+  .step-card-body {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-title {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+
+  .step-text {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  /* HIG: Disclosure (Native HTML Details) */
+  .step-disclosure {
+    margin-top: auto;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
+  }
+
+  .disclosure-trigger {
+    color: var(--color-primary);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: color 0.2s ease;
+  }
+
+  .disclosure-trigger:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .disclosure-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .trigger-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 113, 227, 0.1);
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  details[open] .trigger-icon {
+    background: var(--color-primary);
+    color: white;
+    transform: rotate(45deg);
+  }
+
+  .disclosure-content {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .disclosure-list {
+    margin: 0;
+    padding-left: var(--spacing-lg);
+  }
+
+  .disclosure-list li {
+    margin: var(--spacing-xs) 0;
+  }
+
+  .disclosure-list li strong {
+    color: var(--color-text);
+  }
+
+  /* Responsive: Stack cards on smaller screens */
+  @media (max-width: 900px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+
+    .step-connector {
+      display: none;
+    }
+
+    .step-card-body {
+      min-height: auto;
+    }
+  }
+
+  /* ==========================================
+     TECHNOLOGY SECTIONS
+     ========================================== */
+
+  /* Shared Section Header Styles */
+  .section-header-centered {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.1), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(0, 113, 227, 0.2);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .section-badge.tech-badge {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.05));
+    border-color: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+  }
+
+  .section-badge.tech-badge .badge-icon-modern {
+    color: #8b5cf6;
+  }
+
+  /* Technology Section */
+  .technology-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, white 0%, #f5f5f7 100%);
+  }
+
+  /* Expandable Section Styles */
+  .expandable-section {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .expandable-section:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .expandable-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    cursor: pointer;
+    background: #fafafa;
+    transition: background 0.2s ease;
+    list-style: none;
+  }
+
+  .expandable-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .expandable-trigger:hover {
+    background: #f0f0f5;
+  }
+
+  .trigger-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .trigger-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
+  .trigger-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .trigger-arrow {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .trigger-arrow {
+    transform: rotate(180deg);
+  }
+
+  .expandable-content {
+    padding: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Advantages List */
+  .advantages-list {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+  }
+
+  .advantage-item:hover {
+    background: #f0f0f5;
+    transform: translateX(4px);
+  }
+
+  .advantage-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+
+  .advantage-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .advantage-content p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Roadmap Timeline */
+  .roadmap-timeline {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .roadmap-item {
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-border);
+    transition: all 0.2s ease;
+  }
+
+  .roadmap-item.completed {
+    border-left-color: #10b981;
+  }
+
+  .roadmap-item.in-progress {
+    border-left-color: var(--color-primary);
+    background: linear-gradient(90deg, rgba(0, 113, 227, 0.05), transparent);
+  }
+
+  .roadmap-item.upcoming {
+    border-left-color: #f59e0b;
+  }
+
+  .roadmap-status {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .roadmap-item.completed .roadmap-status {
+    color: #10b981;
+  }
+
+  .roadmap-item.in-progress .roadmap-status {
+    color: var(--color-primary);
+  }
+
+  .roadmap-item.upcoming .roadmap-status {
+    color: #f59e0b;
+  }
+
+  .roadmap-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .roadmap-item p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Metrics Summary */
+  .metrics-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .metric-highlight {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .metric-highlight .metric-value {
+    font-size: clamp(32px, 4vw, 40px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .metric-highlight .metric-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .metric-highlight p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Deployment Tabs */
+  .deploy-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    background: var(--color-background-secondary);
+    padding: 4px;
+    border-radius: var(--radius-full);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .deploy-tab {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .deploy-tab:hover {
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .deploy-tab.active {
+    background: white;
+    color: var(--color-text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .deploy-tab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .deploy-tab-panel {
+    display: none;
+  }
+
+  .deploy-tab-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .diagram-caption {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.6;
+    margin-top: var(--spacing-md);
+    padding: 0 var(--spacing-lg);
+  }
+
+  @media (max-width: 640px) {
+    .deploy-tabs {
+      flex-direction: column;
+      border-radius: var(--radius-lg);
+      width: 100%;
+    }
+    .deploy-tab {
+      border-radius: var(--radius-md);
+    }
+  }
+
+  /* Architecture Diagram */
+  .architecture-diagram-wrapper {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .architecture-diagram-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .architecture-diagram-wrapper:hover .zoom-hint {
+    opacity: 1;
+  }
+
+  .zoom-hint {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 980px;
+    color: #1d1d1f;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .zoom-hint svg {
+    flex-shrink: 0;
+  }
+
+  /* Image Modal */
+  .image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .image-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+  }
+
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  .modal-image-container {
+    max-width: 95vw;
+    max-height: 85vh;
+    overflow: auto;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+    padding: var(--spacing-lg);
+    cursor: grab;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .image-modal.active .modal-image-container {
+    transform: scale(1);
+  }
+
+  .modal-image-container:active {
+    cursor: grabbing;
+  }
+
+  .modal-image {
+    display: block;
+    max-width: none;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+  }
+
+  .modal-caption {
+    margin-top: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  @media (max-width: 834px) {
+    .zoom-hint span {
+      display: none;
+    }
+
+    .zoom-hint {
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .modal-content {
+      padding: var(--spacing-md);
+    }
+
+    .modal-close {
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .architecture-diagram {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  /* Architecture Grid */
+  .architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .arch-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(59, 130, 246, 0.03));
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+  }
+
+  .arch-number {
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .arch-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .arch-card p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* GitHub CTA Button */
+  .github-cta {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: #1d1d1f;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 980px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-github:hover {
+    background: #333336;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-github:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .btn-github svg {
+    flex-shrink: 0;
+  }
+
+  .btn-github .arrow-icon {
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .btn-github:hover .arrow-icon {
+    transform: translate(2px, -2px);
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .btn-github {
+      padding: 12px 20px;
+      font-size: 14px;
+      gap: 10px;
+    }
+
+    .btn-github span {
+      display: none;
+    }
+
+    .btn-github::after {
+      content: "View on GitHub";
+    }
+  }
+
+  /* Tech Categories */
+  .tech-categories {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .tech-category {
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+  }
+
+  .tech-category h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .category-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .tech-tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+  }
+
+  .tech-tag:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* Performance Grid */
+  .performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .perf-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .perf-value {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .perf-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .perf-card p {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Safety Features */
+  .safety-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .safety-item {
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.03), rgba(239, 68, 68, 0.01));
+    border-radius: var(--radius-md);
+    border-left: 4px solid #ef4444;
+  }
+
+  .safety-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-sm) 0;
+  }
+
+  .safety-item p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Agents Grid */
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .agent-card-detailed {
+    padding: var(--spacing-lg);
+    background: #fafafa;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: all 0.2s ease;
+  }
+
+  .agent-card-detailed:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .agent-card-detailed h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .agent-card-detailed p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Responsive for new sections */
+  @media (max-width: 1200px) {
+    .metrics-summary,
+    .safety-features,
+    .agents-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .architecture-grid,
+    .performance-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .architecture-grid,
+    .performance-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .expandable-trigger {
+      padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .expandable-content {
+      padding: var(--spacing-lg);
+    }
+
+    .trigger-text {
+      font-size: 15px;
+    }
+  }
+
+  /* Proof Section */
+  .proof-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-premium-dark);
+  }
+
+  .proof-section .section-subtitle,
+  .proof-section .badge-text {
+    color: var(--color-premium-dark-muted);
+  }
+
+  .proof-section .section-title-emphasized {
+    color: var(--color-premium-dark-text);
+  }
+
+  .proof-section .title-gradient {
+    background: linear-gradient(90deg, var(--color-accent-blue), rgba(16, 185, 129, 0.85));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .proof-section .evidence-card {
+    background: var(--color-premium-dark-surface);
+    border-color: var(--color-premium-dark-hairline);
+  }
+
+  .proof-section .evidence-label,
+  .proof-section .evidence-description {
+    color: var(--color-premium-dark-text);
+  }
+
+  .proof-section .evidence-description {
+    color: var(--color-premium-dark-muted);
+  }
+
+  .proof-section .disclosure-trigger,
+  .proof-section .method-trigger {
+    color: var(--color-premium-dark-text);
+    border-color: var(--color-premium-dark-hairline);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .proof-section .disclosure-content,
+  .proof-section .method-content {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-premium-dark-hairline);
+    color: var(--color-premium-dark-text);
+  }
+
+  .proof-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .stanford-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: #f5f5f7;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .badge-icon-wrapper-product {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge-icon-modern {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary);
+    stroke-width: 2;
+  }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-2xl);
+  }
+
+  .evidence-card {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .evidence-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .evidence-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .evidence-icon-modern {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    stroke-width: 1.5;
+    filter: drop-shadow(0 4px 12px rgba(0, 113, 227, 0.2));
+  }
+
+  .evidence-number {
+    font-size: clamp(48px, 5vw, 64px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .evidence-label {
+    font-size: var(--font-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .evidence-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .significance,
+  .safety {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    background: rgba(0, 113, 227, 0.1);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .study-size,
+  .comparison {
+    font-size: var(--font-xs);
+    color: var(--color-text-secondary);
+  }
+
+  /* Evidence Descriptions & Disclosures - Apple Style */
+  .evidence-description {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: var(--spacing-md) 0;
+    padding: 0 var(--spacing-md);
+  }
+
+  .evidence-disclosure {
+    margin-top: var(--spacing-lg);
+  }
+
+  .evidence-disclosure .disclosure-trigger {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(0, 113, 227, 0.08);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .evidence-disclosure .disclosure-trigger:hover {
+    background: rgba(0, 113, 227, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .disclosure-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0 0 0;
+  }
+
+  .disclosure-list li {
+    padding: var(--spacing-sm) 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .disclosure-list li:last-child {
+    border-bottom: none;
+  }
+
+  .disclosure-link {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .disclosure-link:hover {
+    opacity: 0.7;
+  }
+
+  /* Study Methodology - Apple Progressive Disclosure */
+  .study-methodology {
+    margin-top: var(--spacing-3xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .method-disclosure {
+    background: #f5f5f7;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .method-trigger {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+
+  .method-trigger::after {
+    content: '↓';
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .method-trigger::after {
+    transform: rotate(180deg);
+  }
+
+  .method-content {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .method-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+
+  .method-content p {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .study-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  .spec-item {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .spec-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .spec-value {
+    font-size: 15px;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+
+  .quote-text {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .quote-attribution {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .proof-cta {
+    text-align: center;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(135deg, #0071e3, #00c7be);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-section p {
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-xl);
+    color: white;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    padding: 16px 32px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-lg);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary-large {
+    background: white;
+    color: var(--color-primary);
+  }
+
+  .btn-primary-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-secondary-large {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary-large:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* HIG: Back to Top (Floating Action Button) */
+  .back-to-top {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .back-to-top-icon {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  /* Responsive: HIG Mobile Guidelines */
+  @media (max-width: 1200px) {
+    /* Hide sidebar, show mobile nav */
+    .product-nav-sidebar {
+      display: none;
+    }
+
+    .product-nav-mobile {
+      display: block;
+      position: sticky;
+      top: 60px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 90;
+      padding: var(--spacing-md) 0;
+    }
+
+    .product-layout {
+      padding-left: 0;
+      max-width: 100%;
+    }
+
+    .hero {
+      padding: var(--spacing-2xl) 0;
+    }
+    
+    .hero-story {
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .metrics {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-lg);
+    }
+    
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .evidence-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .study-specs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-nav {
+      top: 60px;
+    }
+    
+    .hero {
+      padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-title {
+      font-size: clamp(40px, 10vw, 60px);
+    }
+    
+    .story-quote {
+      font-size: clamp(20px, 5vw, 28px);
+    }
+    
+    .metrics {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+
+    .cards-grid,
+    .evidence-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-pills {
+      gap: var(--spacing-xs);
+      width: 100%;
+    }
+
+    .nav-pill {
+      flex: 1;
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: var(--font-xs);
+      text-align: center;
+    }
+    
+    .step {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+      text-align: center;
+    }
+    
+    .step-number {
+      margin: 0 auto var(--spacing-md);
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: var(--spacing-md);
+    }
+
+    .btn-primary-large,
+    .btn-secondary-large {
+      width: 100%;
+      padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .how-section,
+    .value-section,
+    .proof-section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .quote-text {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: var(--spacing-md);
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      padding: var(--spacing-md) var(--spacing-lg);
+      min-height: 48px;
+    }
+    
+    .back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+    }
+    
+    .nav-pill {
+      font-size: 11px;
+      padding: var(--spacing-sm);
+    }
+  }
+
+  /* Confidential Documents Section */
+  .confidential-docs-intro {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .confidential-docs-intro p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-base);
+    margin: 0;
+  }
+
+  .confidential-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .confidential-doc-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .confidential-doc-card:not(.coming-soon):hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .confidential-doc-card.coming-soon {
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .doc-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary-subtle), rgba(0, 199, 190, 0.1));
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+  }
+
+  .doc-icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .doc-content {
+    flex: 1;
+  }
+
+  .doc-content h4 {
+    font-size: var(--font-base);
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs);
+    color: var(--color-text);
+  }
+
+  .doc-content p {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .doc-arrow {
+    flex-shrink: 0;
+    font-size: 20px;
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.2s ease;
+  }
+
+  .confidential-doc-card:not(.coming-soon):hover .doc-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 4px 10px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+  }
+
+  .confidential-docs-note {
+    font-size: var(--font-sm);
+    color: var(--color-text-tertiary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .confidential-docs-note::before {
+    content: "🔒";
+    font-size: 14px;
+  }
+
+  /* ==========================================
+     PIPELINE COMPARISON SECTION
+     ========================================== */
+  .pipeline-section {
+    padding: var(--spacing-3xl) 0;
+    background: white;
+  }
+
+  .pipeline-badge {
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.08), rgba(0, 199, 190, 0.08));
+  }
+
+  .pipeline-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto var(--spacing-2xl);
+  }
+
+  @media (max-width: 768px) {
+    .pipeline-comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pipeline-col {
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .pipeline-col.pipeline-bad {
+    background: rgba(255, 69, 58, 0.03);
+    border-color: rgba(255, 69, 58, 0.15);
+  }
+
+  .pipeline-col.pipeline-good {
+    background: rgba(48, 209, 88, 0.03);
+    border-color: rgba(48, 209, 88, 0.2);
+  }
+
+  .pipeline-col-title {
+    font-size: var(--font-base);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .pipeline-bad .pipeline-col-title {
+    color: #ff453a;
+  }
+
+  .pipeline-good .pipeline-col-title {
+    color: #30d158;
+  }
+
+  .pipeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pipeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: var(--font-sm);
+  }
+
+  .pipeline-item:last-child {
+    border-bottom: none;
+  }
+
+  .item-label {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .item-value {
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .pipeline-item.bad .item-value {
+    color: rgba(255, 69, 58, 0.8);
+  }
+
+  .pipeline-item.good .item-value {
+    color: #30d158;
+  }
+
+  .pipeline-insight {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pipeline-insight blockquote {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-style: italic;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0 0 var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-xl);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .pipeline-link {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .pipeline-link:hover {
+    text-decoration: underline;
+  }
+
+  /* ==========================================
+     INSTRUMENTS SECTION
+     ========================================== */
+  .instruments-section {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .instrument-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) {
+    .instrument-tiers {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tier-card-product {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--color-premium-dark-hairline);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .tier-badge {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .tier-1-badge {
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.2), rgba(0, 199, 190, 0.15));
+    color: #64d2ff;
+  }
+
+  .tier-2-badge {
+    background: linear-gradient(135deg, rgba(255, 159, 10, 0.2), rgba(255, 69, 58, 0.15));
+    color: #ff9f0a;
+  }
+
+  .tier-3-badge {
+    background: linear-gradient(135deg, rgba(48, 209, 88, 0.2), rgba(100, 210, 255, 0.15));
+    color: #30d158;
+  }
+
+  .tier-cadence {
+    padding: var(--spacing-sm) var(--spacing-md) 0;
+    font-size: var(--font-xs);
+    color: var(--color-premium-dark-muted);
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  .instrument-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+  }
+
+  .instrument-chip {
+    display: inline-flex;
+    flex-direction: column;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--color-premium-dark-hairline);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+  }
+
+  .instrument-chip em {
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-xs);
+    color: var(--color-premium-dark-muted);
+    opacity: 0.8;
+  }
+
+  .instrument-chip.highlight-chip {
+    border-color: rgba(0, 113, 227, 0.4);
+    background: rgba(0, 113, 227, 0.12);
+  }
+
+  .instrument-chip.highlight-chip em {
+    color: #64d2ff;
+    opacity: 1;
+  }
+
+  /* ==========================================
+     ON-PREMISE SECTION
+     ========================================== */
+  .onprem-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-background-secondary);
+  }
+
+  .onprem-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) {
+    .onprem-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .onprem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .onprem-card {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+  }
+
+  .onprem-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .onprem-number {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .onprem-label {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .onprem-card p {
+    font-size: var(--font-xs);
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Co-Location Principle Callout */
+  .colocation-principle {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.06), rgba(0, 199, 190, 0.06));
+    border: 1px solid rgba(0, 113, 227, 0.15);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .colocation-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--radius-lg);
+    color: white;
+  }
+
+  .colocation-content h3 {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .colocation-content p {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .colocation-principle {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* 3-Tier Deployment Scaling */
+  .deployment-tiers {
+    margin-top: var(--spacing-2xl);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tiers-title {
+    text-align: center;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .tier-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  @media (max-width: 900px) {
+    .tier-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .deploy-tier-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .deploy-tier-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .tier-scale-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.1), rgba(0, 199, 190, 0.1));
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .tier-users {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .tier-hw {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .tier-cost {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .deploy-tier-card p {
+    font-size: var(--font-xs);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Cross-Platform Note */
+  .cross-platform-note {
+    max-width: 700px;
+    margin: var(--spacing-2xl) auto 0;
+    text-align: center;
+  }
+
+  .cross-platform-note p {
+    font-size: var(--font-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-light);
+  }
+
+  /* Accessibility: Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* --- New styles for the honest-rewrite additions --- */
+
+  .hero-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    margin: var(--spacing-md) 0;
+    background: rgba(255, 159, 10, 0.1);
+    color: #b45309;
+    border: 1px solid rgba(255, 159, 10, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f59e0b;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.2);
+  }
+
+  .status-text {
+    display: inline-block;
+  }
+
+  .audience-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: var(--spacing-lg) 0 var(--spacing-xl);
+    font-size: 13px;
+  }
+
+  .audience-chips-label {
+    color: #6e6e73;
+    margin-right: 4px;
+    font-weight: 500;
+  }
+
+  .audience-chip {
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid #d2d2d7;
+    background: #ffffff;
+    color: #1d1d1f;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+
+  .audience-chip:hover {
+    border-color: #0071e3;
+    color: #0071e3;
+  }
+
+  .audience-chip.active {
+    background: #0071e3;
+    color: #ffffff;
+    border-color: #0071e3;
+  }
+
+  .perf-context,
+  .agents-context {
+    font-size: 14px;
+    color: #6e6e73;
+    max-width: 720px;
+    margin: 0 auto var(--spacing-xl);
+    text-align: center;
+    line-height: 1.55;
+  }
+
+  .perf-context a,
+  .agents-context a {
+    color: #0071e3;
+    text-decoration: underline;
+  }
+
+  /* Validation plan blocks */
+  .validation-block {
+    max-width: 820px;
+    margin: 0 auto var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(234, 240, 255, 0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .validation-block-title {
+    font-size: 1.25rem;
+    color: #eaf0ff;
+    margin: 0 0 var(--spacing-md);
+    letter-spacing: -0.01em;
+  }
+
+  .validation-block p {
+    color: rgba(234, 240, 255, 0.78);
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0 0 var(--spacing-md);
+  }
+
+  .validation-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .validation-block strong {
+    color: #ffffff;
+  }
+
+  .regulatory-block,
+  .ip-block {
+    max-width: 820px;
+  }
+
+  /* Validation phases grid */
+  .validation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin: 0 0 var(--spacing-2xl);
+  }
+
+  @media (max-width: 900px) {
+    .validation-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .validation-card {
+    padding: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(234, 240, 255, 0.12);
+    border-radius: var(--radius-lg);
+  }
+
+  .validation-card-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    margin-bottom: var(--spacing-md);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: var(--radius-full);
+    background: rgba(0, 199, 190, 0.15);
+    color: #5dd5cf;
+    border: 1px solid rgba(0, 199, 190, 0.3);
+  }
+
+  .validation-card-title {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0 0 var(--spacing-md);
+    letter-spacing: -0.01em;
+  }
+
+  .validation-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .validation-card-list li {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(234, 240, 255, 0.78);
+    padding: 8px 0;
+    border-top: 1px solid rgba(234, 240, 255, 0.06);
+  }
+
+  .validation-card-list li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .validation-card-list strong {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* Validation CTA */
+  .validation-cta {
+    max-width: 820px;
+    margin: var(--spacing-2xl) auto 0;
+    text-align: center;
+  }
+
+  .validation-cta p {
+    color: #eaf0ff;
+    font-size: 1rem;
+    margin: 0 0 var(--spacing-md);
+  }
+
+  .validation-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+
+  .validation-cta-buttons .btn-primary,
+  .validation-cta-buttons .btn-secondary {
+    padding: 10px 22px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .validation-cta-buttons .btn-primary {
+    background: #0071e3;
+    color: #ffffff;
+    border: 1px solid #0071e3;
+  }
+
+  .validation-cta-buttons .btn-primary:hover {
+    background: #0058b0;
+  }
+
+  .validation-cta-buttons .btn-secondary {
+    background: transparent;
+    color: #eaf0ff;
+    border: 1px solid rgba(234, 240, 255, 0.25);
+  }
+
+  .validation-cta-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(234, 240, 255, 0.5);
+  }
+
+  /* Triple CTA at page bottom */
+  .cta-actions-triple {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+</style>

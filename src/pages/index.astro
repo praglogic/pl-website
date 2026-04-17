@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, Heart } from 'lucide-astro';
 ---
 
-<Layout title="Pragmatic Logic - Open Source Therapeutic AI Companion for Senior Care | Crisis Prevention & Mental Health AI" description="Open source deterministic safety pipeline for assisted living and senior care. 100% crisis recall across 3,720 scenarios, 28.7ms detection latency, 40% fewer crisis interventions. HIPAA-compliant on-premise mental health monitoring for elderly care facilities. Community-driven development.">
+<Layout title="Pragmatic Logic — AI for human good" description="Pragmatic Logic builds therapeutic AI for assisted living (Lilo Solace) and configuration tooling for Claude Code (EmbedIQ). Human ingenuity plus AI symbiosis.">
   <Navigation />
   
   <!-- Hero Section -->
@@ -17,14 +17,14 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
           <span class="hero-emphasis">They deserve purpose and belonging.</span>
         </h1>
         
-        <p class="hero-subtitle">Lilo Solace combines clinical precision with genuine empathy—technology that amplifies human connection, not replaces it.</p>
-        
+        <p class="hero-subtitle">Lilo Solace combines clinical precision with genuine empathy — technology that amplifies human connection, not replaces it.</p>
+
         <div class="hero-actions">
-          <a href="/contact" class="btn-primary-large">Join the Community</a>
-          <a href="/product" class="btn-secondary-large">Learn More</a>
+          <a href="/products/" class="btn-primary-large">See our products</a>
+          <a href="/products/lilo-solace/" class="btn-secondary-large">Lilo Solace</a>
         </div>
-        
-        <p class="disclaimer">*Preliminary results from ongoing pilot studies</p>
+
+        <p class="disclaimer">Lilo Solace is pre-pilot. The numbers below are engineering validation on internal test suites — we haven't generated clinical outcome data yet. That's what the <a href="/products/lilo-solace/#validation-plan">pilot</a> is for.</p>
       </div>
       
       <div class="hero-visual">
@@ -36,28 +36,28 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
     <div class="container">
       <div class="impact-stats">
           <div class="impact-stat">
-            <div class="impact-icon"><TrendingDown size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">40%</div>
-            <div class="impact-label">Fewer Crisis Events</div>
-            <div class="impact-context">Reduction in behavioral emergencies</div>
-          </div>
-          <div class="impact-stat">
             <div class="impact-icon"><Crosshair size={28} strokeWidth={1.5} /></div>
             <div class="impact-number">100%</div>
-            <div class="impact-label">Crisis Recall</div>
-            <div class="impact-context">Zero missed crises across 3,720 internal bench evaluation scenarios</div>
+            <div class="impact-label">Crisis recall</div>
+            <div class="impact-context">On our internal 456-test safety suite. Pilot will measure clinical effectiveness.</div>
           </div>
           <div class="impact-stat">
-            <div class="impact-icon"><Heart size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">Open</div>
-            <div class="impact-label">Source & Community</div>
-            <div class="impact-context">Free for all, built by contributors worldwide</div>
+            <div class="impact-icon"><Zap size={28} strokeWidth={1.5} /></div>
+            <div class="impact-number">&lt;1s</div>
+            <div class="impact-label">Crisis-detection latency</div>
+            <div class="impact-context">On cloud and edge hardware. Regulatory bar is 30 seconds.</div>
+          </div>
+          <div class="impact-stat">
+            <div class="impact-icon"><Target size={28} strokeWidth={1.5} /></div>
+            <div class="impact-number">13</div>
+            <div class="impact-label">Clinical instruments</div>
+            <div class="impact-context">PHQ-9, GAD-7, C-SSRS and more — scoring aligned to published protocols.</div>
           </div>
           <div class="impact-stat highlight">
             <div class="impact-icon"><Heart size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">0</div>
-            <div class="impact-label">Lives Lost</div>
-            <div class="impact-context">Zero critical incidents</div>
+            <div class="impact-number">n=20</div>
+            <div class="impact-label">Pilot recruiting</div>
+            <div class="impact-context">Feasibility study. IRB target Jun 2026, enrollment Q3 2026.</div>
           </div>
         </div>
       </div>
@@ -66,12 +66,12 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
     <div class="container">
       <div class="testimonial-card">
         <div class="testimonial-quote-mark">"</div>
-        <blockquote class="testimonial-text">Lilo alerted us three weeks before we noticed anything was wrong.</blockquote>
+        <blockquote class="testimonial-text">The kind of alert a family wants — surfaced early, grounded in pattern, acted on before it becomes a crisis.</blockquote>
         <div class="testimonial-author">
-          <div class="author-avatar">AP</div>
+          <div class="author-avatar">•</div>
           <div class="author-info">
-            <cite class="author-name">Amudha P.</cite>
-            <span class="author-role">Family Member</span>
+            <cite class="author-name">Illustrative scenario</cite>
+            <span class="author-role">Composite; based on early pilot conversations, not a named user</span>
           </div>
         </div>
       </div>
@@ -162,24 +162,24 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
         </div>
         
         <div class="market-drivers-simple">
-          <a class="driver-item-simple" href="/product#crisis">
+          <a class="driver-item-simple" href="/products/lilo-solace/#crisis">
             <span class="driver-icon-wrapper"><Flame class="icon-modern" /></span>
-            <span class="driver-text">The silent epidemic: workforce collapse meets mental health crisis</span>
+            <span class="driver-text">A silent epidemic: workforce collapse meeting a mental-health crisis</span>
           </a>
-          <a class="driver-item-simple" href="/product#solution">
+          <a class="driver-item-simple" href="/products/lilo-solace/#solution">
             <span class="driver-icon-wrapper"><Zap class="icon-modern" /></span>
-            <span class="driver-text">AI that forms therapeutic bonds in days, not weeks</span>
+            <span class="driver-text">Deterministic safety, not probabilistic hope — because the stakes don't allow otherwise</span>
           </a>
-          <a class="driver-item-simple" href="/product#evidence">
+          <a class="driver-item-simple" href="/products/lilo-solace/#validation-plan">
             <span class="driver-icon-wrapper"><Target class="icon-modern" /></span>
-            <span class="driver-text">100% crisis recall with 28.7ms detection — 1,000x faster than regulatory benchmarks</span>
+            <span class="driver-text">100% recall on our internal safety-test suite. Clinical pilot recruiting for summer 2026.</span>
           </a>
         </div>
-        
+
         <div class="market-cta">
-          <a href="/product" class="btn-secondary-pill">
+          <a href="/products/lilo-solace/" class="btn-secondary-pill">
             <TrendingUp class="btn-icon" />
-            <span>Explore the Platform</span>
+            <span>Explore Lilo Solace</span>
           </a>
         </div>
       </div>

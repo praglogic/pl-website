@@ -1,0 +1,278 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { Heart, Settings2, ArrowRight } from 'lucide-astro';
+---
+
+<Layout
+  title="Products — Pragmatic Logic"
+  description="Pragmatic Logic products: Lilo Solace (therapeutic AI companion for assisted living) and EmbedIQ (Claude Code configuration wizard)."
+>
+  <Navigation />
+
+  <main class="products-index">
+    <section class="products-hero">
+      <div class="container">
+        <p class="eyebrow">Products</p>
+        <h1 class="hero-title">Two products. One mission.<br /><span class="text-gradient">Human ingenuity plus AI symbiosis.</span></h1>
+        <p class="hero-lead">We build production software where safety, reliability, and honesty about capability matter more than hype.</p>
+      </div>
+    </section>
+
+    <section class="products-grid-section">
+      <div class="container">
+        <div class="products-grid">
+          <a href="/products/lilo-solace/" class="product-card product-card-lilo">
+            <div class="product-card-icon"><Heart class="icon" /></div>
+            <div class="product-card-meta">
+              <span class="product-card-category">Healthcare AI</span>
+              <span class="product-card-status status-pilot">Pre-pilot · recruiting partners</span>
+            </div>
+            <h2 class="product-card-title">Lilo Solace</h2>
+            <p class="product-card-tagline">Therapeutic AI companion for assisted living. Deterministic safety pipeline designed for residents and the teams that care for them.</p>
+            <ul class="product-card-points">
+              <li>Crisis detection: 100% recall on internal safety tests, sub-second latency</li>
+              <li>13 clinical instruments integrated (PHQ-9, GAD-7, C-SSRS, and more)</li>
+              <li>Cloud SaaS or on-premise deployment</li>
+              <li>Clinical feasibility pilot recruiting for summer 2026</li>
+            </ul>
+            <span class="product-card-cta">Learn more <ArrowRight class="cta-icon" /></span>
+          </a>
+
+          <a href="/products/embediq/" class="product-card product-card-embediq">
+            <div class="product-card-icon"><Settings2 class="icon" /></div>
+            <div class="product-card-meta">
+              <span class="product-card-category">Developer Tools</span>
+              <span class="product-card-status status-shipping">Shipping · v2.1</span>
+            </div>
+            <h2 class="product-card-title">EmbedIQ</h2>
+            <p class="product-card-tagline">Adaptive wizard that interviews your team and generates a complete Claude Code environment tailored to your role, stack, and compliance needs.</p>
+            <ul class="product-card-points">
+              <li>Adaptive Q&amp;A across seven dimensions with branching logic</li>
+              <li>Compliance packs for healthcare, finance, and education</li>
+              <li>Deterministic generation — no LLM at runtime, no telemetry</li>
+              <li>CLI or web — stateless, Docker- and Kubernetes-ready</li>
+            </ul>
+            <span class="product-card-cta">Learn more <ArrowRight class="cta-icon" /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .products-index {
+    background: var(--color-background-soft, #f7f8fa);
+  }
+
+  .products-hero {
+    padding: var(--space-24) 0 var(--space-12);
+    background: linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-title {
+    max-width: 720px;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-lead {
+    max-width: 640px;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .products-grid-section {
+    padding: var(--space-16) 0 var(--space-24);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  @media (max-width: 834px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8);
+    background: #ffffff;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-2xl);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .product-card-lilo::before {
+    background: linear-gradient(90deg, #0071e3, #00c7be);
+  }
+
+  .product-card-embediq::before {
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-border);
+  }
+
+  .product-card:hover::before {
+    opacity: 1;
+  }
+
+  .product-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+  }
+
+  .product-card-embediq .product-card-icon {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .product-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    font-size: 12px;
+  }
+
+  .product-card-category {
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: var(--color-background-secondary);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .product-card-status {
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+  }
+
+  .status-pilot {
+    background: rgba(255, 159, 10, 0.12);
+    color: #b45309;
+  }
+
+  .status-shipping {
+    background: rgba(48, 209, 88, 0.12);
+    color: #0f7b3e;
+  }
+
+  .product-card-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.02em;
+  }
+
+  .product-card-tagline {
+    font-size: var(--font-size-lg);
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-5);
+  }
+
+  .product-card-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .product-card-points li {
+    position: relative;
+    padding-left: 22px;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+  }
+
+  .product-card-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.4;
+  }
+
+  .product-card-cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+  }
+
+  .product-card-embediq .product-card-cta {
+    color: #6366f1;
+  }
+
+  .cta-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--duration-normal) var(--ease-out);
+  }
+
+  .product-card:hover .cta-icon {
+    transform: translateX(4px);
+  }
+</style>

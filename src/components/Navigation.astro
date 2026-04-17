@@ -10,7 +10,7 @@ const currentPath = Astro.url.pathname;
     
     <div class="nav-links">
       <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
-      <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'active' : ''}>Product</a>
+      <a href="/products/" class={currentPath.startsWith('/products') || currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' || currentPath === '/solutions' ? 'active' : ''}>Products</a>
       <a href="/research" class={currentPath === '/research' ? 'active' : ''}>Research</a>
       <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'active' : ''}>Company</a>
     </div>
@@ -36,7 +36,7 @@ const currentPath = Astro.url.pathname;
     </div>
     <nav class="mobile-menu-nav">
       <a href="/" class={currentPath === '/' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Home</a>
-      <a href="/product" class={currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Product</a>
+      <a href="/products/" class={currentPath.startsWith('/products') || currentPath === '/product' || currentPath === '/lilo-solace' || currentPath === '/technology' || currentPath === '/evidence' || currentPath === '/clinical-evidence' || currentPath === '/solutions' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Products</a>
       <a href="/research" class={currentPath === '/research' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Research</a>
       <a href="/company" class={currentPath === '/company' || currentPath === '/about' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Company</a>
       <a href="/contact" class="mobile-nav-cta">Join the Community</a>

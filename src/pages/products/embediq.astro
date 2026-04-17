@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { Settings2, ArrowLeft } from 'lucide-astro';
+---
+
+<Layout
+  title="EmbedIQ — Pragmatic Logic"
+  description="EmbedIQ: adaptive wizard that generates a complete Claude Code environment tailored to your role, stack, and compliance needs. Page in progress — join the waitlist."
+>
+  <Navigation />
+
+  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that generates a complete Claude Code environment (CLAUDE.md, rules, hooks, skills, compliance controls) tailored to the user's role, tech stack, and industry. Deterministic generation with no runtime LLM. CLI and web interfaces. Shipping v2.1.","featureList":["Adaptive Q&A across seven dimensions","Healthcare, finance, education compliance packs","Deterministic generation, no LLM at runtime","CLI and stateless web API","Docker and Kubernetes deployment"]}`} />
+
+  <main class="placeholder-main">
+    <section class="placeholder-hero">
+      <div class="container container-narrow text-center">
+        <a href="/products/" class="back-link"><ArrowLeft class="back-icon" /> All products</a>
+        <div class="placeholder-icon"><Settings2 class="icon" /></div>
+        <p class="eyebrow">Developer Tools · Shipping v2.1</p>
+        <h1 class="placeholder-title">EmbedIQ</h1>
+        <p class="placeholder-lead">Adaptive wizard that interviews your team and generates a complete Claude Code environment — CLAUDE.md, rules, hooks, skills, compliance controls — tailored to your role, stack, and industry.</p>
+
+        <div class="placeholder-notice">
+          <p><strong>Full product page coming soon.</strong> We&rsquo;re writing the page now. In the meantime, if you&rsquo;d like early access or a walkthrough, reach out and we&rsquo;ll get you set up.</p>
+        </div>
+
+        <div class="placeholder-actions">
+          <a href="/contact?interest=embediq" class="btn btn-primary btn-lg">Get early access</a>
+          <a href="/products/" class="btn btn-secondary btn-lg">Back to products</a>
+        </div>
+
+        <div class="placeholder-highlights">
+          <div class="highlight">
+            <h3>Adaptive interviewing</h3>
+            <p>Branching Q&amp;A across seven dimensions means every user sees only the questions relevant to their role and stack.</p>
+          </div>
+          <div class="highlight">
+            <h3>Compliance-ready output</h3>
+            <p>Pre-built domain packs for healthcare (HIPAA), finance (PCI-DSS), and education (FERPA) — DLP patterns, audit hooks, and role-based controls included.</p>
+          </div>
+          <div class="highlight">
+            <h3>Deterministic, no telemetry</h3>
+            <p>Generation logic is rules-based. No answers sent to third-party AI APIs at runtime. Zero data persistence.</p>
+          </div>
+          <div class="highlight">
+            <h3>CLI or web, your call</h3>
+            <p>Identical core logic behind both interfaces. Stateless REST API means no database, no sessions — deploys cleanly in Docker or Kubernetes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .placeholder-main {
+    background: var(--color-background-soft, #f7f8fa);
+  }
+
+  .placeholder-hero {
+    padding: var(--space-16) 0 var(--space-24);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-8);
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+
+  .back-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .placeholder-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-xl);
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    margin-bottom: var(--space-6);
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+  }
+
+  .placeholder-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-5);
+  }
+
+  .placeholder-lead {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .placeholder-notice {
+    max-width: 600px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-5) var(--space-6);
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+    border-radius: var(--radius-lg);
+  }
+
+  .placeholder-notice p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    line-height: 1.55;
+  }
+
+  .placeholder-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-20);
+  }
+
+  .placeholder-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    text-align: left;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .placeholder-highlights {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .highlight {
+    padding: var(--space-5);
+    background: #ffffff;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+  }
+
+  .highlight h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .highlight p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.55;
+  }
+</style>

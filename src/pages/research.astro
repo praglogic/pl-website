@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, Target } from 'lucide-astro';
 ---
 
-<Layout title="Research & Publications - Pragmatic Logic | Clinical AI Safety Research" description="Research-driven therapeutic AI for senior care. Internal benchmarks: 100% crisis recall across 3,720 scenarios, 28.7ms detection latency. Manuscripts under peer review at leading journals.">
+<Layout title="Research & Publications — Pragmatic Logic | Clinical AI Safety Research" description="Research-driven therapeutic AI for senior care. Engineering validation on internal safety-test suites, evidence-based therapeutic methods, and manuscripts in preparation. Clinical pilot recruiting for summer 2026.">
   <Navigation />
 
   <!-- Hero -->
@@ -24,30 +24,30 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="findings-section">
     <div class="container">
       <h2 class="section-title">Internal Benchmark Results</h2>
-      <p class="section-subtitle">Lilo Engine performance from internal bench evaluation (February 2026)</p>
+      <p class="section-subtitle">Lilo Engine engineering validation from internal bench evaluation</p>
       <div class="findings-grid">
         <div class="finding-card">
           <div class="finding-number">100%</div>
           <div class="finding-label">Crisis Recall</div>
-          <p>Zero false negatives across 3,720 internal test scenarios spanning 15 clinical phenotypes</p>
+          <p>On our internal 456-test safety suite (165-example crisis training set: 80 crisis + 85 non-crisis). Clinical effectiveness will be measured in the pilot.</p>
         </div>
         <div class="finding-card">
-          <div class="finding-number">28.7ms</div>
+          <div class="finding-number">&lt;1s</div>
           <div class="finding-label">Detection Latency</div>
-          <p>1,000x faster than the 30-second Crisis Now/URAC regulatory benchmark</p>
+          <p>Measured on GCP L4 cloud and M1 edge. The 30-second Crisis Now / URAC regulatory benchmark sets the bar we engineer against.</p>
         </div>
         <div class="finding-card">
           <div class="finding-number">96.4%</div>
           <div class="finding-label">Intent Classification</div>
-          <p>Across 11 therapeutic categories with zero crisis-to-non-crisis misclassifications</p>
+          <p>Across 11 therapeutic categories, with zero crisis-to-non-crisis misclassifications on the test set.</p>
         </div>
         <div class="finding-card">
-          <div class="finding-number">98.4%</div>
-          <div class="finding-label">Generation Quality</div>
-          <p>End-to-end scenario evaluation with zero clinical anti-patterns detected</p>
+          <div class="finding-number">98.8</div>
+          <div class="finding-label">Therapeutic Quality</div>
+          <p>On our internal therapeutic evaluation suite (target was 93.3). End-to-end scenarios with zero clinical anti-patterns detected.</p>
         </div>
       </div>
-      <p class="findings-disclaimer">These results reflect internal bench evaluation. Manuscripts describing the methodology and results in detail are currently under peer review at leading journals. Results will be updated as external validation progresses.</p>
+      <p class="findings-disclaimer">These results reflect engineering validation on internal test suites, not clinical outcomes in real residents. Product-generated clinical evidence will come from the feasibility pilot (n=20, IRB-targeted Jun 2026, enrollment Q3 2026). See the <a href="/products/lilo-solace/#validation-plan">validation plan</a>.</p>
     </div>
   </section>
 
