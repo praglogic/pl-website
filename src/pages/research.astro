@@ -20,11 +20,21 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
     </div>
   </section>
 
+  <!-- Research Posture -->
+  <section class="posture-section">
+    <div class="container posture-container">
+      <h2 class="posture-title">Our research posture.</h2>
+      <p class="posture-body">
+        We publish methods, document invariants, and caveat what we haven't proven. <strong>Lilo Solace</strong> is our active clinical research track today — architectural safety, deterministic crisis detection, and the clinical-instrument framework — with manuscripts in the publication pipeline. <strong>EmbedIQ's</strong> research posture lives on its roadmap: an evaluation framework that will score configuration quality against golden reference configs, replayable and reproducible. We'll publish that work when it lands. For now, the clinical-safety research below reflects what's furthest along.
+      </p>
+    </div>
+  </section>
+
   <!-- Internal Benchmark Results -->
   <section class="findings-section">
     <div class="container">
       <h2 class="section-title">Internal Benchmark Results</h2>
-      <p class="section-subtitle">Lilo Engine engineering validation from internal bench evaluation</p>
+      <p class="section-subtitle">Lilo Engine — engineering validation from internal bench evaluation</p>
       <div class="findings-grid">
         <div class="finding-card">
           <div class="finding-number">100%</div>
@@ -55,16 +65,16 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="publications-section">
     <div class="container">
       <h2 class="section-title">Active Research</h2>
-      <p class="section-subtitle">We are actively contributing to the scientific literature on safe clinical AI</p>
+      <p class="section-subtitle">Lilo clinical-safety research — active manuscripts</p>
 
       <div class="publication-card featured">
         <div class="pub-status">
-          <span class="status-badge submitted">Under Peer Review</span>
+          <span class="status-badge submitted">Preprint</span>
         </div>
         <div class="pub-content">
           <h3 class="pub-title">Deterministic Safety Architectures for Clinical AI</h3>
           <p class="pub-authors">Aejaz Sheriff — Praglogic</p>
-          <p class="pub-journal">Manuscript under peer review at a leading digital medicine journal (Springer Nature)</p>
+          <p class="pub-journal">Available as a medRxiv preprint. Revised manuscript in preparation for journal resubmission.</p>
           <div class="pub-highlights">
             <div class="highlight-item">
               <Shield class="highlight-icon" />
@@ -83,7 +93,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
               <span>Details a multi-tier clinical instrument integration framework</span>
             </div>
           </div>
-          <p class="pub-note">Full details will be available upon publication. A preprint may be posted on Research Square pending journal quality review.</p>
+          <p class="pub-note">Preprint available on medRxiv through February 17, 2027. Full citation and DOI will be added when the revised submission lands.</p>
         </div>
       </div>
 
@@ -180,7 +190,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="innovation-section">
     <div class="container">
       <h2 class="section-title">Our Approach<br><span class="title-gradient-dark">Why Pipelines, Not Agents</span></h2>
-      <p class="section-subtitle">Deterministic pipeline architectures provide a class of safety guarantees that agentic orchestration patterns structurally cannot achieve.</p>
+      <p class="section-subtitle">Deterministic pipeline architectures provide a class of safety guarantees — across clinical crisis detection and enterprise configuration generation — that agentic orchestration structurally cannot achieve.</p>
 
       <div class="comparison-table-light">
         <div class="comparison-header-light">
@@ -219,6 +229,11 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
           <div class="comp-cell-light comp-good-light">Explicit stage failures</div>
         </div>
       </div>
+
+      <div class="cross-product-callout">
+        <h3>The same principle applies to EmbedIQ.</h3>
+        <p>Configuration for AI coding agents can be produced two ways. One is to ask an LLM to generate a <code>CLAUDE.md</code>, a rules file, and a set of hooks from a natural-language prompt — the output is non-reproducible, not auditable, and only as good as the prompt. The other is a deterministic pipeline that runs typed generators over a structured profile built from a 71-question interview. EmbedIQ takes the second path: byte-for-byte reproducible configurations, zero runtime LLM calls, and a validation pass before any file is written. The comparison above reads as a Lilo vs. agentic-AI argument for clinical safety, but the same architectural posture is what makes EmbedIQ audit-defensible for HIPAA, PCI-DSS, and FERPA-covered teams.</p>
+      </div>
     </div>
   </section>
 
@@ -226,7 +241,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="instruments-section">
     <div class="container">
       <h2 class="section-title">13-Instrument Clinical Framework</h2>
-      <p class="section-subtitle">Three-tier validated assessment framework integrated into the therapeutic pipeline — the most comprehensive clinical instrument integration in any AI therapeutic system</p>
+      <p class="section-subtitle">Three-tier validated assessment framework integrated into the Lilo Solace therapeutic pipeline.</p>
 
       <div class="tier-grid">
         <div class="tier-card">
@@ -279,7 +294,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="competitor-section">
     <div class="container">
       <h2 class="section-title">How Lilo Solace Compares</h2>
-      <p class="section-subtitle">Addressing gaps that no existing AI therapeutic system covers</p>
+      <p class="section-subtitle">Addressing gaps that published AI therapeutic systems haven't yet covered.</p>
 
       <div class="competitor-table-wrapper">
         <table class="competitor-table">
@@ -352,14 +367,14 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
           </tbody>
         </table>
       </div>
-      <p class="table-source">Comparison based on published capabilities as of February 2026. Sources: Fitzpatrick et al. (2017), Inkster et al. (2018), Intuition Robotics Impact Report (2023).</p>
+      <p class="table-source">Comparison based on published capabilities through early 2026. Sources: Fitzpatrick et al. (2017), Inkster et al. (2018), Intuition Robotics Impact Report (2023).</p>
     </div>
   </section>
 
   <!-- On-Premise Deployment -->
   <section class="deployment-section pl-dark-band pl-dark-glow">
     <div class="container">
-      <h2 class="section-title-light">On-Premise by Design</h2>
+      <h2 class="section-title-light">Lilo Solace — On-Premise by Design</h2>
       <p class="section-subtitle-light">All safety-critical AI processing runs locally. No patient data ever leaves the device.</p>
 
       <!-- Co-Location Principle -->
@@ -400,11 +415,11 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Interested in Our Research?</h2>
-      <p>We welcome collaboration with researchers, clinicians, and policy makers advancing safe clinical AI.</p>
+      <h2>Collaborate with us on the research.</h2>
+      <p>We welcome conversations with clinicians, cognitive-safety researchers, regulatory experts, and enterprise engineering teams working in compliance-sensitive domains.</p>
       <div class="cta-actions">
-        <a href="/contact" class="btn-primary-large">Join the Community</a>
-        <a href="/contact" class="btn-secondary-large">Contact Research Team</a>
+        <a href="/contact?interest=research" class="btn-primary-large">Reach out</a>
+        <a href="/products/" class="btn-secondary-large">See the products</a>
       </div>
     </div>
   </section>
@@ -1216,5 +1231,69 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
 
   .author-note a:hover {
     text-decoration: underline;
+  }
+
+  /* Research posture intro */
+  .posture-section {
+    padding: var(--space-16) 0;
+    background: #fbfbfd;
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .posture-container {
+    max-width: 820px;
+    text-align: center;
+  }
+
+  .posture-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin: 0 0 var(--space-4) 0;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+
+  .posture-body {
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .posture-body strong {
+    color: var(--color-text);
+  }
+
+  /* Cross-product callout in "Why Pipelines" section */
+  .cross-product-callout {
+    margin-top: var(--space-8);
+    padding: var(--space-6) var(--space-8);
+    background: var(--color-primary-subtle, rgba(0, 113, 227, 0.06));
+    border-left: 4px solid var(--color-primary, #0071e3);
+    border-radius: 0 var(--radius-lg, 12px) var(--radius-lg, 12px) 0;
+  }
+
+  .cross-product-callout h3 {
+    font-size: var(--font-size-xl, 1.25rem);
+    font-weight: 600;
+    margin: 0 0 var(--space-3) 0;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+
+  .cross-product-callout p {
+    margin: 0;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .cross-product-callout code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 1px 6px;
+    border-radius: 4px;
   }
 </style>

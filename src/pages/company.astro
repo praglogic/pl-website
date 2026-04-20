@@ -5,19 +5,19 @@ import Footer from '../components/Footer.astro';
 import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, HeartHandshake } from 'lucide-astro';
 ---
 
-<Layout title="Company | Praglogic" description="Praglogic builds therapeutic AI (Lilo Solace) and developer tooling (EmbedIQ). Our team combines 29 years of enterprise healthcare architecture with peer-reviewed clinical AI research.">
+<Layout title="Company | Praglogic" description="Praglogic builds deterministic AI for domains where probabilistic answers aren't good enough — therapeutic AI for elderly mental health (Lilo Solace) and compliance-aware configuration tooling for enterprise engineering (EmbedIQ).">
   <Navigation />
 
   <!-- Hero Section -->
   <section class="company-hero" role="banner" aria-labelledby="hero-heading">
     <div class="container">
       <div class="hero-badge">
-        <span class="badge-text">The Centaur's Mind</span>
+        <span class="badge-text">Praglogic</span>
       </div>
 
-      <h1 id="hero-heading">AI That Amplifies Human Compassion</h1>
+      <h1 id="hero-heading">Deterministic AI for outcomes that matter.</h1>
       <p class="hero-subtitle">
-        Like the mythical centaur combining human intelligence with raw strength, we unite emotional wisdom with computational power to transform senior mental healthcare.
+        A two-product company engineered on one principle — reach for determinism wherever failure is unacceptable, and use LLMs where they genuinely help. Today: therapeutic AI for elderly mental health, and compliance-aware configuration tooling for enterprise engineering teams.
       </p>
     </div>
   </section>
@@ -38,17 +38,17 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
     <div class="container">
       <div class="section-header">
         <h2 id="philosophy-heading">Why We Exist</h2>
-        <p class="section-intro">Healthcare AI excels at pattern recognition but lacks what truly heals: emotional intelligence.</p>
+        <p class="section-intro">AI is now trusted with decisions where a missed call costs a life or breaks an audit. Hype isn't a strategy for those decisions. Determinism is — and we build accordingly.</p>
       </div>
 
       <!-- Core Problem Statement -->
       <div class="problem-statement">
         <div class="statement-content">
           <p class="lead-text">
-            Patients need more than accurate diagnoses—they need to feel <strong>heard, understood, and cared for</strong>. Current AI systems can process clinical data but can't truly understand the human experience.
+            LLMs are excellent at fluency. On their own, they are <strong>not good enough</strong> for safety-critical calls — crisis detection in a nursing home, compliance enforcement in a regulated codebase, PHI handling, audit-defensible configuration.
           </p>
           <p class="statement-description">
-            Our philosophy of the Centaur's Mind creates a symbiotic relationship where artificial intelligence amplifies human empathy rather than replacing it, combining the best of both worlds.
+            Praglogic's posture is to reach for determinism — explicit rules, reproducible outputs, auditable pathways — wherever failure is unacceptable, and to use LLMs where they genuinely help. That posture runs through Lilo Solace's crisis-detection pipeline and EmbedIQ's deterministic configuration generation alike.
           </p>
         </div>
       </div>
@@ -60,17 +60,35 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
           <details class="principle-card">
             <summary class="principle-trigger">
               <span class="principle-header">
-                <span class="principle-icon" aria-hidden="true"><Handshake class="icon-inline-company" /></span>
-                <span class="principle-name">Symbiosis Over Replacement</span>
+                <span class="principle-icon" aria-hidden="true"><Target class="icon-inline-company" /></span>
+                <span class="principle-name">Determinism where it matters</span>
               </span>
               <span class="expand-icon" aria-hidden="true">+</span>
             </summary>
             <div class="principle-content">
-              <p>AI should enhance human capabilities, not replace them. Our platform empowers caregivers to provide better care by automating routine assessments, detecting early warning signs, and freeing up time for meaningful human connection.</p>
+              <p>Explicit rules, reproducible outputs, auditable pathways. We reach for determinism in the places where probabilistic answers aren't good enough and let LLMs assist with fluency where they genuinely help.</p>
               <ul class="principle-examples">
-                <li>Automated assessments free staff for direct care</li>
-                <li>Real-time crisis alerts enable proactive intervention</li>
-                <li>Data insights guide personalized care plans</li>
+                <li>Lilo Solace: four-gate deterministic crisis-detection pipeline</li>
+                <li>EmbedIQ: byte-for-byte reproducible configuration generation, no runtime LLM</li>
+                <li>Shared principle: every safety-critical decision traceable to the rule that produced it</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="principle-card">
+            <summary class="principle-trigger">
+              <span class="principle-header">
+                <span class="principle-icon" aria-hidden="true"><Handshake class="icon-inline-company" /></span>
+                <span class="principle-name">Honesty about stage</span>
+              </span>
+              <span class="expand-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="principle-content">
+              <p>We ship what's shipping. We flag what's planned. We don't call pilots clinical outcomes or roadmap product reality. Clear stage badges, honest caveats, and published methods are features, not footnotes.</p>
+              <ul class="principle-examples">
+                <li>Lilo Solace: labelled pre-pilot; FDA De Novo submission targeted Q4 2026</li>
+                <li>EmbedIQ: labelled shipping v2.1 under MIT; roadmap items listed separately</li>
+                <li>Internal benchmark numbers always distinguished from clinical outcomes</li>
               </ul>
             </div>
           </details>
@@ -79,34 +97,16 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
             <summary class="principle-trigger">
               <span class="principle-header">
                 <span class="principle-icon" aria-hidden="true"><Heart class="icon-inline-company" /></span>
-                <span class="principle-name">Emotional Intelligence First</span>
+                <span class="principle-name">Human judgment in the loop, not behind the curtain</span>
               </span>
               <span class="expand-icon" aria-hidden="true">+</span>
             </summary>
             <div class="principle-content">
-              <p>Technical accuracy alone cannot heal. Our AI is designed to recognize emotional nuance, respond with empathy, and adapt to individual communication styles—creating therapeutic relationships that feel genuinely caring.</p>
+              <p>LLMs help with fluency, phrasing, and user experience. Deterministic pipelines run the safety-critical path. Humans approve the outcomes that matter — clinical escalation, configuration pull requests, compliance sign-off — so the "AI decision" is never the last word.</p>
               <ul class="principle-examples">
-                <li>Voice-first interface reduces friction and anxiety</li>
-                <li>Conversational AI trained on therapeutic dialogue patterns</li>
-                <li>Adaptive responses based on emotional state detection</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="principle-card">
-            <summary class="principle-trigger">
-              <span class="principle-header">
-                <span class="principle-icon" aria-hidden="true"><Target class="icon-inline-company" /></span>
-                <span class="principle-name">Clinical-Grade Precision</span>
-              </span>
-              <span class="expand-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="principle-content">
-              <p>Empathy must be paired with rigor. Every clinical decision is grounded in peer-reviewed research, validated instruments, and evidence-based therapeutic approaches—ensuring both warmth and effectiveness.</p>
-              <ul class="principle-examples">
-                <li>WHO-5, PHQ-9, GAD-7 validated clinical instruments</li>
-                <li>Rigorous clinical validation studies</li>
-                <li><a href="/products/lilo-solace/#validation-plan" style="color: var(--color-primary); text-decoration: none; font-weight: 600;">View our validation plan →</a></li>
+                <li>Lilo Solace: crisis alerts escalate to care-team review, not autonomous action</li>
+                <li>EmbedIQ: configurations land in a pull request for team approval before merge</li>
+                <li>No black-box AI for safety calls; no automation-bias traps</li>
               </ul>
             </div>
           </details>
@@ -115,25 +115,25 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
 
       <!-- The Centaur Metaphor -->
       <div class="metaphor-section">
-        <h3>The Centaur Metaphor</h3>
+        <h3>The Centaur's Mind</h3>
         <p class="metaphor-description">
-          In Greek mythology, the centaur combined human intelligence with equine strength. Neither fully human nor fully beast, the centaur represented a powerful synthesis where two disparate natures created something greater than either alone.
+          In Greek mythology the centaur combined human intelligence with equine strength — two disparate natures fused into something greater than either alone. That's the pattern we aim for: human judgment plus machine strength, applied across domains.
         </p>
         <details class="metaphor-disclosure">
-          <summary class="disclosure-trigger">Why This Matters for Healthcare AI</summary>
+          <summary class="disclosure-trigger">How the pattern shows up in our products</summary>
           <div class="disclosure-content">
             <div class="metaphor-grid">
               <div class="metaphor-item">
-                <h4>Human Wisdom</h4>
-                <p>Emotional intelligence, contextual understanding, ethical judgment, therapeutic presence</p>
+                <h4>Human Judgment</h4>
+                <p>Clinical escalation decisions, PR review for configurations, compliance sign-off, regulatory strategy. The calls that live with consequences.</p>
               </div>
               <div class="metaphor-item">
-                <h4>AI Strength</h4>
-                <p>Continuous monitoring, pattern detection, data processing, scalable assessments</p>
+                <h4>Machine Strength</h4>
+                <p>Deterministic crisis detection in Lilo Solace. Deterministic configuration generation in EmbedIQ. Continuous monitoring, reproducible outputs, audit trails at scale.</p>
               </div>
               <div class="metaphor-item">
-                <h4>Symbiotic Result</h4>
-                <p>Proactive mental health care that combines human compassion with AI reliability to prevent crises before they happen</p>
+                <h4>Same pattern, different tools</h4>
+                <p>Clinicians plus deterministic safety for Lilo. Engineers plus deterministic configuration for EmbedIQ. One principle applied across two very different domains.</p>
               </div>
             </div>
           </div>
@@ -158,8 +158,12 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
         </div>
         <div class="capability-card">
           <h3>Clinical AI research</h3>
-          <p>Active research in deterministic safety architectures for clinical AI, with manuscripts under peer review at a leading digital-medicine journal and a health-policy journal. Grounded in published geriatric mental-health literature (behavioral activation, reminiscence therapy, grounding, C-SSRS).</p>
+          <p>Active research in deterministic safety architectures for clinical AI. Manuscript on the Lilo Engine safety pipeline available as a medRxiv preprint; a second manuscript on architectural safety guarantees for clinical-AI policy is in the publication pipeline. Grounded in published geriatric mental-health literature (behavioral activation, reminiscence therapy, grounding, C-SSRS).</p>
           <p class="capability-link"><a href="/research#about">Read the academic background →</a></p>
+        </div>
+        <div class="capability-card">
+          <h3>Deterministic AI for regulated tooling</h3>
+          <p>EmbedIQ is the developer-tool expression of the same thesis — an adaptive Q&amp;A wizard that generates byte-for-byte reproducible Claude Code configurations, with built-in compliance packs for HIPAA, PCI-DSS, and FERPA. No runtime LLM, zero data persistence, air-gap compatible — the architectural properties regulated industries need and LLM-based competitors structurally can't match.</p>
         </div>
         <div class="capability-card">
           <h3>Cloud, compliance, and engineering</h3>
@@ -195,14 +199,14 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
               <span class="expand-icon" aria-hidden="true">+</span>
             </summary>
             <div class="mission-content">
-              <p>Create emotionally intelligent therapeutic AI that works in symbiosis with human caregivers, transforming senior mental health through the fusion of empathy and technology.</p>
+              <p>Build deterministic AI where determinism matters, and ship honestly about what's true today.</p>
               <div class="mission-focus">
                 <h4>Our Focus:</h4>
                 <ul>
-                  <li>Voice-first therapeutic AI for seniors</li>
-                  <li>Proactive crisis prevention, not reactive intervention</li>
-                  <li>Empowering caregivers, not replacing them</li>
-                  <li>Clinical-grade precision with human warmth</li>
+                  <li>Therapeutic AI for elderly mental health with architectural safety guarantees</li>
+                  <li>Compliance-aware configuration tooling that is air-gap compatible and byte-for-byte reproducible</li>
+                  <li>Research and regulatory pathways that the work can survive — peer review, IRB, FDA De Novo</li>
+                  <li>Product claims that match what ships; roadmap items labelled as such</li>
                 </ul>
               </div>
             </div>
@@ -216,14 +220,14 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
               <span class="expand-icon" aria-hidden="true">+</span>
             </summary>
             <div class="vision-content">
-              <p>A future where every senior receives personalized, empathetic mental health support—where AI amplifies human compassion to prevent crises and restore dignity to aging.</p>
+              <p>A future where AI in regulated domains is trusted because its decisions are reproducible, auditable, and honest about what they are — not because anyone was asked to trust them.</p>
               <div class="vision-impact">
                 <h4>Impact Goals:</h4>
                 <ul>
-                  <li>Zero preventable mental health crises in senior living</li>
-                  <li>Universal access to therapeutic AI regardless of geography</li>
-                  <li>10x increase in caregiver capacity through AI augmentation</li>
-                  <li>New standard of care combining technology and humanity</li>
+                  <li>Deterministic safety pipelines recognised as a distinct class of clinical AI</li>
+                  <li>Enterprise AI coding agents configured by audit-defensible tooling, not hand-written CLAUDE.md files</li>
+                  <li>Published methods and open specifications that other teams can build on</li>
+                  <li>A bar of honesty in AI marketing that the rest of the industry gets dragged toward</li>
                 </ul>
               </div>
             </div>
@@ -247,12 +251,12 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
           <summary class="value-trigger">
             <span class="value-header">
               <span class="value-icon" aria-hidden="true"><Brain class="icon-inline-company" /></span>
-              <span class="value-name">Clinical Excellence</span>
+              <span class="value-name">Evidence and honesty</span>
             </span>
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="value-content">
-            <p>Every clinical decision is grounded in peer-reviewed research, validated instruments, and evidence-based therapeutic approaches. We follow rigorous clinical validation protocols to ensure our platform meets the highest standards of clinical rigor.</p>
+            <p>We publish methods, document invariants, and caveat what we haven't proven. Internal benchmark numbers are never presented as clinical outcomes. Pre-pilot is labelled pre-pilot. Roadmap is labelled roadmap. The published work stands or falls on its own terms — not on marketing.</p>
           </div>
         </details>
 
@@ -265,7 +269,7 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="value-content">
-            <p>Technology should serve humanity, not the other way around. Our voice-first interface adapts to seniors' preferences, our dashboards prioritize caregiver workflow, and our family portal provides transparency without complexity.</p>
+            <p>Technology should meet humans where they are. Voice-first interfaces that adapt to an 82-year-old resident's preferences for Lilo Solace. Role-adaptive configuration that produces meaningfully different output for a developer versus a business analyst versus a compliance officer for EmbedIQ. Different users, same posture.</p>
           </div>
         </details>
 
@@ -273,12 +277,12 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
           <summary class="value-trigger">
             <span class="value-header">
               <span class="value-icon" aria-hidden="true"><ShieldCheck class="icon-inline-company" /></span>
-              <span class="value-name">Privacy & Security</span>
+              <span class="value-name">Privacy &amp; Security</span>
             </span>
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="value-content">
-            <p>Healthcare data deserves the highest protection. Our platform is built HIPAA-compliant from the ground up, with end-to-end encryption, 7-year audit logging, and role-based access control ensuring patient privacy at every layer.</p>
+            <p>Regulated data deserves architectural guarantees, not promises. Lilo Solace is HIPAA-compliant by design — end-to-end encryption, seven-year immutable audit logs, role-based access, and an on-premise deployment path so PHI never has to leave the facility. EmbedIQ runs locally with zero data persistence and zero network calls — air-gap compatible by construction.</p>
           </div>
         </details>
 
@@ -291,7 +295,7 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="value-content">
-            <p>Transparency, fairness, and accountability guide our AI development. We publish our crisis detection accuracy metrics, document our algorithmic decision-making, and maintain human oversight for all critical clinical decisions.</p>
+            <p>No black-box AI for safety calls. Deterministic pipelines run the crisis-detection gate and the compliance-enforcement path; LLMs assist with fluency where they genuinely help. Every safety-critical decision is traceable to the rule that produced it, and humans approve the outcomes that matter — clinical escalation, configuration pull requests, compliance sign-off.</p>
           </div>
         </details>
 
@@ -304,7 +308,7 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="value-content">
-            <p>The pursuit of better outcomes never stops. We continuously refine our therapeutic agents, expand our clinical instrument library, and incorporate feedback from caregivers, families, and residents to improve the platform.</p>
+            <p>The pursuit of better outcomes never stops. We expand the Lilo Solace clinical-instrument framework, refine the deterministic safety pipeline, and evolve EmbedIQ's generators, domain packs, and skills in response to real enterprise use. Improvements ship with explicit version labels, not silently.</p>
           </div>
         </details>
 
@@ -312,12 +316,12 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
           <summary class="value-trigger">
             <span class="value-header">
               <span class="value-icon" aria-hidden="true"><HandHeart class="icon-inline-company" /></span>
-              <span class="value-name">Compassionate Care</span>
+              <span class="value-name">Respect for the humans on the other end</span>
             </span>
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="value-content">
-            <p>Every interaction should add value to a resident's life. Whether it's a voice assessment, a crisis alert, or a family update, we design for dignity, respect, and genuine care—not just clinical efficiency.</p>
+            <p>Every product choice gets measured against the person on the other end — the resident receiving a daily check-in, the family reading a mood pattern, the engineer who needs a CLAUDE.md that makes Monday easier, the compliance officer whose audit has to survive. Designing for dignity, respect, and the actual workflow is not a UX afterthought; it is the work.</p>
           </div>
         </details>
       </div>
@@ -327,10 +331,10 @@ import { Handshake, Heart, Target, Sparkles, HandHeart, ShieldCheck, Brain, Hear
   <!-- CTA Section -->
   <section class="company-cta" role="region" aria-labelledby="cta-heading">
     <div class="container">
-      <h2 id="cta-heading">Join Us in Building the Future</h2>
-      <p class="cta-subtitle">Looking for contributors, collaborators, and community members who share our vision of emotionally intelligent healthcare AI.</p>
+      <h2 id="cta-heading">Join us in building AI that earns the trust it claims.</h2>
+      <p class="cta-subtitle">Looking for collaborators and community members — clinicians, enterprise engineering teams, researchers, advisors, and investors — who share the posture.</p>
       <div class="cta-actions">
-        <a href="/contact" class="btn-primary">Join the Community</a>
+        <a href="/contact?interest=collaborate" class="btn-primary">Join the Community</a>
         <a href="mailto:contact@pragmaticlogic.ai" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
