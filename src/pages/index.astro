@@ -2,210 +2,202 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, Heart } from 'lucide-astro';
+import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileCheck } from 'lucide-astro';
 ---
 
-<Layout title="Praglogic — AI for human good" description="Praglogic builds therapeutic AI for assisted living (Lilo Solace) and configuration tooling for Claude Code (EmbedIQ). Human ingenuity plus AI symbiosis.">
+<Layout
+  title="Praglogic — Deterministic AI for outcomes that matter"
+  description="Praglogic builds deterministic AI for domains where probabilistic answers aren't good enough. Two products: Lilo Solace (therapeutic AI for assisted living) and EmbedIQ (compliance-aware Claude Code configuration)."
+>
   <Navigation />
-  
-  <!-- Hero Section -->
+
+  <!-- Hero -->
   <section class="hero" role="banner" aria-labelledby="hero-title">
     <div class="container hero-grid">
       <div class="hero-content">
         <h1 id="hero-title" class="hero-title">
-          Every senior deserves more than care.
-          <span class="hero-emphasis">They deserve purpose and belonging.</span>
+          AI for outcomes
+          <span class="hero-emphasis">that matter.</span>
         </h1>
-        
-        <p class="hero-subtitle">Lilo Solace combines clinical precision with genuine empathy — technology that amplifies human connection, not replaces it.</p>
-
+        <p class="hero-subtitle">
+          We build deterministic AI for domains where probabilistic answers aren't good enough — elderly mental health and enterprise engineering. Two products. One engineering principle.
+        </p>
         <div class="hero-actions">
-          <a href="/products/" class="btn-primary-large">See our products</a>
-          <a href="/products/lilo-solace/" class="btn-secondary-large">Lilo Solace</a>
+          <a href="/products/" class="btn-primary-large">Explore products</a>
+          <a href="/contact" class="btn-secondary-large">Get in touch</a>
         </div>
-
-        <p class="disclaimer">Lilo Solace is pre-pilot. The numbers below are engineering validation on internal test suites — we haven't generated clinical outcome data yet. That's what the <a href="/products/lilo-solace/#validation-plan">pilot</a> is for.</p>
       </div>
-      
       <div class="hero-visual">
-        <img src="/images/pl_hero.png" alt="PragLogic — technology and people collaborating across research, agriculture, healthcare, and education" class="hero-img" />
+        <img src="/images/pl_hero.png" alt="Praglogic — technology and people collaborating across healthcare, agriculture, research, and education" class="hero-img" />
       </div>
     </div>
-    
-    <!-- Impact Stats -->
+  </section>
+
+  <!-- Thesis -->
+  <section class="thesis" role="region" aria-labelledby="thesis-heading">
+    <div class="container thesis-inner">
+      <h2 id="thesis-heading" class="thesis-heading">We build what we can prove.</h2>
+      <p class="thesis-body">
+        LLMs are good at fluency. They are not, on their own, good enough for decisions where a missed call costs a life or breaks an audit. Our engineering principle is to reach for determinism — explicit rules, reproducible outputs, auditable pathways — in the places where failure is unacceptable, and to use LLMs where they genuinely help. That posture runs through everything we ship.
+      </p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" role="region" aria-labelledby="products-heading">
     <div class="container">
-      <div class="impact-stats">
-          <div class="impact-stat">
-            <div class="impact-icon"><Crosshair size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">100%</div>
-            <div class="impact-label">Crisis recall</div>
-            <div class="impact-context">On our internal 456-test safety suite. Pilot will measure clinical effectiveness.</div>
-          </div>
-          <div class="impact-stat">
-            <div class="impact-icon"><Zap size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">&lt;1s</div>
-            <div class="impact-label">Crisis-detection latency</div>
-            <div class="impact-context">On cloud and edge hardware. Regulatory bar is 30 seconds.</div>
-          </div>
-          <div class="impact-stat">
-            <div class="impact-icon"><Target size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">13</div>
-            <div class="impact-label">Clinical instruments</div>
-            <div class="impact-context">PHQ-9, GAD-7, C-SSRS and more — scoring aligned to published protocols.</div>
-          </div>
-          <div class="impact-stat highlight">
-            <div class="impact-icon"><Heart size={28} strokeWidth={1.5} /></div>
-            <div class="impact-number">n=20</div>
-            <div class="impact-label">Pilot recruiting</div>
-            <div class="impact-context">Feasibility study. IRB target Jun 2026, enrollment Q3 2026.</div>
-          </div>
-        </div>
+      <div class="section-header">
+        <h2 id="products-heading">What we build.</h2>
+        <p>Two products in very different domains, built on the same principle.</p>
       </div>
-    
-    <!-- Testimonial -->
-    <div class="container">
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <blockquote class="testimonial-text">The kind of alert a family wants — surfaced early, grounded in pattern, acted on before it becomes a crisis.</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">•</div>
-          <div class="author-info">
-            <cite class="author-name">Illustrative scenario</cite>
-            <span class="author-role">Composite; based on early pilot conversations, not a named user</span>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-card-top">
+            <span class="product-badge product-badge-lilo">Pre-pilot · recruiting facilities for Q3 2026</span>
+            <h3 class="product-card-title">Lilo Solace</h3>
+            <p class="product-card-tag">Therapeutic AI companion for assisted living.</p>
           </div>
+          <p class="product-card-body">
+            A deterministic safety pipeline designed to surface and de-escalate mental-health crises in elderly residents. Voice-first, on-device or cloud, with every safety decision traceable.
+          </p>
+          <ul class="product-card-proof">
+            <li>100% crisis recall on internal 456-test safety suite</li>
+            <li>13 clinical instruments (PHQ-9, GAD-7, C-SSRS, UCLA-3, and more)</li>
+            <li>Cloud SaaS or on-premise — data-sovereignty options</li>
+          </ul>
+          <a href="/products/lilo-solace/" class="product-card-link" aria-label="Learn more about Lilo Solace">
+            Learn more <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card-top">
+            <span class="product-badge product-badge-embediq">Shipping · v2.1 · MIT license</span>
+            <h3 class="product-card-title">EmbedIQ</h3>
+            <p class="product-card-tag">Compliance-aware configuration for Claude Code agents.</p>
+          </div>
+          <p class="product-card-body">
+            An adaptive Q&amp;A wizard that generates the full Claude Code setup — CLAUDE.md, rules, hooks, skills, commands, MCP configs — from a structured interview. Deterministic, byte-for-byte reproducible, no runtime LLM.
+          </p>
+          <ul class="product-card-proof">
+            <li>71 adaptive questions across 7 dimensions</li>
+            <li>12 generators produce 15–40 config files</li>
+            <li>3 compliance packs: healthcare (HIPAA), finance (PCI-DSS), education (FERPA)</li>
+          </ul>
+          <a href="/products/embediq/" class="product-card-link" aria-label="Learn more about EmbedIQ">
+            Learn more <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deterministic by design -->
+  <section class="determinism pl-dark-band pl-dark-glow" role="region" aria-labelledby="determinism-heading">
+    <div class="container">
+      <div class="section-header section-header-dark">
+        <h2 id="determinism-heading">Deterministic by design.</h2>
+        <p>Why the same principle shows up in both products.</p>
+      </div>
+      <div class="determinism-grid">
+        <div class="det-card">
+          <div class="det-icon"><GitBranch size={28} strokeWidth={1.5} /></div>
+          <h3>Reproducible outputs</h3>
+          <p>Same inputs, same outputs. Byte-for-byte for EmbedIQ configurations. Documented routing through the crisis-detection pipeline for Lilo. Nothing that matters depends on a temperature setting.</p>
+        </div>
+        <div class="det-card">
+          <div class="det-icon"><FileCheck size={28} strokeWidth={1.5} /></div>
+          <h3>Auditable pathways</h3>
+          <p>Every decision traceable to the rule or gate that produced it. Required for FDA De Novo and HIPAA and the audit packages our customers actually have to ship. Also how we'd build either way.</p>
+        </div>
+        <div class="det-card">
+          <div class="det-icon"><ShieldCheck size={28} strokeWidth={1.5} /></div>
+          <h3>No black-box AI for safety calls</h3>
+          <p>LLMs help with fluency, phrasing, and user experience. Determinism runs the safety-critical pipeline — the crisis gate, the compliance enforcement, the permission tier. No probabilistic hope where the stakes don't allow it.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Value Proposition Section -->
-  <section class="value-props" role="region" aria-labelledby="value-props-heading">
+  <!-- Honest stage reporting -->
+  <section class="stage" role="region" aria-labelledby="stage-heading">
     <div class="container">
-      <div class="section-header apple-hero">
-        <h2 id="value-props-heading" class="apple-headline">Beyond Technology.<br>Into Humanity.</h2>
-        <div class="apple-statement">
-          <p class="statement-intro">While others build chatbots,</p>
-          <p class="statement-main">we've created AI companions that <span class="highlight-word">remember</span> your mother's favorite stories, <span class="highlight-word">understand</span> when your father needs encouragement, and <span class="highlight-word">know</span> when to alert you that something's wrong.</p>
-        </div>
-        <div class="apple-tagline">
-          <p>Because every senior deserves technology that feels human.</p>
-        </div>
+      <div class="section-header">
+        <h2 id="stage-heading">Built with honesty about stage.</h2>
+        <p>What is true today. We flag the rest as roadmap.</p>
       </div>
-      
-      <div class="props-grid">
-        <div class="prop-card prop-card-horizontal">
-          <div class="prop-icon-image">
-            <img src="/images/genuine-connection.png" alt="Genuine Connection" class="prop-img" />
-          </div>
-          <div class="prop-content">
-            <h3>Genuine Connection</h3>
-            <p>AI that remembers personal stories, celebrates small victories, and provides companionship that feels authentic and caring.</p>
-          </div>
+      <div class="stage-grid">
+        <div class="stage-stat">
+          <div class="stage-icon"><Code2 size={24} strokeWidth={1.5} /></div>
+          <div class="stage-headline">EmbedIQ shipping</div>
+          <div class="stage-body">v2.1, MIT-licensed, Docker/Kubernetes deploy, pluggable auth, optional OpenTelemetry.</div>
         </div>
-        <div class="prop-card prop-card-horizontal">
-          <div class="prop-icon-image">
-            <img src="/images/peace-of-mind.png" alt="Peace of Mind" class="prop-img" />
-          </div>
-          <div class="prop-content">
-            <h3>Peace of Mind</h3>
-            <p>Gentle, continuous monitoring that catches warning signs early—preventing crises before they happen, not just responding to them.</p>
-          </div>
+        <div class="stage-stat">
+          <div class="stage-icon"><Stethoscope size={24} strokeWidth={1.5} /></div>
+          <div class="stage-headline">Lilo pre-pilot</div>
+          <div class="stage-body">Engineering validation complete. FDA De Novo submission targeted Q4 2026; feasibility study recruiting for summer 2026.</div>
         </div>
-        <div class="prop-card prop-card-horizontal">
-          <div class="prop-icon-image">
-            <img src="/images/Dignity Preserved.png" alt="Dignity Preserved" class="prop-img" />
-          </div>
-          <div class="prop-content">
-            <h3>Dignity Preserved</h3>
-            <p>Respectful care that adapts to each person's needs without overwhelming them with constant questions or intrusive monitoring.</p>
-          </div>
+        <div class="stage-stat">
+          <div class="stage-icon"><Scale size={24} strokeWidth={1.5} /></div>
+          <div class="stage-headline">13 clinical instruments</div>
+          <div class="stage-body">Scoring implementations aligned to published protocols — PHQ-9, GAD-7, C-SSRS, GDS-15, UCLA-3, WHO-5, and more.</div>
         </div>
-        <div class="prop-card prop-card-horizontal">
-          <div class="prop-icon-image">
-            <img src="/images/Families-United.png" alt="Families United" class="prop-img" />
-          </div>
-          <div class="prop-content">
-            <h3>Families United</h3>
-            <p>Transparent updates that help families stay connected to their loved ones' daily lives, joys, and challenges.</p>
-          </div>
+        <div class="stage-stat">
+          <div class="stage-icon"><Flag size={24} strokeWidth={1.5} /></div>
+          <div class="stage-headline">Provisional patent</div>
+          <div class="stage-body">Filing targeted May 2026 around the deterministic crisis-detection method.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Market Opportunity -->
-  <section class="market-opportunity pl-dark-band pl-dark-glow" role="region" aria-labelledby="market-heading">
+  <!-- Who we work with -->
+  <section class="audience" role="region" aria-labelledby="audience-heading">
     <div class="container">
-      <div class="apple-market-hero">
-        <h2 id="market-heading" class="market-headline">The Perfect Storm.<br><span class="market-emphasis">The Perfect Solution.</span></h2>
-        <p class="market-tagline">A crisis that can't be solved with human labor alone</p>
+      <div class="section-header">
+        <h2 id="audience-heading">Who we work with.</h2>
+        <p>Three conversations we are actively having today.</p>
       </div>
-
-      <!-- Research-backed market drivers -->
-      <div class="market-content-simple">
-        <div class="market-crisis-stats">
-          <div class="crisis-stat-item">
-            <div class="crisis-number">65-90%</div>
-            <div class="crisis-label">of nursing home residents have a diagnosable mental disorder</div>
-            <div class="crisis-source">Industry research data, 2024</div>
-          </div>
-          <div class="crisis-stat-item">
-            <div class="crisis-number">99%</div>
-            <div class="crisis-label">of nursing homes currently have open staff positions</div>
-            <div class="crisis-source">AHCA State of the Sector Report, 2024</div>
-          </div>
-          <div class="crisis-stat-item">
-            <div class="crisis-number">$1.2T+</div>
-            <div class="crisis-label">global senior care market projected to reach $1.6T by 2030</div>
-            <div class="crisis-source">Market Research, 2025</div>
-          </div>
-        </div>
-        
-        <div class="market-drivers-simple">
-          <a class="driver-item-simple" href="/products/lilo-solace/#crisis">
-            <span class="driver-icon-wrapper"><Flame class="icon-modern" /></span>
-            <span class="driver-text">A silent epidemic: workforce collapse meeting a mental-health crisis</span>
-          </a>
-          <a class="driver-item-simple" href="/products/lilo-solace/#solution">
-            <span class="driver-icon-wrapper"><Zap class="icon-modern" /></span>
-            <span class="driver-text">Deterministic safety, not probabilistic hope — because the stakes don't allow otherwise</span>
-          </a>
-          <a class="driver-item-simple" href="/products/lilo-solace/#validation-plan">
-            <span class="driver-icon-wrapper"><Target class="icon-modern" /></span>
-            <span class="driver-text">100% recall on our internal safety-test suite. Clinical pilot recruiting for summer 2026.</span>
-          </a>
-        </div>
-
-        <div class="market-cta">
-          <a href="/products/lilo-solace/" class="btn-secondary-pill">
-            <TrendingUp class="btn-icon" />
-            <span>Explore Lilo Solace</span>
-          </a>
-        </div>
+      <div class="audience-grid">
+        <a class="audience-card" href="/contact?interest=lilo-pilot">
+          <div class="audience-icon"><Stethoscope size={28} strokeWidth={1.5} /></div>
+          <h3>Assisted living operators</h3>
+          <p>Recruiting 2–3 facility partners for the Lilo Solace feasibility study (n=20). Free to the partner; we provide hardware, support, and the IRB package.</p>
+          <span class="audience-cta">Start a pilot conversation →</span>
+        </a>
+        <a class="audience-card" href="/contact?interest=embediq">
+          <div class="audience-icon"><Code2 size={28} strokeWidth={1.5} /></div>
+          <h3>Enterprise engineering teams</h3>
+          <p>For teams in regulated industries running Claude Code across multiple projects. EmbedIQ is in active early access; we'll walk you through your stack and give repo access.</p>
+          <span class="audience-cta">Request early access →</span>
+        </a>
+        <a class="audience-card" href="/contact?interest=collaborate">
+          <div class="audience-icon"><Users size={28} strokeWidth={1.5} /></div>
+          <h3>Clinical advisors, researchers, investors</h3>
+          <p>Geriatric psychiatry, deterministic AI safety, and regulated-industry tooling. We are building an advisory board and welcome conversations about the science and the company.</p>
+          <span class="audience-cta">Reach out →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Closing CTA -->
   <section class="cta-section" role="region" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-content">
-        <h2 id="cta-heading">Help Us Build a World Where No Senior Feels Forgotten</h2>
-        <p>Every day we wait, more families lose precious moments with their loved ones. Join us in creating AI that doesn't just monitor—it truly cares.</p>
-        
+        <h2 id="cta-heading">Let's build systems that earn the trust they claim.</h2>
+        <p>If what we're building sounds like the posture your organization needs, we'd like to hear from you.</p>
         <div class="cta-actions">
-          <a href="/contact" class="btn-primary-large">Join the Community</a>
-          <a href="/contact" class="btn-secondary-large">Get in Touch</a>
+          <a href="/contact" class="btn-primary-large">Get in touch</a>
+          <a href="/products/" class="btn-secondary-large">Explore products</a>
         </div>
-        
         <div class="cta-contact">
-          <p>Questions? Email us at <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a></p>
+          <p>Or email us directly at <a href="mailto:contact@pragmaticlogic.ai">contact@pragmaticlogic.ai</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Back to Top Button -->
   <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     <span class="back-to-top-icon" aria-hidden="true">↑</span>
   </button>
@@ -215,13 +207,11 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
 
 <style>
   /* ==========================================
-     HERO SECTION - Clean, balanced layout
+     HERO
      ========================================== */
   .hero {
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     padding: var(--space-20) 0 var(--space-16);
-    position: relative;
-    overflow: hidden;
   }
 
   .hero-grid {
@@ -229,7 +219,55 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
     grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     align-items: center;
-    margin-bottom: var(--space-16);
+  }
+
+  .hero-content {
+    max-width: 560px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 var(--space-6) 0;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-emphasis {
+    display: block;
+    margin-top: var(--space-2);
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--space-8) 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
   }
 
   @media (max-width: 900px) {
@@ -238,268 +276,14 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
       gap: var(--space-10);
       text-align: center;
     }
-
-    .hero-visual {
-      order: -1;
-    }
+    .hero-content { max-width: 100%; margin: 0 auto; }
+    .hero-visual { order: -1; }
+    .hero-actions { justify-content: center; }
   }
 
-  .hero-content {
-    max-width: 560px;
-  }
-
-  @media (max-width: 900px) {
-    .hero-content {
-      max-width: 100%;
-      margin: 0 auto;
-    }
-  }
-
-  .hero-title {
-    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-    font-weight: 300;
-    line-height: 1.25;
-    margin: 0 0 var(--space-6) 0;
-    color: var(--color-text);
-    letter-spacing: -0.01em;
-  }
-
-  .hero-emphasis {
-    display: block;
-    margin-top: var(--space-3);
-    font-weight: 500;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-    margin: 0 0 var(--space-8) 0;
-  }
-
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-img {
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-xl);
-  }
-
-  /* Impact Stats - Light cards */
-  .impact-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-    margin: var(--space-12) 0;
-  }
-
-  @media (max-width: 900px) {
-    .impact-stats {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .impact-stats {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .impact-stat {
-    text-align: center;
-    padding: var(--space-8) var(--space-6);
-    background: white;
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-border);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
-  }
-
-  .impact-stat:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-4px);
-  }
-
-  .impact-stat.highlight {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(37, 99, 235, 0.08));
-    border-color: rgba(16, 185, 129, 0.2);
-  }
-
-  .impact-icon {
-    margin-bottom: var(--space-3);
-    color: var(--color-primary);
-  }
-
-  .impact-icon :global(svg) {
-    width: 28px;
-    height: 28px;
-  }
-
-  .impact-number {
-    font-size: clamp(2.5rem, 5vw, 3rem);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: var(--space-2);
-  }
-
-  .impact-label {
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-
-  .impact-context {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-  }
-
-  /* Testimonial Card */
-  .testimonial-card {
-    max-width: 700px;
-    margin: var(--space-12) auto 0;
-    padding: var(--space-10);
-    background: white;
-    border-radius: var(--radius-2xl);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-    position: relative;
-    text-align: center;
-  }
-
-  .testimonial-quote-mark {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 6rem;
-    font-family: Georgia, serif;
-    color: var(--color-primary);
-    opacity: 0.15;
-    line-height: 1;
-  }
-
-  .testimonial-text {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    font-weight: 400;
-    color: var(--color-text);
-    line-height: 1.6;
-    margin: 0 0 var(--space-6) 0;
-    font-style: italic;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-  }
-
-  .author-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: var(--font-size-base);
-  }
-
-  .author-info {
-    text-align: left;
-  }
-
-  .author-name {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    color: var(--color-text);
-    font-size: var(--font-size-base);
-  }
-
-  .author-role {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-  }
-
-  /* Legacy - keep for compatibility */
-  .stat-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-  }
-
-  /* Hero Testimonial */
-  .hero-testimonial {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .hero-testimonial blockquote {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    font-style: italic;
-    color: var(--color-text);
-    margin: 0 0 var(--space-3) 0;
-    line-height: 1.6;
-  }
-
-  .hero-testimonial cite {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    font-style: normal;
-    font-weight: 500;
-  }
-
-  /* Hero Actions */
-  .hero-actions {
-    display: flex;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-  }
-
-  @media (max-width: 900px) {
-    .hero-actions {
-      justify-content: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-actions {
-      flex-direction: column;
-    }
-  }
-
-  .disclaimer {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-tertiary);
-    margin: 0;
-  }
-
-  @media (max-width: 900px) {
-    .disclaimer {
-      text-align: center;
-    }
-  }
-
-  /* Buttons */
+  /* ==========================================
+     BUTTONS
+     ========================================== */
   .btn-primary-large,
   .btn-secondary-large {
     display: inline-flex;
@@ -511,6 +295,7 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
     font-size: var(--font-size-base);
     text-decoration: none;
     transition: all 0.2s ease;
+    border: 2px solid transparent;
   }
 
   .btn-primary-large {
@@ -525,1562 +310,383 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
   }
 
   .btn-secondary-large {
-    background: white;
-    color: var(--color-primary);
-    border: 2px solid var(--color-border);
-  }
-
-  .btn-secondary-large:hover {
-    border-color: var(--color-primary);
-    background: var(--color-primary-subtle);
-  }
-
-  /* Legacy styles kept for compatibility */
-  .apple-hero-subtitle {
-    margin-bottom: var(--space-8);
-    max-width: 600px;
-  }
-
-  .subtitle-intro {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    color: var(--color-text);
-    font-weight: 500;
-    margin-bottom: var(--space-4);
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-  }
-
-  .subtitle-main {
-    font-size: clamp(1.125rem, 2.2vw, 1.375rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    margin-bottom: var(--space-3);
-    line-height: 1.5;
-    letter-spacing: 0.005em;
-  }
-
-  .subtitle-highlight {
-    color: var(--color-primary);
-    font-weight: 600;
-    position: relative;
-  }
-
-  .subtitle-tagline {
-    font-size: clamp(0.875rem, 1.8vw, 1rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    font-style: italic;
-    opacity: 0.85;
-    margin: 0;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
-  }
-
-  .philosophy-simple {
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    font-style: italic;
-    margin-top: var(--space-3);
-    opacity: 0.85;
-  }
-  
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-    margin-bottom: var(--space-8);
-  }
-
-  /* Simplified Hero Stat - Single Focus */
-  .hero-stat-single {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-    padding: var(--space-8);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.05));
-    border-radius: var(--radius-2xl);
-    border: 2px solid rgba(37, 99, 235, 0.15);
-    margin-bottom: var(--space-8);
-    animation: slideInUp 0.8s ease-out 0.4s both;
-    max-width: 600px;
-  }
-
-  .stat-icon-large {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .stat-icon-large .icon-modern {
-    width: 56px;
-    height: 56px;
-    color: var(--color-primary);
-    stroke-width: 1.5;
-    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.2));
-  }
-
-  .stat-display {
-    flex: 1;
-  }
-
-  .stat-context {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    margin: var(--space-2) 0 0 0;
-    line-height: 1.5;
-  }
-
-  @media (max-width: 768px) {
-    .hero-stat-single {
-      flex-direction: column;
-      text-align: center;
-      padding: var(--space-6);
-    }
-  }
-
-  .stat-number-hero {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .stat-number {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--space-1);
-  }
-  
-  .stat-label {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-weight: 500;
-  }
-  
-  .hero-actions {
-    display: flex;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-  }
-  
-  .btn-primary-large, .btn-secondary-large {
-    padding: var(--space-4) var(--space-8);
-    border-radius: var(--radius-xl);
-    font-weight: 600;
-    font-size: var(--font-size-lg);
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
-  }
-  
-  .btn-primary-large {
-    background: var(--color-primary);
-    color: white;
-  }
-  
-  .btn-primary-large:hover {
-    background: var(--color-primary-light);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .btn-secondary-large {
     background: transparent;
     color: var(--color-text);
     border-color: var(--color-border);
   }
-  
+
   .btn-secondary-large:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
   }
 
-  .btn-secondary-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 980px;
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-  }
-
-  .btn-secondary-pill:hover {
-    background: rgba(0, 0, 0, 0.06);
-    border-color: rgba(0, 0, 0, 0.12);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  .btn-secondary-pill .btn-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--color-primary);
-    stroke-width: 2;
-    transition: transform 0.3s ease;
-  }
-
-  .btn-secondary-pill:hover .btn-icon {
-    transform: scale(1.1);
-  }
-
-  /* Dark band button variant */
-  .pl-dark-band .btn-secondary-pill {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-
-  .pl-dark-band .btn-secondary-pill:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-
-  .pl-dark-band .btn-secondary-pill .btn-icon {
-    color: white;
-  }
-  
-  .disclaimer {
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.6);
-    font-style: italic;
-    line-height: 1.4;
-  }
-  
-  .impact-story {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(16, 185, 129, 0.02));
-    border-left: 4px solid var(--color-secondary);
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
-    margin-bottom: var(--space-8);
-    box-shadow: var(--shadow-sm);
-    animation: slideInUp 0.8s ease-out 0.3s both;
-    transition: all 0.3s ease;
-  }
-
-  .impact-story:hover {
-    transform: translateX(4px);
-    box-shadow: var(--shadow-md);
-  }
-
-  /* Simplified Testimonial */
-  .hero-testimonial {
-    margin-bottom: var(--space-8);
-    padding: var(--space-6) 0;
-    max-width: 600px;
-    animation: slideInUp 0.8s ease-out 0.3s both;
-  }
-
-  .testimonial-quote {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-    line-height: 1.5;
-    font-style: italic;
-  }
-
-  .testimonial-attribution {
-    font-size: 15px;
-    color: var(--color-text-light);
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  /* Hero Stats Compact - Apple Style */
-  .hero-stats-compact {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
-    padding: var(--space-4) 0;
-  }
-
-  @media (max-width: 768px) {
-    .hero-stats-compact {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .stat-compact {
-    text-align: center;
-    padding: var(--space-4);
-    background: white;
-    border-radius: var(--radius-xl);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .stat-compact:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .stat-number-compact {
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 700;
-    background: linear-gradient(135deg, #0071e3, #00c7be);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: var(--space-2);
-    line-height: 1.2;
-  }
-
-  .stat-label-compact {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
-  }
-  
-  .story-quote p {
-    font-size: var(--font-size-lg);
-    font-style: italic;
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-    line-height: 1.6;
-  }
-  
-  .story-quote cite {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-weight: 600;
-  }
-  
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: var(--space-8);
-  }
-
-  .hero-image {
-    position: sticky;
-    top: 120px;
-    width: 100%;
-    max-width: 480px;
-  }
-  
-  .hero-img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-2xl);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hero-img:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
-  }
-
-  @media (max-width: 1024px) {
-    .hero-visual {
-      order: -1;
-      padding-top: 0;
-    }
-
-    .hero-image {
-      position: relative;
-      top: 0;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-  }
-  
-  .mockup-container {
-    position: relative;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .mockup-badge {
-    background: var(--color-secondary);
-    color: white;
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    text-align: center;
-  }
-  
-  .mockup-placeholder {
-    background: white;
-    border: 1px solid var(--color-border);
-    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-    box-shadow: var(--shadow-xl);
-    overflow: hidden;
-  }
-  
-  .mockup-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-4);
-    background: var(--color-background-alt);
-    border-bottom: 1px solid var(--color-border);
-  }
-  
-  .mockup-dots {
-    display: flex;
-    gap: var(--space-2);
-  }
-  
-  .mockup-dots span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-border);
-  }
-  
-  .mockup-title {
-    font-weight: 600;
-    font-size: var(--font-size-sm);
-  }
-  
-  .mockup-content {
-    padding: var(--space-6);
-  }
-  
-  .agent-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-  
-  .agent-card {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    transition: all 0.2s ease;
-  }
-  
-  .agent-card.active {
-    border-color: var(--color-secondary);
-    background: rgba(16, 185, 129, 0.05);
-  }
-  
-  .agent-card.alert {
-    border-color: var(--color-accent);
-    background: rgba(245, 158, 11, 0.05);
-  }
-  
-  .agent-icon {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--space-2);
-  }
-  
-  .agent-name {
-    font-weight: 600;
-    margin-bottom: var(--space-1);
-    font-size: var(--font-size-sm);
-  }
-  
-  .agent-status {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-light);
-  }
-  
-  /* Value Props Section */
-  .value-props {
-    padding: var(--space-24) 0;
-    background: white;
-  }
-
+  /* ==========================================
+     SECTION HEADER (shared)
+     ========================================== */
   .section-header {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto var(--space-16);
+    max-width: 720px;
+    margin: 0 auto var(--space-12);
   }
 
   .section-header h2 {
-    font-size: var(--font-size-4xl);
+    font-size: clamp(1.875rem, 3.5vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
+    margin: 0 0 var(--space-3) 0;
     letter-spacing: -0.02em;
   }
 
-  .apple-hero {
-    max-width: 1000px;
-    margin: 0 auto var(--space-20);
-    padding: var(--space-12) 0;
-  }
-
-  .apple-headline {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: var(--space-8);
-    color: var(--color-text);
-    letter-spacing: -0.025em;
-    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .section-header p {
-    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
-    color: var(--color-text);
-    line-height: 1.6;
-    font-weight: 500;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .apple-statement {
-    max-width: 900px;
-    margin: 0 auto var(--space-8);
-    text-align: center;
-    padding: var(--space-6) 0;
-  }
-
-  .statement-intro {
-    font-size: clamp(1.125rem, 2vw, 1.25rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    margin-bottom: var(--space-4);
-    letter-spacing: 0.005em;
-    opacity: 0.8;
-  }
-
-  .statement-main {
-    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
-    color: var(--color-text);
-    line-height: 1.4;
-    font-weight: 500;
-    margin: 0;
-    letter-spacing: -0.015em;
-  }
-
-  .apple-tagline {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .apple-tagline p {
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: 0.01em;
-    opacity: 0.9;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
     margin: 0;
   }
 
-  .highlight-word {
-    color: var(--color-primary);
+  .section-header-dark h2 { color: var(--color-premium-dark-text); }
+  .section-header-dark p { color: var(--color-premium-dark-muted); }
+
+  /* ==========================================
+     THESIS BAND
+     ========================================== */
+  .thesis {
+    padding: var(--space-16) 0;
+    background: #fbfbfd;
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .thesis-inner { max-width: 820px; text-align: center; }
+
+  .thesis-heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
-    position: relative;
+    margin: 0 0 var(--space-4) 0;
+    letter-spacing: -0.02em;
   }
 
-  .highlight-word::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    border-radius: 1px;
-    opacity: 0.6;
+  .thesis-body {
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
   }
 
-  .props-grid {
+  /* ==========================================
+     PRODUCTS
+     ========================================== */
+  .products { padding: var(--space-20) 0; }
+
+  .product-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .prop-card {
-    padding: var(--space-6);
-    background: white;
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .prop-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-primary);
-  }
-
-  .prop-card-horizontal {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: var(--space-5);
-    align-items: start;
-  }
-
-  .prop-icon-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .prop-img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .prop-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 140px;
-  }
-
-  .prop-card:hover .prop-icon-image {
-    transform: scale(1.02);
-  }
-
-  .prop-card h3 {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    margin-bottom: var(--space-2);
-    color: var(--color-text);
-    line-height: 1.3;
-  }
-
-  .prop-card p {
-    font-size: var(--font-size-base);
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin: 0;
   }
 
   @media (max-width: 900px) {
-    .props-grid {
-      grid-template-columns: 1fr;
-      max-width: 500px;
-    }
+    .product-grid { grid-template-columns: 1fr; }
   }
 
-  @media (max-width: 600px) {
-    .prop-card-horizontal {
-      grid-template-columns: 100px 1fr;
-      gap: var(--space-4);
-    }
-
-    .prop-img {
-      width: 100px;
-      height: 100px;
-    }
-
-    .prop-content {
-      min-height: auto;
-    }
-  }
-
-  /* Market Opportunity Section */
-  .market-opportunity {
-    padding: var(--space-24) 0;
-    background: var(--color-premium-dark);
-  }
-
-  .market-opportunity .market-headline {
-    color: var(--color-premium-dark-text);
-  }
-
-  .market-opportunity .market-tagline {
-    color: var(--color-premium-dark-muted);
-  }
-
-  .market-opportunity .market-emphasis {
-    background: linear-gradient(90deg, var(--color-accent-blue), rgba(16, 185, 129, 0.85));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .market-opportunity .market-stat-hero {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--color-premium-dark-hairline);
-  }
-
-  .market-opportunity .stat-label-large {
-    color: var(--color-premium-dark-text);
-  }
-
-  .market-opportunity .stat-context {
-    color: var(--color-premium-dark-muted);
-  }
-
-  .market-opportunity .driver-item-simple {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--color-premium-dark-hairline);
-  }
-
-  .market-opportunity .driver-text {
-    color: var(--color-premium-dark-text);
-  }
-
-  .apple-market-hero {
-    text-align: center;
-    margin-bottom: var(--space-16);
-  }
-
-  .market-headline {
-    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: var(--space-4);
-    color: var(--color-text);
-    letter-spacing: -0.025em;
-  }
-
-  .market-emphasis {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-  }
-
-  .market-tagline {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    font-style: italic;
-    opacity: 0.9;
-  }
-
-  .market-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    align-items: start;
-  }
-
-  /* Simplified Market Section */
-  .market-content-simple {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .market-stat-hero {
-    margin-bottom: var(--space-12);
-    padding: var(--space-8);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+  .product-card {
+    background: white;
+    border: 1px solid var(--color-border-light);
     border-radius: var(--radius-2xl);
-    border: 2px solid rgba(37, 99, 235, 0.1);
-  }
-
-  .market-drivers-simple {
+    padding: var(--space-10);
+    transition: all 0.25s ease;
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    margin-bottom: var(--space-8);
-    text-align: left;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
-  .driver-item-simple {
+  .product-card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .product-card-top { margin-bottom: var(--space-5); }
+
+  .product-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: var(--space-4);
+  }
+
+  .product-badge-lilo {
+    background: rgba(245, 158, 11, 0.12);
+    color: #b45309;
+  }
+
+  .product-badge-embediq {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+  }
+
+  .product-card-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin: 0 0 var(--space-2) 0;
+    letter-spacing: -0.02em;
+  }
+
+  .product-card-tag {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .product-card-body {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5) 0;
+  }
+
+  .product-card-proof {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .product-card-proof li {
+    padding-left: var(--space-5);
+    position: relative;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .product-card-proof li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+  }
+
+  .product-card-link {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease;
+  }
+
+  .product-card-link:hover { gap: 10px; color: var(--color-primary-dark); }
+
+  /* ==========================================
+     DETERMINISM (dark band)
+     ========================================== */
+  .determinism { padding: var(--space-20) 0; }
+
+  .determinism-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 900px) {
+    .determinism-grid { grid-template-columns: 1fr; }
+  }
+
+  .det-card {
+    padding: var(--space-8);
+    background: var(--color-premium-dark-surface);
+    border: 1px solid var(--color-premium-dark-hairline);
+    border-radius: var(--radius-xl);
+  }
+
+  .det-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: rgba(37, 99, 235, 0.18);
+    color: #93c5fd;
     display: flex;
     align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-4) var(--space-6);
-    background: white;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+    justify-content: center;
+    margin-bottom: var(--space-4);
   }
 
-  .driver-item-simple:hover {
-    transform: translateX(4px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .driver-item-simple:focus-visible {
-    outline: 2px solid rgba(37, 99, 235, 0.65);
-    outline-offset: 2px;
-  }
-
-  .market-cta {
-    text-align: center;
-    margin-top: var(--space-6);
-  }
-
-  .link-subtle {
-    font-size: var(--font-size-base);
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    display: inline-block;
-  }
-
-  .link-subtle:hover {
-    color: var(--color-primary-light);
-    transform: translateX(2px);
-  }
-
-  .apple-market-stats {
-    margin-bottom: var(--space-12);
-  }
-
-  .primary-stat {
-    text-align: center;
-    margin-bottom: var(--space-8);
-    padding: var(--space-8);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
-    border-radius: var(--radius-2xl);
-    border: 2px solid rgba(37, 99, 235, 0.1);
-  }
-
-  .stat-number-large {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--space-2);
-  }
-
-  .stat-label-large {
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
-    color: var(--color-text);
+  .det-card h3 {
+    font-size: var(--font-size-xl);
     font-weight: 600;
+    color: var(--color-premium-dark-text);
+    margin: 0 0 var(--space-3) 0;
     letter-spacing: -0.01em;
   }
 
-  .secondary-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-  }
-
-  .market-stat-small {
-    text-align: center;
-    padding: var(--space-6);
-    background: white;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-  }
-
-  .market-stat-small:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .market-number-small {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--space-2);
-  }
-
-  .market-label-small {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-weight: 500;
-  }
-
-  .apple-market-drivers {
-    background: white;
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-md);
-  }
-
-  .drivers-title {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-    text-align: center;
-  }
-
-  .driver-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-4);
-    margin-bottom: var(--space-3);
-    border-radius: var(--radius-lg);
-    transition: all 0.3s ease;
-  }
-
-  .driver-item:hover {
-    background: var(--color-background-soft);
-    transform: translateX(4px);
-  }
-
-  .competitive-advantage {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
-    border: 1px solid rgba(16, 185, 129, 0.2);
-  }
-
-  .driver-icon {
-    font-size: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  .driver-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.05));
-    border-radius: var(--radius-lg);
-    transition: all 0.3s ease;
-  }
-
-  .driver-item-simple:hover .driver-icon-wrapper {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.1));
-    transform: scale(1.05);
-  }
-
-  .driver-icon-wrapper .icon-modern {
-    width: 20px;
-    height: 20px;
-    color: var(--color-primary);
-    stroke-width: 2;
-  }
-
-  .driver-text {
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
-    color: var(--color-text);
-    font-weight: 500;
-    line-height: 1.5;
-  }
-
-  .apple-revenue-projection {
-    background: white;
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-md);
-  }
-
-  .projection-title {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-    text-align: center;
-  }
-
-  .projection-chart {
-    display: flex;
-    align-items: end;
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
-    height: 200px;
-  }
-
-  .projection-year {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-
-  .year-label {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-weight: 500;
-    margin-bottom: var(--space-2);
-  }
-
-  .revenue-bar {
-    width: 100%;
-    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-light));
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    padding: var(--space-3);
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .revenue-bar:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .year-1 { height: 25%; }
-  .year-2 { height: 60%; }
-  .year-3 { height: 100%; }
-
-  .revenue-amount {
-    color: white;
-    font-weight: 700;
-    font-size: var(--font-size-sm);
-    text-align: center;
-  }
-
-  .projection-note {
-    text-align: center;
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border-light);
-  }
-
-  .projection-note p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-style: italic;
+  .det-card p {
+    color: var(--color-premium-dark-muted);
     margin: 0;
+    line-height: 1.65;
+    font-size: var(--font-size-base);
   }
 
-  .market-text h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-    color: var(--color-text);
+  /* ==========================================
+     HONEST STAGE
+     ========================================== */
+  .stage {
+    padding: var(--space-20) 0;
+    background: #fbfbfd;
   }
 
-  .market-subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-8);
-    max-width: 100%;
-  }
-
-  .market-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-    margin-bottom: var(--space-8);
-  }
-
-  .market-stat {
-    text-align: center;
-    padding: var(--space-6);
-    background: white;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-  }
-
-  .market-stat:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .market-number {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--space-2);
-  }
-
-  .market-label {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-  }
-
-  /* Market Crisis Stats */
-  .market-crisis-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-    margin-bottom: var(--space-10);
-  }
-
-  @media (max-width: 768px) {
-    .market-crisis-stats {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-    }
-  }
-
-  .crisis-stat-item {
-    text-align: center;
-    padding: var(--space-6);
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-xl);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .crisis-number {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: 700;
-    color: white;
-    margin-bottom: var(--space-2);
-  }
-
-  .crisis-label {
-    font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.4;
-  }
-
-  .crisis-source {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: var(--space-2);
-    font-style: italic;
-  }
-
-  .market-highlights {
-    display: grid;
-    gap: var(--space-3);
-  }
-
-  .highlight {
-    color: var(--color-text);
-    font-weight: 500;
-    padding: var(--space-3) 0;
-    border-left: 3px solid var(--color-secondary);
-    padding-left: var(--space-4);
-  }
-
-  /* Clinical Evidence Section */
-  .clinical-evidence {
-    padding: var(--space-24) 0;
-    background: white;
-  }
-
-  .evidence-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto var(--space-16);
-  }
-
-  .evidence-header h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-    color: var(--color-text);
-  }
-
-  .evidence-header p {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-light);
-    max-width: 100%;
-  }
-
-  .evidence-grid {
+  .stage-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
+    gap: var(--space-5);
   }
 
-  .evidence-card {
-    padding: var(--space-8);
-    background: linear-gradient(135deg, var(--color-background-soft), white);
-    border: 2px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    text-align: center;
-    transition: all 0.4s ease;
+  @media (max-width: 1024px) { .stage-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .stage-grid { grid-template-columns: 1fr; } }
+
+  .stage-stat {
+    padding: var(--space-6);
+    background: white;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
   }
 
-  .evidence-card:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
+  .stage-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
   }
 
-  .evidence-metric {
-    font-size: var(--font-size-5xl);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--space-3);
-  }
-
-  .evidence-label {
+  .stage-headline {
     font-size: var(--font-size-lg);
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: var(--space-2);
+    letter-spacing: -0.01em;
   }
 
-  .evidence-detail {
+  .stage-body {
     font-size: var(--font-size-sm);
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
+    line-height: 1.55;
   }
 
-  /* Apple-Inspired Clinical Evidence Styling */
-  .apple-evidence-hero {
-    text-align: center;
-    margin-bottom: var(--space-16);
-  }
+  /* ==========================================
+     AUDIENCE
+     ========================================== */
+  .audience { padding: var(--space-20) 0; }
 
-  .evidence-headline {
-    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: var(--space-6);
-    color: var(--color-text);
-    letter-spacing: -0.025em;
-  }
-
-  .evidence-emphasis {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-  }
-
-  .stanford-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.05));
-    border: 2px solid rgba(37, 99, 235, 0.2);
-    border-radius: var(--radius-full);
-    padding: var(--space-3) var(--space-6);
-    margin-bottom: var(--space-4);
-    font-weight: 600;
-    color: var(--color-primary);
-  }
-
-  .badge-icon {
-    font-size: 1.25rem;
-  }
-
-  .badge-icon-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .badge-icon-wrapper .icon-modern {
-    width: 20px;
-    height: 20px;
-    color: var(--color-primary);
-    stroke-width: 2;
-  }
-
-  .evidence-tagline {
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
-    color: var(--color-text-light);
-    font-weight: 400;
-    font-style: italic;
-    opacity: 0.9;
-  }
-
-  .apple-evidence-grid {
+  .audience-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
-  }
-  
-  @media (max-width: 768px) {
-    .apple-evidence-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
   }
 
-  /* Simplified Evidence Grid */
-  .evidence-grid-simple {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
-    margin-bottom: var(--space-8);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+  @media (max-width: 900px) {
+    .audience-grid { grid-template-columns: 1fr; }
   }
 
-  @media (max-width: 768px) {
-    .evidence-grid-simple {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
-  }
-
-  .evidence-card-simple {
-    text-align: center;
-    padding: var(--space-10) var(--space-8);
-    background: white;
-    border-radius: var(--radius-2xl);
-    border: 1px solid var(--color-border-light);
-    box-shadow: var(--shadow-lg);
-    transition: all 0.4s ease;
-  }
-
-  .evidence-card-simple:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-  }
-
-  .evidence-context {
-    font-size: var(--font-size-base);
-    color: var(--color-text-light);
-    margin-top: var(--space-3);
-    line-height: 1.5;
-  }
-
-  .evidence-footer {
-    text-align: center;
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--color-border-light);
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .study-note {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-4);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-  }
-
-  .icon-inline {
-    width: 16px;
-    height: 16px;
-    color: var(--color-primary);
-    stroke-width: 2;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .evidence-card-apple {
-    text-align: center;
-    padding: var(--space-10);
-    background: white;
-    border-radius: var(--radius-2xl);
-    border: 1px solid var(--color-border-light);
-    box-shadow: var(--shadow-lg);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .evidence-card-apple::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .evidence-card-apple:hover::before {
-    opacity: 1;
-  }
-
-  .evidence-card-apple:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-xl);
-  }
-
-  .primary-outcome::before {
-    background: linear-gradient(90deg, #ef4444, #f97316);
-  }
-
-  .secondary-outcome::before {
-    background: linear-gradient(90deg, #10b981, #059669);
-  }
-
-  .operational-outcome::before {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
-  }
-
-  .safety-outcome::before {
-    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
-  }
-
-  .outcome-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-4);
-    display: block;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-  }
-
-  .outcome-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--space-4);
-  }
-
-  .outcome-icon-wrapper .icon-modern {
-    width: 48px;
-    height: 48px;
-    stroke-width: 1.5;
-    transition: all 0.3s ease;
-  }
-
-  .primary-outcome .outcome-icon-wrapper .icon-modern {
-    color: var(--color-primary);
-    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.3));
-  }
-
-  .secondary-outcome .outcome-icon-wrapper .icon-modern {
-    color: #f59e0b;
-    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.3));
-  }
-
-  .evidence-card-simple:hover .outcome-icon-wrapper .icon-modern {
-    transform: scale(1.1);
-  }
-
-  .evidence-metric-large {
-    font-size: clamp(3rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: var(--space-4);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-  }
-
-  .evidence-label-apple {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-4);
-    line-height: 1.3;
-  }
-
-  .evidence-detail-apple {
+  .audience-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    padding: var(--space-8);
+    background: white;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
   }
 
-  .significance {
-    font-size: var(--font-size-sm);
-    font-weight: 700;
+  .audience-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .audience-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-primary-subtle), rgba(16, 185, 129, 0.08));
     color: var(--color-primary);
-    background: rgba(37, 99, 235, 0.1);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-5);
   }
 
-  .study-size {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-light);
-    font-weight: 500;
-  }
-
-  .comparison {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-weight: 500;
-  }
-
-  .improvement {
-    font-size: var(--font-size-sm);
+  .audience-card h3 {
+    font-size: var(--font-size-xl);
     font-weight: 600;
-    color: var(--color-secondary);
+    margin: 0 0 var(--space-3) 0;
+    letter-spacing: -0.01em;
   }
 
-  .safety-record {
-    font-size: var(--font-size-sm);
-    font-weight: 700;
-    color: #8b5cf6;
-    background: rgba(139, 92, 246, 0.1);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    display: inline-block;
+  .audience-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 var(--space-4) 0;
+    font-size: var(--font-size-base);
+    flex: 1;
   }
 
-  /* CTA Section */
+  .audience-cta {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+  }
+
+  /* ==========================================
+     CTA
+     ========================================== */
   .cta-section {
-    padding: var(--space-24) 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    pointer-events: none;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: var(--space-20) 0;
   }
 
   .cta-content {
-    position: relative;
-    z-index: 1;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   .cta-content h2 {
-    font-size: var(--font-size-4xl);
+    font-size: clamp(1.875rem, 3.5vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: var(--space-4);
     color: white;
+    margin: 0 0 var(--space-4) 0;
+    letter-spacing: -0.02em;
   }
 
-  .cta-content p {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-8);
-    max-width: 100%;
-    color: white;
-    font-weight: 400;
+  .cta-content > p {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 var(--space-8) 0;
+    line-height: 1.5;
   }
 
   .cta-actions {
     display: flex;
     gap: var(--space-4);
     justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: var(--space-6);
-  }
-
-  .cta-contact {
-    color: white;
-  }
-
-  .cta-contact a {
-    color: white;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-
-  .cta-contact a:hover {
-    opacity: 0.8;
   }
 
   .cta-section .btn-secondary-large {
@@ -2095,258 +701,50 @@ import { Flame, Zap, Target, TrendingUp, TrendingDown, Crosshair, DollarSign, He
     background: rgba(255, 255, 255, 0.2);
   }
 
-  @media (max-width: 1024px) {
-    .hero .container {
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
-    }
-
-    .hero-visual {
-      order: -1;
-    }
-
-    .hero-stats {
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-4);
-    }
-
-    .hero-actions {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .props-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .market-content {
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
-    }
-
-    .market-drivers-simple {
-      text-align: left;
-    }
-
-    .driver-item-simple {
-      flex-direction: row;
-    }
-
-    .market-stats {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .evidence-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cta-actions {
-      flex-wrap: wrap;
-    }
-    
-    .secondary-stats {
-      grid-template-columns: 1fr;
-    }
+  .cta-contact p {
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0;
   }
 
-  @media (max-width: 768px) {
-    .hero {
-      padding: var(--space-20) 0 var(--space-16);
-    }
-    
-    .hero-title,
-    .hero-title-apple {
-      font-size: var(--font-size-4xl);
-    }
-
-    .hero-subtitle {
-      font-size: var(--font-size-lg);
-    }
-    
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    .prop-card-horizontal {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .section-header h2 {
-      font-size: var(--font-size-3xl);
-    }
-
-    .section-header p {
-      font-size: var(--font-size-xl);
-    }
-
-    .market-stats {
-      grid-template-columns: 1fr;
-    }
-
-    .evidence-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .projection-chart {
-      height: 150px;
-    }
+  .cta-contact a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 600;
   }
 
-  @media (max-width: 640px) {
-    .hero {
-      padding: var(--space-16) 0 var(--space-12);
-    }
+  .cta-contact a:hover { opacity: 0.85; }
 
-    .hero-title,
-    .hero-title-apple {
-      font-size: clamp(1.875rem, 8vw, 2.5rem);
-    }
-
-    .hero-subtitle {
-      font-size: var(--font-size-base);
-    }
-
-    .hero-stats,
-    .apple-hero-stats {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-    }
-
-    .hero-stat-single {
-      padding: var(--space-6);
-    }
-
-    .market-drivers-simple,
-    .evidence-grid-simple {
-      gap: var(--space-4);
-    }
-
-    .driver-item-simple {
-      padding: var(--space-3) var(--space-4);
-    }
-
-    .hero-stats-compact {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-      padding: var(--space-4) 0;
-    }
-
-    .hero-actions {
-      flex-direction: column;
-      width: 100%;
-      gap: var(--space-3);
-    }
-
-    .btn-primary-large,
-    .btn-secondary-large {
-      width: 100%;
-      text-align: center;
-      padding: var(--space-4) var(--space-6);
-    }
-
-    .btn-secondary-pill {
-      width: 100%;
-      justify-content: center;
-      padding: 14px 24px;
-    }
-
-    .agent-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .section-header h2 {
-      font-size: var(--font-size-2xl);
-    }
-
-    .prop-card h3 {
-      font-size: var(--font-size-xl);
-    }
-
-    .cta-content h2 {
-      font-size: var(--font-size-2xl);
-    }
-
-    .cta-content p {
-      font-size: var(--font-size-lg);
-    }
-
-    .cta-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-    
-    .apple-impact-story {
-      padding: var(--space-6);
-    }
-    
-    .philosophy-statement {
-      padding: var(--space-4);
-    }
-    
-    .value-props,
-    .market-opportunity,
-    .clinical-evidence,
-    .cta-section {
-      padding: var(--space-16) 0;
-    }
-    
-    .back-to-top {
-      bottom: 20px;
-      right: 20px;
-      width: 44px;
-      height: 44px;
-    }
-  }
-
-  /* ===================
-     Back to Top Button (Apple HIG: FAB)
-     =================== */
+  /* ==========================================
+     BACK TO TOP
+     ========================================== */
   .back-to-top {
     position: fixed;
-    bottom: 32px;
-    right: 32px;
-    width: 48px;
-    height: 48px;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
-    border: none;
+    background: white;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
     cursor: pointer;
+    box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 40;
+    transition: all 0.2s ease;
+    z-index: 100;
   }
 
   .back-to-top:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-    background: var(--color-primary-light);
-  }
-
-  .back-to-top:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 4px;
   }
 
   .back-to-top-icon {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  /* ===================
-     Reduced Motion Support (WCAG 2.3.3)
-     =================== */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
+    font-size: 20px;
+    line-height: 1;
   }
 </style>
