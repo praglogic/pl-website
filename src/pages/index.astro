@@ -7,7 +7,7 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
 
 <Layout
   title="Praglogic — Deterministic AI for outcomes that matter"
-  description="Praglogic builds deterministic AI for domains where probabilistic answers aren't good enough. Two products: Lilo Solace (therapeutic AI for assisted living) and EmbedIQ (compliance-aware Claude Code configuration)."
+  description="Praglogic builds deterministic AI for domains where probabilistic answers aren't good enough. Two products: Lilo Solace (therapeutic AI for assisted living) and EmbedIQ (compliance-aware configuration for Claude Code, Cursor, Copilot, Gemini CLI, Windsurf, and AGENTS.md)."
 >
   <Navigation />
 
@@ -72,21 +72,26 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
 
         <article class="product-card">
           <div class="product-card-top">
-            <span class="product-badge product-badge-embediq">Shipping · v2.1 · MIT license</span>
+            <span class="product-badge product-badge-embediq">Shipping · v3.2 · MIT license</span>
             <h3 class="product-card-title">EmbedIQ</h3>
-            <p class="product-card-tag">Compliance-aware configuration for Claude Code agents.</p>
+            <p class="product-card-tag">Compliance-aware configuration for every AI coding agent on your team.</p>
           </div>
           <p class="product-card-body">
-            An adaptive Q&amp;A wizard that generates the full Claude Code setup — CLAUDE.md, rules, hooks, skills, commands, MCP configs — from a structured interview. Deterministic, byte-for-byte reproducible, no runtime LLM.
+            An adaptive Q&amp;A wizard that generates the full config for Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and cross-agent <code>AGENTS.md</code> &mdash; from a single structured interview. Deterministic, byte-for-byte reproducible, no runtime LLM.
           </p>
           <ul class="product-card-proof">
             <li>71 adaptive questions across 7 dimensions</li>
-            <li>12 generators produce 15–40 config files</li>
+            <li>17 generators, 6 agent formats, 15–40 config files</li>
             <li>3 compliance packs: healthcare (HIPAA), finance (PCI-DSS), education (FERPA)</li>
           </ul>
-          <a href="/products/embediq/" class="product-card-link" aria-label="Learn more about EmbedIQ">
-            Learn more <span aria-hidden="true">→</span>
-          </a>
+          <div class="product-card-links">
+            <a href="/products/embediq/" class="product-card-link" aria-label="Learn more about EmbedIQ">
+              Learn more <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://github.com/asq-sheriff/embediq" class="product-card-link-secondary" target="_blank" rel="noopener" aria-label="EmbedIQ on GitHub">
+              View on GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </article>
       </div>
     </div>
@@ -103,7 +108,7 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
         <div class="det-card">
           <div class="det-icon"><GitBranch size={28} strokeWidth={1.5} /></div>
           <h3>Reproducible outputs</h3>
-          <p>Same inputs, same outputs. Byte-for-byte for EmbedIQ configurations. Documented routing through the crisis-detection pipeline for Lilo. Nothing that matters depends on a temperature setting.</p>
+          <p>Same inputs, same outputs. Byte-for-byte for EmbedIQ configurations — verified by a golden-config replay scorer. Documented routing through the crisis-detection pipeline for Lilo. Nothing that matters depends on a temperature setting.</p>
         </div>
         <div class="det-card">
           <div class="det-icon"><FileCheck size={28} strokeWidth={1.5} /></div>
@@ -130,7 +135,7 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
         <div class="stage-stat">
           <div class="stage-icon"><Code2 size={24} strokeWidth={1.5} /></div>
           <div class="stage-headline">EmbedIQ shipping</div>
-          <div class="stage-body">v2.1, MIT-licensed, Docker/Kubernetes deploy, pluggable auth, optional OpenTelemetry.</div>
+          <div class="stage-body">v3.2 (April 22, 2026). Multi-agent targeting: Claude Code, Cursor, Copilot, Gemini, Windsurf, AGENTS.md. MIT-licensed, Docker/Kubernetes, enterprise ops (autopilot, drift, git PR, webhooks).</div>
         </div>
         <div class="stage-stat">
           <div class="stage-icon"><Stethoscope size={24} strokeWidth={1.5} /></div>
@@ -168,8 +173,8 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
         <a class="audience-card" href="/contact?interest=embediq">
           <div class="audience-icon"><Code2 size={28} strokeWidth={1.5} /></div>
           <h3>Enterprise engineering teams</h3>
-          <p>For teams in regulated industries running Claude Code across multiple projects. EmbedIQ is in active early access; we'll walk you through your stack and give repo access.</p>
-          <span class="audience-cta">Request early access →</span>
+          <p>For teams in regulated industries running AI coding agents across multiple projects. EmbedIQ is MIT-licensed and on GitHub — we'll walk you through enterprise deployment, autopilot, drift detection, and compliance-platform integration (Drata / Vanta).</p>
+          <span class="audience-cta">Start an enterprise conversation →</span>
         </a>
         <a class="audience-card" href="/contact?interest=collaborate">
           <div class="audience-icon"><Users size={28} strokeWidth={1.5} /></div>
@@ -473,12 +478,19 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
     background: var(--color-primary);
   }
 
+  .product-card-links {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+
   .product-card-link {
     font-weight: 600;
     color: var(--color-primary);
     font-size: var(--font-size-base);
     text-decoration: none;
-    margin-top: auto;
     display: inline-flex;
     align-items: center;
     gap: 4px;
@@ -486,6 +498,29 @@ import { ShieldCheck, Scale, GitBranch, Stethoscope, Code2, Users, Flag, FileChe
   }
 
   .product-card-link:hover { gap: 10px; color: var(--color-primary-dark); }
+
+  .product-card-link-secondary {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+
+  .product-card-link-secondary:hover {
+    color: var(--color-primary);
+  }
+
+  .product-card-body code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.92em;
+    background: var(--color-background-secondary, #f1f5f9);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
 
   /* ==========================================
      DETERMINISM (dark band)

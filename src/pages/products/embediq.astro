@@ -2,16 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
-import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldCheck, Lock, Terminal, Github, ArrowRight, Stethoscope, CreditCard, GraduationCap, FileText, Gauge, ListChecks, BookOpen, Cpu, Wrench, Brain, Hand, PackageCheck, Map, Archive } from 'lucide-astro';
+import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldCheck, Lock, Terminal, Github, ArrowRight, Stethoscope, CreditCard, GraduationCap, FileText, Gauge, ListChecks, BookOpen, Cpu, Wrench, Brain, Hand, PackageCheck, Map, Archive, MousePointer, Sparkles, Wind, Layers, Users, GitPullRequest, Webhook, AlarmClock, RefreshCw, Workflow } from 'lucide-astro';
 ---
 
 <Layout
-  title="EmbedIQ — Claude Code configuration wizard | Praglogic"
-  description="EmbedIQ is an adaptive wizard that generates a complete Claude Code environment — 15 to 40 files tailored to your role, stack, and compliance profile. Healthcare, finance, and education packs included. Deterministic generation, no runtime LLM, no telemetry. MIT licensed."
+  title="EmbedIQ — Multi-agent configuration wizard | Praglogic"
+  description="EmbedIQ is an adaptive wizard that interviews your team once and generates the full config for Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and cross-agent AGENTS.md. Healthcare, finance, and education compliance packs included. Deterministic generation, no runtime LLM, no telemetry. MIT licensed."
 >
   <Navigation />
 
-  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that generates a complete Claude Code environment (CLAUDE.md, rules, hooks, skills, commands, agents, MCP servers, compliance controls) tailored to the user's role, tech stack, and industry. Deterministic generation with no runtime LLM. CLI and web interfaces. Version 2.1. MIT licensed.","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","featureList":["Adaptive 71-question interview across seven dimensions","12 generators producing 15-40 configuration files","Healthcare (HIPAA), finance (PCI-DSS/SOX/GLBA), education (FERPA/COPPA) compliance packs","Deterministic generation, no runtime LLM","Zero data persistence, optional OpenTelemetry","Web UI and CLI interfaces","Docker and Kubernetes deployment"]}`} />
+  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that interviews a team once and generates the full configuration for six AI coding agents — Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and cross-agent AGENTS.md — tailored to the user's role, tech stack, and industry. Deterministic generation with no runtime LLM. Ships with drift detection, autopilot scheduled regeneration, GitHub PR integration, and Slack/Teams/compliance-platform webhooks. CLI and web interfaces. Version 3.2. MIT licensed.","softwareVersion":"3.2.0","license":"https://opensource.org/licenses/MIT","featureList":["Adaptive 71-question interview across seven dimensions","Six agent formats from a single interview: Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, AGENTS.md","17 generators producing 15-40 configuration files","Healthcare (HIPAA), finance (PCI-DSS/SOX/GLBA), education (FERPA/COPPA) compliance packs","Deterministic generation, no runtime LLM","Evaluation framework with golden-config replay scorer","Drift detection CLI and autopilot scheduled regeneration","GitHub PR integration, Slack/Teams webhooks, Drata/Vanta compliance-platform adapters","Zero data persistence, optional OpenTelemetry","Web UI and CLI interfaces","Docker and Kubernetes deployment"]}`} />
 
   <main class="embediq-page">
     <!-- Hero -->
@@ -23,17 +23,18 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
           <span class="category-chip">Developer Tools</span>
           <span class="status-chip status-shipping">
             <span class="status-dot"></span>
-            Shipping · v2.1 · MIT license
+            Shipping · v3.2 · MIT license
           </span>
         </div>
 
         <h1 class="hero-title">EmbedIQ</h1>
-        <p class="hero-tagline">Answer a few questions.<br /><span class="text-gradient-embediq">We generate your ideal Claude Code setup.</span></p>
-        <p class="hero-lead">Setting up Claude Code for a real team means writing CLAUDE.md, permission rules, hooks, skills, commands, agents, MCP configs, and compliance controls — and keeping all of it consistent across machines. EmbedIQ interviews you, then generates the whole thing. 15 to 40 files. Deterministic. No runtime LLM.</p>
+        <p class="hero-tagline">Answer a few questions.<br /><span class="text-gradient-embediq">We generate the config for every AI coding agent on your team.</span></p>
+        <p class="hero-lead">Setting up Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and <code>AGENTS.md</code> across a real team means writing six different config formats — and keeping them consistent as your stack, roles, and compliance posture evolve. EmbedIQ interviews you once, then generates all of them. 15 to 40 files per agent target. Deterministic. No runtime LLM.</p>
 
         <div class="hero-actions">
-          <a href="/contact?interest=embediq" class="btn-embediq-primary">Get early access</a>
+          <a href="https://github.com/asq-sheriff/embediq" class="btn-embediq-primary" target="_blank" rel="noopener"><Github class="btn-icon" /> View on GitHub</a>
           <a href="#how-it-works" class="btn-embediq-secondary">See how it works</a>
+          <a href="/contact?interest=embediq" class="btn-embediq-secondary">Enterprise walkthrough</a>
         </div>
 
         <div class="hero-meta-row">
@@ -42,12 +43,12 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
             <span class="meta-label">adaptive questions<br />across 7 dimensions</span>
           </div>
           <div class="meta-stat">
-            <span class="meta-num">12</span>
-            <span class="meta-label">generators produce<br />15&ndash;40 config files</span>
+            <span class="meta-num">6</span>
+            <span class="meta-label">agent formats<br />from one interview</span>
           </div>
           <div class="meta-stat">
-            <span class="meta-num">3</span>
-            <span class="meta-label">compliance packs<br />(healthcare, finance, education)</span>
+            <span class="meta-num">17</span>
+            <span class="meta-label">generators produce<br />15&ndash;40 config files</span>
           </div>
           <div class="meta-stat">
             <span class="meta-num">0</span>
@@ -61,26 +62,26 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
     <section class="problem-section" id="problem">
       <div class="container">
         <p class="eyebrow">The problem</p>
-        <h2>Claude Code is powerful. Configuring it is not.</h2>
+        <h2>Every AI coding agent wants a different config. Keeping them coherent is the actual work.</h2>
         <div class="problem-grid">
           <div class="problem-card">
             <h3>Today</h3>
             <ul>
-              <li>Someone writes CLAUDE.md from scratch, guessing which tech-stack details matter.</li>
-              <li>Security and compliance teams share PDFs. Developers translate them into Python hooks by hand.</li>
-              <li>Every teammate&rsquo;s local Claude Code setup drifts a little.</li>
-              <li>When compliance requirements change, someone updates settings, rules, and hooks across every machine.</li>
+              <li>Someone writes <code>CLAUDE.md</code> from scratch. Someone else writes <code>.cursor/rules/*.mdc</code>. Someone else does <code>.github/copilot-instructions.md</code>. They drift.</li>
+              <li>Security and compliance teams share PDFs. Developers translate them into hooks and rules by hand &mdash; differently for each agent.</li>
+              <li>When compliance requirements change, six files in six formats need updating across every machine.</li>
               <li>No validation that the configuration actually meets HIPAA, PCI-DSS, or SOC 2 before you ship.</li>
+              <li>&ldquo;Works on my Claude Code&rdquo; becomes &ldquo;fails on my Cursor&rdquo; becomes a meeting.</li>
             </ul>
           </div>
           <div class="problem-card problem-card-after">
             <h3>With EmbedIQ</h3>
             <ul>
-              <li>Open the wizard. Answer 25 to 40 contextual questions — branching adapts to your role, stack, and industry.</li>
+              <li>Open the wizard. Answer 25 to 40 contextual questions &mdash; branching adapts to your role, stack, and industry.</li>
               <li>Review your derived profile with confidence scores. Correct anything before generating.</li>
-              <li>EmbedIQ generates a complete <code>.claude/</code> structure plus <code>CLAUDE.md</code>, <code>.mcp.json.template</code>, and an association map.</li>
+              <li>EmbedIQ generates the full config for every agent format in one pass: Claude Code, Cursor, Copilot, Gemini CLI, Windsurf, plus cross-agent <code>AGENTS.md</code>.</li>
               <li>Output validation flags missing compliance controls, over-permissive settings, and DLP coverage gaps before files hit disk.</li>
-              <li>Check the generated files into git. Your whole team gets identical, compliant setup.</li>
+              <li>Check the generated files into git. Your whole team gets identical, compliant setup across whichever agent they use.</li>
             </ul>
           </div>
         </div>
@@ -124,19 +125,20 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
             <div class="step-num">3</div>
             <div class="step-icon"><FileCode2 class="icon" /></div>
             <h3>Generate</h3>
-            <p>12 generators run in parallel. Output is validated against your compliance profile before files are written. You end up with 15 to 40 files: a tailored <code>CLAUDE.md</code>, permission rules, Python hook scripts, role-specific agents, slash commands with model routing, MCP server templates, and a documentation registry.</p>
+            <p>17 generators run in parallel across six agent formats: Claude Code (<code>CLAUDE.md</code>, rules, commands, agents, hooks, MCP), Cursor (<code>.cursor/rules/*.mdc</code> with scoping), GitHub Copilot (project + glob-scoped instructions), Gemini CLI (<code>GEMINI.md</code>), Windsurf (<code>.windsurfrules</code>), and cross-agent <code>AGENTS.md</code>. Output is validated against your compliance profile before files are written.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What you get: 12 generators -->
+    <!-- What you get: 17 generators across 6 agent formats -->
     <section class="generators-section pl-dark-band pl-dark-glow" id="generators">
       <div class="container">
         <p class="eyebrow eyebrow-light">What you get</p>
-        <h2 class="dark-title">Twelve generators. One coherent environment.</h2>
-        <p class="section-lead-light">Each generator owns one slice of the Claude Code configuration. Together they produce a complete, consistent setup that works the same on every teammate&rsquo;s machine.</p>
+        <h2 class="dark-title">Seventeen generators. Six agent formats. One coherent environment.</h2>
+        <p class="section-lead-light">The Claude Code generators are the flagship depth &mdash; hooks, skills, slash commands, MCP templates. The cross-agent targets take the same derived profile and emit native config for every other coding agent your team uses. One interview, six formats, no drift.</p>
 
+        <h3 class="gen-group-title">Claude Code &mdash; deep integration</h3>
         <div class="generators-grid">
           <div class="gen-card">
             <div class="gen-icon"><FileText /></div>
@@ -166,7 +168,7 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
           <div class="gen-card">
             <div class="gen-icon"><Brain /></div>
             <h3>Agents</h3>
-            <p>Role-specific agent definitions: security-reviewer, compliance-checker, test-writer. Each gets its own allowed-tools list — read-only for reviewers.</p>
+            <p>Role-specific agent definitions: security-reviewer, compliance-checker, test-writer. Each gets its own allowed-tools list &mdash; read-only for reviewers.</p>
           </div>
           <div class="gen-card">
             <div class="gen-icon"><Hand /></div>
@@ -197,6 +199,35 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
             <div class="gen-icon"><BookOpen /></div>
             <h3>Document state registry</h3>
             <p><code>docs/document_state.yaml</code> categorizing documentation by lifecycle (CURRENT, FUTURE, REFERENCE, ARCHIVED). Plays well with CI gates and staleness checks.</p>
+          </div>
+        </div>
+
+        <h3 class="gen-group-title gen-group-title-cross">Cross-agent targets &mdash; one interview, every agent</h3>
+        <div class="generators-grid">
+          <div class="gen-card">
+            <div class="gen-icon"><Layers /></div>
+            <h3>AGENTS.md</h3>
+            <p>The cross-agent standard: a single <code>AGENTS.md</code> with unified Stack, Commands, Boundaries, Rules, and Terminology sections that any compatible coding agent can read.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><MousePointer /></div>
+            <h3>Cursor rules</h3>
+            <p><code>.cursor/rules/*.mdc</code> files with MDC frontmatter and <code>alwaysApply</code> / <code>globs</code> scoping. Mirrors the same rules, security posture, and compliance gates as the Claude Code config.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Github /></div>
+            <h3>GitHub Copilot instructions</h3>
+            <p><code>.github/copilot-instructions.md</code> for project-wide guidance plus glob-scoped <code>.github/instructions/*.instructions.md</code> (<code>applyTo</code> selectors) for path-specific rules.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Sparkles /></div>
+            <h3>Gemini CLI</h3>
+            <p><code>GEMINI.md</code> with your stack, conventions, and safety posture rendered in the format Gemini expects. Same source-of-truth profile; native output.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Wind /></div>
+            <h3>Windsurf</h3>
+            <p><code>.windsurfrules</code> generated from the same interview. Teams can switch agents without re-authoring their rules, conventions, or DLP policies.</p>
           </div>
         </div>
       </div>
@@ -249,7 +280,7 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
           </div>
         </div>
 
-        <p class="compliance-note">A SOC 2 / GDPR-oriented pack and a FedRAMP extension are in the roadmap. The three packs above are shipping today.</p>
+        <p class="compliance-note">External plugins: point <code>EMBEDIQ_PLUGINS_DIR</code> at your own registry to ship custom packs today. A SOC 2 / GDPR-oriented pack and a FedRAMP extension are in the roadmap; the three packs above are shipping today.</p>
       </div>
     </section>
 
@@ -264,6 +295,7 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
           <div class="privacy-card">
             <h3>Rules-based generation</h3>
             <p>The Branch Evaluator uses ten deterministic operators to decide which questions to show and which rules to emit. No third-party AI call is made while you run the wizard.</p>
+            <p class="privacy-proof">Prove it: <code>npm run evaluate</code> replays a golden config and byte-diffs every file. 56 unit tests gate every release.</p>
           </div>
           <div class="privacy-card">
             <h3>Zero data persistence</h3>
@@ -294,7 +326,7 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
               <Terminal class="code-icon" />
               <span>Run the web wizard</span>
             </div>
-            <pre><code>git clone &lt;repo-url&gt;
+            <pre><code>git clone https://github.com/asq-sheriff/embediq.git
 cd embediq
 npm install
 npm run start:web
@@ -312,18 +344,66 @@ npm run start:web
 
           <div class="code-block">
             <div class="code-header">
+              <GitPullRequest class="code-icon" />
+              <span>Generate + open a pull request in one shot</span>
+            </div>
+            <pre><code>npm start -- --git-pr
+# interviews you, generates files, and opens an atomic PR
+# via the GitHub REST v3 Git Data API — with evaluation
+# scores and contributor attribution in the PR body.</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
               <PackageCheck class="code-icon" />
               <span>After generation, in your project</span>
             </div>
             <pre><code>cp .mcp.json.template .mcp.json      # add your API keys
 cd /path/to/your/project
-claude                               # launch Claude Code
-git add CLAUDE.md .claude/ .claudeignore .mcp.json.template
-git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
+claude                               # launch Claude Code (or your agent)
+git add CLAUDE.md AGENTS.md .claude/ .cursor/ .github/ .claudeignore
+git commit -m "Add AI-agent config generated by EmbedIQ"</code></pre>
           </div>
 
           <div class="local-note">
             <strong>Keep these local (git-ignored):</strong> <code>.claude/settings.local.json</code>, <code>.mcp.json</code>, <code>.claude/logs/</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enterprise operations -->
+    <section class="enterprise-section" id="enterprise">
+      <div class="container">
+        <p class="eyebrow">Enterprise operations</p>
+        <h2>Scheduled regeneration. Drift detection. Audit-ready PRs.</h2>
+        <p class="section-lead">Generating the config is the start. Keeping it in sync across dozens of repos, compliance reviews, and contributor changes is the actual operating problem.</p>
+
+        <div class="enterprise-grid">
+          <div class="enterprise-card">
+            <div class="enterprise-icon"><Users /></div>
+            <h3>Interrupt &amp; resume</h3>
+            <p>Shareable session URLs (<code>?session=id</code>) let an interview span devices and contributors. Ship with a half-finished interview, hand it to a compliance officer, they finish it, you merge &mdash; with per-answer attribution.</p>
+          </div>
+          <div class="enterprise-card">
+            <div class="enterprise-icon"><RefreshCw /></div>
+            <h3>Drift detection</h3>
+            <p><code>npm run drift</code> classifies every file as match, missing, modified-by-user, modified-stale-stamp, version-mismatch, or extra. Exit codes wire straight into CI gates so rogue edits fail the build.</p>
+          </div>
+          <div class="enterprise-card">
+            <div class="enterprise-icon"><AlarmClock /></div>
+            <h3>Autopilot</h3>
+            <p><code>@hourly</code>, <code>@daily</code>, <code>@weekly</code>, <code>@monthly</code> scheduled drift scans with a JSON-backed store and per-run records. Full REST CRUD at <code>/api/autopilot/schedules</code>.</p>
+          </div>
+          <div class="enterprise-card">
+            <div class="enterprise-icon"><GitPullRequest /></div>
+            <h3>GitHub PRs</h3>
+            <p>The <code>--git-pr</code> flag opens an atomic pull request via the REST v3 Git Data API with generated files, evaluation scores, validation results, and contributor attribution in the PR body.</p>
+          </div>
+          <div class="enterprise-card">
+            <div class="enterprise-icon"><Webhook /></div>
+            <h3>Webhooks &mdash; outbound &amp; inbound</h3>
+            <p>Outbound to Slack (Block Kit), Teams (MessageCard), or generic JSON with auto-detection and per-URL event filtering. Inbound Drata and Vanta adapters translate compliance findings into autopilot runs.</p>
           </div>
         </div>
       </div>
@@ -336,29 +416,32 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
         <h2>Shipping today. Growing.</h2>
         <div class="roadmap-grid">
           <div class="roadmap-col roadmap-now">
-            <h3>Shipping (v2.1)</h3>
+            <h3>Shipping (v3.2, April 22 2026)</h3>
             <ul>
               <li>71-question adaptive wizard with branching logic</li>
-              <li>12 generators producing 15&ndash;40 configuration files</li>
-              <li>Compliance packs: HIPAA, PCI-DSS/SOX/GLBA, FERPA/COPPA</li>
+              <li>17 generators across six agent formats (Claude Code, Cursor, Copilot, Gemini CLI, Windsurf, AGENTS.md)</li>
+              <li>Compliance packs: HIPAA, PCI-DSS/SOX/GLBA, FERPA/COPPA; external plugin registry via <code>EMBEDIQ_PLUGINS_DIR</code></li>
+              <li>Evaluation framework: golden-config replay scorer and benchmark mode</li>
+              <li>Composable skills system with external registry support</li>
+              <li>Interrupt &amp; resume sessions with contributor attribution</li>
+              <li>Drift detection CLI and autopilot scheduled regeneration</li>
+              <li>GitHub PR integration (<code>--git-pr</code>), Slack / Teams / Drata / Vanta webhooks</li>
               <li>Output validation before files are written</li>
-              <li>Role-adaptive output (technical and non-technical)</li>
-              <li>Web UI and CLI with identical core logic</li>
-              <li>Pluggable auth (Basic, OIDC, Proxy Header)</li>
-              <li>Docker and Kubernetes deployment manifests</li>
-              <li>Optional OpenTelemetry instrumentation</li>
+              <li>Role-adaptive output (8 roles; non-technical &ldquo;coworker&rdquo; variants)</li>
+              <li>Pluggable auth (Basic, OIDC, Proxy Header), rate limiting, TLS</li>
+              <li>Docker and Kubernetes deployment manifests; optional OpenTelemetry</li>
               <li>MIT license</li>
             </ul>
           </div>
           <div class="roadmap-col roadmap-next">
             <h3>On the roadmap</h3>
             <ul>
-              <li>Public package distribution (npm install command)</li>
-              <li>External plugin loading from <code>plugins/</code> directory</li>
+              <li>AI-augmented generation (v4.0, opt-in): provider abstraction for Claude, OpenAI, Ollama &mdash; deterministic baseline always available</li>
+              <li>Public package distribution (<code>npm install</code>)</li>
               <li>SOC 2 / GDPR-oriented compliance pack</li>
               <li>FedRAMP extension</li>
-              <li>Headless CI/CD integration</li>
-              <li>Expanded agent-team coordination patterns</li>
+              <li>Quick mode: 5-question lightweight wizard for sub-2-minute config</li>
+              <li>Deeper generator parity for non-flagship agents</li>
             </ul>
           </div>
         </div>
@@ -369,11 +452,12 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
     <section class="embediq-cta">
       <div class="container container-narrow text-center">
         <h2>Ready to see it run against your stack?</h2>
-        <p>EmbedIQ is in active early-access. Reach out and we&rsquo;ll set up a walkthrough or give you repo access.</p>
+        <p>EmbedIQ is MIT-licensed and on GitHub. Clone it, run the wizard, and see what config comes out for your role, stack, and compliance posture.</p>
         <div class="cta-buttons">
-          <a href="/contact?interest=embediq" class="btn-embediq-primary btn-embediq-lg">Get early access</a>
+          <a href="https://github.com/asq-sheriff/embediq" class="btn-embediq-primary btn-embediq-lg" target="_blank" rel="noopener"><Github class="btn-icon" /> Try it on GitHub</a>
           <a href="/products/" class="btn-embediq-secondary btn-embediq-lg">Back to products</a>
         </div>
+        <p class="cta-footnote">Running it in a regulated environment with audit, SSO, and compliance-platform integration? <a href="/contact?interest=embediq">Reach out for an enterprise walkthrough</a>.</p>
       </div>
     </section>
   </main>
@@ -523,6 +607,12 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
   .btn-embediq-lg {
     padding: 14px 28px;
     font-size: 15px;
+  }
+
+  .btn-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
 
   .hero-meta-row {
@@ -778,6 +868,25 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
     padding: var(--space-24) 0;
   }
 
+  .gen-group-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(234, 240, 255, 0.78);
+    margin: var(--space-10) 0 var(--space-5);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid rgba(234, 240, 255, 0.12);
+  }
+
+  .gen-group-title:first-of-type {
+    margin-top: 0;
+  }
+
+  .gen-group-title-cross {
+    color: #a5a8f5;
+  }
+
   .generators-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -992,6 +1101,14 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
     color: #c7cafa;
   }
 
+  .privacy-proof {
+    margin-top: var(--space-3) !important;
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(234, 240, 255, 0.1);
+    font-size: 13px !important;
+    color: rgba(234, 240, 255, 0.66) !important;
+  }
+
   /* Quickstart */
   .quickstart-section {
     padding: var(--space-20) 0;
@@ -1065,6 +1182,78 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
     padding: 1px 5px;
     border-radius: 4px;
     border: 1px solid var(--color-border-light);
+  }
+
+  /* Enterprise operations */
+  .enterprise-section {
+    padding: var(--space-20) 0;
+    background: #ffffff;
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .enterprise-section h2 {
+    max-width: 820px;
+    margin-bottom: var(--space-4);
+  }
+
+  .enterprise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  @media (max-width: 1024px) {
+    .enterprise-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .enterprise-grid { grid-template-columns: 1fr; }
+  }
+
+  .enterprise-card {
+    padding: var(--space-6);
+    background: var(--color-background-soft);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+  }
+
+  .enterprise-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    margin-bottom: var(--space-3);
+  }
+
+  .enterprise-icon :global(svg) {
+    width: 20px;
+    height: 20px;
+  }
+
+  .enterprise-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.01em;
+  }
+
+  .enterprise-card p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .enterprise-card code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12px;
+    background: var(--color-background-secondary);
+    padding: 1px 5px;
+    border-radius: 4px;
   }
 
   /* Roadmap */
@@ -1169,5 +1358,21 @@ git commit -m "Add Claude Code config generated by EmbedIQ"</code></pre>
     gap: var(--space-3);
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .cta-footnote {
+    margin-top: var(--space-6) !important;
+    font-size: 13px !important;
+    color: var(--color-text-tertiary) !important;
+  }
+
+  .cta-footnote a {
+    color: #6366f1;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cta-footnote a:hover {
+    color: #4f46e5;
   }
 </style>
