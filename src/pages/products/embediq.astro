@@ -7,11 +7,11 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
 
 <Layout
   title="EmbedIQ — Multi-agent configuration wizard | Praglogic"
-  description="EmbedIQ is an adaptive wizard that interviews your team once and generates the full config for Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and cross-agent AGENTS.md. Healthcare, finance, and education compliance packs included. Deterministic generation, no runtime LLM, no telemetry. MIT licensed."
+  description="EmbedIQ is an adaptive wizard that interviews your team once and generates governed config for every major AI coding agent — Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, cross-agent AGENTS.md, and local models like Ollama. Healthcare, finance, education, and AI-risk compliance packs, with OSCAL and CycloneDX-ML AIBOM governance exports. Deterministic generation, no runtime LLM, no telemetry. MIT licensed."
 >
   <Navigation />
 
-  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that interviews a team once and generates the full configuration for six AI coding agents — Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and cross-agent AGENTS.md — tailored to the user's role, tech stack, and industry. Deterministic generation with no runtime LLM. Ships with drift detection, autopilot scheduled regeneration, GitHub PR integration, and Slack/Teams/compliance-platform webhooks. CLI and web interfaces. Version 3.2. MIT licensed.","softwareVersion":"3.2.0","license":"https://opensource.org/licenses/MIT","featureList":["Adaptive 71-question interview across seven dimensions","Six agent formats from a single interview: Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, AGENTS.md","17 generators producing 15-40 configuration files","Healthcare (HIPAA), finance (PCI-DSS/SOX/GLBA), education (FERPA/COPPA) compliance packs","Deterministic generation, no runtime LLM","Evaluation framework with golden-config replay scorer","Drift detection CLI and autopilot scheduled regeneration","GitHub PR integration, Slack/Teams webhooks, Drata/Vanta compliance-platform adapters","Zero data persistence, optional OpenTelemetry","Web UI and CLI interfaces","Docker and Kubernetes deployment"]}`} />
+  <script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EmbedIQ","applicationCategory":"DeveloperApplication","operatingSystem":"Node.js 18+, Docker, Kubernetes","description":"Adaptive configuration wizard that interviews a team once and generates the full configuration for the major AI coding agents — Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, cross-agent AGENTS.md, and local models like Ollama — tailored to role, tech stack, and industry. Deterministic generation with no runtime LLM. Ships with enterprise AI governance (OSCAL, CycloneDX-ML AIBOM, tamper-evident audit), three-role delegation, multi-node autopilot, drift detection, and pull-request integration for GitHub, GitLab, Bitbucket, and Azure DevOps. CLI and web interfaces. Version 4.0.2. MIT licensed.","softwareVersion":"4.0.2","license":"https://opensource.org/licenses/MIT","featureList":["Adaptive 93-question interview across seven dimensions with role-based delegation","Major AI coding agents plus local models: Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, AGENTS.md, Continue.dev, Aider, Zed AI, Ollama","31 generators producing 15-40 configuration files across 16 output targets","Compliance domain packs: healthcare (HIPAA/HITECH), finance (PCI-DSS/SOX/GLBA), education (FERPA/COPPA), AI risk management (NIST AI RMF)","Enterprise AI governance: OSCAL catalog and profile import and export, CycloneDX-ML AIBOM, tamper-evident RFC-6962 audit log","Three-role delegation: admin, team lead, and individual developer with per-answer attribution","Deterministic generation, no runtime LLM","Multi-node deployment with Postgres-backed sessions and autopilot","Drift detection CLI and scheduled autopilot regeneration","Pull-request integration for GitHub, GitLab, Bitbucket, and Azure DevOps; Slack and Teams webhooks; Drata and Vanta compliance adapters","Hybrid local and hosted routing with confidence escalation and optional PHI redaction","Zero data persistence, optional OpenTelemetry; web UI and CLI; Docker and Kubernetes deployment"]}`} />
 
   <main class="embediq-page">
     <!-- Hero -->
@@ -23,13 +23,13 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
           <span class="category-chip">Developer Tools</span>
           <span class="status-chip status-shipping">
             <span class="status-dot"></span>
-            Shipped · v3.2 · MIT license
+            Shipped · v4.0.2 · MIT license
           </span>
         </div>
 
         <h1 class="hero-title">EmbedIQ</h1>
         <p class="hero-tagline">Answer a few questions.<br /><span class="text-gradient-embediq">We generate the config for every AI coding agent on your team.</span></p>
-        <p class="hero-lead">Setting up Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and <code>AGENTS.md</code> across a real team means writing six different config formats — and keeping them consistent as your stack, roles, and compliance posture evolve. EmbedIQ interviews you once, then generates all of them. 15 to 40 files per agent target. Deterministic. No runtime LLM.</p>
+        <p class="hero-lead">Setting up Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, <code>AGENTS.md</code> — and local models like Ollama — across a real team means juggling a dozen config formats and keeping them consistent as your stack, roles, and compliance posture evolve. EmbedIQ interviews you once, then generates all of them, with audit-ready governance for regulated teams. 15 to 40 files per target. Deterministic. No runtime LLM.</p>
 
         <div class="hero-actions">
           <a href="https://github.com/asq-sheriff/embediq" class="btn-embediq-primary" target="_blank" rel="noopener"><Github class="btn-icon" /> View on GitHub</a>
@@ -39,15 +39,15 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
 
         <div class="hero-meta-row">
           <div class="meta-stat">
-            <span class="meta-num">71</span>
+            <span class="meta-num">93</span>
             <span class="meta-label">adaptive questions<br />across 7 dimensions</span>
           </div>
           <div class="meta-stat">
-            <span class="meta-num">6</span>
-            <span class="meta-label">agent formats<br />from one interview</span>
+            <span class="meta-num">16</span>
+            <span class="meta-label">output targets<br />from one interview</span>
           </div>
           <div class="meta-stat">
-            <span class="meta-num">17</span>
+            <span class="meta-num">31</span>
             <span class="meta-label">generators produce<br />15&ndash;40 config files</span>
           </div>
           <div class="meta-stat">
@@ -100,7 +100,7 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
             <div class="step-num">1</div>
             <div class="step-icon"><MessageCircleQuestion class="icon" /></div>
             <h3>Interview</h3>
-            <p>71 questions live in the bank across seven dimensions. Branching logic means you only see the 25 to 40 that actually matter for your role, stack, and industry. Each question has help text; none is a trick.</p>
+            <p>93 questions live in the bank across seven dimensions. Branching logic means you only see the 25 to 40 that actually matter for your role, stack, and industry. Each question has help text; none is a trick.</p>
             <details class="step-detail">
               <summary>See sample questions</summary>
               <ul class="sample-questions">
@@ -125,18 +125,18 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
             <div class="step-num">3</div>
             <div class="step-icon"><FileCode2 class="icon" /></div>
             <h3>Generate</h3>
-            <p>17 generators run in parallel across six agent formats: Claude Code (<code>CLAUDE.md</code>, rules, commands, agents, hooks, MCP), Cursor (<code>.cursor/rules/*.mdc</code> with scoping), GitHub Copilot (project + glob-scoped instructions), Gemini CLI (<code>GEMINI.md</code>), Windsurf (<code>.windsurfrules</code>), and cross-agent <code>AGENTS.md</code>. Output is validated against your compliance profile before files are written.</p>
+            <p>31 generators run across sixteen output targets: Claude Code (<code>CLAUDE.md</code>, rules, commands, agents, hooks, MCP), Cursor (<code>.cursor/rules/*.mdc</code> with scoping), GitHub Copilot (project + glob-scoped instructions), Gemini CLI (<code>GEMINI.md</code>), Windsurf (<code>.windsurfrules</code>), and cross-agent <code>AGENTS.md</code> — plus local models via Continue.dev, Aider, Zed AI, and Ollama. Output is validated against your compliance profile before files are written.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What you get: 17 generators across 6 agent formats -->
+    <!-- What you get: 31 generators across 16 output targets -->
     <section class="generators-section pl-dark-band pl-dark-glow" id="generators">
       <div class="container">
         <p class="eyebrow eyebrow-light">What you get</p>
-        <h2 class="dark-title">Seventeen generators. Six agent formats. One coherent environment.</h2>
-        <p class="section-lead-light">The Claude Code generators are the flagship depth &mdash; hooks, skills, slash commands, MCP templates. The cross-agent targets take the same derived profile and emit native config for every other coding agent your team uses. One interview, six formats, no drift.</p>
+        <h2 class="dark-title">Thirty-one generators. Sixteen output targets. One coherent environment.</h2>
+        <p class="section-lead-light">The Claude Code generators are the flagship depth &mdash; hooks, skills, slash commands, MCP templates. The cross-agent targets emit native config for every other coding agent your team uses — hosted and local — and a governance layer emits OSCAL, AIBOM, and tamper-evident audit artifacts for regulated teams. One interview, sixteen targets, no drift.</p>
 
         <h3 class="gen-group-title">Claude Code &mdash; deep integration</h3>
         <div class="generators-grid">
@@ -230,6 +230,50 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
             <p><code>.windsurfrules</code> generated from the same interview. Teams can switch agents without re-authoring their rules, conventions, or DLP policies.</p>
           </div>
         </div>
+
+        <h3 class="gen-group-title gen-group-title-cross">Local AI &amp; enterprise governance &mdash; new in v4</h3>
+        <div class="generators-grid">
+          <div class="gen-card">
+            <div class="gen-icon"><Workflow /></div>
+            <h3>Local-model agents</h3>
+            <p>Native config for <code>Continue.dev</code>, <code>Aider</code>, and <code>Zed AI</code>, so the same rules and guardrails follow your team onto on-device models.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Cpu /></div>
+            <h3>Ollama &amp; local router</h3>
+            <p>Ollama setup plus a confidence-escalating router that runs simple tasks locally and escalates complex ones to a hosted model &mdash; with optional PHI redaction for regulated teams.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Stethoscope /></div>
+            <h3>Healthcare RAG scaffold</h3>
+            <p>A FHIR-aware retrieval scaffold with a local vector store and audit logging, for HIPAA-sensitive local workflows.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><PackageCheck /></div>
+            <h3>OSCAL catalog, profile &amp; SSP</h3>
+            <p>Import NIST 800-53 / SP 800-218 catalogs and FedRAMP profiles; export an OSCAL component definition and SSP fragment straight into your audit pipeline.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><Archive /></div>
+            <h3>CycloneDX-ML AIBOM</h3>
+            <p>An AI Bill of Materials enumerating every model, agent, and service the harness invokes &mdash; machine-readable for supply-chain governance.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><ShieldCheck /></div>
+            <h3>Tamper-evident audit log</h3>
+            <p>An RFC-6962-pattern, hash-linked audit chain with a <code>verify-audit-log</code> script, so every generated change is provable.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><GitPullRequest /></div>
+            <h3>CI pipelines</h3>
+            <p><code>azure-pipelines.yml</code> and CI files matched to your stack (.NET, Python, Java, Node, Go, Rust), with a security stage for regulated profiles.</p>
+          </div>
+          <div class="gen-card">
+            <div class="gen-icon"><FileCode2 /></div>
+            <h3>Editor &amp; IDE configs</h3>
+            <p>Visual Studio <code>.editorconfig</code> with analyzer severities, plus JetBrains <code>.junie/guidelines.md</code> and <code>.aiignore</code>.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -278,9 +322,21 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
               <li>Role-based access enforcement</li>
             </ul>
           </div>
+
+          <div class="compliance-card">
+            <div class="compliance-icon"><ShieldCheck /></div>
+            <h3>AI Risk Management</h3>
+            <p class="compliance-frameworks">NIST AI RMF · AI 600-1</p>
+            <ul>
+              <li>Governance questions mapped to the NIST AI Risk Management Framework</li>
+              <li>OSCAL component-definition and SSP-fragment exports</li>
+              <li>CycloneDX-ML AI Bill of Materials (AIBOM)</li>
+              <li>Tamper-evident, hash-linked audit log with verification script</li>
+            </ul>
+          </div>
         </div>
 
-        <p class="compliance-note">External plugins: point <code>EMBEDIQ_PLUGINS_DIR</code> at your own registry to ship custom packs today. A SOC 2 / GDPR-oriented pack and a FedRAMP extension are in the roadmap; the three packs above are shipping today.</p>
+        <p class="compliance-note">The wizard also imports NIST 800-53 / SP 800-218 catalogs and FedRAMP Low/Moderate/High profiles via OSCAL, with 50+ framework options across these domains. External plugins: point <code>EMBEDIQ_PLUGINS_DIR</code> at your own registry to ship custom packs today. A dedicated SOC 2 / GDPR-oriented pack is on the roadmap; the four packs above are shipping today.</p>
       </div>
     </section>
 
@@ -295,11 +351,11 @@ import { Settings2, ArrowLeft, MessageCircleQuestion, Eye, FileCode2, ShieldChec
           <div class="privacy-card">
             <h3>Rules-based generation</h3>
             <p>The Branch Evaluator uses ten deterministic operators to decide which questions to show and which rules to emit. No third-party AI call is made while you run the wizard.</p>
-            <p class="privacy-proof">Prove it: <code>npm run evaluate</code> replays a golden config and byte-diffs every file. 56 unit tests gate every release.</p>
+            <p class="privacy-proof">Prove it: <code>npm run evaluate</code> replays a golden config and byte-diffs every file. 1,339 tests gate every release.</p>
           </div>
           <div class="privacy-card">
-            <h3>Zero data persistence</h3>
-            <p>Your answers live only in volatile memory — process heap for the CLI, browser memory for the web UI. No database. No logging of user input.</p>
+            <h3>Zero data persistence by default</h3>
+            <p>By default your answers live only in volatile memory — process heap for the CLI, browser memory for the web UI. No logging of user input. Multi-node deployments can opt into an encrypted Postgres session store with key rotation.</p>
           </div>
           <div class="privacy-card">
             <h3>Stateless REST API</h3>
@@ -382,8 +438,8 @@ git commit -m "Add AI-agent config generated by EmbedIQ"</code></pre>
         <div class="enterprise-grid">
           <div class="enterprise-card">
             <div class="enterprise-icon"><Users /></div>
-            <h3>Interrupt &amp; resume</h3>
-            <p>Shareable session URLs (<code>?session=id</code>) let an interview span devices and contributors. Ship with a half-finished interview, hand it to a compliance officer, they finish it, you merge &mdash; with per-answer attribution.</p>
+            <h3>Role-based delegation</h3>
+            <p>Shareable, role-scoped session links let an interview span devices and contributors. An admin sets policy, a team lead answers project and technology questions, and individuals set their own preferences &mdash; with role-scoped writes and per-answer attribution. Partial submissions still generate.</p>
           </div>
           <div class="enterprise-card">
             <div class="enterprise-icon"><RefreshCw /></div>
@@ -393,17 +449,22 @@ git commit -m "Add AI-agent config generated by EmbedIQ"</code></pre>
           <div class="enterprise-card">
             <div class="enterprise-icon"><AlarmClock /></div>
             <h3>Autopilot</h3>
-            <p><code>@hourly</code>, <code>@daily</code>, <code>@weekly</code>, <code>@monthly</code> scheduled drift scans with a JSON-backed store and per-run records. Full REST CRUD at <code>/api/autopilot/schedules</code>.</p>
+            <p>Arbitrary 5-field cron with IANA time zones (DST-aware), or <code>@hourly</code>/<code>@daily</code>/<code>@weekly</code>/<code>@monthly</code>. Backed by JSON, SQLite, or Postgres; multiple scheduler replicas coordinate via atomic claim-locking. Full REST CRUD at <code>/api/autopilot/schedules</code>.</p>
           </div>
           <div class="enterprise-card">
             <div class="enterprise-icon"><GitPullRequest /></div>
-            <h3>GitHub PRs</h3>
-            <p>The <code>--git-pr</code> flag opens an atomic pull request via the REST v3 Git Data API with generated files, evaluation scores, validation results, and contributor attribution in the PR body.</p>
+            <h3>Pull requests &mdash; every provider</h3>
+            <p>The <code>--git-pr</code> flag opens an atomic pull request on GitHub, GitLab, Bitbucket, or Azure DevOps, with generated files, evaluation scores, validation results, and contributor attribution in the PR body.</p>
           </div>
           <div class="enterprise-card">
             <div class="enterprise-icon"><Webhook /></div>
             <h3>Webhooks &mdash; outbound &amp; inbound</h3>
             <p>Outbound to Slack (Block Kit), Teams (MessageCard), or generic JSON with auto-detection and per-URL event filtering. Inbound Drata and Vanta adapters translate compliance findings into autopilot runs.</p>
+          </div>
+          <div class="enterprise-card">
+            <div class="enterprise-icon"><Lock /></div>
+            <h3>Multi-node &amp; secure sessions</h3>
+            <p>Postgres-backed sessions let every web replica share state for horizontal scale-out, and session payloads are encrypted with support for key rotation &mdash; no sticky sessions, no downtime to rotate keys.</p>
           </div>
         </div>
       </div>
@@ -416,32 +477,31 @@ git commit -m "Add AI-agent config generated by EmbedIQ"</code></pre>
         <h2>Shipped. Growing.</h2>
         <div class="roadmap-grid">
           <div class="roadmap-col roadmap-now">
-            <h3>v3.2 &mdash; released April 22, 2026</h3>
+            <h3>v4.0.2 &mdash; released June 3, 2026</h3>
             <ul>
-              <li>71-question adaptive wizard with branching logic</li>
-              <li>17 generators across six agent formats (Claude Code, Cursor, Copilot, Gemini CLI, Windsurf, AGENTS.md)</li>
-              <li>Compliance packs: HIPAA, PCI-DSS/SOX/GLBA, FERPA/COPPA; external plugin registry via <code>EMBEDIQ_PLUGINS_DIR</code></li>
-              <li>Evaluation framework: golden-config replay scorer and benchmark mode</li>
-              <li>Composable skills system with external registry support</li>
-              <li>Interrupt &amp; resume sessions with contributor attribution</li>
-              <li>Drift detection CLI and autopilot scheduled regeneration</li>
-              <li>GitHub PR integration (<code>--git-pr</code>), Slack / Teams / Drata / Vanta webhooks</li>
-              <li>Output validation before files are written</li>
-              <li>Role-adaptive output (8 roles; non-technical &ldquo;coworker&rdquo; variants)</li>
-              <li>Pluggable auth (Basic, OIDC, Proxy Header), rate limiting, TLS</li>
-              <li>Docker and Kubernetes deployment manifests; optional OpenTelemetry</li>
+              <li>93-question adaptive wizard with branching logic and three-role delegation (admin / lead / individual)</li>
+              <li>31 generators across 16 output targets &mdash; six flagship agents plus local models (Continue.dev, Aider, Zed AI, Ollama)</li>
+              <li>Compliance domain packs: HIPAA/HITECH, PCI-DSS/SOX/GLBA, FERPA/COPPA, NIST AI RMF; OSCAL catalog/profile import with FedRAMP profiles</li>
+              <li>Enterprise AI governance: OSCAL component &amp; SSP exports, CycloneDX-ML AIBOM, tamper-evident RFC-6962 audit log, per-file provenance</li>
+              <li>Hybrid local/hosted routing with confidence escalation and optional PHI redaction; healthcare RAG scaffold</li>
+              <li>Multi-node deployment: Postgres-backed sessions and autopilot with atomic claim-locking; encrypted sessions with key rotation</li>
+              <li>Autopilot with arbitrary cron and IANA time zones; drift detection CLI; output validation before any file is written</li>
+              <li>Pull requests for GitHub, GitLab, Bitbucket, Azure DevOps; Slack / Teams / Drata / Vanta webhooks</li>
+              <li>Azure DevOps &amp; CI pipelines; Visual Studio and JetBrains editor configs</li>
+              <li>Evaluation framework with golden-config replay scorer and benchmark mode; 1,339 tests gate every release</li>
+              <li>Pluggable auth (Basic, OIDC, Proxy Header), rate limiting, TLS; Docker &amp; Kubernetes; optional OpenTelemetry</li>
               <li>MIT license</li>
             </ul>
           </div>
           <div class="roadmap-col roadmap-next">
             <h3>On the roadmap</h3>
             <ul>
-              <li>AI-augmented generation (v4.0, opt-in): provider abstraction for Claude, OpenAI, Ollama &mdash; deterministic baseline always available</li>
+              <li>Provider abstraction &amp; policy RAG (v4.1): pluggable AI providers (Claude, OpenAI, Ollama) with token-usage tracking &mdash; all AI features opt-in, deterministic baseline always available</li>
+              <li>Self-hosted multi-workspace (v4.2): per-workspace isolation, multi-tenant within a single install</li>
+              <li>AI-augmented generation (v4.3, gated): a post-generation LLM review pass, applied only when it scores higher than the deterministic baseline</li>
               <li>Public package distribution (<code>npm install</code>)</li>
-              <li>SOC 2 / GDPR-oriented compliance pack</li>
-              <li>FedRAMP extension</li>
-              <li>Quick mode: 5-question lightweight wizard for sub-2-minute config</li>
-              <li>Deeper generator parity for non-flagship agents</li>
+              <li>Dedicated SOC 2 / GDPR compliance pack</li>
+              <li>Quick mode: lightweight wizard for sub-2-minute config</li>
             </ul>
           </div>
         </div>
