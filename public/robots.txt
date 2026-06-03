@@ -18,3 +18,47 @@ Disallow: /confidential-docs/
 # Build artifacts and APIs
 Disallow: /api/
 Disallow: /_astro/
+
+# AI search & answer engines are welcome to index public content.
+# (Confidential areas above remain disallowed for all agents.)
+User-agent: GPTBot
+Allow: /
+Disallow: /confidential/
+Disallow: /confidential-docs/
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /confidential/
+Disallow: /confidential-docs/
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+Disallow: /confidential/
+Disallow: /confidential-docs/
+
+# AI guidance file for answer engines
+# https://pragmaticlogic.ai/llms.txt
