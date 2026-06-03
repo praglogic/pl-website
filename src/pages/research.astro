@@ -25,7 +25,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
     <div class="container posture-container">
       <h2 class="posture-title">Our research posture.</h2>
       <p class="posture-body">
-        We publish methods, document invariants, and caveat what we haven't proven. <strong>Lilo Solace</strong> is our active clinical research track today — architectural safety, deterministic crisis detection, and the clinical-instrument framework — with manuscripts in the publication pipeline. <strong>EmbedIQ's</strong> research posture lives on its roadmap: an evaluation framework that will score configuration quality against golden reference configs, replayable and reproducible. We'll publish that work when it lands. For now, the clinical-safety research below reflects what's furthest along.
+        We publish methods, document invariants, and caveat what we haven't proven. <strong>Auravera</strong> is our active clinical research track today — architectural safety, deterministic crisis detection, and the clinical-instrument framework — with manuscripts in the publication pipeline. <strong>EmbedIQ's</strong> research posture lives on its roadmap: an evaluation framework that will score configuration quality against golden reference configs, replayable and reproducible. We'll publish that work when it lands. For now, the clinical-safety research below reflects what's furthest along.
       </p>
     </div>
   </section>
@@ -34,12 +34,12 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="findings-section">
     <div class="container">
       <h2 class="section-title">Internal Benchmark Results</h2>
-      <p class="section-subtitle">Lilo Engine — engineering validation from internal bench evaluation</p>
+      <p class="section-subtitle">Auravera — engineering validation from internal bench evaluation</p>
       <div class="findings-grid">
         <div class="finding-card">
           <div class="finding-number">100%</div>
           <div class="finding-label">Crisis Recall</div>
-          <p>On our internal 456-test safety suite (165-example crisis training set: 80 crisis + 85 non-crisis). Clinical effectiveness will be measured in the pilot.</p>
+          <p>On our internal 500-test safety suite (165-example crisis training set: 80 crisis + 85 non-crisis). Clinical effectiveness will be measured in the pilot.</p>
         </div>
         <div class="finding-card">
           <div class="finding-number">&lt;1s</div>
@@ -57,7 +57,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
           <p>On our internal therapeutic evaluation suite (target was 93.3). End-to-end scenarios with zero clinical anti-patterns detected.</p>
         </div>
       </div>
-      <p class="findings-disclaimer">These results reflect engineering validation on internal test suites, not clinical outcomes in real residents. Product-generated clinical evidence will come from the feasibility pilot (n=20, IRB-targeted Jun 2026, enrollment Q3 2026). See the <a href="/products/lilo-solace/#validation-plan">validation plan</a>.</p>
+      <p class="findings-disclaimer">These results reflect engineering validation on internal test suites, not clinical outcomes in real residents. Product-generated clinical evidence will come from the feasibility pilot (n=20, IRB-targeted Jun 2026, enrollment Q3 2026). See the <a href="/products/auravera/#validation-plan">validation plan</a>.</p>
     </div>
   </section>
 
@@ -65,7 +65,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="publications-section">
     <div class="container">
       <h2 class="section-title">Active Research</h2>
-      <p class="section-subtitle">Lilo clinical-safety research — active manuscripts</p>
+      <p class="section-subtitle">Auravera clinical-safety research — active manuscripts</p>
 
       <div class="publication-card featured">
         <div class="pub-status">
@@ -78,7 +78,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
           <div class="pub-highlights">
             <div class="highlight-item">
               <Shield class="highlight-icon" />
-              <span>Describes the Lilo Engine's deterministic pipeline architecture</span>
+              <span>Describes the Auravera's deterministic pipeline architecture</span>
             </div>
             <div class="highlight-item">
               <Target class="highlight-icon" />
@@ -182,7 +182,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
         </div>
       </div>
 
-      <p class="evidence-conclusion">These findings — from independent, peer-reviewed sources — are why we designed Lilo Engine as a deterministic pipeline with structural safety invariants, rather than relying on human oversight or agentic conventions.</p>
+      <p class="evidence-conclusion">These findings — from independent, peer-reviewed sources — are why we designed Auravera as a deterministic pipeline with structural safety invariants, rather than relying on human oversight or agentic conventions.</p>
     </div>
   </section>
 
@@ -196,7 +196,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
         <div class="comparison-header-light">
           <div class="comp-col-light"></div>
           <div class="comp-col-light comp-bad-light">Agentic Orchestration</div>
-          <div class="comp-col-light comp-good-light">Deterministic Pipeline (Lilo)</div>
+          <div class="comp-col-light comp-good-light">Deterministic Pipeline (Auravera)</div>
         </div>
         <div class="comparison-row-light">
           <div class="comp-label-light">Crisis detection</div>
@@ -232,7 +232,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
 
       <div class="cross-product-callout">
         <h3>The same principle applies to EmbedIQ.</h3>
-        <p>Configuration for AI coding agents can be produced two ways. One is to ask an LLM to generate a <code>CLAUDE.md</code>, a rules file, and a set of hooks from a natural-language prompt — the output is non-reproducible, not auditable, and only as good as the prompt. The other is a deterministic pipeline that runs typed generators over a structured profile built from a 71-question interview. EmbedIQ takes the second path: byte-for-byte reproducible configurations, zero runtime LLM calls, and a validation pass before any file is written. The comparison above reads as a Lilo vs. agentic-AI argument for clinical safety, but the same architectural posture is what makes EmbedIQ audit-defensible for HIPAA, PCI-DSS, and FERPA-covered teams.</p>
+        <p>Configuration for AI coding agents can be produced two ways. One is to ask an LLM to generate a <code>CLAUDE.md</code>, a rules file, and a set of hooks from a natural-language prompt — the output is non-reproducible, not auditable, and only as good as the prompt. The other is a deterministic pipeline that runs typed generators over a structured profile built from a 71-question interview. EmbedIQ takes the second path: byte-for-byte reproducible configurations, zero runtime LLM calls, and a validation pass before any file is written. The comparison above reads as a Auravera vs. agentic-AI argument for clinical safety, but the same architectural posture is what makes EmbedIQ audit-defensible for HIPAA, PCI-DSS, and FERPA-covered teams.</p>
       </div>
     </div>
   </section>
@@ -241,7 +241,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <section class="instruments-section">
     <div class="container">
       <h2 class="section-title">13-Instrument Clinical Framework</h2>
-      <p class="section-subtitle">Three-tier validated assessment framework integrated into the Lilo Solace therapeutic pipeline.</p>
+      <p class="section-subtitle">Three-tier validated assessment framework integrated into the Auravera therapeutic pipeline.</p>
 
       <div class="tier-grid">
         <div class="tier-card">
@@ -293,7 +293,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <!-- Competitor Comparison -->
   <section class="competitor-section">
     <div class="container">
-      <h2 class="section-title">How Lilo Solace Compares</h2>
+      <h2 class="section-title">How Auravera Compares</h2>
       <p class="section-subtitle">Addressing gaps that published AI therapeutic systems haven't yet covered.</p>
 
       <div class="competitor-table-wrapper">
@@ -304,7 +304,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
               <th>Woebot</th>
               <th>Wysa</th>
               <th>ElliQ</th>
-              <th class="highlight-col">Lilo Solace</th>
+              <th class="highlight-col">Auravera</th>
             </tr>
           </thead>
           <tbody>
@@ -327,7 +327,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
               <td class="no">✗</td>
               <td class="partial">Basic</td>
               <td class="no">✗</td>
-              <td class="highlight-col yes">4-gate OR, 100% recall</td>
+              <td class="highlight-col yes">Multi-method, 100% recall</td>
             </tr>
             <tr>
               <td>Clinical Instruments</td>
@@ -374,7 +374,7 @@ import { Shield, Brain, Cpu, BookOpen, Layers, AlertTriangle, CheckCircle, Zap, 
   <!-- On-Premise Deployment -->
   <section class="deployment-section pl-dark-band pl-dark-glow">
     <div class="container">
-      <h2 class="section-title-light">Lilo Solace — On-Premise by Design</h2>
+      <h2 class="section-title-light">Auravera — On-Premise by Design</h2>
       <p class="section-subtitle-light">All safety-critical AI processing runs locally. No patient data ever leaves the device.</p>
 
       <!-- Co-Location Principle -->

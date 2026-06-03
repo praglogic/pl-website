@@ -5,7 +5,7 @@ export interface Props {
 	image?: string;
 }
 
-const { title, description = "Praglogic — AI for human good. Lilo Solace (therapeutic AI for assisted living) and EmbedIQ (Claude Code configuration wizard).", image = "/og-image.png" } = Astro.props;
+const { title, description = "Praglogic — AI for human good. Auravera (therapeutic AI for assisted living) and EmbedIQ (Claude Code configuration wizard).", image = "/og-image.png" } = Astro.props;
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new URL(Astro.url.pathname, `http://localhost:4321`);
 ---
 
@@ -21,7 +21,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="Praglogic, Lilo Solace, EmbedIQ, therapeutic AI, healthcare AI, senior care AI, assisted living technology, crisis detection, clinical AI safety, deterministic safety pipeline, HIPAA compliant AI, Claude Code configuration, Claude Code wizard, developer tools, compliance automation, HIPAA, PCI-DSS, FERPA" />
+		<meta name="keywords" content="Praglogic, Auravera, EmbedIQ, therapeutic AI, healthcare AI, senior care AI, assisted living technology, crisis detection, multimodal emotion AI, voice emotion analysis, wearable health monitoring, clinical AI safety, deterministic safety pipeline, HIPAA compliant AI, Claude Code configuration, Claude Code wizard, developer tools, compliance automation, HIPAA, PCI-DSS, FERPA" />
 		<link rel="canonical" href={canonicalURL} />
 		
 		<!-- Open Graph / Facebook -->
@@ -43,8 +43,9 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-		<!-- Schema.org Structured Data: Organization (per-product SoftwareApplication schemas live on the product pages) -->
-		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"Organization","name":"Praglogic","url":"https://pragmaticlogic.ai","logo":"https://pragmaticlogic.ai/images/pl_logo.svg","description":"Praglogic builds therapeutic AI (Lilo Solace) for assisted living and developer tools (EmbedIQ) for Claude Code.","sameAs":[],"contactPoint":{"@type":"ContactPoint","email":"contact@pragmaticlogic.ai","contactType":"customer service"}}`} />
+		<!-- Schema.org Structured Data: Organization + WebSite (per-product SoftwareApplication schemas live on the product pages) -->
+		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"Organization","name":"Praglogic","legalName":"Praglogic LLC","url":"https://pragmaticlogic.ai","logo":"https://pragmaticlogic.ai/images/pl_logo.svg","description":"Praglogic builds therapeutic AI (Auravera) for assisted living and developer tools (EmbedIQ) for Claude Code.","brand":[{"@type":"Brand","name":"Auravera"},{"@type":"Brand","name":"EmbedIQ"}],"sameAs":[],"contactPoint":{"@type":"ContactPoint","email":"contact@pragmaticlogic.ai","contactType":"customer service"}}`} />
+		<script type="application/ld+json" is:inline set:html={`{"@context":"https://schema.org","@type":"WebSite","name":"Praglogic","url":"https://pragmaticlogic.ai","description":"Deterministic AI for domains where probabilistic answers aren't good enough — Auravera (therapeutic AI for assisted living) and EmbedIQ (configuration wizard for AI coding agents).","inLanguage":"en","publisher":{"@type":"Organization","name":"Praglogic"}}`} />
 	</head>
 	<body>
 		<slot />
